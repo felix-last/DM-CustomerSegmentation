@@ -1,0 +1,154 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+Filter Limits for Interval Variables
+(maximum 500 observations printed)
+
+                                                                         Keep
+                                                             Filter     Missing
+Variable                  Role       Minimum     Maximum     Method     Values     Label
+
+ClaimsRate                INPUT         0.00        1.00    MANUAL         Y            
+CustomerAge               INPUT         0.00      150.00    MANUAL         Y            
+CustomerMonetaryValue     INPUT    -35784.17    11899.00    MANUAL         Y            
+GrossMonthlySalary        INPUT         0.00    11558.49    MANUAL         Y            
+PremiumsinLOBHealth       INPUT        24.45      365.07    PERCENTS       Y            
+PremiumsinLOBHousehold    INPUT       -70.00     1194.10    PERCENTS       Y            
+PremiumsinLOBMotor        INPUT        18.78      559.44    PERCENTS       Y            
+PremiumsinLOBWorkComp     INPUT       -11.00      254.38    PERCENTS       Y            
+ 
+                                                                                                                                                                                                                                                                
+ 
+Excluded Class Values
+(maximum 500 observations printed)
+
+                                          Train         Train             Filter
+   Variable        Role     Level         Count       Percent    Label    Method
+
+FirstPolicyYear    INPUT    53784             1    .009712510             MANUAL
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Number Of Observations
+
+Data
+Role     Filtered    Excluded     DATA
+
+TRAIN      8181        2115      10296
+ 
+                                                                                                                                                                                                                                                                
+ 
+Statistics for Original and FILTERED Data
+(maximum 500 observations printed)
+
+Data Role=TRAIN Variable=ClaimsRate
+
+Statistics            Original    Filtered
+
+Non Missing           10296.00     8181.00
+Missing                   0.00        0.00
+Minimum                   0.00        0.00
+Maximum                 256.20        1.00
+Mean                      0.74        0.59
+Standard Deviation        2.92        0.28
+Skewness                 71.21       -0.13
+Kurtosis               5877.86       -1.26
+
+
+Data Role=TRAIN Variable=CustomerAge
+
+Statistics            Original    Filtered
+
+Non Missing           10279.00     8167.00
+Missing                  17.00       14.00
+Minimum                  15.00       15.00
+Maximum                 988.00       81.00
+Mean                     47.99       48.26
+Standard Deviation       19.71       17.36
+Skewness                 10.54       -0.02
+Kurtosis                501.81       -1.19
+
+
+Data Role=TRAIN Variable=CustomerMonetaryValue
+
+Statistics              Original    Filtered
+
+Non Missing             10296.00     8181.00
+Missing                     0.00        0.00
+Minimum               -165680.42      -25.00
+Maximum                 11875.89     1448.28
+Mean                      177.89      280.80
+Standard Deviation       1945.81      229.94
+Skewness                  -67.04        0.76
+Kurtosis                 5323.18        0.80
+
+
+Data Role=TRAIN Variable=GrossMonthlySalary
+
+Statistics             Original     Filtered
+
+Non Missing            10260.00      8152.00
+Missing                   36.00        29.00
+Minimum                  665.00       665.00
+Maximum               110429.76     10042.00
+Mean                    5012.84      5035.98
+Standard Deviation      2314.90      1964.12
+Skewness                  11.25        -0.00
+Kurtosis                 474.39        -0.93
+
+
+Data Role=TRAIN Variable=PremiumsinLOBHealth
+
+Statistics             Original    Filtered
+
+Non Missing            10253.00     8144.00
+Missing                   43.00       37.00
+Minimum                   -2.11       24.45
+Maximum                28272.00      365.07
+Mean                     171.58      171.33
+Standard Deviation       296.41       71.29
+Skewness                  84.52        0.25
+Kurtosis                7914.20       -0.58
+
+
+Data Role=TRAIN Variable=PremiumsinLOBHousehold
+
+Statistics             Original    Filtered
+
+Non Missing            10296.00     8181.00
+Missing                    0.00        0.00
+Minimum                  -75.00      -70.00
+Maximum                25048.80     1194.10
+Mean                     210.43      209.52
+Standard Deviation       352.60      216.41
+Skewness                  36.05        1.58
+Kurtosis                2427.16        2.60
+
+
+Data Role=TRAIN Variable=PremiumsinLOBMotor
+
+Statistics             Original    Filtered
+
+Non Missing            10262.00     8156.00
+Missing                   34.00       25.00
+Minimum                   -4.11       19.45
+Maximum                11604.42      558.55
+Mean                     300.47      294.64
+Standard Deviation       211.91      130.60
+Skewness                  23.87       -0.05
+Kurtosis                1096.29       -0.87
+
+
+Data Role=TRAIN Variable=PremiumsinLOBWorkComp
+
+Statistics             Original    Filtered
+
+Non Missing            10210.00     8114.00
+Missing                   86.00       67.00
+Minimum                  -12.00      -11.00
+Maximum                 1988.70      254.38
+Mean                      41.28       40.04
+Standard Deviation        51.51       41.75
+Skewness                   7.44        1.72
+Kurtosis                 212.78        3.45

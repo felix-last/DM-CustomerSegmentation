@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  DataSource="azinsurance" Scope="LOCAL" Role="RAW" Library="INS_PROJ" Table="A2ZINSURANCE"
+ NCols="14" NObs="10296" NBytes="1254400" Segment="" DataSourceRole="RAW" OutputType="VIEW"
+ ForceRun="N" ComputeStatistics="N" DataSelection="DATASOURCE" NewTable="" MetaAdvisor="BASIC"
+ ApplyIntervalLevelLowerLimit="Y" IntervalLowerLimit="20" ApplyMaxPercentMissing="Y"
+ MaxPercentMissing="50" ApplyMaxClassLevels="Y" MaxClassLevels="20" IdentifyEmptyColumns="Y"
+ VariableValidation="STRICT" NewVariableRole="REJECT" DropMapVariables="Y" DsId="azinsurance"
+ DsSampleName="" DsSampleSizeType="" DsSampleSize="" DsCreatedBy="m2015382" DsCreateDate="1765295300.7"
+ DsModifiedBy="m2015382" DsModifyDate="1765295300.7" DsScope="LOCAL" Sample="D" SampleSizeType="PERCENT"
+ SampleSizePercent="20" SampleSizeObs="10000" DBPassThrough="Y" RunAction="Train"
+ Component="DataSource" RawCreateTime="1765363578.4" CreateTime="10DEC2015:10:46:18"
+ Description="" Data="INS_PROJ.A2ZINSURANCE" CMeta="WORK.M2M2ICD3" RunId="d51406d4-d375-47b9-807d-64b1843795b1"
+>
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES/>
+</_ROOT_>

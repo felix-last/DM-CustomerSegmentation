@@ -1,0 +1,960 @@
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
+MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "16. Dezember 2015" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "19.53 Uhr" );
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Training Log";
+MPRINT(EM_DIAGRAM):   put nldate;
+MPRINT(EM_DIAGRAM):   put nltime;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+*------------------------------------------------------------*
+* Training Log
+Date:                16. Dezember 2015
+Time:                19.53 Uhr
+*------------------------------------------------------------*
+MPRINT(EM_DIAGRAM):    filename O2YB99RR "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\EMTRAIN.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   proc printto print=O2YB99RR new;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _LOG "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\EMLOG.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
+MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "16. Dezember 2015" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "19.53 Uhr" );
+MPRINT(EM_DIAGRAM):   file _LOG;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "User:                D059331";
+MPRINT(EM_DIAGRAM):   put nldate;
+MPRINT(EM_DIAGRAM):   put nltime;
+MPRINT(EM_DIAGRAM):   put "Site:                70107571";
+MPRINT(EM_DIAGRAM):   put "Platform:            X64_8PRO";
+MPRINT(EM_DIAGRAM):   put "Maintenance Release: 9.03.01M2P081512";
+MPRINT(EM_DIAGRAM):   put "EM Version:          12.1";
+MPRINT(EM_DIAGRAM):   put "* ";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _LOGIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\EMTRAIN.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_COPYFILE):   data _null_;
+MPRINT(EM_COPYFILE):   length line $20000;
+MPRINT(EM_COPYFILE):   file _LOG MOD lrecl=20000;
+MPRINT(EM_COPYFILE):   fid=fopen("_LOGIN",'i',20000,'v');
+MPRINT(EM_COPYFILE):   if fid > 0 then do;
+MPRINT(EM_COPYFILE):   do while(^fread(fid));
+MPRINT(EM_COPYFILE):   rlen = frlen(fid);
+MPRINT(EM_COPYFILE):   rc= fget(fid,line,20000);
+MPRINT(EM_COPYFILE):   start = length(line)-length(left(line))+1;
+MPRINT(EM_COPYFILE):   line=strip(line);
+MPRINT(EM_COPYFILE):   put @start line;
+MPRINT(EM_COPYFILE):   end;
+MPRINT(EM_COPYFILE):   if fid > 0 then rc=fclose(fid);
+MPRINT(EM_COPYFILE):   end;
+MPRINT(EM_COPYFILE):   run;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _LOGIN;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   file _LOG mod;
+MPRINT(EM_DIAGRAM):   put _page_;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   filename _LOGIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\EMSCORE.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   file _LOG mod;
+MPRINT(EM_DIAGRAM):   put _page_;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _LOGIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\EMREPORT.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _LOGIN;
+MPRINT(EM_DIAGRAM):    filename _LOG;
+MPRINT(EM_DIAGRAM):    filename _OUT "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\EMOUTPUT.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
+MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "16. Dezember 2015" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "19.53 Uhr" );
+MPRINT(EM_DIAGRAM):   file _OUT;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "User:                D059331";
+MPRINT(EM_DIAGRAM):   put nldate;
+MPRINT(EM_DIAGRAM):   put nltime;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Training Output";
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _OUTIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\EMTRAIN.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_COPYFILE):   data _null_;
+MPRINT(EM_COPYFILE):   length line $20000;
+MPRINT(EM_COPYFILE):   file _OUT MOD lrecl=20000;
+MPRINT(EM_COPYFILE):   fid=fopen("_OUTIN",'i',20000,'v');
+MPRINT(EM_COPYFILE):   if fid > 0 then do;
+MPRINT(EM_COPYFILE):   do while(^fread(fid));
+MPRINT(EM_COPYFILE):   rlen = frlen(fid);
+MPRINT(EM_COPYFILE):   rc= fget(fid,line,20000);
+MPRINT(EM_COPYFILE):   start = length(line)-length(left(line))+1;
+MPRINT(EM_COPYFILE):   line=strip(line);
+MPRINT(EM_COPYFILE):   put @start line;
+MPRINT(EM_COPYFILE):   end;
+MPRINT(EM_COPYFILE):   if fid > 0 then rc=fclose(fid);
+MPRINT(EM_COPYFILE):   end;
+MPRINT(EM_COPYFILE):   run;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _OUTIN;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   file _OUT mod;
+MPRINT(EM_DIAGRAM):   put _page_;
+MPRINT(EM_DIAGRAM):   put // "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Score Output";
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _OUTIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\EMSCORE.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _OUTIN;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   file _OUT mod;
+MPRINT(EM_DIAGRAM):   put _page_;
+MPRINT(EM_DIAGRAM):   put // "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Report Output";
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _OUTIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\EMREPORT.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _OUTIN;
+MPRINT(EM_DIAGRAM):    filename _OUT;
+MPRINT(EM_DIAGRAM):    filename _emtool_ 'C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\EMRUNSTATUS.xml' encoding="UTF-8" NOBOM;
+27432      proc freq data=EMWS1.Plot2_VariableSet noprint;
+MPRINT(EM_DIAGRAM):    proc freq data=EMWS1.Plot2_VariableSet noprint;
+27433      table ROLE*LEVEL/out=WORK.Plot2META;
+MPRINT(EM_DIAGRAM):   table ROLE*LEVEL/out=WORK.Plot2META;
+27434      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 13 observations read from the data set EMWS1.PLOT2_VARIABLESET.
+NOTE: The data set WORK.PLOT2META has 3 observations and 4 variables.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+27435      proc print data=WORK.Plot2META label noobs;
+MPRINT(EM_DIAGRAM):   proc print data=WORK.Plot2META label noobs;
+27436      var ROLE LEVEL COUNT;
+MPRINT(EM_DIAGRAM):   var ROLE LEVEL COUNT;
+27437      label ROLE = "%sysfunc(sasmsg(sashelp.dmine, meta_role_vlabel, NOQUOTE))" LEVEL = "%sysfunc(sasmsg(sashelp.dmine, meta_level_vlabel, NOQUOTE))" COUNT = "%sysfunc(sasmsg(sashelp.dmine, rpt_count_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label ROLE = "Role" LEVEL = "Measurement Level" COUNT = "Frequency Count";
+27438      title9 ' ';
+MPRINT(EM_DIAGRAM):   title9 ' ';
+27439      title10 "%sysfunc(sasmsg(sashelp.dmine, rpt_varSummary_title  , NOQUOTE))";
+MPRINT(EM_DIAGRAM):   title10 "Variable Summary";
+MPRINT(EM_DIAGRAM):   run;
+27440      run;
+
+NOTE: There were 3 observations read from the data set WORK.PLOT2META.
+NOTE: The PROCEDURE PRINT printed page 6.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+27441      title10;
+MPRINT(EM_DIAGRAM):   title10;
+MPRINT(EM_DIAGRAM):    data WORK.M2038YZM;
+MPRINT(EM_DIAGRAM):   set WORK.M2038YZM;
+MPRINT(EM_DIAGRAM):   if role = 'TARGET' and use in ('Y', 'D') then do;
+MPRINT(EM_DIAGRAM):   role = 'TARGET';
+MPRINT(EM_DIAGRAM):   output;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if role in('REJECTED' 'PREDICT' 'RESIDUAL' 'GROUP' 'ASSESS') and use = 'Y' then do;
+MPRINT(EM_DIAGRAM):   role = 'INPUT';
+MPRINT(EM_DIAGRAM):   output;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if role = 'INPUT' and use in ('Y', 'D') then do;
+MPRINT(EM_DIAGRAM):   role = 'INPUT';
+MPRINT(EM_DIAGRAM):   output;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if role = 'FREQ' and use = 'Y' then do;
+MPRINT(EM_DIAGRAM):   role = 'FREQ';
+MPRINT(EM_DIAGRAM):   output;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else delete;
+MPRINT(EM_DIAGRAM):   run;
+27462      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------* ;
+27463      * Plot2: DMDBClass Macro ;
+MPRINT(EM_DIAGRAM):   * Plot2: DMDBClass Macro ;
+27464      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+27465      %macro DMDBClass;
+27466          ClaimsRate(ASC) CustomerAge(ASC) CustomerMonetaryValue(ASC)
+27467         EducationalDegree(ASC) FirstPolicyYear(ASC) GeographicLiving(ASC)
+27468         GrossMonthlySalary(ASC) HasChildren(ASC) PremiumsinLOBHealth(ASC)
+27469         PremiumsinLOBHousehold(ASC) PremiumsinLOBLife(ASC) PremiumsinLOBMotor(ASC)
+27470         PremiumsinLOBWorkComp(ASC)
+27471      %mend DMDBClass;
+27472      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+27473      * Plot2: Create DMDB;
+MPRINT(EM_DIAGRAM):   * Plot2: Create DMDB;
+27474      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+27475      proc dmdb batch data=EMWS1.Filter_TRAIN
+27476      dmdbcat=WORK.Plot2_DMDB
+27477      maxlevel = 23
+27478      nonorm
+27479      ;
+MPRINT(EM_DIAGRAM):   proc dmdb batch data=EMWS1.Filter_TRAIN dmdbcat=WORK.Plot2_DMDB maxlevel = 23 nonorm ;
+MPRINT(EM_DIAGRAM):   class
+27480      class %DMDBClass;
+MPRINT(DMDBCLASS):   ClaimsRate(ASC) CustomerAge(ASC) CustomerMonetaryValue(ASC) EducationalDegree(ASC) FirstPolicyYear(ASC) GeographicLiving(ASC) GrossMonthlySalary(ASC) HasChildren(ASC) PremiumsinLOBHealth(ASC) PremiumsinLOBHousehold(ASC) 
+PremiumsinLOBLife(ASC) PremiumsinLOBMotor(ASC) PremiumsinLOBWorkComp(ASC)
+MPRINT(EM_DIAGRAM):  ;
+27481      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: Records processed = 8181   Memory used = 511K.
+NOTE: There were 10296 observations read from the data set INS_PROJ.A2ZINSURANCE.
+NOTE: View EMWS1.FILTER_TRAIN.VIEW used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.06 seconds
+      
+NOTE: There were 10296 observations read from the data set EMWS1.IDS_DATA.
+NOTE: There were 8181 observations read from the data set EMWS1.FILTER_TRAIN.
+NOTE: PROCEDURE DMDB used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.07 seconds
+      
+
+MPRINT(EM_DIAGRAM):   quit;
+27482      quit;
+
+27483      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+27484      * Plot2: Creating univariate histograms;
+MPRINT(EM_DIAGRAM):   * Plot2: Creating univariate histograms;
+27485      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+27486      goptions ftext="SWISS";
+MPRINT(EM_DIAGRAM):   goptions ftext="SWISS";
+27487      goptions nodisplay device=PNG;
+MPRINT(EM_DIAGRAM):   goptions nodisplay device=PNG;
+27488      axis1 width=2 offset=(1,1) label=(rotate=90 angle=270) minor=none;
+MPRINT(EM_DIAGRAM):   axis1 width=2 offset=(1,1) label=(rotate=90 angle=270) minor=none;
+27489      axis2 width=2 minor=none;
+MPRINT(EM_DIAGRAM):   axis2 width=2 minor=none;
+27490      pattern1 value=solid;
+MPRINT(EM_DIAGRAM):   pattern1 value=solid;
+27491      proc gchart
+27492      data=EMWS1.Filter_TRAIN gout=WORK.Plot2GRAPH;
+MPRINT(EM_DIAGRAM):   proc gchart data=EMWS1.Filter_TRAIN gout=WORK.Plot2GRAPH;
+27493      *;
+MPRINT(EM_DIAGRAM):   *;
+27494      title "ClaimsRate";
+MPRINT(EM_DIAGRAM):   title "ClaimsRate";
+27495      vbar ClaimsRate /
+27496      name = "ClaimsRate" description = "ClaimsRate"
+MPRINT(EM_DIAGRAM):   vbar ClaimsRate / name = "ClaimsRate" description = "ClaimsRate" FREQ type=FREQ noframe missing raxis=axis1 maxis=axis2;
+27497      FREQ
+MPRINT(EM_DIAGRAM):   run;
+27498      type=FREQ
+27499      noframe
+27500      missing
+27501      raxis=axis1 maxis=axis2;
+27502      run;
+
+WARNING: The VBAR/VBAR3D chart for ClaimsRate could not be labeled because the labels are wider than the bars.
+27503      title "CustomerAge";
+MPRINT(EM_DIAGRAM):   title "CustomerAge";
+27504      vbar CustomerAge /
+27505      name = "CustomerAge" description = "CustomerAge"
+MPRINT(EM_DIAGRAM):   vbar CustomerAge / name = "CustomerAge" description = "CustomerAge" FREQ type=FREQ noframe missing raxis=axis1 maxis=axis2;
+27506      FREQ
+MPRINT(EM_DIAGRAM):   run;
+27507      type=FREQ
+27508      noframe
+27509      missing
+27510      raxis=axis1 maxis=axis2;
+27511      run;
+
+27512      title "CustomerMonetaryValue";
+MPRINT(EM_DIAGRAM):   title "CustomerMonetaryValue";
+27513      vbar CustomerMonetaryValue /
+27514      name = "CustomerMonetaryValue" description = "CustomerMonetaryValue"
+MPRINT(EM_DIAGRAM):   vbar CustomerMonetaryValue / name = "CustomerMonetaryValue" description = "CustomerMonetaryValue" FREQ type=FREQ noframe missing raxis=axis1 maxis=axis2;
+27515      FREQ
+MPRINT(EM_DIAGRAM):   run;
+27516      type=FREQ
+27517      noframe
+27518      missing
+27519      raxis=axis1 maxis=axis2;
+27520      run;
+
+WARNING: The VBAR/VBAR3D chart for CustomerMonetaryValue could not be labeled because the labels are wider than the bars.
+NOTE: Graph's name, CUSTOMER, changed to CUSTOME1. CUSTOMER is already used or not a valid SAS name.
+27521      title "EducationalDegree";
+MPRINT(EM_DIAGRAM):   title "EducationalDegree";
+27522      vbar EducationalDegree /
+27523      name = "EducationalDegree" description = "EducationalDegree"
+MPRINT(EM_DIAGRAM):   vbar EducationalDegree / name = "EducationalDegree" description = "EducationalDegree" FREQ type=FREQ noframe missing raxis=axis1 maxis=axis2;
+27524      FREQ
+MPRINT(EM_DIAGRAM):   run;
+27525      type=FREQ
+27526      noframe
+27527      missing
+27528      raxis=axis1 maxis=axis2;
+27529      run;
+
+27530      title "FirstPolicyYear";
+MPRINT(EM_DIAGRAM):   title "FirstPolicyYear";
+27531      vbar FirstPolicyYear /
+27532      name = "FirstPolicyYear" description = "FirstPolicyYear"
+MPRINT(EM_DIAGRAM):   vbar FirstPolicyYear / name = "FirstPolicyYear" description = "FirstPolicyYear" FREQ type=FREQ noframe missing raxis=axis1 maxis=axis2;
+27533      FREQ
+MPRINT(EM_DIAGRAM):   run;
+27534      type=FREQ
+27535      noframe
+27536      missing
+27537      raxis=axis1 maxis=axis2;
+27538      run;
+
+WARNING: The VBAR/VBAR3D chart for FirstPolicyYear could not be labeled because the labels are wider than the bars.
+27539      title "GeographicLiving";
+MPRINT(EM_DIAGRAM):   title "GeographicLiving";
+27540      vbar GeographicLiving /
+27541      name = "GeographicLiving" description = "GeographicLiving"
+27542      FREQ
+MPRINT(EM_DIAGRAM):   vbar GeographicLiving / name = "GeographicLiving" description = "GeographicLiving" FREQ type=FREQ noframe missing discrete raxis=axis1 maxis=axis2;
+27543      type=FREQ
+MPRINT(EM_DIAGRAM):   run;
+27544      noframe
+27545      missing
+27546      discrete
+27547      raxis=axis1 maxis=axis2;
+27548      run;
+
+27549      title "GrossMonthlySalary";
+MPRINT(EM_DIAGRAM):   title "GrossMonthlySalary";
+27550      vbar GrossMonthlySalary /
+27551      name = "GrossMonthlySalary" description = "GrossMonthlySalary"
+MPRINT(EM_DIAGRAM):   vbar GrossMonthlySalary / name = "GrossMonthlySalary" description = "GrossMonthlySalary" FREQ type=FREQ noframe missing raxis=axis1 maxis=axis2;
+27552      FREQ
+MPRINT(EM_DIAGRAM):   run;
+27553      type=FREQ
+27554      noframe
+27555      missing
+27556      raxis=axis1 maxis=axis2;
+27557      run;
+
+WARNING: The VBAR/VBAR3D chart for GrossMonthlySalary could not be labeled because the labels are wider than the bars.
+27558      title "HasChildren";
+MPRINT(EM_DIAGRAM):   title "HasChildren";
+27559      vbar HasChildren /
+27560      name = "HasChildren" description = "HasChildren"
+27561      FREQ
+MPRINT(EM_DIAGRAM):   vbar HasChildren / name = "HasChildren" description = "HasChildren" FREQ type=FREQ noframe missing discrete raxis=axis1 maxis=axis2;
+27562      type=FREQ
+MPRINT(EM_DIAGRAM):   run;
+27563      noframe
+27564      missing
+27565      discrete
+27566      raxis=axis1 maxis=axis2;
+27567      run;
+
+27568      title "PremiumsinLOBHealth";
+MPRINT(EM_DIAGRAM):   title "PremiumsinLOBHealth";
+27569      vbar PremiumsinLOBHealth /
+27570      name = "PremiumsinLOBHealth" description = "PremiumsinLOBHealth"
+MPRINT(EM_DIAGRAM):   vbar PremiumsinLOBHealth / name = "PremiumsinLOBHealth" description = "PremiumsinLOBHealth" FREQ type=FREQ noframe missing raxis=axis1 maxis=axis2;
+27571      FREQ
+MPRINT(EM_DIAGRAM):   run;
+27572      type=FREQ
+27573      noframe
+27574      missing
+27575      raxis=axis1 maxis=axis2;
+27576      run;
+
+WARNING: The VBAR/VBAR3D chart for PremiumsinLOBHealth could not be labeled because the labels are wider than the bars.
+27577      title "PremiumsinLOBHousehold";
+MPRINT(EM_DIAGRAM):   title "PremiumsinLOBHousehold";
+27578      vbar PremiumsinLOBHousehold /
+27579      name = "PremiumsinLOBHousehold" description = "PremiumsinLOBHousehold"
+MPRINT(EM_DIAGRAM):   vbar PremiumsinLOBHousehold / name = "PremiumsinLOBHousehold" description = "PremiumsinLOBHousehold" FREQ type=FREQ noframe missing raxis=axis1 maxis=axis2;
+27580      FREQ
+MPRINT(EM_DIAGRAM):   run;
+27581      type=FREQ
+27582      noframe
+27583      missing
+27584      raxis=axis1 maxis=axis2;
+27585      run;
+
+WARNING: The VBAR/VBAR3D chart for PremiumsinLOBHousehold could not be labeled because the labels are wider than the bars.
+NOTE: Graph's name, PREMIUMS, changed to PREMIUM1. PREMIUMS is already used or not a valid SAS name.
+27586      title "PremiumsinLOBLife";
+MPRINT(EM_DIAGRAM):   title "PremiumsinLOBLife";
+27587      vbar PremiumsinLOBLife /
+27588      name = "PremiumsinLOBLife" description = "PremiumsinLOBLife"
+MPRINT(EM_DIAGRAM):   vbar PremiumsinLOBLife / name = "PremiumsinLOBLife" description = "PremiumsinLOBLife" FREQ type=FREQ noframe missing raxis=axis1 maxis=axis2;
+27589      FREQ
+MPRINT(EM_DIAGRAM):   run;
+27590      type=FREQ
+27591      noframe
+27592      missing
+27593      raxis=axis1 maxis=axis2;
+27594      run;
+
+WARNING: The VBAR/VBAR3D chart for PremiumsinLOBLife could not be labeled because the labels are wider than the bars.
+NOTE: Graph's name, PREMIUMS, changed to PREMIUM2. PREMIUMS is already used or not a valid SAS name.
+27595      title "PremiumsinLOBMotor";
+MPRINT(EM_DIAGRAM):   title "PremiumsinLOBMotor";
+27596      vbar PremiumsinLOBMotor /
+27597      name = "PremiumsinLOBMotor" description = "PremiumsinLOBMotor"
+MPRINT(EM_DIAGRAM):   vbar PremiumsinLOBMotor / name = "PremiumsinLOBMotor" description = "PremiumsinLOBMotor" FREQ type=FREQ noframe missing raxis=axis1 maxis=axis2;
+27598      FREQ
+MPRINT(EM_DIAGRAM):   run;
+27599      type=FREQ
+27600      noframe
+27601      missing
+27602      raxis=axis1 maxis=axis2;
+27603      run;
+
+WARNING: The VBAR/VBAR3D chart for PremiumsinLOBMotor could not be labeled because the labels are wider than the bars.
+NOTE: Graph's name, PREMIUMS, changed to PREMIUM3. PREMIUMS is already used or not a valid SAS name.
+27604      title "PremiumsinLOBWorkComp";
+MPRINT(EM_DIAGRAM):   title "PremiumsinLOBWorkComp";
+27605      vbar PremiumsinLOBWorkComp /
+27606      name = "PremiumsinLOBWorkComp" description = "PremiumsinLOBWorkComp"
+MPRINT(EM_DIAGRAM):   vbar PremiumsinLOBWorkComp / name = "PremiumsinLOBWorkComp" description = "PremiumsinLOBWorkComp" FREQ type=FREQ noframe missing raxis=axis1 maxis=axis2;
+27607      FREQ
+MPRINT(EM_DIAGRAM):   run;
+27608      type=FREQ
+27609      noframe
+27610      missing
+27611      raxis=axis1 maxis=axis2;
+27612      run;
+
+WARNING: The VBAR/VBAR3D chart for PremiumsinLOBWorkComp could not be labeled because the labels are wider than the bars.
+NOTE: Graph's name, PREMIUMS, changed to PREMIUM4. PREMIUMS is already used or not a valid SAS name.
+27613      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: There were 10296 observations read from the data set INS_PROJ.A2ZINSURANCE.
+NOTE: View EMWS1.FILTER_TRAIN.VIEW used (Total process time):
+      real time           0.98 seconds
+      cpu time            0.93 seconds
+      
+NOTE: There were 10296 observations read from the data set EMWS1.IDS_DATA.
+NOTE: There were 8181 observations read from the data set EMWS1.FILTER_TRAIN.
+NOTE: PROCEDURE GCHART used (Total process time):
+      real time           1.00 seconds
+      cpu time            0.93 seconds
+      
+
+27614      title;
+MPRINT(EM_DIAGRAM):   title;
+27615      goptions display;
+MPRINT(EM_DIAGRAM):   goptions display;
+27616      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+27617      * Plot2: Creating variable by interval target charts;
+MPRINT(EM_DIAGRAM):   * Plot2: Creating variable by interval target charts;
+27618      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+27619      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+27620      * Plot2: DMDBClass Macro ;
+MPRINT(EM_DIAGRAM):   * Plot2: DMDBClass Macro ;
+27621      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+27622      %macro DMDBClass;
+27623          EducationalDegree(ASC) FirstPolicyYear(ASC) GeographicLiving(ASC)
+27624         HasChildren(ASC)
+27625      %mend DMDBClass;
+27626      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+27627      * Plot2: DMDBVar Macro ;
+MPRINT(EM_DIAGRAM):   * Plot2: DMDBVar Macro ;
+27628      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+27629      %macro DMDBVar;
+27630          ClaimsRate CustomerAge CustomerMonetaryValue GrossMonthlySalary
+27631         PremiumsinLOBHealth PremiumsinLOBHousehold PremiumsinLOBLife PremiumsinLOBMotor
+27632         PremiumsinLOBWorkComp
+27633      %mend DMDBVar;
+27634      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+27635      * Plot2: Create DMDB;
+MPRINT(EM_DIAGRAM):   * Plot2: Create DMDB;
+27636      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+27637      proc dmdb batch data=EMWS1.Filter_TRAIN
+27638      dmdbcat=WORK.Plot2_DMDB
+27639      classout=work.classoutDs
+27640      varout=work.varoutDs
+27641      maxlevel = 513
+27642      ;
+MPRINT(EM_DIAGRAM):   proc dmdb batch data=EMWS1.Filter_TRAIN dmdbcat=WORK.Plot2_DMDB classout=work.classoutDs varout=work.varoutDs maxlevel = 513 ;
+MPRINT(EM_DIAGRAM):   class
+27643      class %DMDBClass;
+MPRINT(DMDBCLASS):   EducationalDegree(ASC) FirstPolicyYear(ASC) GeographicLiving(ASC) HasChildren(ASC)
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   var
+27644      var %DMDBVar;
+MPRINT(DMDBVAR):   ClaimsRate CustomerAge CustomerMonetaryValue GrossMonthlySalary PremiumsinLOBHealth PremiumsinLOBHousehold PremiumsinLOBLife PremiumsinLOBMotor PremiumsinLOBWorkComp
+MPRINT(EM_DIAGRAM):  ;
+27645      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: Records processed = 8181   Memory used = 511K.
+NOTE: There were 10296 observations read from the data set INS_PROJ.A2ZINSURANCE.
+NOTE: View EMWS1.FILTER_TRAIN.VIEW used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.06 seconds
+      
+NOTE: There were 10296 observations read from the data set EMWS1.IDS_DATA.
+NOTE: There were 8181 observations read from the data set EMWS1.FILTER_TRAIN.
+NOTE: The data set WORK.CLASSOUTDS has 38 observations and 9 variables.
+NOTE: The data set WORK.VAROUTDS has 9 observations and 9 variables.
+NOTE: PROCEDURE DMDB used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.07 seconds
+      
+
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):   *--- end code ---*;
+27646      quit;
+27647      *--- end code ---*;
+
+27648      title8;
+MPRINT(EM_DIAGRAM):    title8;
+27649      title8 "%sysfunc(sasmsg(sashelp.dmine, rpt_classvars_title, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   title8 "Class Variables";
+27650      proc print data=work.classoutDs;
+MPRINT(EM_DIAGRAM):   proc print data=work.classoutDs;
+27651      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 38 observations read from the data set WORK.CLASSOUTDS.
+NOTE: The PROCEDURE PRINT printed page 7.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+27652      proc datasets lib=work nolist;
+MPRINT(EM_DIAGRAM):   proc datasets lib=work nolist;
+27653      delete classoutDs;
+MPRINT(EM_DIAGRAM):   delete classoutDs;
+27654      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: Deleting WORK.CLASSOUTDS (memtype=DATA).
+27655      title8;
+MPRINT(EM_DIAGRAM):   title8;
+27656      title8;
+MPRINT(EM_DIAGRAM):   title8;
+27657      title8 "%sysfunc(sasmsg(sashelp.dmine, rpt_intvars_title, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   title8 "Interval Variables";
+
+NOTE: PROCEDURE DATASETS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+27658      proc print data=work.varoutDs;
+MPRINT(EM_DIAGRAM):   proc print data=work.varoutDs;
+27659      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 9 observations read from the data set WORK.VAROUTDS.
+NOTE: The PROCEDURE PRINT printed page 8.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+27660      proc datasets lib=work nolist;
+MPRINT(EM_DIAGRAM):   proc datasets lib=work nolist;
+27661      delete varoutDs;
+MPRINT(EM_DIAGRAM):   delete varoutDs;
+27662      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: Deleting WORK.VAROUTDS (memtype=DATA).
+27663      title8;
+MPRINT(EM_DIAGRAM):   title8;
+
+NOTE: PROCEDURE DATASETS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+27664      proc datasets lib=WORK nolist;
+MPRINT(EM_DIAGRAM):   proc datasets lib=WORK nolist;
+27665      delete Plot2_DMDB;
+MPRINT(EM_DIAGRAM):   delete Plot2_DMDB;
+27666      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file WORK.PLOT2_DMDB (memtype=DATA) was not found, but appears on a DELETE statement.
+27667      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: PROCEDURE DATASETS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+27668      proc datasets lib=WORK nolist;
+MPRINT(EM_DIAGRAM):    proc datasets lib=WORK nolist;
+27669      delete Plot2_DMDB / memtype=catalog;
+MPRINT(EM_DIAGRAM):   delete Plot2_DMDB / memtype=catalog;
+27670      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: Deleting WORK.PLOT2_DMDB (memtype=CATALOG).
+27671      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: PROCEDURE DATASETS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+27672      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+27673      * Plot2: Copying graphs to node folder;
+MPRINT(EM_DIAGRAM):   * Plot2: Copying graphs to node folder;
+27674      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+27675      filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\ClaimsRate.gif";
+MPRINT(EM_DIAGRAM):   filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\ClaimsRate.gif";
+27676      goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+MPRINT(EM_DIAGRAM):   goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+27677      proc greplay igout=WORK.PLOT2GRAPH nofs;
+MPRINT(EM_DIAGRAM):   proc greplay igout=WORK.PLOT2GRAPH nofs;
+NOTE: Building list of graphs from the catalog.
+
+NOTE: Enter greplay commands or statements.
+27678      replay CLAIMSRA;
+MPRINT(EM_DIAGRAM):   replay CLAIMSRA;
+NOTE:  91 records written to C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\ClaimsRate.gif
+27679      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: PROCEDURE GREPLAY used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.06 seconds
+      
+
+27680      goptions device=win;
+MPRINT(EM_DIAGRAM):   goptions device=win;
+27681      filename gsasfile;
+MPRINT(EM_DIAGRAM):   filename gsasfile;
+NOTE: Fileref GSASFILE has been deassigned.
+27682      filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\CustomerMonetaryValue.gif";
+MPRINT(EM_DIAGRAM):    filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\CustomerMonetaryValue.gif";
+27683      goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+MPRINT(EM_DIAGRAM):   goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+27684      proc greplay igout=WORK.PLOT2GRAPH nofs;
+MPRINT(EM_DIAGRAM):   proc greplay igout=WORK.PLOT2GRAPH nofs;
+NOTE: Building list of graphs from the catalog.
+
+NOTE: Enter greplay commands or statements.
+27685      replay CUSTOME1;
+MPRINT(EM_DIAGRAM):   replay CUSTOME1;
+NOTE:  81 records written to C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\CustomerMonetaryValue.gif
+27686      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: PROCEDURE GREPLAY used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.01 seconds
+      
+
+27687      goptions device=win;
+MPRINT(EM_DIAGRAM):   goptions device=win;
+27688      filename gsasfile;
+MPRINT(EM_DIAGRAM):   filename gsasfile;
+NOTE: Fileref GSASFILE has been deassigned.
+27689      filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\CustomerAge.gif";
+MPRINT(EM_DIAGRAM):    filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\CustomerAge.gif";
+27690      goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+MPRINT(EM_DIAGRAM):   goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+27691      proc greplay igout=WORK.PLOT2GRAPH nofs;
+MPRINT(EM_DIAGRAM):   proc greplay igout=WORK.PLOT2GRAPH nofs;
+NOTE: Building list of graphs from the catalog.
+
+NOTE: Enter greplay commands or statements.
+27692      replay CUSTOMER;
+MPRINT(EM_DIAGRAM):   replay CUSTOMER;
+NOTE:  119 records written to C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\CustomerAge.gif
+27693      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: PROCEDURE GREPLAY used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.06 seconds
+      
+
+27694      goptions device=win;
+MPRINT(EM_DIAGRAM):   goptions device=win;
+27695      filename gsasfile;
+MPRINT(EM_DIAGRAM):   filename gsasfile;
+NOTE: Fileref GSASFILE has been deassigned.
+27696      filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\EducationalDegree.gif";
+MPRINT(EM_DIAGRAM):    filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\EducationalDegree.gif";
+27697      goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+MPRINT(EM_DIAGRAM):   goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+27698      proc greplay igout=WORK.PLOT2GRAPH nofs;
+MPRINT(EM_DIAGRAM):   proc greplay igout=WORK.PLOT2GRAPH nofs;
+NOTE: Building list of graphs from the catalog.
+
+NOTE: Enter greplay commands or statements.
+27699      replay EDUCATIO;
+MPRINT(EM_DIAGRAM):   replay EDUCATIO;
+NOTE:  59 records written to C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\EducationalDegree.gif
+27700      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: PROCEDURE GREPLAY used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.07 seconds
+      
+
+27701      goptions device=win;
+MPRINT(EM_DIAGRAM):   goptions device=win;
+27702      filename gsasfile;
+MPRINT(EM_DIAGRAM):   filename gsasfile;
+NOTE: Fileref GSASFILE has been deassigned.
+27703      filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\FirstPolicyYear.gif";
+MPRINT(EM_DIAGRAM):    filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\FirstPolicyYear.gif";
+27704      goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+MPRINT(EM_DIAGRAM):   goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+27705      proc greplay igout=WORK.PLOT2GRAPH nofs;
+MPRINT(EM_DIAGRAM):   proc greplay igout=WORK.PLOT2GRAPH nofs;
+NOTE: Building list of graphs from the catalog.
+
+NOTE: Enter greplay commands or statements.
+27706      replay FIRSTPOL;
+MPRINT(EM_DIAGRAM):   replay FIRSTPOL;
+NOTE:  119 records written to C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\FirstPolicyYear.gif
+27707      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: PROCEDURE GREPLAY used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.01 seconds
+      
+
+27708      goptions device=win;
+MPRINT(EM_DIAGRAM):   goptions device=win;
+27709      filename gsasfile;
+MPRINT(EM_DIAGRAM):   filename gsasfile;
+NOTE: Fileref GSASFILE has been deassigned.
+27710      filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\GeographicLiving.gif";
+MPRINT(EM_DIAGRAM):    filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\GeographicLiving.gif";
+27711      goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+MPRINT(EM_DIAGRAM):   goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+27712      proc greplay igout=WORK.PLOT2GRAPH nofs;
+MPRINT(EM_DIAGRAM):   proc greplay igout=WORK.PLOT2GRAPH nofs;
+NOTE: Building list of graphs from the catalog.
+
+NOTE: Enter greplay commands or statements.
+27713      replay GEOGRAPH;
+MPRINT(EM_DIAGRAM):   replay GEOGRAPH;
+NOTE:  49 records written to C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\GeographicLiving.gif
+27714      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: PROCEDURE GREPLAY used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.07 seconds
+      
+
+27715      goptions device=win;
+MPRINT(EM_DIAGRAM):   goptions device=win;
+27716      filename gsasfile;
+MPRINT(EM_DIAGRAM):   filename gsasfile;
+NOTE: Fileref GSASFILE has been deassigned.
+27717      filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\GrossMonthlySalary.gif";
+MPRINT(EM_DIAGRAM):    filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\GrossMonthlySalary.gif";
+27718      goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+MPRINT(EM_DIAGRAM):   goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+27719      proc greplay igout=WORK.PLOT2GRAPH nofs;
+MPRINT(EM_DIAGRAM):   proc greplay igout=WORK.PLOT2GRAPH nofs;
+NOTE: Building list of graphs from the catalog.
+
+NOTE: Enter greplay commands or statements.
+27720      replay GROSSMON;
+MPRINT(EM_DIAGRAM):   replay GROSSMON;
+NOTE:  105 records written to C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\GrossMonthlySalary.gif
+27721      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: PROCEDURE GREPLAY used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.07 seconds
+      
+
+27722      goptions device=win;
+MPRINT(EM_DIAGRAM):   goptions device=win;
+27723      filename gsasfile;
+MPRINT(EM_DIAGRAM):   filename gsasfile;
+NOTE: Fileref GSASFILE has been deassigned.
+27724      filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\HasChildren.gif";
+MPRINT(EM_DIAGRAM):    filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\HasChildren.gif";
+27725      goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+MPRINT(EM_DIAGRAM):   goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+27726      proc greplay igout=WORK.PLOT2GRAPH nofs;
+MPRINT(EM_DIAGRAM):   proc greplay igout=WORK.PLOT2GRAPH nofs;
+NOTE: Building list of graphs from the catalog.
+
+NOTE: Enter greplay commands or statements.
+27727      replay HASCHILD;
+MPRINT(EM_DIAGRAM):   replay HASCHILD;
+NOTE:  43 records written to C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\HasChildren.gif
+27728      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: PROCEDURE GREPLAY used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.06 seconds
+      
+
+27729      goptions device=win;
+MPRINT(EM_DIAGRAM):   goptions device=win;
+27730      filename gsasfile;
+MPRINT(EM_DIAGRAM):   filename gsasfile;
+NOTE: Fileref GSASFILE has been deassigned.
+27731      filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\PremiumsinLOBHousehold.gif";
+MPRINT(EM_DIAGRAM):    filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\PremiumsinLOBHousehold.gif";
+27732      goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+MPRINT(EM_DIAGRAM):   goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+27733      proc greplay igout=WORK.PLOT2GRAPH nofs;
+MPRINT(EM_DIAGRAM):   proc greplay igout=WORK.PLOT2GRAPH nofs;
+NOTE: Building list of graphs from the catalog.
+
+NOTE: Enter greplay commands or statements.
+27734      replay PREMIUM1;
+MPRINT(EM_DIAGRAM):   replay PREMIUM1;
+NOTE:  81 records written to C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\PremiumsinLOBHousehold.gif
+27735      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: PROCEDURE GREPLAY used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.07 seconds
+      
+
+27736      goptions device=win;
+MPRINT(EM_DIAGRAM):   goptions device=win;
+27737      filename gsasfile;
+MPRINT(EM_DIAGRAM):   filename gsasfile;
+NOTE: Fileref GSASFILE has been deassigned.
+27738      filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\PremiumsinLOBLife.gif";
+MPRINT(EM_DIAGRAM):    filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\PremiumsinLOBLife.gif";
+27739      goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+MPRINT(EM_DIAGRAM):   goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+27740      proc greplay igout=WORK.PLOT2GRAPH nofs;
+MPRINT(EM_DIAGRAM):   proc greplay igout=WORK.PLOT2GRAPH nofs;
+NOTE: Building list of graphs from the catalog.
+
+NOTE: Enter greplay commands or statements.
+27741      replay PREMIUM2;
+MPRINT(EM_DIAGRAM):   replay PREMIUM2;
+NOTE:  65 records written to C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\PremiumsinLOBLife.gif
+27742      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: PROCEDURE GREPLAY used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.06 seconds
+      
+
+27743      goptions device=win;
+MPRINT(EM_DIAGRAM):   goptions device=win;
+27744      filename gsasfile;
+MPRINT(EM_DIAGRAM):   filename gsasfile;
+NOTE: Fileref GSASFILE has been deassigned.
+27745      filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\PremiumsinLOBMotor.gif";
+MPRINT(EM_DIAGRAM):    filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\PremiumsinLOBMotor.gif";
+27746      goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+MPRINT(EM_DIAGRAM):   goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+27747      proc greplay igout=WORK.PLOT2GRAPH nofs;
+MPRINT(EM_DIAGRAM):   proc greplay igout=WORK.PLOT2GRAPH nofs;
+NOTE: Building list of graphs from the catalog.
+
+NOTE: Enter greplay commands or statements.
+27748      replay PREMIUM3;
+MPRINT(EM_DIAGRAM):   replay PREMIUM3;
+NOTE:  107 records written to C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\PremiumsinLOBMotor.gif
+27749      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: PROCEDURE GREPLAY used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.04 seconds
+      
+
+27750      goptions device=win;
+MPRINT(EM_DIAGRAM):   goptions device=win;
+27751      filename gsasfile;
+MPRINT(EM_DIAGRAM):   filename gsasfile;
+NOTE: Fileref GSASFILE has been deassigned.
+27752      filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\PremiumsinLOBWorkComp.gif";
+MPRINT(EM_DIAGRAM):    filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\PremiumsinLOBWorkComp.gif";
+27753      goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+MPRINT(EM_DIAGRAM):   goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+27754      proc greplay igout=WORK.PLOT2GRAPH nofs;
+MPRINT(EM_DIAGRAM):   proc greplay igout=WORK.PLOT2GRAPH nofs;
+NOTE: Building list of graphs from the catalog.
+
+NOTE: Enter greplay commands or statements.
+27755      replay PREMIUM4;
+MPRINT(EM_DIAGRAM):   replay PREMIUM4;
+NOTE:  79 records written to C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\PremiumsinLOBWorkComp.gif
+27756      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: PROCEDURE GREPLAY used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.06 seconds
+      
+
+27757      goptions device=win;
+MPRINT(EM_DIAGRAM):   goptions device=win;
+27758      filename gsasfile;
+MPRINT(EM_DIAGRAM):   filename gsasfile;
+NOTE: Fileref GSASFILE has been deassigned.
+27759      filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\PremiumsinLOBHealth.gif";
+MPRINT(EM_DIAGRAM):    filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\PremiumsinLOBHealth.gif";
+27760      goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+MPRINT(EM_DIAGRAM):   goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+27761      proc greplay igout=WORK.PLOT2GRAPH nofs;
+MPRINT(EM_DIAGRAM):   proc greplay igout=WORK.PLOT2GRAPH nofs;
+NOTE: Building list of graphs from the catalog.
+
+NOTE: Enter greplay commands or statements.
+27762      replay PREMIUMS;
+MPRINT(EM_DIAGRAM):   replay PREMIUMS;
+NOTE:  97 records written to C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\PremiumsinLOBHealth.gif
+27763      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: PROCEDURE GREPLAY used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.04 seconds
+      
+
+27764      goptions device=win;
+MPRINT(EM_DIAGRAM):   goptions device=win;
+27765      filename gsasfile;
+MPRINT(EM_DIAGRAM):   filename gsasfile;
+NOTE: Fileref GSASFILE has been deassigned.
+MPRINT(EM_DIAGRAM):    proc printto;
+MPRINT(EM_DIAGRAM):   run;
