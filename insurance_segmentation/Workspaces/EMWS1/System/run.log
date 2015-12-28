@@ -9,21 +9,21 @@ Traverser: Beginning flow traversal
 MPRINT(EM_DIAGRAM):    data _null_;
 15518      file emwipmsg;
 MPRINT(EM_DIAGRAM):   file emwipmsg;
-15519      put '<Node Id="Ids" Event="Run" Pid="11128" Gridid=""/>';
-MPRINT(EM_DIAGRAM):   put '<Node Id="Ids" Event="Run" Pid="11128" Gridid=""/>';
+15519      put '<Node Id="Ids" Event="Run" Pid="6568" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Ids" Event="Run" Pid="6568" Gridid=""/>';
 15520      run;
 MPRINT(EM_DIAGRAM):   run;
 
 NOTE: The file EMWIPMSG is:
       Local Host Name=WDFN33788459A,
-      Local Host IP addr=fe80::98a1%57,
+      Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
       Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
       Peer IP addr=127.0.0.1,Peer Name=N/A,
-      Peer Portno=52937,Lrecl=256,Recfm=Variable
+      Peer Portno=54285,Lrecl=256,Recfm=Variable
 
 NOTE: 1 record was written to the file EMWIPMSG.
-      The minimum record length was 50.
-      The maximum record length was 50.
+      The minimum record length was 49.
+      The maximum record length was 49.
 NOTE: DATA statement used (Total process time):
       real time           0.00 seconds
       cpu time            0.00 seconds
@@ -33,14 +33,14 @@ NOTE: DATA statement used (Total process time):
 *------------------------------------------------------------* 
 * 
 * Ids : Beginning update before running 
-* datetime : 17DEC2015:13:07:08 
+* datetime : 28DEC2015:13:31:21 
 * 
 *------------------------------------------------------------* 
 MPRINT(EM_DIAGRAM):     filename _emtool_ 'C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Ids\PROPERTIES.xml' encoding="UTF-8" NOBOM;
 *------------------------------------------------------------* 
 * 
 * Ids : End update 
-* datetime : 17DEC2015:13:07:08 
+* datetime : 28DEC2015:13:31:22 
 * 
 *------------------------------------------------------------* 
 15523      %em_getactionstatus(emlib =EMWS1, nodeid=Ids);
@@ -53,7 +53,7 @@ MPRINT(EM_GETACTIONSTATUS):   run;
 15526      %let em_Report = N;
 15527      %let em_Run = N;
 NOTE: PROCEDURE DISPLAY used (Total process time):
-      real time           0.02 seconds
+      real time           0.01 seconds
       cpu time            0.01 seconds
       
 
@@ -66,102 +66,314 @@ Node "Ids" succeeded.
 MPRINT(EM_DIAGRAM):    data _null_;
 15529      file emwipmsg;
 MPRINT(EM_DIAGRAM):   file emwipmsg;
-15530      put '<Node Id="Ids" Event="Complete" Pid="11128" Gridid=""/>';
-MPRINT(EM_DIAGRAM):   put '<Node Id="Ids" Event="Complete" Pid="11128" Gridid=""/>';
+15530      put '<Node Id="Ids" Event="Complete" Pid="6568" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Ids" Event="Complete" Pid="6568" Gridid=""/>';
 15531      run;
 MPRINT(EM_DIAGRAM):   run;
 
 NOTE: The file EMWIPMSG is:
       Local Host Name=WDFN33788459A,
-      Local Host IP addr=fe80::98a1%57,
+      Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
       Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
       Peer IP addr=127.0.0.1,Peer Name=N/A,
-      Peer Portno=52937,Lrecl=256,Recfm=Variable
+      Peer Portno=54285,Lrecl=256,Recfm=Variable
 
 NOTE: 1 record was written to the file EMWIPMSG.
-      The minimum record length was 55.
-      The maximum record length was 55.
+      The minimum record length was 54.
+      The maximum record length was 54.
 NOTE: DATA statement used (Total process time):
       real time           0.00 seconds
-      cpu time            0.01 seconds
+      cpu time            0.00 seconds
       
 
+Traverser: WaitingNode "PLOT2" 
+Traverser: WaitingNode "IMPT" 
 traverser_readyNode_note 
 15532      data _null_;
 MPRINT(EM_DIAGRAM):    data _null_;
 15533      file emwipmsg;
 MPRINT(EM_DIAGRAM):   file emwipmsg;
-15534      put '<Node Id="Stat" Event="Run" Pid="11128" Gridid=""/>';
-MPRINT(EM_DIAGRAM):   put '<Node Id="Stat" Event="Run" Pid="11128" Gridid=""/>';
+15534      put '<Node Id="Filter" Event="Run" Pid="6568" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Filter" Event="Run" Pid="6568" Gridid=""/>';
 15535      run;
 MPRINT(EM_DIAGRAM):   run;
 
 NOTE: The file EMWIPMSG is:
       Local Host Name=WDFN33788459A,
-      Local Host IP addr=fe80::98a1%57,
+      Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
       Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
       Peer IP addr=127.0.0.1,Peer Name=N/A,
-      Peer Portno=52937,Lrecl=256,Recfm=Variable
+      Peer Portno=54285,Lrecl=256,Recfm=Variable
 
 NOTE: 1 record was written to the file EMWIPMSG.
-      The minimum record length was 51.
-      The maximum record length was 51.
+      The minimum record length was 52.
+      The maximum record length was 52.
 NOTE: DATA statement used (Total process time):
-      real time           0.00 seconds
+      real time           0.01 seconds
       cpu time            0.01 seconds
       
 
 15536      %let emloopmode =;
 *------------------------------------------------------------* 
 * 
-* Stat : Beginning update before running 
-* datetime : 17DEC2015:13:07:08 
+* Filter : Beginning update before running 
+* datetime : 28DEC2015:13:31:22 
 * 
 *------------------------------------------------------------* 
-MPRINT(EM_DIAGRAM):     data WORK.Stat_FILTERSET;
+MPRINT(EM_DIAGRAM):     data WORK.Filter_FILTERSET;
 MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
 MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
 MPRINT(EM_DIAGRAM):   set EMWS1.Ids_exportSet ;
 MPRINT(EM_DIAGRAM):   PORT = '';
 MPRINT(EM_DIAGRAM):   USE = '';
-MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" "SCORE" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" ) and EXPORT = 'Y' ;
 MPRINT(EM_DIAGRAM):   run;
-MPRINT(EM_DIAGRAM):    filename _emtool_ 'C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Stat\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):    filename _emtool_ 'C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Filter\PROPERTIES.xml' encoding="UTF-8" NOBOM;
 *------------------------------------------------------------* 
 * 
-* Stat : End update 
-* datetime : 17DEC2015:13:07:08 
+* Filter : End update 
+* datetime : 28DEC2015:13:31:22 
 * 
 *------------------------------------------------------------* 
-15557      %em_getactionstatus(emlib =EMWS1, nodeid=Stat);
+15556      %em_getactionstatus(emlib =EMWS1, nodeid=Filter);
 MPRINT(EM_DIAGRAM):   
 MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
 MPRINT(EM_GETACTIONSTATUS):   run;
 
-15558      %let em_Train = Y;
-15559      %let em_Report = Y;
-15560      %let em_Score = Y;
-15561      %let em_Run = Y;
+15557      %let em_Train = N;
+15558      %let em_Score = N;
+15559      %let em_Report = N;
+15560      %let em_Run = N;
 NOTE: PROCEDURE DISPLAY used (Total process time):
-      real time           0.01 seconds
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Filter" has already run. 
+Node "Filter" succeeded. 
+15561      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+15562      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+15563      put '<Node Id="Filter" Event="Complete" Pid="6568" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Filter" Event="Complete" Pid="6568" Gridid=""/>';
+15564      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=WDFN33788459A,
+      Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
+      Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=54285,Lrecl=256,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 57.
+      The maximum record length was 57.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+Traverser: WaitingNode "IMPT" 
+traverser_readyNode_note 
+15565      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+15566      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+15567      put '<Node Id="Plot2" Event="Run" Pid="6568" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Plot2" Event="Run" Pid="6568" Gridid=""/>';
+15568      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=WDFN33788459A,
+      Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
+      Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=54285,Lrecl=256,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 51.
+      The maximum record length was 51.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+15569      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Plot2 : Beginning update before running 
+* datetime : 28DEC2015:13:31:23 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.Plot2_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Filter_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _emtool_ 'C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+*------------------------------------------------------------* 
+* 
+* Plot2 : End update 
+* datetime : 28DEC2015:13:31:23 
+* 
+*------------------------------------------------------------* 
+15589      %em_getactionstatus(emlib =EMWS1, nodeid=Plot2);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+15590      %let em_Train = N;
+15591      %let em_Score = N;
+15592      %let em_Report = N;
+15593      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.02 seconds
       cpu time            0.00 seconds
       
 
 MPRINT(EM_GETACTIONSTATUS):   
 MPRINT(EM_DIAGRAM):  ;
 
-15562      %let emloopmode =;
-15563      %let emloopnumber =0;
-15564      %let emloopId =Stat;
+Node "Plot2" has already run. 
+Node "Plot2" succeeded. 
+15594      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+15595      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+15596      put '<Node Id="Plot2" Event="Complete" Pid="6568" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Plot2" Event="Complete" Pid="6568" Gridid=""/>';
+15597      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=WDFN33788459A,
+      Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
+      Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=54285,Lrecl=256,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 56.
+      The maximum record length was 56.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+traverser_readyNode_note 
+15598      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+15599      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+15600      put '<Node Id="Impt" Event="Run" Pid="6568" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Impt" Event="Run" Pid="6568" Gridid=""/>';
+15601      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=WDFN33788459A,
+      Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
+      Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=54285,Lrecl=256,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 50.
+      The maximum record length was 50.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+15602      %let emloopmode =;
 *------------------------------------------------------------* 
 * 
-* Stat : Running 
-* datetime : 17DEC2015:13:07:08 
+* Impt : Beginning update before running 
+* datetime : 28DEC2015:13:31:24 
 * 
 *------------------------------------------------------------* 
-15565      %let SYSCC =0;
-15566      %let EMGROUPMODE =;
-15567      %let EMGROUPID =;
+MPRINT(EM_DIAGRAM):     data WORK.Impt_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Plot2_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _emtool_ 'C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Impt\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+*------------------------------------------------------------* 
+* 
+* Impt : End update 
+* datetime : 28DEC2015:13:31:24 
+* 
+*------------------------------------------------------------* 
+15622      %em_getactionstatus(emlib =EMWS1, nodeid=Impt);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+15623      proc compare base=EMWS1.Impt_emtrainvariable compare=EMWS1.Impt_variableSet out=diffDS noprint outnoequal outbase outcomp outdiff;
+MPRINT(EM_GETACTIONSTATUS):   proc compare base=EMWS1.Impt_emtrainvariable compare=EMWS1.Impt_variableSet out=diffDS noprint outnoequal outbase outcomp outdiff;
+15624      run;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+NOTE: There were 13 observations read from the data set EMWS1.IMPT_EMTRAINVARIABLE.
+NOTE: There were 13 observations read from the data set EMWS1.IMPT_VARIABLESET.
+NOTE: The data set WORK.DIFFDS has 39 observations and 9 variables.
+NOTE: PROCEDURE COMPARE used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+15625      %let diffVar = N;
+15626      data _null_;
+MPRINT(EM_GETACTIONSTATUS):   data _null_;
+15627      set diffDs end=eof;
+MPRINT(EM_GETACTIONSTATUS):   set diffDs end=eof;
+15628      if eof and _N_>0 then call symput('diffVar', 'Y');
+MPRINT(EM_GETACTIONSTATUS):   if eof and _N_>0 then call symput('diffVar', 'Y');
+15629      run;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+NOTE: There were 39 observations read from the data set WORK.DIFFDS.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+15630      %let em_Train = Y;
+15631      %let em_Score = N;
+15632      %let em_Report = N;
+15633      %let em_Run = Y;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.04 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):    
+MPRINT(EM_DIAGRAM):  ;
+
+15634      %let emloopmode =;
+15635      %let emloopnumber =0;
+15636      %let emloopId =Impt;
+*------------------------------------------------------------* 
+* 
+* Impt : Running 
+* datetime : 28DEC2015:13:31:24 
+* 
+*------------------------------------------------------------* 
+15637      %let SYSCC =0;
+15638      %let EMGROUPMODE =;
+15639      %let EMGROUPID =;
 MPRINT(EM_DIAGRAM):      filename temp catalog 'sashelp.emutil.em_vardist.source';
 MPRINT(EM_DIAGRAM):   filename temp;
 MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_classdist.source';
@@ -178,6 +390,6 @@ MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_getvarname.source
 MPRINT(EM_DIAGRAM):   filename temp;
 MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emassmt.em_assess.source';
 MPRINT(EM_DIAGRAM):   filename temp;
-MPRINT(EM_DIAGRAM):    filename L3GKZOEY "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Stat\EMTRAIN.log" encoding="UTF-8" NOBOM;
-MPRINT(EM_DIAGRAM):   proc printto log=L3GKZOEY new;
+MPRINT(EM_DIAGRAM):    filename L0OL3_73 "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Impt\EMTRAIN.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   proc printto log=L0OL3_73 new;
 MPRINT(EM_DIAGRAM):   run;

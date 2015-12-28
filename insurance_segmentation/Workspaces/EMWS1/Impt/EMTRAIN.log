@@ -1,0 +1,1621 @@
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
+MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "December 28, 2015" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "13:31:24" );
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Training Log";
+MPRINT(EM_DIAGRAM):   put nldate;
+MPRINT(EM_DIAGRAM):   put nltime;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+*------------------------------------------------------------*
+* Training Log
+Date:                December 28, 2015
+Time:                13:31:24
+*------------------------------------------------------------*
+MPRINT(EM_DIAGRAM):    filename O0OL3_73 "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Impt\EMTRAIN.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   proc printto print=O0OL3_73 new;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _LOG "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Impt\EMLOG.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
+MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "December 28, 2015" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "13:31:24" );
+MPRINT(EM_DIAGRAM):   file _LOG;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "User:                D059331";
+MPRINT(EM_DIAGRAM):   put nldate;
+MPRINT(EM_DIAGRAM):   put nltime;
+MPRINT(EM_DIAGRAM):   put "Site:                70107571";
+MPRINT(EM_DIAGRAM):   put "Platform:            X64_8PRO";
+MPRINT(EM_DIAGRAM):   put "Maintenance Release: 9.03.01M2P081512";
+MPRINT(EM_DIAGRAM):   put "EM Version:          12.1";
+MPRINT(EM_DIAGRAM):   put "* ";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _LOGIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Impt\EMTRAIN.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_COPYFILE):   data _null_;
+MPRINT(EM_COPYFILE):   length line $20000;
+MPRINT(EM_COPYFILE):   file _LOG MOD lrecl=20000;
+MPRINT(EM_COPYFILE):   fid=fopen("_LOGIN",'i',20000,'v');
+MPRINT(EM_COPYFILE):   if fid > 0 then do;
+MPRINT(EM_COPYFILE):   do while(^fread(fid));
+MPRINT(EM_COPYFILE):   rlen = frlen(fid);
+MPRINT(EM_COPYFILE):   rc= fget(fid,line,20000);
+MPRINT(EM_COPYFILE):   start = length(line)-length(left(line))+1;
+MPRINT(EM_COPYFILE):   line=strip(line);
+MPRINT(EM_COPYFILE):   put @start line;
+MPRINT(EM_COPYFILE):   end;
+MPRINT(EM_COPYFILE):   if fid > 0 then rc=fclose(fid);
+MPRINT(EM_COPYFILE):   end;
+MPRINT(EM_COPYFILE):   run;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _LOGIN;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   file _LOG mod;
+MPRINT(EM_DIAGRAM):   put _page_;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   filename _LOGIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Impt\EMSCORE.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   file _LOG mod;
+MPRINT(EM_DIAGRAM):   put _page_;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _LOGIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Impt\EMREPORT.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _LOGIN;
+MPRINT(EM_DIAGRAM):    filename _LOG;
+MPRINT(EM_DIAGRAM):    filename _OUT "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Impt\EMOUTPUT.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
+MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "December 28, 2015" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "13:31:24" );
+MPRINT(EM_DIAGRAM):   file _OUT;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "User:                D059331";
+MPRINT(EM_DIAGRAM):   put nldate;
+MPRINT(EM_DIAGRAM):   put nltime;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Training Output";
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _OUTIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Impt\EMTRAIN.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_COPYFILE):   data _null_;
+MPRINT(EM_COPYFILE):   length line $20000;
+MPRINT(EM_COPYFILE):   file _OUT MOD lrecl=20000;
+MPRINT(EM_COPYFILE):   fid=fopen("_OUTIN",'i',20000,'v');
+MPRINT(EM_COPYFILE):   if fid > 0 then do;
+MPRINT(EM_COPYFILE):   do while(^fread(fid));
+MPRINT(EM_COPYFILE):   rlen = frlen(fid);
+MPRINT(EM_COPYFILE):   rc= fget(fid,line,20000);
+MPRINT(EM_COPYFILE):   start = length(line)-length(left(line))+1;
+MPRINT(EM_COPYFILE):   line=strip(line);
+MPRINT(EM_COPYFILE):   put @start line;
+MPRINT(EM_COPYFILE):   end;
+MPRINT(EM_COPYFILE):   if fid > 0 then rc=fclose(fid);
+MPRINT(EM_COPYFILE):   end;
+MPRINT(EM_COPYFILE):   run;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _OUTIN;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   file _OUT mod;
+MPRINT(EM_DIAGRAM):   put _page_;
+MPRINT(EM_DIAGRAM):   put // "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Score Output";
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _OUTIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Impt\EMSCORE.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _OUTIN;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   file _OUT mod;
+MPRINT(EM_DIAGRAM):   put _page_;
+MPRINT(EM_DIAGRAM):   put // "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Report Output";
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _OUTIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Impt\EMREPORT.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _OUTIN;
+MPRINT(EM_DIAGRAM):    filename _OUT;
+MPRINT(EM_DIAGRAM):    filename _emtool_ 'C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Impt\EMRUNSTATUS.xml' encoding="UTF-8" NOBOM;
+20479      proc freq data=EMWS1.Impt_VariableSet noprint;
+MPRINT(EM_DIAGRAM):    proc freq data=EMWS1.Impt_VariableSet noprint;
+20480      table ROLE*LEVEL/out=WORK.ImptMETA;
+MPRINT(EM_DIAGRAM):   table ROLE*LEVEL/out=WORK.ImptMETA;
+20481      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 13 observations read from the data set EMWS1.IMPT_VARIABLESET.
+NOTE: The data set WORK.IMPTMETA has 3 observations and 4 variables.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+20482      proc print data=WORK.ImptMETA label noobs;
+MPRINT(EM_DIAGRAM):   proc print data=WORK.ImptMETA label noobs;
+20483      var ROLE LEVEL COUNT;
+MPRINT(EM_DIAGRAM):   var ROLE LEVEL COUNT;
+20484      label ROLE = "%sysfunc(sasmsg(sashelp.dmine, meta_role_vlabel, NOQUOTE))" LEVEL = "%sysfunc(sasmsg(sashelp.dmine, meta_level_vlabel, NOQUOTE))" COUNT = "%sysfunc(sasmsg(sashelp.dmine, rpt_count_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label ROLE = "Role" LEVEL = "Measurement Level" COUNT = "Frequency Count";
+20485      title9 ' ';
+MPRINT(EM_DIAGRAM):   title9 ' ';
+20486      title10 "%sysfunc(sasmsg(sashelp.dmine, rpt_varSummary_title  , NOQUOTE))";
+MPRINT(EM_DIAGRAM):   title10 "Variable Summary";
+MPRINT(EM_DIAGRAM):   run;
+20487      run;
+
+NOTE: There were 3 observations read from the data set WORK.IMPTMETA.
+NOTE: The PROCEDURE PRINT printed page 1.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+20488      title10;
+MPRINT(EM_DIAGRAM):   title10;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Impt: Preparing metadata for training;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   data WORK.M1PT88WB;
+MPRINT(EM_DIAGRAM):   set WORK.M1PT88WB;
+MPRINT(EM_DIAGRAM):   where(use = 'Y' or (ROLE ne 'REJECTED' and USE = 'D'));
+MPRINT(EM_DIAGRAM):   if (role = 'REJECTED') then role = 'INPUT';
+MPRINT(EM_DIAGRAM):   if role = 'INPUT' and METHOD='DEFAULT' then do;
+MPRINT(EM_DIAGRAM):   if level ne 'INTERVAL' then METHOD = "COUNT";
+MPRINT(EM_DIAGRAM):   else METHOD = "MEAN";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if role = 'TARGET' and METHOD='DEFAULT' then do;
+MPRINT(EM_DIAGRAM):   if level ne 'INTERVAL' then METHOD = "NONE";
+MPRINT(EM_DIAGRAM):   else METHOD = "NONE";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   run;
+20506      data WORK.Impt_TREEINPUTS;
+MPRINT(EM_DIAGRAM):    data WORK.Impt_TREEINPUTS;
+20507      set WORK.M3P56POU;
+MPRINT(EM_DIAGRAM):   set WORK.M3P56POU;
+20508      if ROLE ne 'FREQ' then do;
+MPRINT(EM_DIAGRAM):   if ROLE ne 'FREQ' then do;
+20509      if ((ROLE in('TARGET','REJECTED') and useTree='D') or useTree='N') then delete;
+MPRINT(EM_DIAGRAM):   if ((ROLE in('TARGET','REJECTED') and useTree='D') or useTree='N') then delete;
+20510      ROLE = 'INPUT';
+MPRINT(EM_DIAGRAM):   ROLE = 'INPUT';
+20511      end;
+MPRINT(EM_DIAGRAM):   end;
+20512      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 13 observations read from the data set WORK.M3P56POU.
+NOTE: The data set WORK.IMPT_TREEINPUTS has 13 observations and 23 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+20513      data WORK.M3P56POU;
+MPRINT(EM_DIAGRAM):   data WORK.M3P56POU;
+20514      set WORK.M3P56POU;
+MPRINT(EM_DIAGRAM):   set WORK.M3P56POU;
+20515      if METHOD in("TREE", "TREESURR") then role = 'TARGET';
+MPRINT(EM_DIAGRAM):   if METHOD in("TREE", "TREESURR") then role = 'TARGET';
+20516      else if (role = 'REJECTED') then role = 'INPUT';
+MPRINT(EM_DIAGRAM):   else if (role = 'REJECTED') then role = 'INPUT';
+20517      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 13 observations read from the data set WORK.M3P56POU.
+NOTE: The data set WORK.M3P56POU has 13 observations and 23 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+20518      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------* ;
+20519      * Impt: DMDBClass Macro ;
+MPRINT(EM_DIAGRAM):   * Impt: DMDBClass Macro ;
+20520      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+20521      %macro DMDBClass;
+20522          EducationalDegree(DESC) FirstPolicyYear(DESC) GeographicLiving(DESC)
+20523         HasChildren(DESC)
+20524      %mend DMDBClass;
+20525      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+20526      * Impt: DMDBVar Macro ;
+MPRINT(EM_DIAGRAM):   * Impt: DMDBVar Macro ;
+20527      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+20528      %macro DMDBVar;
+20529          ClaimsRate CustomerAge CustomerMonetaryValue GrossMonthlySalary
+20530         PremiumsinLOBHealth PremiumsinLOBHousehold PremiumsinLOBLife PremiumsinLOBMotor
+20531         PremiumsinLOBWorkComp
+20532      %mend DMDBVar;
+20533      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+20534      * Impt: Create DMDB;
+MPRINT(EM_DIAGRAM):   * Impt: Create DMDB;
+20535      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+20536      proc dmdb batch data=EMWS1.Plot2_TRAIN
+20537      dmdbcat=WORK.Impt_DMDB
+20538      classout=WORK.Impt_DMDBCLASSOUT
+20539      varout=WORK.IMPUTE_1MUI3F5_DMDBVAROUT
+20540      maxlevel = 513
+20541      ;
+MPRINT(EM_DIAGRAM):   proc dmdb batch data=EMWS1.Plot2_TRAIN dmdbcat=WORK.Impt_DMDB classout=WORK.Impt_DMDBCLASSOUT varout=WORK.IMPUTE_1MUI3F5_DMDBVAROUT maxlevel = 513 ;
+MPRINT(EM_DIAGRAM):   class
+20542      class %DMDBClass;
+MPRINT(DMDBCLASS):   EducationalDegree(DESC) FirstPolicyYear(DESC) GeographicLiving(DESC) HasChildren(DESC)
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   var
+20543      var %DMDBVar;
+MPRINT(DMDBVAR):   ClaimsRate CustomerAge CustomerMonetaryValue GrossMonthlySalary PremiumsinLOBHealth PremiumsinLOBHousehold PremiumsinLOBLife PremiumsinLOBMotor PremiumsinLOBWorkComp
+MPRINT(EM_DIAGRAM):  ;
+20544      target
+20545      EducationalDegree
+20546      FirstPolicyYear
+20547      GeographicLiving
+20548      HasChildren
+20549      ;
+MPRINT(EM_DIAGRAM):   target EducationalDegree FirstPolicyYear GeographicLiving HasChildren ;
+20550      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: Records processed = 10288   Memory used = 511K.
+NOTE: There were 10296 observations read from the data set INS_PROJ.A2ZINSURANCE.
+NOTE: There were 10296 observations read from the data set EMWS1.IDS_DATA.
+NOTE: View EMWS1.PLOT2_TRAIN.VIEW used (Total process time):
+      real time           0.14 seconds
+      cpu time            0.12 seconds
+      
+NOTE: There were 10288 observations read from the data set EMWS1.FILTER_TRAIN.
+NOTE: There were 10288 observations read from the data set EMWS1.PLOT2_TRAIN.
+NOTE: The data set WORK.IMPT_DMDBCLASSOUT has 39 observations and 9 variables.
+NOTE: The data set WORK.IMPUTE_1MUI3F5_DMDBVAROUT has 9 observations and 9 variables.
+NOTE: PROCEDURE DMDB used (Total process time):
+      real time           0.16 seconds
+      cpu time            0.14 seconds
+      
+
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):   *--- end code ---*;
+20551      quit;
+20552      *--- end code ---*;
+
+20553      proc sort data=WORK.Impt_DMDBCLASSOUT;
+MPRINT(EM_DIAGRAM):    proc sort data=WORK.Impt_DMDBCLASSOUT;
+20554      by NAME;
+MPRINT(EM_DIAGRAM):   by NAME;
+20555      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set WORK.IMPT_DMDBCLASSOUT.
+NOTE: The data set WORK.IMPT_DMDBCLASSOUT has 39 observations and 9 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+20556      data WORK.Impt_DMDBCLASSOUT;
+MPRINT(EM_DIAGRAM):   data WORK.Impt_DMDBCLASSOUT;
+20557      retain missFlag;
+MPRINT(EM_DIAGRAM):   retain missFlag;
+20558      set WORK.Impt_DMDBCLASSOUT;
+MPRINT(EM_DIAGRAM):   set WORK.Impt_DMDBCLASSOUT;
+20559      by NAME;
+MPRINT(EM_DIAGRAM):   by NAME;
+20560      output;
+MPRINT(EM_DIAGRAM):   output;
+20561      if first.name then missflag = 0;
+MPRINT(EM_DIAGRAM):   if first.name then missflag = 0;
+20562      if (TYPE='C' and CRAW='') or (TYPE='N' and NRAW=.) then missflag = 1;
+MPRINT(EM_DIAGRAM):   if (TYPE='C' and CRAW='') or (TYPE='N' and NRAW=.) then missflag = 1;
+20563      if last.name and ^missFlag then do;
+MPRINT(EM_DIAGRAM):   if last.name and ^missFlag then do;
+20564      if type = 'C' then do;
+MPRINT(EM_DIAGRAM):   if type = 'C' then do;
+20565      LEVEL= '';
+MPRINT(EM_DIAGRAM):   LEVEL= '';
+20566      CRAW = '';
+MPRINT(EM_DIAGRAM):   CRAW = '';
+20567      NRAW = .;
+MPRINT(EM_DIAGRAM):   NRAW = .;
+20568      end;
+MPRINT(EM_DIAGRAM):   end;
+20569      else do;
+MPRINT(EM_DIAGRAM):   else do;
+20570      LEVEL='.';
+MPRINT(EM_DIAGRAM):   LEVEL='.';
+20571      CRAW = '.';
+MPRINT(EM_DIAGRAM):   CRAW = '.';
+20572      NRAW= .;
+MPRINT(EM_DIAGRAM):   NRAW= .;
+20573      end;
+MPRINT(EM_DIAGRAM):   end;
+20574      FREQUENCY = 0;
+MPRINT(EM_DIAGRAM):   FREQUENCY = 0;
+20575      FREQPERCENT = 0;
+MPRINT(EM_DIAGRAM):   FREQPERCENT = 0;
+20576      NMISSPERCENT = 0;
+MPRINT(EM_DIAGRAM):   NMISSPERCENT = 0;
+20577      output;
+MPRINT(EM_DIAGRAM):   output;
+20578      end;
+MPRINT(EM_DIAGRAM):   end;
+20579      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set WORK.IMPT_DMDBCLASSOUT.
+NOTE: The data set WORK.IMPT_DMDBCLASSOUT has 39 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+20580      data WORK.Impt_MISS(KEEP=NAME NMISS PERCENTMISS);
+MPRINT(EM_DIAGRAM):    data WORK.Impt_MISS(KEEP=NAME NMISS PERCENTMISS);
+20581      length NAME $32;
+MPRINT(EM_DIAGRAM):   length NAME $32;
+20582      set
+20583      WORK.Impt_DMDBCLASSOUT(rename=(freqpercent=PERCENTMISS frequency=NMISS) where=((TYPE='C' and CRAW='') or (TYPE='N' and NRAW=.)))
+20584      WORK.IMPUTE_1MUI3F5_DMDBVAROUT
+20585      ;
+MPRINT(EM_DIAGRAM):   set WORK.Impt_DMDBCLASSOUT(rename=(freqpercent=PERCENTMISS frequency=NMISS) where=((TYPE='C' and CRAW='') or (TYPE='N' and NRAW=.))) WORK.IMPUTE_1MUI3F5_DMDBVAROUT ;
+20586      if (NMISS ne . and N ne .) then PERCENTMISS = (NMISS/(NMISS+N))*100;
+MPRINT(EM_DIAGRAM):   if (NMISS ne . and N ne .) then PERCENTMISS = (NMISS/(NMISS+N))*100;
+20587      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 4 observations read from the data set WORK.IMPT_DMDBCLASSOUT.
+      WHERE ((TYPE='C') and (CRAW=' ')) or ((TYPE='N') and (NRAW=.));
+NOTE: There were 9 observations read from the data set WORK.IMPUTE_1MUI3F5_DMDBVAROUT.
+NOTE: The data set WORK.IMPT_MISS has 13 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+20588      proc sort data=WORK.M1PT88WB NOTHREADS;
+MPRINT(EM_DIAGRAM):   proc sort data=WORK.M1PT88WB NOTHREADS;
+20589      by NAME;
+MPRINT(EM_DIAGRAM):   by NAME;
+20590      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 13 observations read from the data set WORK.M1PT88WB.
+NOTE: The data set WORK.M1PT88WB has 13 observations and 23 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+20591      proc sort data=WORK.Impt_MISS NOTHREADS;
+MPRINT(EM_DIAGRAM):   proc sort data=WORK.Impt_MISS NOTHREADS;
+20592      by NAME;
+MPRINT(EM_DIAGRAM):   by NAME;
+20593      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 13 observations read from the data set WORK.IMPT_MISS.
+NOTE: The data set WORK.IMPT_MISS has 13 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+20594      data WORK.M1PT88WB;
+MPRINT(EM_DIAGRAM):   data WORK.M1PT88WB;
+20595      merge WORK.M1PT88WB WORK.Impt_MISS(in=_b);
+MPRINT(EM_DIAGRAM):   merge WORK.M1PT88WB WORK.Impt_MISS(in=_b);
+20596      by NAME;
+MPRINT(EM_DIAGRAM):   by NAME;
+20597      if _b then output;
+MPRINT(EM_DIAGRAM):   if _b then output;
+20598      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 13 observations read from the data set WORK.M1PT88WB.
+NOTE: There were 13 observations read from the data set WORK.IMPT_MISS.
+NOTE: The data set WORK.M1PT88WB has 13 observations and 25 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+20599      data WORK.M1PT88WB;
+MPRINT(EM_DIAGRAM):   data WORK.M1PT88WB;
+20600      set WORK.M1PT88WB;
+MPRINT(EM_DIAGRAM):   set WORK.M1PT88WB;
+20601      if 0<PERCENTMISS<50 and method ne 'NONE' then IMPUTE = 1;
+MPRINT(EM_DIAGRAM):   if 0<PERCENTMISS<50 and method ne 'NONE' then IMPUTE = 1;
+20602      else IMPUTE = 0;
+MPRINT(EM_DIAGRAM):   else IMPUTE = 0;
+20603      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 13 observations read from the data set WORK.M1PT88WB.
+NOTE: The data set WORK.M1PT88WB has 13 observations and 26 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+20604      proc dmdb data=WORK.M1PT88WB outtable=WORK.NEWNAMES nameserver;
+MPRINT(EM_DIAGRAM):    proc dmdb data=WORK.M1PT88WB outtable=WORK.NEWNAMES nameserver;
+20605      names NAME;
+MPRINT(EM_DIAGRAM):   names NAME;
+20606      prefix M_ IMP_;
+MPRINT(EM_DIAGRAM):   prefix M_ IMP_;
+20607      where IMPUTE=1;
+MPRINT(EM_DIAGRAM):   where IMPUTE=1;
+20608      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 10 observations read from the data set WORK.M1PT88WB.
+      WHERE IMPUTE=1;
+NOTE: The data set WORK.NEWNAMES has 10 observations and 3 variables.
+NOTE: PROCEDURE DMDB used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+20609      data WORK.M1PT88WB;
+MPRINT(EM_DIAGRAM):   data WORK.M1PT88WB;
+20610      merge WORK.M1PT88WB WORK.NEWNAMES;
+MPRINT(EM_DIAGRAM):   merge WORK.M1PT88WB WORK.NEWNAMES;
+20611      by NAME;
+MPRINT(EM_DIAGRAM):   by NAME;
+20612      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 13 observations read from the data set WORK.M1PT88WB.
+NOTE: There were 10 observations read from the data set WORK.NEWNAMES.
+NOTE: The data set WORK.M1PT88WB has 13 observations and 28 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+20613      proc dmdb data=WORK.M1PT88WB outtable=WORK.NEWNAMES nameserver;
+MPRINT(EM_DIAGRAM):   proc dmdb data=WORK.M1PT88WB outtable=WORK.NEWNAMES nameserver;
+20614      names NAME;
+MPRINT(EM_DIAGRAM):   names NAME;
+20615      prefix M_;
+MPRINT(EM_DIAGRAM):   prefix M_;
+20616      where IMPUTE=0;
+MPRINT(EM_DIAGRAM):   where IMPUTE=0;
+20617      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 3 observations read from the data set WORK.M1PT88WB.
+      WHERE IMPUTE=0;
+NOTE: The data set WORK.NEWNAMES has 3 observations and 2 variables.
+NOTE: PROCEDURE DMDB used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+20618      data WORK.M1PT88WB;
+MPRINT(EM_DIAGRAM):   data WORK.M1PT88WB;
+20619      merge WORK.M1PT88WB WORK.NEWNAMES;
+MPRINT(EM_DIAGRAM):   merge WORK.M1PT88WB WORK.NEWNAMES;
+20620      by NAME;
+MPRINT(EM_DIAGRAM):   by NAME;
+20621      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 13 observations read from the data set WORK.M1PT88WB.
+NOTE: There were 3 observations read from the data set WORK.NEWNAMES.
+NOTE: The data set WORK.M1PT88WB has 13 observations and 28 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+20622      data WORK.Impt;
+MPRINT(EM_DIAGRAM):    data WORK.Impt;
+20623      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The data set WORK.IMPT has 1 observations and 0 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+20624      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------* ;
+20625      * Impt: IMPUTE INTERVAL Macro ;
+MPRINT(EM_DIAGRAM):   * Impt: IMPUTE INTERVAL Macro ;
+20626      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+20627      %macro IMPTINT;
+20628          CustomerAge GrossMonthlySalary PremiumsinLOBHealth PremiumsinLOBLife
+20629         PremiumsinLOBMotor PremiumsinLOBWorkComp
+20630      %mend IMPTINT;
+
+20631      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------* ;
+20632      * Impt: IMPUTE MEDIAN Macro ;
+MPRINT(EM_DIAGRAM):   * Impt: IMPUTE MEDIAN Macro ;
+20633      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+20634      %macro IMPTMEDIAN;
+20635          CustomerAge GrossMonthlySalary PremiumsinLOBHealth PremiumsinLOBLife
+20636         PremiumsinLOBMotor PremiumsinLOBWorkComp
+20637      %mend IMPTMEDIAN;
+
+20638      data EM_STDIZE / view=EM_STDIZE;
+MPRINT(EM_DIAGRAM):    data EM_STDIZE / view=EM_STDIZE;
+20639      set
+20639    ! EMWS1.Plot2_TRAIN(keep= %IMPTInt
+MPRINT(EM_DIAGRAM):   set EMWS1.Plot2_TRAIN(keep
+20640      );
+MPRINT(EM_DIAGRAM):  = CustomerAge GrossMonthlySalary PremiumsinLOBHealth PremiumsinLOBLife PremiumsinLOBMotor PremiumsinLOBWorkComp );
+20641      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: DATA STEP view saved on file WORK.EM_STDIZE.
+NOTE: A stored DATA STEP view cannot run under a different operating system.
+NOTE: View EMWS1.PLOT2_TRAIN.VIEW used (Total process time):
+      real time           0.24 seconds
+      cpu time            0.23 seconds
+      
+NOTE: DATA statement used (Total process time):
+      real time           0.27 seconds
+      cpu time            0.29 seconds
+      
+
+20642      proc stdize data=EM_STDIZE
+20643      pctlpts=(0 1 10 20 25 30 40 50 75 60 80 90 99 100) outstat=WORK._STDIZEDS out=_NULL_;
+MPRINT(EM_DIAGRAM):   proc stdize data=EM_STDIZE pctlpts=(0 1 10 20 25 30 40 50 75 60 80 90 99 100) outstat=WORK._STDIZEDS out=_NULL_;
+MPRINT(EM_DIAGRAM):   var
+20644      var %IMPTInt;
+MPRINT(IMPTINT):   CustomerAge GrossMonthlySalary PremiumsinLOBHealth PremiumsinLOBLife PremiumsinLOBMotor PremiumsinLOBWorkComp
+MPRINT(EM_DIAGRAM):  ;
+20645      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 10296 observations read from the data set INS_PROJ.A2ZINSURANCE.
+NOTE: There were 10296 observations read from the data set EMWS1.IDS_DATA.
+NOTE: There were 10288 observations read from the data set EMWS1.FILTER_TRAIN.
+NOTE: View WORK.EM_STDIZE.VIEW used (Total process time):
+      real time           0.81 seconds
+      cpu time            0.81 seconds
+      
+NOTE: There were 10288 observations read from the data set EMWS1.PLOT2_TRAIN.
+NOTE: There were 10288 observations read from the data set WORK.EM_STDIZE.
+NOTE: The data set WORK._STDIZEDS has 22 observations and 7 variables.
+NOTE: PROCEDURE STDIZE used (Total process time):
+      real time           0.83 seconds
+      cpu time            0.82 seconds
+      
+
+20646      data WORK._IMPUTEMEDIAN;
+MPRINT(EM_DIAGRAM):    data WORK._IMPUTEMEDIAN;
+20647      set WORK._STDIZEDS;
+MPRINT(EM_DIAGRAM):   set WORK._STDIZEDS;
+20648      where _TYPE_='P50';
+MPRINT(EM_DIAGRAM):   where _TYPE_='P50';
+MPRINT(EM_DIAGRAM):   keep
+20649      keep %IMPTMEDIAN;
+MPRINT(IMPTMEDIAN):   CustomerAge GrossMonthlySalary PremiumsinLOBHealth PremiumsinLOBLife PremiumsinLOBMotor PremiumsinLOBWorkComp
+MPRINT(EM_DIAGRAM):  ;
+20650      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 1 observations read from the data set WORK._STDIZEDS.
+      WHERE _TYPE_='P50';
+NOTE: The data set WORK._IMPUTEMEDIAN has 1 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+20651      data WORK.Impt;
+MPRINT(EM_DIAGRAM):   data WORK.Impt;
+20652      merge WORK.Impt WORK._IMPUTEMEDIAN;
+MPRINT(EM_DIAGRAM):   merge WORK.Impt WORK._IMPUTEMEDIAN;
+20653      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 1 observations read from the data set WORK.IMPT.
+NOTE: There were 1 observations read from the data set WORK._IMPUTEMEDIAN.
+NOTE: The data set WORK.IMPT has 1 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+20654      data WORK._STDIZEDS;
+MPRINT(EM_DIAGRAM):   data WORK._STDIZEDS;
+20655      set WORK._STDIZEDS;
+MPRINT(EM_DIAGRAM):   set WORK._STDIZEDS;
+20656      where _TYPE_ =: 'P';
+MPRINT(EM_DIAGRAM):   where _TYPE_ =: 'P';
+20657      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 14 observations read from the data set WORK._STDIZEDS.
+      WHERE _TYPE_=:'P';
+NOTE: The data set WORK._STDIZEDS has 14 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Impt: Preparing metadata for Tree Imputation;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   data WORK.M209XCEX;
+MPRINT(EM_DIAGRAM):   retain found 0;
+MPRINT(EM_DIAGRAM):   set WORK.M209XCEX end=eof;
+MPRINT(EM_DIAGRAM):   length USE $1;
+MPRINT(EM_DIAGRAM):   if NAME = 'EducationalDegree' then do;
+MPRINT(EM_DIAGRAM):   ROLE = 'TARGET';
+MPRINT(EM_DIAGRAM):   found = 1;
+MPRINT(EM_DIAGRAM):   USE='Y';
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   output;
+MPRINT(EM_DIAGRAM):   if eof and ^found then do;
+MPRINT(EM_DIAGRAM):   NAME = 'EducationalDegree';
+MPRINT(EM_DIAGRAM):   ROLE = 'TARGET';
+MPRINT(EM_DIAGRAM):   LABEL = '';
+MPRINT(EM_DIAGRAM):   TYPE = 'C';
+MPRINT(EM_DIAGRAM):   LENGTH = length;
+MPRINT(EM_DIAGRAM):   FORMAT = '$CHAR15.0';
+MPRINT(EM_DIAGRAM):   ORDER = '';
+MPRINT(EM_DIAGRAM):   LEVEL = 'ORDINAL';
+MPRINT(EM_DIAGRAM):   USE='Y';
+MPRINT(EM_DIAGRAM):   output;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Impt: Create Decision Tree using Target EducationalDegree;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Impt: Create decision matrix;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Tree Variables Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Tree Targets Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   data WORK.EM_Impt / view=WORK.EM_Impt;
+MPRINT(EM_DIAGRAM):   set EMWS1.Plot2_TRAIN(keep
+MPRINT(EM_DIAGRAM):  =ClaimsRate CustomerAge CustomerMonetaryValue FirstPolicyYear GeographicLiving GrossMonthlySalary HasChildren PremiumsinLOBHealth PremiumsinLOBHousehold PremiumsinLOBLife PremiumsinLOBMotor PremiumsinLOBWorkComp EducationalDegree);
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Interval Inputs Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Binary and Nominal Inputs Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Ordinal Inputs Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Impt: Run ARBOR procedure;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    proc arbor data=WORK.EM_Impt Leafsize=5 Mincatsize = 5 Maxbranch=2 Maxdepth=6 MAXRULES=5 MAXSURRS=2 Missing=USEINSEARCH ;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   input
+MPRINT(INTINPUTS):   ClaimsRate CustomerAge CustomerMonetaryValue GrossMonthlySalary PremiumsinLOBHealth PremiumsinLOBHousehold PremiumsinLOBLife PremiumsinLOBMotor PremiumsinLOBWorkComp
+MPRINT(EM_DIAGRAM):   / level = interval;
+MPRINT(EM_DIAGRAM):   input
+MPRINT(NOMINPUTS):   GeographicLiving HasChildren
+MPRINT(EM_DIAGRAM):   / level=nominal;
+MPRINT(EM_DIAGRAM):   input
+MPRINT(ORDINPUTS):   FirstPolicyYear
+MPRINT(EM_DIAGRAM):   / level=ordinal;
+MPRINT(EM_DIAGRAM):   target EducationalDegree / level=ORDINAL Criterion=GINI ;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   Performance DISK ;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   MAKEMACRO NLEAVES=nleaves;
+MPRINT(EM_DIAGRAM):   save MODEL=WORK.OUTTREE_TREE_2BMXCOU SEQUENCE=WORK.OUTSEQ_TREE_2BMXCOU IMPORTANCE=WORK.OUTIMPORT_TREE_2BMXCOU NODESTAT=WORK.OUTNODES_TREE_2BMXCOU SUMMARY=WORK.OUTSUMMARY_TREE_2BMXCOU STATSBYNODE=WORK.OUTSTATS_TREE_2BMXCOU 
+Pathlistnonmissing = WORK.OUTPATH_TREE_2BMXCOU Rules = WORK.OUTRULES_TREE_2BMXCOU ;
+MPRINT(EM_DIAGRAM):   code metabase=WORK.TREE_2BMXCOU.SCORECODE.SOURCE group=Impt NOLEAFID;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   code metabase=WORK.TREE_2BMXCOU.RESIDUALSCORECODE.SOURCE group=Impt residual NOLEAFID;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   score data=WORK.EM_Impt out=_NULL_ outfit=WORK.OUTFIT_TREE_2BMXCOU role=TRAIN ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):    data WORK.OUTIMPORT_TREE_2BMXCOU;
+MPRINT(EM_DIAGRAM):   set WORK.OUTIMPORT_TREE_2BMXCOU;
+MPRINT(EM_DIAGRAM):   label NAME = "Variable Name" LABEL = "Label" NRULES = "Number of Splitting Rules" IMPORTANCE = "Importance" NSURROGATES = "Number of Surrogate Rules" ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   filename x "C:\Users\D059331\AppData\Local\Temp\SAS Temporary Files\_TD6568_WDFN33788459A_\Prc2\DESCRIBE.SOURCE" encoding='utf-8' NOBOM;
+MPRINT(EM_DIAGRAM):    data temp;
+MPRINT(EM_DIAGRAM):   length varname $22;
+MPRINT(EM_DIAGRAM):   retain varname;
+MPRINT(EM_DIAGRAM):   set WORK.OUTPATH_TREE_2BMXCOU;
+MPRINT(EM_DIAGRAM):   if ^missing(variable) then varname=variable;
+MPRINT(EM_DIAGRAM):   else if ^missing(var_name) then varname=var_name;
+MPRINT(EM_DIAGRAM):   output;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   proc sort data=temp;
+MPRINT(EM_DIAGRAM):   by node;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   proc sort data=WORK.OUTNODES_TREE_2BMXCOU out=outnodes;
+MPRINT(EM_DIAGRAM):   by node;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data temp;
+MPRINT(EM_DIAGRAM):   merge temp(in=_a) outnodes(keep= node NPRIORS P_EducationalDegr1___Basic P_EducationalDegr2___High_School P_EducationalDegr3___BSc_MSc P_EducationalDegr4___PhD );
+MPRINT(EM_DIAGRAM):   by node;
+MPRINT(EM_DIAGRAM):   if _a;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   proc sort data=temp;
+MPRINT(EM_DIAGRAM):   by node descending varname descending numeric_value;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   file x;
+MPRINT(EM_DIAGRAM):   set temp;
+MPRINT(EM_DIAGRAM):   by node descending varname;
+MPRINT(EM_DIAGRAM):   retain origvar oldnode string;
+MPRINT(EM_DIAGRAM):   length origvar $32 oldnode 8 string $200;
+MPRINT(EM_DIAGRAM):   if _n_ = 1 then do;
+MPRINT(EM_DIAGRAM):   origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode = node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if first.node then do;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put " Node = " node;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if first.varname then do;
+MPRINT(EM_DIAGRAM):   if RELATION ^in ("=", "ISMISSING", "ISNOTMISSING") then do;
+MPRINT(EM_DIAGRAM):   if MISSING(CHARACTER_VALUE) then do;
+MPRINT(EM_DIAGRAM):   if NUMERIC_VALUE ne . then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string= "AND "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string= "if "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string= "AND "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string= "if "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("=") then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string = "AND "||strip(varname) ||" IS ONE OF: "||character_value;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string = "if "|| strip(varname) ||" IS ONE OF: "||character_value;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("ISMISSING") then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string = " AND "|| strip(varname) || " equals Missing";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string = "if "|| strip(varname) ||" equals Missing";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("ISNOTMISSING") then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string = " AND "|| strip(varname) || " equals All Values";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string = "if "|| strip(varname) ||" equals All Values";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   if RELATION ^in ("=", "ISMISSING", "ISNOTMISSING") then do;
+MPRINT(EM_DIAGRAM):   if MISSING(CHARACTER_VALUE) then do;
+MPRINT(EM_DIAGRAM):   if NUMERIC_VALUE ne . then do;
+MPRINT(EM_DIAGRAM):   if ^MISSING(string) then string= strip(string)||" AND "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   else string= " if "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   if ^MISSING(string) then string= strip(string)||" AND "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   else string= " if "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("=") then do;
+MPRINT(EM_DIAGRAM):   string = strip(string)||", "||strip(character_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("ISMISSING") then do;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if last.varname then do;
+MPRINT(EM_DIAGRAM):   if RELATION in ("ISMISSING") then do;
+MPRINT(EM_DIAGRAM):   if ^first.varname then do;
+MPRINT(EM_DIAGRAM):   string = strip(string) || " or MISSING";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   put string;
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if last.node then do;
+MPRINT(EM_DIAGRAM):   put "then ";
+MPRINT(EM_DIAGRAM):   put " Tree Node Identifier   = " node;
+MPRINT(EM_DIAGRAM):   put " Number of Observations = " NPRIORS;
+MPRINT(EM_DIAGRAM):   put " Predicted: EducationalDegree=1 - Basic  = " P_EducationalDegr1___Basic;
+MPRINT(EM_DIAGRAM):   put " Predicted: EducationalDegree=2 - High School  = " P_EducationalDegr2___High_School;
+MPRINT(EM_DIAGRAM):   put " Predicted: EducationalDegree=3 - BSc/MSc  = " P_EducationalDegr3___BSc_MSc;
+MPRINT(EM_DIAGRAM):   put " Predicted: EducationalDegree=4 - PhD  = " P_EducationalDegr4___PhD;
+MPRINT(EM_DIAGRAM):   put " ";
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename x;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Impt: Preparing metadata for Tree Imputation;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   data WORK.M3LVYX5Q;
+MPRINT(EM_DIAGRAM):   retain found 0;
+MPRINT(EM_DIAGRAM):   set WORK.M3LVYX5Q end=eof;
+MPRINT(EM_DIAGRAM):   length USE $1;
+MPRINT(EM_DIAGRAM):   if NAME = 'FirstPolicyYear' then do;
+MPRINT(EM_DIAGRAM):   ROLE = 'TARGET';
+MPRINT(EM_DIAGRAM):   found = 1;
+MPRINT(EM_DIAGRAM):   USE='Y';
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   output;
+MPRINT(EM_DIAGRAM):   if eof and ^found then do;
+MPRINT(EM_DIAGRAM):   NAME = 'FirstPolicyYear';
+MPRINT(EM_DIAGRAM):   ROLE = 'TARGET';
+MPRINT(EM_DIAGRAM):   LABEL = '';
+MPRINT(EM_DIAGRAM):   TYPE = 'N';
+MPRINT(EM_DIAGRAM):   LENGTH = length;
+MPRINT(EM_DIAGRAM):   FORMAT = 'BEST12.0';
+MPRINT(EM_DIAGRAM):   ORDER = '';
+MPRINT(EM_DIAGRAM):   LEVEL = 'ORDINAL';
+MPRINT(EM_DIAGRAM):   USE='Y';
+MPRINT(EM_DIAGRAM):   output;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Impt: Create Decision Tree using Target FirstPolicyYear;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Impt: Create decision matrix;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Tree Variables Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Tree Targets Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   data WORK.EM_Impt / view=WORK.EM_Impt;
+MPRINT(EM_DIAGRAM):   set EMWS1.Plot2_TRAIN(keep
+MPRINT(EM_DIAGRAM):  =ClaimsRate CustomerAge CustomerMonetaryValue EducationalDegree GeographicLiving GrossMonthlySalary HasChildren PremiumsinLOBHealth PremiumsinLOBHousehold PremiumsinLOBLife PremiumsinLOBMotor PremiumsinLOBWorkComp FirstPolicyYear);
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Interval Inputs Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Binary and Nominal Inputs Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Ordinal Inputs Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Impt: Run ARBOR procedure;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    proc arbor data=WORK.EM_Impt Leafsize=5 Mincatsize = 5 Maxbranch=2 Maxdepth=6 MAXRULES=5 MAXSURRS=2 Missing=USEINSEARCH ;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   input
+MPRINT(INTINPUTS):   ClaimsRate CustomerAge CustomerMonetaryValue GrossMonthlySalary PremiumsinLOBHealth PremiumsinLOBHousehold PremiumsinLOBLife PremiumsinLOBMotor PremiumsinLOBWorkComp
+MPRINT(EM_DIAGRAM):   / level = interval;
+MPRINT(EM_DIAGRAM):   input
+MPRINT(NOMINPUTS):   GeographicLiving HasChildren
+MPRINT(EM_DIAGRAM):   / level=nominal;
+MPRINT(EM_DIAGRAM):   input
+MPRINT(ORDINPUTS):   EducationalDegree
+MPRINT(EM_DIAGRAM):   / level=ordinal;
+MPRINT(EM_DIAGRAM):   target FirstPolicyYear / level=ORDINAL Criterion=GINI ;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   Performance DISK ;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   MAKEMACRO NLEAVES=nleaves;
+MPRINT(EM_DIAGRAM):   save MODEL=WORK.OUTTREE_TREE_05U0LC7 SEQUENCE=WORK.OUTSEQ_TREE_05U0LC7 IMPORTANCE=WORK.OUTIMPORT_TREE_05U0LC7 NODESTAT=WORK.OUTNODES_TREE_05U0LC7 SUMMARY=WORK.OUTSUMMARY_TREE_05U0LC7 STATSBYNODE=WORK.OUTSTATS_TREE_05U0LC7 
+Pathlistnonmissing = WORK.OUTPATH_TREE_05U0LC7 Rules = WORK.OUTRULES_TREE_05U0LC7 ;
+MPRINT(EM_DIAGRAM):   code metabase=WORK.TREE_05U0LC7.SCORECODE.SOURCE group=Impt NOLEAFID;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   code metabase=WORK.TREE_05U0LC7.RESIDUALSCORECODE.SOURCE group=Impt residual NOLEAFID;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   score data=WORK.EM_Impt out=_NULL_ outfit=WORK.OUTFIT_TREE_05U0LC7 role=TRAIN ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):    data WORK.OUTIMPORT_TREE_05U0LC7;
+MPRINT(EM_DIAGRAM):   set WORK.OUTIMPORT_TREE_05U0LC7;
+MPRINT(EM_DIAGRAM):   label NAME = "Variable Name" LABEL = "Label" NRULES = "Number of Splitting Rules" IMPORTANCE = "Importance" NSURROGATES = "Number of Surrogate Rules" ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   filename x "C:\Users\D059331\AppData\Local\Temp\SAS Temporary Files\_TD6568_WDFN33788459A_\Prc2\DESCRIBE.SOURCE" encoding='utf-8' NOBOM;
+MPRINT(EM_DIAGRAM):    data temp;
+MPRINT(EM_DIAGRAM):   length varname $22;
+MPRINT(EM_DIAGRAM):   retain varname;
+MPRINT(EM_DIAGRAM):   set WORK.OUTPATH_TREE_05U0LC7;
+MPRINT(EM_DIAGRAM):   if ^missing(variable) then varname=variable;
+MPRINT(EM_DIAGRAM):   else if ^missing(var_name) then varname=var_name;
+MPRINT(EM_DIAGRAM):   output;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   proc sort data=temp;
+MPRINT(EM_DIAGRAM):   by node;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   proc sort data=WORK.OUTNODES_TREE_05U0LC7 out=outnodes;
+MPRINT(EM_DIAGRAM):   by node;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data temp;
+MPRINT(EM_DIAGRAM):   merge temp(in=_a) outnodes(keep= node NPRIORS P_FirstPolicyYear1974 P_FirstPolicyYear1975 P_FirstPolicyYear1976 P_FirstPolicyYear1977 P_FirstPolicyYear1978 P_FirstPolicyYear1979 P_FirstPolicyYear1980 P_FirstPolicyYear1981 
+P_FirstPolicyYear1982 P_FirstPolicyYear1983 P_FirstPolicyYear1984 P_FirstPolicyYear1985 P_FirstPolicyYear1986 P_FirstPolicyYear1987 P_FirstPolicyYear1988 P_FirstPolicyYear1989 P_FirstPolicyYear1990 P_FirstPolicyYear1991 P_FirstPolicyYear1992 
+P_FirstPolicyYear1993 P_FirstPolicyYear1994 P_FirstPolicyYear1995 P_FirstPolicyYear1996 P_FirstPolicyYear1997 P_FirstPolicyYear1998 );
+MPRINT(EM_DIAGRAM):   by node;
+MPRINT(EM_DIAGRAM):   if _a;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   proc sort data=temp;
+MPRINT(EM_DIAGRAM):   by node descending varname descending numeric_value;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   file x;
+MPRINT(EM_DIAGRAM):   set temp;
+MPRINT(EM_DIAGRAM):   by node descending varname;
+MPRINT(EM_DIAGRAM):   retain origvar oldnode string;
+MPRINT(EM_DIAGRAM):   length origvar $32 oldnode 8 string $200;
+MPRINT(EM_DIAGRAM):   if _n_ = 1 then do;
+MPRINT(EM_DIAGRAM):   origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode = node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if first.node then do;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put " Node = " node;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if first.varname then do;
+MPRINT(EM_DIAGRAM):   if RELATION ^in ("=", "ISMISSING", "ISNOTMISSING") then do;
+MPRINT(EM_DIAGRAM):   if MISSING(CHARACTER_VALUE) then do;
+MPRINT(EM_DIAGRAM):   if NUMERIC_VALUE ne . then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string= "AND "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string= "if "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string= "AND "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string= "if "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("=") then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string = "AND "||strip(varname) ||" IS ONE OF: "||character_value;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string = "if "|| strip(varname) ||" IS ONE OF: "||character_value;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("ISMISSING") then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string = " AND "|| strip(varname) || " equals Missing";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string = "if "|| strip(varname) ||" equals Missing";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("ISNOTMISSING") then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string = " AND "|| strip(varname) || " equals All Values";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string = "if "|| strip(varname) ||" equals All Values";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   if RELATION ^in ("=", "ISMISSING", "ISNOTMISSING") then do;
+MPRINT(EM_DIAGRAM):   if MISSING(CHARACTER_VALUE) then do;
+MPRINT(EM_DIAGRAM):   if NUMERIC_VALUE ne . then do;
+MPRINT(EM_DIAGRAM):   if ^MISSING(string) then string= strip(string)||" AND "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   else string= " if "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   if ^MISSING(string) then string= strip(string)||" AND "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   else string= " if "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("=") then do;
+MPRINT(EM_DIAGRAM):   string = strip(string)||", "||strip(character_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("ISMISSING") then do;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if last.varname then do;
+MPRINT(EM_DIAGRAM):   if RELATION in ("ISMISSING") then do;
+MPRINT(EM_DIAGRAM):   if ^first.varname then do;
+MPRINT(EM_DIAGRAM):   string = strip(string) || " or MISSING";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   put string;
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if last.node then do;
+MPRINT(EM_DIAGRAM):   put "then ";
+MPRINT(EM_DIAGRAM):   put " Tree Node Identifier   = " node;
+MPRINT(EM_DIAGRAM):   put " Number of Observations = " NPRIORS;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1974  = " P_FirstPolicyYear1974;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1975  = " P_FirstPolicyYear1975;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1976  = " P_FirstPolicyYear1976;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1977  = " P_FirstPolicyYear1977;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1978  = " P_FirstPolicyYear1978;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1979  = " P_FirstPolicyYear1979;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1980  = " P_FirstPolicyYear1980;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1981  = " P_FirstPolicyYear1981;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1982  = " P_FirstPolicyYear1982;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1983  = " P_FirstPolicyYear1983;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1984  = " P_FirstPolicyYear1984;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1985  = " P_FirstPolicyYear1985;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1986  = " P_FirstPolicyYear1986;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1987  = " P_FirstPolicyYear1987;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1988  = " P_FirstPolicyYear1988;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1989  = " P_FirstPolicyYear1989;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1990  = " P_FirstPolicyYear1990;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1991  = " P_FirstPolicyYear1991;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1992  = " P_FirstPolicyYear1992;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1993  = " P_FirstPolicyYear1993;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1994  = " P_FirstPolicyYear1994;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1995  = " P_FirstPolicyYear1995;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1996  = " P_FirstPolicyYear1996;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1997  = " P_FirstPolicyYear1997;
+MPRINT(EM_DIAGRAM):   put " Predicted: FirstPolicyYear=1998  = " P_FirstPolicyYear1998;
+MPRINT(EM_DIAGRAM):   put " ";
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename x;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Impt: Preparing metadata for Tree Imputation;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   data WORK.M1JHZ1SI;
+MPRINT(EM_DIAGRAM):   retain found 0;
+MPRINT(EM_DIAGRAM):   set WORK.M1JHZ1SI end=eof;
+MPRINT(EM_DIAGRAM):   length USE $1;
+MPRINT(EM_DIAGRAM):   if NAME = 'GeographicLiving' then do;
+MPRINT(EM_DIAGRAM):   ROLE = 'TARGET';
+MPRINT(EM_DIAGRAM):   found = 1;
+MPRINT(EM_DIAGRAM):   USE='Y';
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   output;
+MPRINT(EM_DIAGRAM):   if eof and ^found then do;
+MPRINT(EM_DIAGRAM):   NAME = 'GeographicLiving';
+MPRINT(EM_DIAGRAM):   ROLE = 'TARGET';
+MPRINT(EM_DIAGRAM):   LABEL = '';
+MPRINT(EM_DIAGRAM):   TYPE = 'N';
+MPRINT(EM_DIAGRAM):   LENGTH = length;
+MPRINT(EM_DIAGRAM):   FORMAT = 'BEST12.0';
+MPRINT(EM_DIAGRAM):   ORDER = '';
+MPRINT(EM_DIAGRAM):   LEVEL = 'NOMINAL';
+MPRINT(EM_DIAGRAM):   USE='Y';
+MPRINT(EM_DIAGRAM):   output;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Impt: Create Decision Tree using Target GeographicLiving;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Impt: Create decision matrix;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Tree Variables Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Tree Targets Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   data WORK.EM_Impt / view=WORK.EM_Impt;
+MPRINT(EM_DIAGRAM):   set EMWS1.Plot2_TRAIN(keep
+MPRINT(EM_DIAGRAM):  =ClaimsRate CustomerAge CustomerMonetaryValue EducationalDegree FirstPolicyYear GrossMonthlySalary HasChildren PremiumsinLOBHealth PremiumsinLOBHousehold PremiumsinLOBLife PremiumsinLOBMotor PremiumsinLOBWorkComp GeographicLiving);
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Interval Inputs Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Binary and Nominal Inputs Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Ordinal Inputs Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Impt: Run ARBOR procedure;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    proc arbor data=WORK.EM_Impt Leafsize=5 Mincatsize = 5 Maxbranch=2 Maxdepth=6 alpha = 0.02 Padjust= CHAIDBEFORE DEPTH MAXRULES=5 MAXSURRS=2 Missing=USEINSEARCH ;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   input
+MPRINT(INTINPUTS):   ClaimsRate CustomerAge CustomerMonetaryValue GrossMonthlySalary PremiumsinLOBHealth PremiumsinLOBHousehold PremiumsinLOBLife PremiumsinLOBMotor PremiumsinLOBWorkComp
+MPRINT(EM_DIAGRAM):   / level = interval;
+MPRINT(EM_DIAGRAM):   input
+MPRINT(NOMINPUTS):   HasChildren
+MPRINT(EM_DIAGRAM):   / level=nominal;
+MPRINT(EM_DIAGRAM):   input
+MPRINT(ORDINPUTS):   EducationalDegree FirstPolicyYear
+MPRINT(EM_DIAGRAM):   / level=ordinal;
+MPRINT(EM_DIAGRAM):   target GeographicLiving / level=NOMINAL Criterion=PROBCHISQ ;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   Performance DISK ;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   MAKEMACRO NLEAVES=nleaves;
+MPRINT(EM_DIAGRAM):   save MODEL=WORK.OUTTREE_TREE_0_ULN19 SEQUENCE=WORK.OUTSEQ_TREE_0_ULN19 IMPORTANCE=WORK.OUTIMPORT_TREE_0_ULN19 NODESTAT=WORK.OUTNODES_TREE_0_ULN19 SUMMARY=WORK.OUTSUMMARY_TREE_0_ULN19 STATSBYNODE=WORK.OUTSTATS_TREE_0_ULN19 
+Pathlistnonmissing = WORK.OUTPATH_TREE_0_ULN19 Rules = WORK.OUTRULES_TREE_0_ULN19 ;
+MPRINT(EM_DIAGRAM):   code metabase=WORK.TREE_0_ULN19.SCORECODE.SOURCE group=Impt NOLEAFID;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   code metabase=WORK.TREE_0_ULN19.RESIDUALSCORECODE.SOURCE group=Impt residual NOLEAFID;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   score data=WORK.EM_Impt out=_NULL_ outfit=WORK.OUTFIT_TREE_0_ULN19 role=TRAIN ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):    data WORK.OUTIMPORT_TREE_0_ULN19;
+MPRINT(EM_DIAGRAM):   set WORK.OUTIMPORT_TREE_0_ULN19;
+MPRINT(EM_DIAGRAM):   label NAME = "Variable Name" LABEL = "Label" NRULES = "Number of Splitting Rules" IMPORTANCE = "Importance" NSURROGATES = "Number of Surrogate Rules" ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   filename x "C:\Users\D059331\AppData\Local\Temp\SAS Temporary Files\_TD6568_WDFN33788459A_\Prc2\DESCRIBE.SOURCE" encoding='utf-8' NOBOM;
+MPRINT(EM_DIAGRAM):    data temp;
+MPRINT(EM_DIAGRAM):   length varname $22;
+MPRINT(EM_DIAGRAM):   retain varname;
+MPRINT(EM_DIAGRAM):   set WORK.OUTPATH_TREE_0_ULN19;
+MPRINT(EM_DIAGRAM):   if ^missing(variable) then varname=variable;
+MPRINT(EM_DIAGRAM):   else if ^missing(var_name) then varname=var_name;
+MPRINT(EM_DIAGRAM):   output;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   proc sort data=temp;
+MPRINT(EM_DIAGRAM):   by node;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   proc sort data=WORK.OUTNODES_TREE_0_ULN19 out=outnodes;
+MPRINT(EM_DIAGRAM):   by node;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data temp;
+MPRINT(EM_DIAGRAM):   merge temp(in=_a) outnodes(keep= node NPRIORS P_GeographicLiving1 P_GeographicLiving4 P_GeographicLiving3 P_GeographicLiving2 );
+MPRINT(EM_DIAGRAM):   by node;
+MPRINT(EM_DIAGRAM):   if _a;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   proc sort data=temp;
+MPRINT(EM_DIAGRAM):   by node descending varname descending numeric_value;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   file x;
+MPRINT(EM_DIAGRAM):   set temp;
+MPRINT(EM_DIAGRAM):   by node descending varname;
+MPRINT(EM_DIAGRAM):   retain origvar oldnode string;
+MPRINT(EM_DIAGRAM):   length origvar $32 oldnode 8 string $200;
+MPRINT(EM_DIAGRAM):   if _n_ = 1 then do;
+MPRINT(EM_DIAGRAM):   origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode = node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if first.node then do;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put " Node = " node;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if first.varname then do;
+MPRINT(EM_DIAGRAM):   if RELATION ^in ("=", "ISMISSING", "ISNOTMISSING") then do;
+MPRINT(EM_DIAGRAM):   if MISSING(CHARACTER_VALUE) then do;
+MPRINT(EM_DIAGRAM):   if NUMERIC_VALUE ne . then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string= "AND "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string= "if "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string= "AND "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string= "if "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("=") then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string = "AND "||strip(varname) ||" IS ONE OF: "||character_value;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string = "if "|| strip(varname) ||" IS ONE OF: "||character_value;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("ISMISSING") then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string = " AND "|| strip(varname) || " equals Missing";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string = "if "|| strip(varname) ||" equals Missing";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("ISNOTMISSING") then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string = " AND "|| strip(varname) || " equals All Values";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string = "if "|| strip(varname) ||" equals All Values";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   if RELATION ^in ("=", "ISMISSING", "ISNOTMISSING") then do;
+MPRINT(EM_DIAGRAM):   if MISSING(CHARACTER_VALUE) then do;
+MPRINT(EM_DIAGRAM):   if NUMERIC_VALUE ne . then do;
+MPRINT(EM_DIAGRAM):   if ^MISSING(string) then string= strip(string)||" AND "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   else string= " if "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   if ^MISSING(string) then string= strip(string)||" AND "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   else string= " if "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("=") then do;
+MPRINT(EM_DIAGRAM):   string = strip(string)||", "||strip(character_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("ISMISSING") then do;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if last.varname then do;
+MPRINT(EM_DIAGRAM):   if RELATION in ("ISMISSING") then do;
+MPRINT(EM_DIAGRAM):   if ^first.varname then do;
+MPRINT(EM_DIAGRAM):   string = strip(string) || " or MISSING";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   put string;
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if last.node then do;
+MPRINT(EM_DIAGRAM):   put "then ";
+MPRINT(EM_DIAGRAM):   put " Tree Node Identifier   = " node;
+MPRINT(EM_DIAGRAM):   put " Number of Observations = " NPRIORS;
+MPRINT(EM_DIAGRAM):   put " Predicted: GeographicLiving=1  = " P_GeographicLiving1;
+MPRINT(EM_DIAGRAM):   put " Predicted: GeographicLiving=4  = " P_GeographicLiving4;
+MPRINT(EM_DIAGRAM):   put " Predicted: GeographicLiving=3  = " P_GeographicLiving3;
+MPRINT(EM_DIAGRAM):   put " Predicted: GeographicLiving=2  = " P_GeographicLiving2;
+MPRINT(EM_DIAGRAM):   put " ";
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename x;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Impt: Preparing metadata for Tree Imputation;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   data WORK.M35R6NE5;
+MPRINT(EM_DIAGRAM):   retain found 0;
+MPRINT(EM_DIAGRAM):   set WORK.M35R6NE5 end=eof;
+MPRINT(EM_DIAGRAM):   length USE $1;
+MPRINT(EM_DIAGRAM):   if NAME = 'HasChildren' then do;
+MPRINT(EM_DIAGRAM):   ROLE = 'TARGET';
+MPRINT(EM_DIAGRAM):   found = 1;
+MPRINT(EM_DIAGRAM):   USE='Y';
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   output;
+MPRINT(EM_DIAGRAM):   if eof and ^found then do;
+MPRINT(EM_DIAGRAM):   NAME = 'HasChildren';
+MPRINT(EM_DIAGRAM):   ROLE = 'TARGET';
+MPRINT(EM_DIAGRAM):   LABEL = '';
+MPRINT(EM_DIAGRAM):   TYPE = 'N';
+MPRINT(EM_DIAGRAM):   LENGTH = length;
+MPRINT(EM_DIAGRAM):   FORMAT = 'BEST12.0';
+MPRINT(EM_DIAGRAM):   ORDER = '';
+MPRINT(EM_DIAGRAM):   LEVEL = 'NOMINAL';
+MPRINT(EM_DIAGRAM):   USE='Y';
+MPRINT(EM_DIAGRAM):   output;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Impt: Create Decision Tree using Target HasChildren;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Impt: Create decision matrix;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Tree Variables Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Tree Targets Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   data WORK.EM_Impt / view=WORK.EM_Impt;
+MPRINT(EM_DIAGRAM):   set EMWS1.Plot2_TRAIN(keep
+MPRINT(EM_DIAGRAM):  =ClaimsRate CustomerAge CustomerMonetaryValue EducationalDegree FirstPolicyYear GeographicLiving GrossMonthlySalary PremiumsinLOBHealth PremiumsinLOBHousehold PremiumsinLOBLife PremiumsinLOBMotor PremiumsinLOBWorkComp HasChildren);
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Interval Inputs Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Binary and Nominal Inputs Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Impt: Ordinal Inputs Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Impt: Run ARBOR procedure;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    proc arbor data=WORK.EM_Impt Leafsize=5 Mincatsize = 5 Maxbranch=2 Maxdepth=6 alpha = 0.02 Padjust= CHAIDBEFORE DEPTH MAXRULES=5 MAXSURRS=2 Missing=USEINSEARCH ;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   input
+MPRINT(INTINPUTS):   ClaimsRate CustomerAge CustomerMonetaryValue GrossMonthlySalary PremiumsinLOBHealth PremiumsinLOBHousehold PremiumsinLOBLife PremiumsinLOBMotor PremiumsinLOBWorkComp
+MPRINT(EM_DIAGRAM):   / level = interval;
+MPRINT(EM_DIAGRAM):   input
+MPRINT(NOMINPUTS):   GeographicLiving
+MPRINT(EM_DIAGRAM):   / level=nominal;
+MPRINT(EM_DIAGRAM):   input
+MPRINT(ORDINPUTS):   EducationalDegree FirstPolicyYear
+MPRINT(EM_DIAGRAM):   / level=ordinal;
+MPRINT(EM_DIAGRAM):   target HasChildren / level=NOMINAL Criterion=PROBCHISQ ;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   Performance DISK ;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   MAKEMACRO NLEAVES=nleaves;
+MPRINT(EM_DIAGRAM):   save MODEL=WORK.OUTTREE_TREE_03JL2UC SEQUENCE=WORK.OUTSEQ_TREE_03JL2UC IMPORTANCE=WORK.OUTIMPORT_TREE_03JL2UC NODESTAT=WORK.OUTNODES_TREE_03JL2UC SUMMARY=WORK.OUTSUMMARY_TREE_03JL2UC STATSBYNODE=WORK.OUTSTATS_TREE_03JL2UC 
+Pathlistnonmissing = WORK.OUTPATH_TREE_03JL2UC Rules = WORK.OUTRULES_TREE_03JL2UC ;
+MPRINT(EM_DIAGRAM):   code metabase=WORK.TREE_03JL2UC.SCORECODE.SOURCE group=Impt NOLEAFID;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   code metabase=WORK.TREE_03JL2UC.RESIDUALSCORECODE.SOURCE group=Impt residual NOLEAFID;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   score data=WORK.EM_Impt out=_NULL_ outfit=WORK.OUTFIT_TREE_03JL2UC role=TRAIN ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   quit;
+MPRINT(EM_DIAGRAM):    data WORK.OUTIMPORT_TREE_03JL2UC;
+MPRINT(EM_DIAGRAM):   set WORK.OUTIMPORT_TREE_03JL2UC;
+MPRINT(EM_DIAGRAM):   label NAME = "Variable Name" LABEL = "Label" NRULES = "Number of Splitting Rules" IMPORTANCE = "Importance" NSURROGATES = "Number of Surrogate Rules" ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   filename x "C:\Users\D059331\AppData\Local\Temp\SAS Temporary Files\_TD6568_WDFN33788459A_\Prc2\DESCRIBE.SOURCE" encoding='utf-8' NOBOM;
+MPRINT(EM_DIAGRAM):    data temp;
+MPRINT(EM_DIAGRAM):   length varname $22;
+MPRINT(EM_DIAGRAM):   retain varname;
+MPRINT(EM_DIAGRAM):   set WORK.OUTPATH_TREE_03JL2UC;
+MPRINT(EM_DIAGRAM):   if ^missing(variable) then varname=variable;
+MPRINT(EM_DIAGRAM):   else if ^missing(var_name) then varname=var_name;
+MPRINT(EM_DIAGRAM):   output;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   proc sort data=temp;
+MPRINT(EM_DIAGRAM):   by node;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   proc sort data=WORK.OUTNODES_TREE_03JL2UC out=outnodes;
+MPRINT(EM_DIAGRAM):   by node;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data temp;
+MPRINT(EM_DIAGRAM):   merge temp(in=_a) outnodes(keep= node NPRIORS P_HasChildren1 P_HasChildren0 );
+MPRINT(EM_DIAGRAM):   by node;
+MPRINT(EM_DIAGRAM):   if _a;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   proc sort data=temp;
+MPRINT(EM_DIAGRAM):   by node descending varname descending numeric_value;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   file x;
+MPRINT(EM_DIAGRAM):   set temp;
+MPRINT(EM_DIAGRAM):   by node descending varname;
+MPRINT(EM_DIAGRAM):   retain origvar oldnode string;
+MPRINT(EM_DIAGRAM):   length origvar $32 oldnode 8 string $200;
+MPRINT(EM_DIAGRAM):   if _n_ = 1 then do;
+MPRINT(EM_DIAGRAM):   origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode = node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if first.node then do;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put " Node = " node;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if first.varname then do;
+MPRINT(EM_DIAGRAM):   if RELATION ^in ("=", "ISMISSING", "ISNOTMISSING") then do;
+MPRINT(EM_DIAGRAM):   if MISSING(CHARACTER_VALUE) then do;
+MPRINT(EM_DIAGRAM):   if NUMERIC_VALUE ne . then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string= "AND "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string= "if "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string= "AND "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string= "if "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("=") then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string = "AND "||strip(varname) ||" IS ONE OF: "||character_value;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string = "if "|| strip(varname) ||" IS ONE OF: "||character_value;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("ISMISSING") then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string = " AND "|| strip(varname) || " equals Missing";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string = "if "|| strip(varname) ||" equals Missing";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("ISNOTMISSING") then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+MPRINT(EM_DIAGRAM):   string = " AND "|| strip(varname) || " equals All Values";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   string = "if "|| strip(varname) ||" equals All Values";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   if RELATION ^in ("=", "ISMISSING", "ISNOTMISSING") then do;
+MPRINT(EM_DIAGRAM):   if MISSING(CHARACTER_VALUE) then do;
+MPRINT(EM_DIAGRAM):   if NUMERIC_VALUE ne . then do;
+MPRINT(EM_DIAGRAM):   if ^MISSING(string) then string= strip(string)||" AND "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   else string= " if "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   if ^MISSING(string) then string= strip(string)||" AND "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   else string= " if "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("=") then do;
+MPRINT(EM_DIAGRAM):   string = strip(string)||", "||strip(character_value);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("ISMISSING") then do;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if last.varname then do;
+MPRINT(EM_DIAGRAM):   if RELATION in ("ISMISSING") then do;
+MPRINT(EM_DIAGRAM):   if ^first.varname then do;
+MPRINT(EM_DIAGRAM):   string = strip(string) || " or MISSING";
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   put string;
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   if last.node then do;
+MPRINT(EM_DIAGRAM):   put "then ";
+MPRINT(EM_DIAGRAM):   put " Tree Node Identifier   = " node;
+MPRINT(EM_DIAGRAM):   put " Number of Observations = " NPRIORS;
+MPRINT(EM_DIAGRAM):   put " Predicted: HasChildren=1  = " P_HasChildren1;
+MPRINT(EM_DIAGRAM):   put " Predicted: HasChildren=0  = " P_HasChildren0;
+MPRINT(EM_DIAGRAM):   put " ";
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename x;
+NOTE: View EMWS1.PLOT2_TRAIN.VIEW used (Total process time):
+      real time           8.42 seconds
+      cpu time            7.14 seconds
+      
+NOTE: View EMWS1.PLOT2_TRAIN.VIEW used (Total process time):
+      real time           0.18 seconds
+      cpu time            0.14 seconds
+      
+21761      proc transpose data=WORK.Impt out=WORK._IMPVALUE(drop =_LABEL_ rename=(_NAME_=NAME COL1=VALUE));
+MPRINT(EM_DIAGRAM):    proc transpose data=WORK.Impt out=WORK._IMPVALUE(drop =_LABEL_ rename=(_NAME_=NAME COL1=VALUE));
+21762      var
+21763      CustomerAge
+21764      GrossMonthlySalary
+21765      PremiumsinLOBHealth
+21766      PremiumsinLOBLife
+21767      PremiumsinLOBMotor
+21768      PremiumsinLOBWorkComp
+21769      ;
+MPRINT(EM_DIAGRAM):   var CustomerAge GrossMonthlySalary PremiumsinLOBHealth PremiumsinLOBLife PremiumsinLOBMotor PremiumsinLOBWorkComp ;
+21770      run;
+MPRINT(EM_DIAGRAM):   run;
+
+WARNING: The variable _LABEL_ in the DROP, KEEP, or RENAME list has never been referenced.
+NOTE: There were 1 observations read from the data set WORK.IMPT.
+NOTE: The data set WORK._IMPVALUE has 6 observations and 2 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+21771      proc sort data=WORK._IMPVALUE NOTHREADS;
+MPRINT(EM_DIAGRAM):   proc sort data=WORK._IMPVALUE NOTHREADS;
+21772      by NAME;
+MPRINT(EM_DIAGRAM):   by NAME;
+21773      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 6 observations read from the data set WORK._IMPVALUE.
+NOTE: The data set WORK._IMPVALUE has 6 observations and 2 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+21774      data EMWS1.Impt_META;
+MPRINT(EM_DIAGRAM):   data EMWS1.Impt_META;
+21775      merge WORK.M1PT88WB WORK._IMPVALUE;
+MPRINT(EM_DIAGRAM):   merge WORK.M1PT88WB WORK._IMPVALUE;
+21776      by NAME;
+MPRINT(EM_DIAGRAM):   by NAME;
+21777      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 13 observations read from the data set WORK.M1PT88WB.
+NOTE: There were 6 observations read from the data set WORK._IMPVALUE.
+NOTE: The data set EMWS1.IMPT_META has 13 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+21778      proc print data=EMWS1.Impt_META(obs=500) label noobs;
+MPRINT(EM_DIAGRAM):    proc print data=EMWS1.Impt_META(obs=500) label noobs;
+21779      label NAME = "%sysfunc(sasmsg(sashelp.dmine, meta_name_vlabel,          NOQUOTE))" LABEL = "%sysfunc(sasmsg(sashelp.dmine, meta_label_vlabel,         NOQUOTE))" PERCENTMISS = "%sysfunc(sasmsg(sashelp.dmine, rpt_percentmissing_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label NAME = "Variable Name" LABEL = "Label" PERCENTMISS = "Percent Missing";
+21780      var NAME LABEL PERCENTMISS;
+MPRINT(EM_DIAGRAM):   var NAME LABEL PERCENTMISS;
+21781      where IMP eq '' and PERCENTMISS>50;
+MPRINT(EM_DIAGRAM):   where IMP eq '' and PERCENTMISS>50;
+21782      title9 "%sysfunc(sasmsg(sashelp.dmine, rpt_rejectedsummary_title, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   title9 "Rejected Variables Summary";
+21783      title10 "%sysfunc(sasmsg(sashelp.dmine, rpt_numberobs_title,         NOQUOTE))";
+MPRINT(EM_DIAGRAM):   title10 "Number Of Observations";
+MPRINT(EM_DIAGRAM):   run;
+21784      run;
+
+NOTE: No observations were selected from data set EMWS1.IMPT_META.
+NOTE: There were 0 observations read from the data set EMWS1.IMPT_META.
+      WHERE (IMP=' ') and (PERCENTMISS>50);
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(EM_DIAGRAM):    proc printto;
+MPRINT(EM_DIAGRAM):   run;

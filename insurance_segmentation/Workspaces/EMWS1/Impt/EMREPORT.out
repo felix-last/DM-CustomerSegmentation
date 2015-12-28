@@ -1,0 +1,39 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+Imputation Summary
+Number Of Observations
+
+                                                                                                               Number of
+                          Impute                                   Impute             Measurement                Missing
+Variable Name             Method     Imputed Variable              Value     Role        Level       Label     for TRAIN
+
+CustomerAge              MEDIAN      IMP_CustomerAge                48.00    INPUT     INTERVAL                       17
+EducationalDegree        TREESURR    IMP_EducationalDegree            .      INPUT     ORDINAL                        17
+FirstPolicyYear          TREESURR    IMP_FirstPolicyYear              .      INPUT     ORDINAL                        30
+GeographicLiving         TREESURR    IMP_GeographicLiving             .      INPUT     NOMINAL                         1
+GrossMonthlySalary       MEDIAN      IMP_GrossMonthlySalary       5000.00    INPUT     INTERVAL                       36
+HasChildren              TREESURR    IMP_HasChildren                  .      INPUT     NOMINAL                        21
+PremiumsinLOBHealth      MEDIAN      IMP_PremiumsinLOBHealth       162.81    INPUT     INTERVAL                       43
+PremiumsinLOBLife        MEDIAN      IMP_PremiumsinLOBLife          25.56    INPUT     INTERVAL                      104
+PremiumsinLOBMotor       MEDIAN      IMP_PremiumsinLOBMotor        298.61    INPUT     INTERVAL                       34
+PremiumsinLOBWorkComp    MEDIAN      IMP_PremiumsinLOBWorkComp      25.67    INPUT     INTERVAL                       86
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Distribution Training Data
+
+        Number of
+          Missing    Number of    Percent of
+Obs     for TRAIN    Variables     Variables
+
+ 1            104        1            10    
+ 2             86        1            10    
+ 3             43        1            10    
+ 4             36        1            10    
+ 5             34        1            10    
+ 6             30        1            10    
+ 7             21        1            10    
+ 8             17        2            20    
+ 9              1        1            10    

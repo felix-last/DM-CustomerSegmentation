@@ -3,7 +3,7 @@
  MinPercent="0.01" MaxValues="25" MADSCutoff="9" SpacingsCutoff="9" StddevCutoff="3"
  PercentsCutoff="0.5" PublishScoreCode="Y" CreateDistributionData="Y" UpdateClassLevel="N"
  ForceRun="N" RunAction="Train" Component="Filter" RawCreateTime="1765912895.3" CreateTime="16DEC2015:19:21:35"
- RunId="4f3eb9f7-be7d-4a54-a241-2a8b2feaf5c7">
+ RunId="abf20c53-2169-41d8-82aa-a2878c92cf24">
 <VARIABLEPROPERTIES/>
 <FILEPROPERTIES ><![CDATA[
 CLASSFILTER

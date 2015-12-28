@@ -1,7 +1,7 @@
 *------------------------------------------------------------*
 User:                D059331
-Date:                16. Dezember 2015
-Time:                19.53 Uhr
+Date:                December 28, 2015
+Time:                13:25:35
 *------------------------------------------------------------*
 * Training Output
 *------------------------------------------------------------*
@@ -24,60 +24,61 @@ Class Variables
  
 Obs    NAME                 LEVEL                CODE     FREQUENCY    TYPE    CRAW               NRAW    FREQPERCENT    NMISSPERCENT
  
-  1    EducationalDegree                            4            16     C                            .       0.1956           .
-  2    EducationalDegree    1 - BASIC               1           947     C      1 - Basic             .      11.5756         11.5983
-  3    EducationalDegree    2 - HIGH SCHOOL         0          2845     C      2 - High School       .      34.7757         34.8438
-  4    EducationalDegree    3 - BSC/MSC             2          3837     C      3 - BSc/MSc           .      46.9014         46.9933
-  5    EducationalDegree    4 - PHD                 3           536     C      4 - PhD               .       6.5518          6.5646
-  6    FirstPolicyYear      .                      25            23     N                            .       0.2811           .
-  7    FirstPolicyYear      1974                    8           115     N                         1974       1.4057          1.4097
-  8    FirstPolicyYear      1975                   24           223     N                         1975       2.7258          2.7335
-  9    FirstPolicyYear      1976                   23           330     N                         1976       4.0337          4.0451
- 10    FirstPolicyYear      1977                    6           353     N                         1977       4.3149          4.3270
- 11    FirstPolicyYear      1978                    9           362     N                         1978       4.4249          4.4374
- 12    FirstPolicyYear      1979                   10           355     N                         1979       4.3393          4.3516
- 13    FirstPolicyYear      1980                   12           347     N                         1980       4.2415          4.2535
- 14    FirstPolicyYear      1981                    4           352     N                         1981       4.3027          4.3148
- 15    FirstPolicyYear      1982                   16           357     N                         1982       4.3638          4.3761
- 16    FirstPolicyYear      1983                   18           337     N                         1983       4.1193          4.1309
- 17    FirstPolicyYear      1984                   13           379     N                         1984       4.6327          4.6457
- 18    FirstPolicyYear      1985                    0           340     N                         1985       4.1560          4.1677
- 19    FirstPolicyYear      1986                    3           360     N                         1986       4.4004          4.4128
- 20    FirstPolicyYear      1987                   15           347     N                         1987       4.2415          4.2535
- 21    FirstPolicyYear      1988                    5           405     N                         1988       4.9505          4.9645
- 22    FirstPolicyYear      1989                   14           382     N                         1989       4.6694          4.6825
- 23    FirstPolicyYear      1990                    2           355     N                         1990       4.3393          4.3516
- 24    FirstPolicyYear      1991                    1           352     N                         1991       4.3027          4.3148
- 25    FirstPolicyYear      1992                   20           360     N                         1992       4.4004          4.4128
- 26    FirstPolicyYear      1993                   19           380     N                         1993       4.6449          4.6580
- 27    FirstPolicyYear      1994                   17           372     N                         1994       4.5471          4.5599
- 28    FirstPolicyYear      1995                   11           330     N                         1995       4.0337          4.0451
- 29    FirstPolicyYear      1996                   22           358     N                         1996       4.3760          4.3883
- 30    FirstPolicyYear      1997                   21           218     N                         1997       2.6647          2.6722
- 31    FirstPolicyYear      1998                    7            89     N                         1998       1.0879          1.0910
- 32    GeographicLiving     1                       0          2433     N                            1      29.7396         29.7396
- 33    GeographicLiving     2                       3           818     N                            2       9.9988          9.9988
- 34    GeographicLiving     3                       1          1645     N                            3      20.1076         20.1076
- 35    GeographicLiving     4                       2          3285     N                            4      40.1540         40.1540
- 36    HasChildren          .                       2            13     N                            .       0.1589           .
- 37    HasChildren          0                       1          2447     N                            0      29.9108         29.9584
- 38    HasChildren          1                       0          5721     N                            1      69.9303         70.0416
+  1    EducationalDegree                            4            17     C                            .       0.1652           .
+  2    EducationalDegree    1 - BASIC               1          1272     C      1 - Basic             .      12.3639         12.3844
+  3    EducationalDegree    2 - HIGH SCHOOL         0          3507     C      2 - High School       .      34.0883         34.1447
+  4    EducationalDegree    3 - BSC/MSC             2          4794     C      3 - BSc/MSc           .      46.5980         46.6751
+  5    EducationalDegree    4 - PHD                 3           698     C      4 - PhD               .       6.7846          6.7958
+  6    FirstPolicyYear      .                      25            30     N                            .       0.2916           .
+  7    FirstPolicyYear      1974                   11           140     N                         1974       1.3608          1.3648
+  8    FirstPolicyYear      1975                   24           285     N                         1975       2.7702          2.7783
+  9    FirstPolicyYear      1976                    7           433     N                         1976       4.2088          4.2211
+ 10    FirstPolicyYear      1977                    9           453     N                         1977       4.4032          4.4161
+ 11    FirstPolicyYear      1978                   12           453     N                         1978       4.4032          4.4161
+ 12    FirstPolicyYear      1979                    5           443     N                         1979       4.3060          4.3186
+ 13    FirstPolicyYear      1980                   14           432     N                         1980       4.1991          4.2113
+ 14    FirstPolicyYear      1981                    1           444     N                         1981       4.3157          4.3283
+ 15    FirstPolicyYear      1982                   18           444     N                         1982       4.3157          4.3283
+ 16    FirstPolicyYear      1983                    8           423     N                         1983       4.1116          4.1236
+ 17    FirstPolicyYear      1984                   15           464     N                         1984       4.5101          4.5233
+ 18    FirstPolicyYear      1985                    0           429     N                         1985       4.1699          4.1821
+ 19    FirstPolicyYear      1986                    4           458     N                         1986       4.4518          4.4648
+ 20    FirstPolicyYear      1987                   17           438     N                         1987       4.2574          4.2698
+ 21    FirstPolicyYear      1988                    6           512     N                         1988       4.9767          4.9912
+ 22    FirstPolicyYear      1989                   16           466     N                         1989       4.5295          4.5428
+ 23    FirstPolicyYear      1990                    3           447     N                         1990       4.3449          4.3576
+ 24    FirstPolicyYear      1991                    2           430     N                         1991       4.1796          4.1919
+ 25    FirstPolicyYear      1992                   21           451     N                         1992       4.3837          4.3966
+ 26    FirstPolicyYear      1993                   20           472     N                         1993       4.5879          4.6013
+ 27    FirstPolicyYear      1994                   19           474     N                         1994       4.6073          4.6208
+ 28    FirstPolicyYear      1995                   13           444     N                         1995       4.3157          4.3283
+ 29    FirstPolicyYear      1996                   23           440     N                         1996       4.2768          4.2893
+ 30    FirstPolicyYear      1997                   22           271     N                         1997       2.6341          2.6418
+ 31    FirstPolicyYear      1998                   10           112     N                         1998       1.0886          1.0918
+ 32    GeographicLiving     .                       4             1     N                            .       0.0097           .
+ 33    GeographicLiving     1                       0          3046     N                            1      29.6073         29.6102
+ 34    GeographicLiving     2                       3          1036     N                            2      10.0700         10.0710
+ 35    GeographicLiving     3                       2          2064     N                            3      20.0622         20.0642
+ 36    GeographicLiving     4                       1          4141     N                            4      40.2508         40.2547
+ 37    HasChildren          .                       2            21     N                            .       0.2041           .
+ 38    HasChildren          0                       1          3008     N                            0      29.2379         29.2978
+ 39    HasChildren          1                       0          7259     N                            1      70.5579         70.7022
  
  
  
 Interval Variables
  
-Obs    NAME                          NMISS            N        MIN         MAX       MEAN        STD    SKEWNESS    KURTOSIS
+Obs    NAME                          NMISS            N          MIN         MAX       MEAN        STD    SKEWNESS    KURTOSIS
  
- 1     ClaimsRate                        0         8181       0.00        1.00       0.59       0.28    -0.12662    -1.26139
- 2     CustomerAge                      14         8167      15.00       81.00      48.26      17.36    -0.01852    -1.18579
- 3     CustomerMonetaryValue             0         8181     -25.00     1448.28     280.80     229.94     0.76351     0.80432
- 4     GrossMonthlySalary               29         8152     665.00    10042.00    5035.98    1964.12    -0.00069    -0.93238
- 5     PremiumsinLOBHealth              37         8144      24.45      365.07     171.33      71.29     0.24534    -0.58450
- 6     PremiumsinLOBHousehold            0         8181     -70.00     1194.10     209.52     216.41     1.58431     2.60193
- 7     PremiumsinLOBLife                75         8106      -7.00      398.30      41.77      45.95     2.10504     6.03697
- 8     PremiumsinLOBMotor               25         8156      19.45      558.55     294.64     130.60    -0.05288    -0.86620
- 9     PremiumsinLOBWorkComp            67         8114     -11.00      254.38      40.04      41.75     1.72344     3.45162
+ 1     ClaimsRate                        0        10288         0.00       35.00       0.70       0.68     30.7706     1344.97
+ 2     CustomerAge                      17        10271        15.00       81.00      47.90      17.39     -0.0136       -1.16
+ 3     CustomerMonetaryValue             0        10288    -28945.40    11875.89     209.04     545.08    -28.8912     1438.92
+ 4     GrossMonthlySalary               36        10252       665.00    10042.00    4995.65    1968.82      0.0043       -0.92
+ 5     PremiumsinLOBHealth              43        10245        -2.11    28272.00     171.58     296.52     84.4906     7908.54
+ 6     PremiumsinLOBHousehold            0        10288       -75.00    25048.80     210.48     352.71     36.0460     2425.82
+ 7     PremiumsinLOBLife               104        10184        -7.00      398.30      41.86      47.49      2.0903        5.72
+ 8     PremiumsinLOBMotor               34        10254        -4.11    11604.42     300.47     211.97     23.8702     1095.94
+ 9     PremiumsinLOBWorkComp            86        10202       -12.00     1988.70      41.28      51.52      7.4416      212.90
 
 
 *------------------------------------------------------------*
