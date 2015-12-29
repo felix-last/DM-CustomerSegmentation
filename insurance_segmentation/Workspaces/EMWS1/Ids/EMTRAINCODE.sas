@@ -1,7 +1,7 @@
 *------------------------------------------------------------*;
 * Data Source Setup;
 *------------------------------------------------------------*;
-libname EMWS1 "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1";
+libname EMWS1 "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1";
 *------------------------------------------------------------*;
 * Ids: Creating DATA data;
 *------------------------------------------------------------*;

@@ -1,0 +1,78 @@
+*------------------------------------------------------------*
+User:                raquel
+Date:                December 28, 2015
+Time:                23:53:36
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+         Measurement    Frequency
+Role        Level         Count
+ 
+ID        NOMINAL            1
+INPUT     BINARY             1
+INPUT     INTERVAL          10
+INPUT     NOMINAL            1
+INPUT     ORDINAL            2
+ 
+ 
+ 
+Variable Levels Summary
+(maximum 500 observations printed)
+ 
+                            Frequency
+    Variable        Role      Count
+ 
+CustomerIdentity     ID       10296
+ 
+ 
+ 
+Class Variable Summary Statistics
+(maximum 500 observations printed)
+ 
+Data Role=TRAIN
+ 
+                                           Number
+Data                                         of                                   Mode                            Mode2
+Role         Variable Name        Role     Levels    Missing    Mode           Percentage    Mode2              Percentage
+ 
+TRAIN    IMP_CustomerAge          INPUT      68         0       54                2.17       48                    1.94
+TRAIN    IMP_EducationalDegree    INPUT       4         0       3 - BSc/MSc      46.72       2 - High School      34.15
+TRAIN    IMP_GeographicLiving     INPUT       4         0       4                40.26       1                    29.60
+TRAIN    IMP_HasChildren          INPUT       2         0       1                70.71       0                    29.29
+ 
+ 
+ 
+Interval Variable Summary Statistics
+(maximum 500 observations printed)
+ 
+Data Role=TRAIN
+ 
+                                                  Standard          Non
+Variable                     Role         Mean    Deviation     Missing     Missing     Minimum      Median     Maximum    Skewness    Kurtosis
+ 
+ClaimsRate                   INPUT    0.742785    2.916957        10296           0           0    0.720623       256.2    71.20994    5877.858
+CustomerMonetaryValue        INPUT    177.8926    1945.812        10296           0     -165680      186.71    11875.89    -67.0427    5323.183
+IMP_GrossMonthlySalary       INPUT    5012.802     2310.85        10296           0         665      5002.5    110429.8    11.27077    476.0638
+IMP_PremiumsinLOBHealth      INPUT    171.5442    295.7869        10296           0       -2.11      162.81       28272    84.69639    7947.375
+IMP_PremiumsinLOBLife        INPUT    41.69118     47.2683        10296           0          -7       25.56       398.3     2.10677    5.813791
+IMP_PremiumsinLOBMotor       INPUT    300.4641    211.5648        10296           0       -4.11      298.61    11604.42    23.91054    1099.929
+IMP_PremiumsinLOBWorkComp    INPUT    41.14715    51.31762        10296           0         -12       25.67      1988.7    7.468171    214.3382
+LOYALTY                      INPUT    23.94775    510.5225        10296           0      -51769          29          41    -101.444    10292.55
+PremiumsinLOBHousehold       INPUT    210.4312     352.596        10296           0         -75       132.8     25048.8    36.05402    2427.156
+TOTAL_PREMIUM                INPUT    765.2778    471.3466        10296           0      354.18      698.59    29331.32     40.0524    2147.165
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*

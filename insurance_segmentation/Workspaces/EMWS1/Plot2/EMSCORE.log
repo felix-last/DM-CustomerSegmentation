@@ -3,8 +3,8 @@ MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
 MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
 MPRINT(EM_DIAGRAM):   run;
 MPRINT(EM_DIAGRAM):   data _null_;
-MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "December 28, 2015" );
-MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "13:25:34" );
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "December 29, 2015" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "01:41:05" );
 MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
 MPRINT(EM_DIAGRAM):   put "* Score Log";
 MPRINT(EM_DIAGRAM):   put nldate;
@@ -13,57 +13,57 @@ MPRINT(EM_DIAGRAM):   put "*----------------------------------------------------
 MPRINT(EM_DIAGRAM):   run;
 *------------------------------------------------------------*
 * Score Log
-Date:                December 28, 2015
-Time:                13:25:34
+Date:                December 29, 2015
+Time:                01:41:05
 *------------------------------------------------------------*
-MPRINT(EM_DIAGRAM):    filename O2R9M1SW "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\EMSCORE.out" encoding="UTF-8" NOBOM;
-MPRINT(EM_DIAGRAM):   proc printto print=O2R9M1SW new;
+MPRINT(EM_DIAGRAM):    filename O0_7BGEY "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\EMSCORE.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   proc printto print=O0_7BGEY new;
 MPRINT(EM_DIAGRAM):   run;
-20874      *------------------------------------------------------------*;
+21380      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
-20875      * Plot2: Scoring DATA data;
+21381      * Plot2: Scoring DATA data;
 MPRINT(EM_DIAGRAM):   * Plot2: Scoring DATA data;
-20876      *------------------------------------------------------------*;
+21382      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
-20877      data EMWS1.Plot2_TRAIN
-20878      / view=EMWS1.Plot2_TRAIN
-20879      ;
+21383      data EMWS1.Plot2_TRAIN
+21384      / view=EMWS1.Plot2_TRAIN
+21385      ;
 MPRINT(EM_DIAGRAM):   data EMWS1.Plot2_TRAIN / view=EMWS1.Plot2_TRAIN ;
-20880      set EMWS1.Filter_TRAIN
-20881      ;
-MPRINT(EM_DIAGRAM):   set EMWS1.Filter_TRAIN ;
-20882      run;
+21386      set EMWS1.Trans_TRAIN
+21387      ;
+MPRINT(EM_DIAGRAM):   set EMWS1.Trans_TRAIN ;
+21388      run;
 MPRINT(EM_DIAGRAM):   run;
 
 NOTE: DATA STEP view saved on file EMWS1.PLOT2_TRAIN.
 NOTE: A stored DATA STEP view cannot run under a different operating system.
-NOTE: View EMWS1.FILTER_TRAIN.VIEW used (Total process time):
-      real time           0.06 seconds
-      cpu time            0.06 seconds
+NOTE: View EMWS1.TRANS_TRAIN.VIEW used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.07 seconds
       
 NOTE: DATA statement used (Total process time):
-      real time           0.08 seconds
-      cpu time            0.07 seconds
+      real time           0.10 seconds
+      cpu time            0.09 seconds
       
 
 MPRINT(EM_DIAGRAM):   quit;
-20883      quit;
+21389      quit;
 
-20884      *------------------------------------------------------------*;
+21390      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
-20885      * Plot2: Computing metadata for TRAIN data;
+21391      * Plot2: Computing metadata for TRAIN data;
 MPRINT(EM_DIAGRAM):   * Plot2: Computing metadata for TRAIN data;
-20886      *------------------------------------------------------------*;
+21392      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
 
 NOTE: View EMWS1.PLOT2_TRAIN.VIEW used (Total process time):
       real time           0.10 seconds
-      cpu time            0.09 seconds
+      cpu time            0.10 seconds
       
 MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   * &nodeid: Computing Metadata for TRAIN data;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
-MPRINT(EM_DIAGRAM):   filename _delta "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\CDELTA_TRAIN.sas";
+MPRINT(EM_DIAGRAM):   filename _delta "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\CDELTA_TRAIN.sas";
 MPRINT(EMADVISECOLUMNS):   proc display c=sashelp.emmeta.advisecolumns.scl;
 MPRINT(EMADVISECOLUMNS):   run;
 MPRINT(EMADVISECOLUMNS):    options validvarname=any;
@@ -78,12 +78,12 @@ MPRINT(EMADVISECOLUMNS):   call symput('_engineTable', attrc(dsid, 'ENGINE'));
 MPRINT(EMADVISECOLUMNS):   dsid = close(dsid);
 MPRINT(EMADVISECOLUMNS):   end;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    proc contents data=EMWS1.Plot2_TRAIN out=WORK.M0RUWHBM noprint;
+MPRINT(EMADVISECOLUMNS):    proc contents data=EMWS1.Plot2_TRAIN out=WORK.M1RPXNNT noprint;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M0RUWHBM;
+MPRINT(EMADVISECOLUMNS):    data WORK.M1RPXNNT;
 MPRINT(EMADVISECOLUMNS):   length NAME $ 64 TYPE $ 1 LABEL $ 200 FORMAT $ 20 INFORMAT $20 INDEX $ 1 INDEXTYPE $ 9;
 MPRINT(EMADVISECOLUMNS):   label NAME =;
-MPRINT(EMADVISECOLUMNS):   set WORK.M0RUWHBM(keep=name type length label format formatl formatd informat informl informd idxusage rename=(type=itype));
+MPRINT(EMADVISECOLUMNS):   set WORK.M1RPXNNT(keep=name type length label format formatl formatd informat informl informd idxusage rename=(type=itype));
 MPRINT(EMADVISECOLUMNS):   if itype = 1 then type = 'N';
 MPRINT(EMADVISECOLUMNS):   else type = 'C';
 MPRINT(EMADVISECOLUMNS):   if formatl > 0 then do;
@@ -101,21 +101,21 @@ MPRINT(EMADVISECOLUMNS):   else index = "Y";
 MPRINT(EMADVISECOLUMNS):   indextype = idxusage;
 MPRINT(EMADVISECOLUMNS):   drop idxusage itype formatl formatd informl informd;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M0RUWHBM;
+MPRINT(EMADVISECOLUMNS):    data WORK.M1RPXNNT;
 MPRINT(EMADVISECOLUMNS):   length UNAME $64;
-MPRINT(EMADVISECOLUMNS):   set WORK.M0RUWHBM;
+MPRINT(EMADVISECOLUMNS):   set WORK.M1RPXNNT;
 MPRINT(EMADVISECOLUMNS):   UNAME = upcase(NAME);
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    proc sort data=WORK.M2MOH02G NOTHREADS;
+MPRINT(EMADVISECOLUMNS):    proc sort data=WORK.M2SO_H9L NOTHREADS;
 MPRINT(EMADVISECOLUMNS):   by UNAME;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M2MOH02G;
+MPRINT(EMADVISECOLUMNS):    data WORK.M2SO_H9L;
 MPRINT(EMADVISECOLUMNS):   drop UNAME;
-MPRINT(EMADVISECOLUMNS):   set WORK.M2MOH02G;
+MPRINT(EMADVISECOLUMNS):   set WORK.M2SO_H9L;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M0K5U9KA(keep=NAME ATTR);
+MPRINT(EMADVISECOLUMNS):    data WORK.M1QB71IS(keep=NAME ATTR);
 MPRINT(EMADVISECOLUMNS):   length ATTR $ 20;
-MPRINT(EMADVISECOLUMNS):   set WORK.M2MOH02G;
+MPRINT(EMADVISECOLUMNS):   set WORK.M2SO_H9L;
 MPRINT(EMADVISECOLUMNS):   if level ne "INTERVAL" then do;
 MPRINT(EMADVISECOLUMNS):   if order = ' ' then do;
 MPRINT(EMADVISECOLUMNS):   attr = 'ORDER';
@@ -150,10 +150,10 @@ MPRINT(EMADVISECOLUMNS):   run;
 MPRINT(EMADVISECOLUMNS):   proc sort NOTHREADS;
 MPRINT(EMADVISECOLUMNS):   by attr;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M2MOH02G;
+MPRINT(EMADVISECOLUMNS):    data WORK.M2SO_H9L;
 MPRINT(EMADVISECOLUMNS):   length NAME $64 ROLE $ 32 LEVEL $ 10 ORDER $ 8 CREATOR $32 FORMATTYPE $ 10 FAMILY $ 10 LOWERLIMIT 8 UPPERLIMIT 8 REPORT $1 DISTRIBUTION $ 20 COMMENT $64;
 MPRINT(EMADVISECOLUMNS):   length levelAssigned 8 roleAssigned 8 PRICE 8;
-MPRINT(EMADVISECOLUMNS):   set WORK.M2MOH02G;
+MPRINT(EMADVISECOLUMNS):   set WORK.M2SO_H9L;
 MPRINT(EMADVISECOLUMNS):   if formattype = ' ' then do;
 MPRINT(EMADVISECOLUMNS):   if format ne ' ' then do;
 MPRINT(EMADVISECOLUMNS):   if type = 'N' then do;
@@ -291,8 +291,8 @@ MPRINT(EMADVISECOLUMNS):   end;
 MPRINT(EMADVISECOLUMNS):   else role = upcase(role);
 MPRINT(EMADVISECOLUMNS):   if REPORT = '' then REPORT = 'N';
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M2MOH02G;
-MPRINT(EMADVISECOLUMNS):   set WORK.M2MOH02G;
+MPRINT(EMADVISECOLUMNS):    data WORK.M2SO_H9L;
+MPRINT(EMADVISECOLUMNS):   set WORK.M2SO_H9L;
 MPRINT(EMADVISECOLUMNS):   label NAME = "Variable Name" TYPE = "Type" ROLE = "Role" LEVEL= "Measurement Level" ORDER= "Order" CREATOR= "Creator" FORMATTYPE= "Format Type" FAMILY= "Family" DISTRIBUTION= "Distribution" PRICE= "Price" LOWERLIMIT= "Lower 
 limit" UPPERLIMIT= "Upper Limit" REPORT= "Report" COMMENT= "Comment" INDEX= "Index" INDEXTYPE= "IndexType" LABEL= "Label" LENGTH= "Length";
 MPRINT(EMADVISECOLUMNS):   drop levelAssigned roleAssigned;
@@ -305,12 +305,12 @@ MPRINT(EM_DIAGRAM):   run;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   * &nodeid: Merge incoming metadata;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
-MPRINT(EM_DIAGRAM):   proc contents data=EMWS1.Filter_TRAIN noprint out=_temp2(keep=NAME);
+MPRINT(EM_DIAGRAM):   proc contents data=EMWS1.Trans_TRAIN noprint out=_temp2(keep=NAME);
 MPRINT(EM_DIAGRAM):   run;
 MPRINT(EM_DIAGRAM):   proc sort data=_temp2;
 MPRINT(EM_DIAGRAM):   by NAME;
 MPRINT(EM_DIAGRAM):   run;
-MPRINT(EM_DIAGRAM):   proc sort data=EMWS1.Filter_CMeta_TRAIN out=_temp;
+MPRINT(EM_DIAGRAM):   proc sort data=EMWS1.Trans_CMeta_TRAIN out=_temp;
 MPRINT(EM_DIAGRAM):   by NAME;
 MPRINT(EM_DIAGRAM):   run;
 MPRINT(EM_DIAGRAM):   data EMWS1.Plot2_CMeta_TRAIN;
@@ -324,8 +324,8 @@ MPRINT(EM_DIAGRAM):   *---------------------------------------------------------
 MPRINT(EM_DIAGRAM):   run;
 MPRINT(EM_DIAGRAM):   filename _delta;
 NOTE: View EMWS1.PLOT2_TRAIN.VIEW used (Total process time):
-      real time           0.14 seconds
-      cpu time            0.12 seconds
+      real time           0.10 seconds
+      cpu time            0.10 seconds
       
 MPRINT(EM_DIAGRAM):    proc printto;
 MPRINT(EM_DIAGRAM):   run;

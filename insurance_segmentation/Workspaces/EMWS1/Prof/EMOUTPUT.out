@@ -1,0 +1,96 @@
+*------------------------------------------------------------*
+User:                raquel
+Date:                December 29, 2015
+Time:                01:36:23
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+            Measurement    Frequency
+Role           Level         Count
+ 
+ASSESS       NOMINAL            1
+ID           NOMINAL            1
+INPUT        BINARY             1
+INPUT        INTERVAL          12
+INPUT        NOMINAL            1
+INPUT        ORDINAL            2
+REJECTED     INTERVAL           2
+REJECTED     NOMINAL            1
+SEGMENT      NOMINAL            1
+ 
+ 
+ 
+ 
+Frequencies: _SEGMENT_
+ 
+                                     Percent of
+ Segment     Segment    Frequency       Total
+Variable      Value       Count       Frequency
+ 
+_SEGMENT_       2           4421       42.9390
+_SEGMENT_       1           3324       32.2844
+_SEGMENT_       3           2551       24.7766
+ 
+ 
+ 
+Variable: _SEGMENT_ Segment: 2 Count: 4421
+Decision Tree Importance Profiles
+ 
+Variable                    Worth     Rank
+ 
+IMP_CustomerAge            0.19281      1
+IMP_HasChildren            0.15130      2
+IMP_GrossMonthlySalary     0.13602      3
+TOTAL_PREMIUM              0.05877      4
+IMP_EducationalDegree      0.05713      5
+ClaimsRate                 0.01433      6
+IMP_REP_FirstPolicyYear    0.00055      7
+IMP_GeographicLiving       0.00031      8
+ 
+ 
+ 
+Variable: _SEGMENT_ Segment: 1 Count: 3324
+Decision Tree Importance Profiles
+ 
+Variable                    Worth     Rank
+ 
+IMP_CustomerAge            0.28016      1
+IMP_GrossMonthlySalary     0.26350      2
+IMP_EducationalDegree      0.07929      3
+TOTAL_PREMIUM              0.05054      4
+IMP_HasChildren            0.02356      5
+ClaimsRate                 0.00309      6
+IMP_REP_FirstPolicyYear    0.00055      7
+IMP_GeographicLiving       0.00037      8
+ 
+ 
+ 
+Variable: _SEGMENT_ Segment: 3 Count: 2551
+Decision Tree Importance Profiles
+ 
+Variable                    Worth     Rank
+ 
+IMP_HasChildren            0.29505      1
+IMP_CustomerAge            0.22177      2
+IMP_GrossMonthlySalary     0.17095      3
+ClaimsRate                 0.00496      4
+TOTAL_PREMIUM              0.00468      5
+IMP_EducationalDegree      0.00196      6
+IMP_REP_FirstPolicyYear    0.00065      7
+IMP_GeographicLiving       0.00027      8
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*

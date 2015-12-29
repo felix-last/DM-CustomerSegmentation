@@ -1,0 +1,11 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Limits and Replacement Values for Interval Variables
+
+                                                      Lower                   Upper
+                                          Lower    Replacement    Upper    Replacement
+   Variable         Replace Variable      limit       Value       Limit       Value
+
+FirstPolicyYear    REP_FirstPolicyYear     1900         .          2015         .     

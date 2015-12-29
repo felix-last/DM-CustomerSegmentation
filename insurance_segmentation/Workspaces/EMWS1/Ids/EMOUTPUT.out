@@ -1,7 +1,7 @@
 *------------------------------------------------------------*
-User:                D059331
-Date:                16. Dezember 2015
-Time:                18.49 Uhr
+User:                raquel
+Date:                December 29, 2015
+Time:                01:23:33
 *------------------------------------------------------------*
 * Training Output
 *------------------------------------------------------------*
@@ -14,9 +14,10 @@ Variable Summary
          Measurement    Frequency
 Role        Level         Count
  
-ID        INTERVAL          1
+ID        NOMINAL           1
+INPUT     BINARY            1
 INPUT     INTERVAL          9
-INPUT     NOMINAL           2
+INPUT     NOMINAL           1
 INPUT     ORDINAL           2
  
  
@@ -46,8 +47,8 @@ Data Set Label
 Special Data Set Type (From TYPE=)
 Observations in Data Set                   10296
 Engine Name                                BASE
-Create Date                                16.12.2015 18:49:24
-Last Modified Date                         16.12.2015 18:49:24
+Create Date                                09Dec15:15:43:03
+Last Modified Date                         09Dec15:15:43:03
 Deleted Observations in Data Set           0
 Use of Variable in Indexes                 NONE
 Library Member Type                        DATA

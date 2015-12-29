@@ -1,0 +1,2738 @@
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
+MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "December 29, 2015" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "01:43:39" );
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Report Log";
+MPRINT(EM_DIAGRAM):   put nldate;
+MPRINT(EM_DIAGRAM):   put nltime;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+*------------------------------------------------------------*
+* Report Log
+Date:                December 29, 2015
+Time:                01:43:39
+*------------------------------------------------------------*
+MPRINT(EM_DIAGRAM):    filename O3DF029_ "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Clus\EMREPORT.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   proc printto print=O3DF029_ new;
+MPRINT(EM_DIAGRAM):   run;
+28235      data WORK.M0X4_OWK;
+MPRINT(EM_DIAGRAM):    data WORK.M0X4_OWK;
+28236      set WORK.M0X4_OWK;
+MPRINT(EM_DIAGRAM):   set WORK.M0X4_OWK;
+28237      if role eq 'REJECTED' then role = 'INPUT';
+MPRINT(EM_DIAGRAM):   if role eq 'REJECTED' then role = 'INPUT';
+28238      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 11 observations read from the data set WORK.M0X4_OWK.
+NOTE: The data set WORK.M0X4_OWK has 11 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28239      data WORK.M0X4_OWK;
+MPRINT(EM_DIAGRAM):    data WORK.M0X4_OWK;
+28240      set WORK.M0X4_OWK end=_eof_ nobs=_nobs_;
+MPRINT(EM_DIAGRAM):   set WORK.M0X4_OWK end=_eof_ nobs=_nobs_;
+28241      output;
+MPRINT(EM_DIAGRAM):   output;
+28242      if _eof_ then do;
+MPRINT(EM_DIAGRAM):   if _eof_ then do;
+28243      name = '_SEGMENT_';
+MPRINT(EM_DIAGRAM):   name = '_SEGMENT_';
+28244      ROLE = 'TARGET';
+MPRINT(EM_DIAGRAM):   ROLE = 'TARGET';
+28245      LEVEL = 'NOMINAL';
+MPRINT(EM_DIAGRAM):   LEVEL = 'NOMINAL';
+28246      LABEL = 'Segment Variable';
+MPRINT(EM_DIAGRAM):   LABEL = 'Segment Variable';
+28247      TYPE = 'N';
+MPRINT(EM_DIAGRAM):   TYPE = 'N';
+28248      FORMAT = '';
+MPRINT(EM_DIAGRAM):   FORMAT = '';
+28249      INFORMAT = '';
+MPRINT(EM_DIAGRAM):   INFORMAT = '';
+28250      USE='Y';
+MPRINT(EM_DIAGRAM):   USE='Y';
+28251      output;
+MPRINT(EM_DIAGRAM):   output;
+28252      end;
+MPRINT(EM_DIAGRAM):   end;
+28253      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 11 observations read from the data set WORK.M0X4_OWK.
+NOTE: The data set WORK.M0X4_OWK has 12 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28254      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+28255      * Clus: Create decision matrix;
+MPRINT(EM_DIAGRAM):   * Clus: Create decision matrix;
+28256      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+28257      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28258      * Clus: Tree Variables Macro ;
+MPRINT(EM_DIAGRAM):   * Clus: Tree Variables Macro ;
+28259      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28260      %macro EM_TREEVARS;
+28261          ClaimsRate CustomerMonetaryValue IMP_CustomerAge IMP_EducationalDegree
+28262         IMP_FirstPolicyYear IMP_GeographicLiving IMP_GrossMonthlySalary IMP_HasChildren
+28263         IMP_REP_FirstPolicyYear LOYALTY TOTAL_PREMIUM
+28264      %mend EM_TREEVARS;
+28265      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28266      * Clus: Tree Targets Macro ;
+MPRINT(EM_DIAGRAM):   * Clus: Tree Targets Macro ;
+28267      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28268      %macro EM_TREETARGETS;
+28269          _SEGMENT_
+28270      %mend EM_TREETARGETS;
+28271      data EMWS1.EM_Clus / view=EMWS1.EM_Clus;
+MPRINT(EM_DIAGRAM):   data EMWS1.EM_Clus / view=EMWS1.EM_Clus;
+28272      set
+28272    ! EMWS1.Clus_TRAIN(keep=%EM_TREEVARS %EM_TREETARGETS);
+MPRINT(EM_DIAGRAM):   set EMWS1.Clus_TRAIN(keep
+MPRINT(EM_DIAGRAM):  =ClaimsRate CustomerMonetaryValue IMP_CustomerAge IMP_EducationalDegree IMP_FirstPolicyYear IMP_GeographicLiving IMP_GrossMonthlySalary IMP_HasChildren IMP_REP_FirstPolicyYear LOYALTY TOTAL_PREMIUM _SEGMENT_);
+28273      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: DATA STEP view saved on file EMWS1.EM_CLUS.
+NOTE: A stored DATA STEP view cannot run under a different operating system.
+NOTE: View EMWS1.CLUS_TRAIN.VIEW used (Total process time):
+      real time           0.14 seconds
+      cpu time            0.12 seconds
+      
+NOTE: DATA statement used (Total process time):
+      real time           0.14 seconds
+      cpu time            0.12 seconds
+      
+
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Clus: Interval Inputs Macro ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28274      *------------------------------------------------------------* ;
+28275      * Clus: Interval Inputs Macro ;
+28276      *------------------------------------------------------------* ;
+28277      %macro INTINPUTS;
+28278          ClaimsRate CustomerMonetaryValue IMP_FirstPolicyYear IMP_GrossMonthlySalary
+28279         IMP_REP_FirstPolicyYear LOYALTY TOTAL_PREMIUM
+28280      %mend INTINPUTS;
+28281      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28282      * Clus: Binary and Nominal Inputs Macro ;
+MPRINT(EM_DIAGRAM):   * Clus: Binary and Nominal Inputs Macro ;
+28283      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28284      %macro NOMINPUTS;
+28285          IMP_GeographicLiving IMP_HasChildren
+28286      %mend NOMINPUTS;
+28287      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28288      * Clus: Ordinal Inputs Macro ;
+MPRINT(EM_DIAGRAM):   * Clus: Ordinal Inputs Macro ;
+28289      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28290      %macro ORDINPUTS;
+28291          IMP_CustomerAge IMP_EducationalDegree
+28292      %mend ORDINPUTS;
+28293      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+28294      * Clus: Run ARBOR procedure;
+MPRINT(EM_DIAGRAM):   * Clus: Run ARBOR procedure;
+28295      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+
+28296      proc arbor data=EMWS1.EM_Clus
+28297      MAXSURRS=5
+28298      ;
+MPRINT(EM_DIAGRAM):    proc arbor data=EMWS1.EM_Clus MAXSURRS=5 ;
+28299      ;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_DIAGRAM):   input
+28300      input %INTINPUTS
+MPRINT(INTINPUTS):   ClaimsRate CustomerMonetaryValue IMP_FirstPolicyYear IMP_GrossMonthlySalary IMP_REP_FirstPolicyYear LOYALTY TOTAL_PREMIUM
+28301      / level = interval;
+MPRINT(EM_DIAGRAM):   / level = interval;
+MPRINT(EM_DIAGRAM):   input
+28302      input %NOMINPUTS
+MPRINT(NOMINPUTS):   IMP_GeographicLiving IMP_HasChildren
+28303      / level=nominal;
+MPRINT(EM_DIAGRAM):   / level=nominal;
+MPRINT(EM_DIAGRAM):   input
+28304      input %ORDINPUTS
+MPRINT(ORDINPUTS):   IMP_CustomerAge IMP_EducationalDegree
+28305      / level=ordinal;
+MPRINT(EM_DIAGRAM):   / level=ordinal;
+28306      target _SEGMENT_ / level=NOMINAL
+28307      Criterion=PROBCHISQ
+28308      ;
+MPRINT(EM_DIAGRAM):   target _SEGMENT_ / level=NOMINAL Criterion=PROBCHISQ ;
+28309      ;
+MPRINT(EM_DIAGRAM):   ;
+28310      Performance DISK
+28311      ;
+MPRINT(EM_DIAGRAM):   Performance DISK ;
+28312      MAKEMACRO NLEAVES=nleaves;
+MPRINT(EM_DIAGRAM):   MAKEMACRO NLEAVES=nleaves;
+NOTE: Variable IMP_FirstPolicyYear is uninitialized.
+NOTE: Variable _WARN_ is uninitialized.
+NOTE: 1329077 kilobytes of physical memory.
+NOTE: Will use 10296 out of 10296 training cases.
+NOTE: Using memory pool with 234826752 bytes.
+NOTE: Will not search for split on variable IMP_FirstPolicyYear.
+NOTE: Too many values are missing.
+NOTE: Will not search for split on variable LOYALTY.
+NOTE: Too many values are missing.
+NOTE: Passed training data 18 times.
+NOTE: Training used 3052552 bytes of work memory.
+NOTE: The subtree sequence contains 30 subtrees. The largest has 59 nodes and 30 leaves.
+NOTE: Using subtree with 39 nodes and 20 leaves.
+NOTE: Created macro variable NLEAVES equal to 20.
+28313      save
+28314      MODEL=EMWS1.Clus_PLOTDS
+28315      SEQUENCE=EMWS1.Clus_OUTSEQ
+28316      IMPORTANCE=EMWS1.Clus_OUTIMPORT
+28317      NODESTAT=EMWS1.Clus_OUTNODES
+28318      SUMMARY=WORK.OUTSUMMARY_TREE_1LQ2V0Y
+28319      STATSBYNODE=WORK.OUTSTATS_TREE_1LQ2V0Y
+28320      Pathlistnonmissing = WORK.OUTPATH_TREE_1LQ2V0Y
+28321      Rules = WORK.OUTRULES_TREE_1LQ2V0Y
+28322      ;
+MPRINT(EM_DIAGRAM):   save MODEL=EMWS1.Clus_PLOTDS SEQUENCE=EMWS1.Clus_OUTSEQ IMPORTANCE=EMWS1.Clus_OUTIMPORT NODESTAT=EMWS1.Clus_OUTNODES SUMMARY=WORK.OUTSUMMARY_TREE_1LQ2V0Y STATSBYNODE=WORK.OUTSTATS_TREE_1LQ2V0Y Pathlistnonmissing = 
+WORK.OUTPATH_TREE_1LQ2V0Y Rules = WORK.OUTRULES_TREE_1LQ2V0Y ;
+NOTE: The data set EMWS1.CLUS_OUTIMPORT has 11 observations and 5 variables.
+NOTE: The data set EMWS1.CLUS_PLOTDS has 2224 observations and 4 variables.
+NOTE: The data set EMWS1.CLUS_OUTNODES has 39 observations and 22 variables.
+NOTE: The data set WORK.OUTPATH_TREE_1LQ2V0Y has 176 observations and 7 variables.
+NOTE: The data set WORK.OUTRULES_TREE_1LQ2V0Y has 628 observations and 6 variables.
+NOTE: The data set EMWS1.CLUS_OUTSEQ has 30 observations and 11 variables.
+NOTE: The data set WORK.OUTSTATS_TREE_1LQ2V0Y has 195 observations and 5 variables.
+NOTE: The data set WORK.OUTSUMMARY_TREE_1LQ2V0Y has 16 observations and 6 variables.
+28323      run;
+MPRINT(EM_DIAGRAM):   run;
+
+28324      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: There were 10296 observations read from the data set INS_PROJ.A2ZINSURANCE.
+NOTE: There were 10296 observations read from the data set EMWS1.IDS_DATA.
+NOTE: There were 10296 observations read from the data set EMWS1.REPL_TRAIN.
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      10296 at 56659:24   
+NOTE: There were 10296 observations read from the data set EMWS1.IMPT_TRAIN.
+NOTE: There were 10296 observations read from the data set EMWS1.TRANS_TRAIN.
+NOTE: View EMWS1.EM_CLUS.VIEW used (Total process time):
+      real time           0.73 seconds
+      cpu time            0.68 seconds
+      
+NOTE: There were 10296 observations read from the data set EMWS1.CLUS_TRAIN.
+NOTE: There were 10296 observations read from the data set EMWS1.EM_CLUS.
+NOTE: The data set WORK._NAMEDAT has 3 observations and 5 variables.
+NOTE: PROCEDURE ARBOR used (Total process time):
+      real time           0.74 seconds
+      cpu time            0.70 seconds
+      
+
+28325      data EMWS1.Clus_OUTIMPORT;
+MPRINT(EM_DIAGRAM):    data EMWS1.Clus_OUTIMPORT;
+28326      set EMWS1.Clus_OUTIMPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Clus_OUTIMPORT;
+28327      label NAME = "%sysfunc(sasmsg(sashelp.dmine, meta_name_vlabel, noquote))" LABEL = "%sysfunc(sasmsg(sashelp.dmine, meta_label_vlabel, noquote))" NRULES = "%sysfunc(sasmsg(sashelp.dmine, rpt_nrules_vlabel, noquote))" IMPORTANCE =
+28328         "%sysfunc(sasmsg(sashelp.dmine, rpt_importance_vlabel, noquote))" NSURROGATES = "%sysfunc(sasmsg(sashelp.dmine, rpt_nsurrogates_vlabel, noquote))"
+28329      ;
+MPRINT(EM_DIAGRAM):   label NAME = "Variable Name" LABEL = "Label" NRULES = "Number of Splitting Rules" IMPORTANCE = "Importance" NSURROGATES = "Number of Surrogate Rules" ;
+28330      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 11 observations read from the data set EMWS1.CLUS_OUTIMPORT.
+NOTE: The data set EMWS1.CLUS_OUTIMPORT has 11 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+28331      filename x "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Clus\ENGLISHRULES.txt" encoding='utf-8' NOBOM;
+MPRINT(EM_DIAGRAM):   filename x "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Clus\ENGLISHRULES.txt" encoding='utf-8' NOBOM;
+28332      data temp;
+MPRINT(EM_DIAGRAM):    data temp;
+28333      length varname $37;
+MPRINT(EM_DIAGRAM):   length varname $37;
+28334      retain varname;
+MPRINT(EM_DIAGRAM):   retain varname;
+28335      set WORK.OUTPATH_TREE_1LQ2V0Y;
+MPRINT(EM_DIAGRAM):   set WORK.OUTPATH_TREE_1LQ2V0Y;
+28336      if ^missing(variable) then varname=variable;
+MPRINT(EM_DIAGRAM):   if ^missing(variable) then varname=variable;
+28337      else if ^missing(var_name) then varname=var_name;
+MPRINT(EM_DIAGRAM):   else if ^missing(var_name) then varname=var_name;
+28338      output;
+MPRINT(EM_DIAGRAM):   output;
+28339      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 176 observations read from the data set WORK.OUTPATH_TREE_1LQ2V0Y.
+NOTE: The data set WORK.TEMP has 176 observations and 8 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28340      proc sort data=temp;
+MPRINT(EM_DIAGRAM):   proc sort data=temp;
+28341      by node;
+MPRINT(EM_DIAGRAM):   by node;
+28342      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 176 observations read from the data set WORK.TEMP.
+NOTE: The data set WORK.TEMP has 176 observations and 8 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+28343      proc sort data=EMWS1.Clus_OUTNODES out=outnodes;
+MPRINT(EM_DIAGRAM):   proc sort data=EMWS1.Clus_OUTNODES out=outnodes;
+28344      by node;
+MPRINT(EM_DIAGRAM):   by node;
+28345      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set EMWS1.CLUS_OUTNODES.
+NOTE: The data set WORK.OUTNODES has 39 observations and 22 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28346      data temp;
+MPRINT(EM_DIAGRAM):   data temp;
+28347      merge temp(in=_a) outnodes(keep= node
+28348      NPRIORS
+28349      P__SEGMENT_1
+28350      P__SEGMENT_3
+28351      P__SEGMENT_2
+28352      );
+MPRINT(EM_DIAGRAM):   merge temp(in=_a) outnodes(keep= node NPRIORS P__SEGMENT_1 P__SEGMENT_3 P__SEGMENT_2 );
+28353      by node;
+MPRINT(EM_DIAGRAM):   by node;
+28354      if _a;
+MPRINT(EM_DIAGRAM):   if _a;
+28355      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 176 observations read from the data set WORK.TEMP.
+NOTE: There were 39 observations read from the data set WORK.OUTNODES.
+NOTE: The data set WORK.TEMP has 176 observations and 12 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28356      proc sort data=temp;
+MPRINT(EM_DIAGRAM):   proc sort data=temp;
+28357      by node descending varname descending numeric_value;
+MPRINT(EM_DIAGRAM):   by node descending varname descending numeric_value;
+28358      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 176 observations read from the data set WORK.TEMP.
+NOTE: The data set WORK.TEMP has 176 observations and 12 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28359      data _null_;
+MPRINT(EM_DIAGRAM):   data _null_;
+28360      file x;
+MPRINT(EM_DIAGRAM):   file x;
+28361      set temp;
+MPRINT(EM_DIAGRAM):   set temp;
+28362      by node descending varname;
+MPRINT(EM_DIAGRAM):   by node descending varname;
+28363      retain origvar oldnode string;
+MPRINT(EM_DIAGRAM):   retain origvar oldnode string;
+28364      length origvar $32 oldnode 8 string $200;
+MPRINT(EM_DIAGRAM):   length origvar $32 oldnode 8 string $200;
+28365      if _n_ = 1 then do;
+MPRINT(EM_DIAGRAM):   if _n_ = 1 then do;
+28366      origvar = varname;
+MPRINT(EM_DIAGRAM):   origvar = varname;
+28367      oldnode = node;
+MPRINT(EM_DIAGRAM):   oldnode = node;
+28368      end;
+MPRINT(EM_DIAGRAM):   end;
+28369      if first.node then do;
+MPRINT(EM_DIAGRAM):   if first.node then do;
+28370      put "&EM_CODEBAR";
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+28371      put " Node = " node;
+MPRINT(EM_DIAGRAM):   put " Node = " node;
+28372      put "&EM_CODEBAR";
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+28373      end;
+MPRINT(EM_DIAGRAM):   end;
+28374      if first.varname then do;
+MPRINT(EM_DIAGRAM):   if first.varname then do;
+28375      if RELATION ^in ("=", "ISMISSING", "ISNOTMISSING") then do;
+MPRINT(EM_DIAGRAM):   if RELATION ^in ("=", "ISMISSING", "ISNOTMISSING") then do;
+28376      if MISSING(CHARACTER_VALUE) then do;
+MPRINT(EM_DIAGRAM):   if MISSING(CHARACTER_VALUE) then do;
+28377      if NUMERIC_VALUE ne . then do;
+MPRINT(EM_DIAGRAM):   if NUMERIC_VALUE ne . then do;
+28378      if ^first.node then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+28379      string= "AND "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   string= "AND "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+28380      end;
+MPRINT(EM_DIAGRAM):   end;
+28381      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28382      string= "if "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   string= "if "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+28383      end;
+MPRINT(EM_DIAGRAM):   end;
+28384      end;
+MPRINT(EM_DIAGRAM):   end;
+28385      end;
+MPRINT(EM_DIAGRAM):   end;
+28386      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28387      if ^first.node then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+28388      string= "AND "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   string= "AND "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+28389      end;
+MPRINT(EM_DIAGRAM):   end;
+28390      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28391      string= "if "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   string= "if "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+28392      end;
+MPRINT(EM_DIAGRAM):   end;
+28393      end;
+MPRINT(EM_DIAGRAM):   end;
+28394      end;
+MPRINT(EM_DIAGRAM):   end;
+28395      else if RELATION in ("=") then do;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("=") then do;
+28396      if ^first.node then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+28397      string = "AND "||strip(varname) ||" IS ONE OF: "||character_value;
+MPRINT(EM_DIAGRAM):   string = "AND "||strip(varname) ||" IS ONE OF: "||character_value;
+28398      end;
+MPRINT(EM_DIAGRAM):   end;
+28399      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28400      string = "if "|| strip(varname) ||" IS ONE OF: "||character_value;
+MPRINT(EM_DIAGRAM):   string = "if "|| strip(varname) ||" IS ONE OF: "||character_value;
+28401      end;
+MPRINT(EM_DIAGRAM):   end;
+28402      end;
+MPRINT(EM_DIAGRAM):   end;
+28403      else if RELATION in ("ISMISSING") then do;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("ISMISSING") then do;
+28404      if ^first.node then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+28405      string = " AND "|| strip(varname) || " equals Missing";
+MPRINT(EM_DIAGRAM):   string = " AND "|| strip(varname) || " equals Missing";
+28406      end;
+MPRINT(EM_DIAGRAM):   end;
+28407      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28408      string = "if "|| strip(varname) ||" equals Missing";
+MPRINT(EM_DIAGRAM):   string = "if "|| strip(varname) ||" equals Missing";
+28409      end;
+MPRINT(EM_DIAGRAM):   end;
+28410      end;
+MPRINT(EM_DIAGRAM):   end;
+28411      else if RELATION in ("ISNOTMISSING") then do;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("ISNOTMISSING") then do;
+28412      if ^first.node then do;
+MPRINT(EM_DIAGRAM):   if ^first.node then do;
+28413      string = " AND "|| strip(varname) || " equals All Values";
+MPRINT(EM_DIAGRAM):   string = " AND "|| strip(varname) || " equals All Values";
+28414      end;
+MPRINT(EM_DIAGRAM):   end;
+28415      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28416      string = "if "|| strip(varname) ||" equals All Values";
+MPRINT(EM_DIAGRAM):   string = "if "|| strip(varname) ||" equals All Values";
+28417      end;
+MPRINT(EM_DIAGRAM):   end;
+28418      end;
+MPRINT(EM_DIAGRAM):   end;
+28419      if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+28420      oldnode=node;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+28421      end;
+MPRINT(EM_DIAGRAM):   end;
+28422      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28423      if RELATION ^in ("=", "ISMISSING", "ISNOTMISSING") then do;
+MPRINT(EM_DIAGRAM):   if RELATION ^in ("=", "ISMISSING", "ISNOTMISSING") then do;
+28424      if MISSING(CHARACTER_VALUE) then do;
+MPRINT(EM_DIAGRAM):   if MISSING(CHARACTER_VALUE) then do;
+28425      if NUMERIC_VALUE ne . then do;
+MPRINT(EM_DIAGRAM):   if NUMERIC_VALUE ne . then do;
+28426      if ^MISSING(string) then string= strip(string)||" AND "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   if ^MISSING(string) then string= strip(string)||" AND "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+28427      else string= " if "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+MPRINT(EM_DIAGRAM):   else string= " if "|| strip(varname)||" "||strip(relation)||" "||strip(numeric_value);
+28428      end;
+MPRINT(EM_DIAGRAM):   end;
+28429      end;
+MPRINT(EM_DIAGRAM):   end;
+28430      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28431      if ^MISSING(string) then string= strip(string)||" AND "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   if ^MISSING(string) then string= strip(string)||" AND "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+28432      else string= " if "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+MPRINT(EM_DIAGRAM):   else string= " if "|| strip(varname)||" "||strip(relation)||" "||strip(character_value);
+28433      end;
+MPRINT(EM_DIAGRAM):   end;
+28434      end;
+MPRINT(EM_DIAGRAM):   end;
+28435      else if RELATION in ("=") then do;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("=") then do;
+28436      string = strip(string)||", "||strip(character_value);
+MPRINT(EM_DIAGRAM):   string = strip(string)||", "||strip(character_value);
+28437      end;
+MPRINT(EM_DIAGRAM):   end;
+28438      else if RELATION in ("ISMISSING") then do;
+MPRINT(EM_DIAGRAM):   else if RELATION in ("ISMISSING") then do;
+28439      end;
+MPRINT(EM_DIAGRAM):   end;
+28440      if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+28441      oldnode=node;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+28442      end;
+MPRINT(EM_DIAGRAM):   end;
+28443      if last.varname then do;
+MPRINT(EM_DIAGRAM):   if last.varname then do;
+28444      if RELATION in ("ISMISSING") then do;
+MPRINT(EM_DIAGRAM):   if RELATION in ("ISMISSING") then do;
+28445      if ^first.varname then do;
+MPRINT(EM_DIAGRAM):   if ^first.varname then do;
+28446      string = strip(string) || " or MISSING";
+MPRINT(EM_DIAGRAM):   string = strip(string) || " or MISSING";
+28447      end;
+MPRINT(EM_DIAGRAM):   end;
+28448      end;
+MPRINT(EM_DIAGRAM):   end;
+28449      put string;
+MPRINT(EM_DIAGRAM):   put string;
+28450      if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+28451      oldnode=node;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+28452      end;
+MPRINT(EM_DIAGRAM):   end;
+28453      if last.node then do;
+MPRINT(EM_DIAGRAM):   if last.node then do;
+28454      put "then ";
+MPRINT(EM_DIAGRAM):   put "then ";
+28455      put " Tree Node Identifier   = " node;
+MPRINT(EM_DIAGRAM):   put " Tree Node Identifier   = " node;
+28456      put " Number of Observations = " NPRIORS;
+MPRINT(EM_DIAGRAM):   put " Number of Observations = " NPRIORS;
+28457      put " Predicted: _SEGMENT_=1  = " P__SEGMENT_1;
+MPRINT(EM_DIAGRAM):   put " Predicted: _SEGMENT_=1  = " P__SEGMENT_1;
+28458      put " Predicted: _SEGMENT_=3  = " P__SEGMENT_3;
+MPRINT(EM_DIAGRAM):   put " Predicted: _SEGMENT_=3  = " P__SEGMENT_3;
+28459      put " Predicted: _SEGMENT_=2  = " P__SEGMENT_2;
+MPRINT(EM_DIAGRAM):   put " Predicted: _SEGMENT_=2  = " P__SEGMENT_2;
+28460      put " ";
+MPRINT(EM_DIAGRAM):   put " ";
+28461      if ^missing(varname) then origvar = varname;
+MPRINT(EM_DIAGRAM):   if ^missing(varname) then origvar = varname;
+28462      oldnode=node;
+MPRINT(EM_DIAGRAM):   oldnode=node;
+28463      end;
+MPRINT(EM_DIAGRAM):   end;
+28464      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: Numeric values have been converted to character values at the places given by: (Line):(Column).
+      28379:67    28382:66    28426:108   28427:72    
+NOTE: The file X is:
+      Filename=\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Clus\ENGLISHRULES.txt,
+      RECFM=V,LRECL=1536,File Size (bytes)=0,
+      Last Modified=29Dec2015:01:43:40,
+      Create Time=29Dec2015:01:43:40
+
+NOTE: 277 records were written to the file X.
+      The minimum record length was 1.
+      The maximum record length was 108.
+NOTE: There were 176 observations read from the data set WORK.TEMP.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28465      filename x;
+MPRINT(EM_DIAGRAM):    filename x;
+NOTE: Fileref X has been deassigned.
+28466      /* belowtext */
+28467      data templabel;
+MPRINT(EM_DIAGRAM):    data templabel;
+28468      set WORK.OUTRULES_TREE_1LQ2V0Y;
+MPRINT(EM_DIAGRAM):   set WORK.OUTRULES_TREE_1LQ2V0Y;
+28469      if ((ROLE="PRIMARY") AND (STAT ="LABEL"));
+MPRINT(EM_DIAGRAM):   if ((ROLE="PRIMARY") AND (STAT ="LABEL"));
+28470      rename character_value = belowtext;
+MPRINT(EM_DIAGRAM):   rename character_value = belowtext;
+28471      keep NODE character_value;
+MPRINT(EM_DIAGRAM):   keep NODE character_value;
+28472      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 628 observations read from the data set WORK.OUTRULES_TREE_1LQ2V0Y.
+NOTE: The data set WORK.TEMPLABEL has 19 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28473      data tempvar;
+MPRINT(EM_DIAGRAM):   data tempvar;
+28474      set WORK.OUTRULES_TREE_1LQ2V0Y;
+MPRINT(EM_DIAGRAM):   set WORK.OUTRULES_TREE_1LQ2V0Y;
+28475      if ((ROLE="PRIMARY") AND (STAT="VARIABLE"));
+MPRINT(EM_DIAGRAM):   if ((ROLE="PRIMARY") AND (STAT="VARIABLE"));
+28476      keep NODE character_value;
+MPRINT(EM_DIAGRAM):   keep NODE character_value;
+28477      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 628 observations read from the data set WORK.OUTRULES_TREE_1LQ2V0Y.
+NOTE: The data set WORK.TEMPVAR has 19 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+28478      proc sort data=templabel;
+MPRINT(EM_DIAGRAM):   proc sort data=templabel;
+28479      by node;
+MPRINT(EM_DIAGRAM):   by node;
+28480      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 19 observations read from the data set WORK.TEMPLABEL.
+NOTE: The data set WORK.TEMPLABEL has 19 observations and 2 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28481      proc sort data=tempvar;
+MPRINT(EM_DIAGRAM):   proc sort data=tempvar;
+28482      by node;
+MPRINT(EM_DIAGRAM):   by node;
+28483      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 19 observations read from the data set WORK.TEMPVAR.
+NOTE: The data set WORK.TEMPVAR has 19 observations and 2 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28484      data tempbelow;
+MPRINT(EM_DIAGRAM):   data tempbelow;
+28485      merge templabel tempvar;
+MPRINT(EM_DIAGRAM):   merge templabel tempvar;
+28486      by node;
+MPRINT(EM_DIAGRAM):   by node;
+28487      if missing(belowtext) then belowtext= character_value;
+MPRINT(EM_DIAGRAM):   if missing(belowtext) then belowtext= character_value;
+28488      keep node belowtext;
+MPRINT(EM_DIAGRAM):   keep node belowtext;
+28489      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 19 observations read from the data set WORK.TEMPLABEL.
+NOTE: There were 19 observations read from the data set WORK.TEMPVAR.
+NOTE: The data set WORK.TEMPBELOW has 19 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28490      proc sort data=tempbelow;
+MPRINT(EM_DIAGRAM):   proc sort data=tempbelow;
+28491      by node;
+MPRINT(EM_DIAGRAM):   by node;
+28492      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 19 observations read from the data set WORK.TEMPBELOW.
+NOTE: The data set WORK.TEMPBELOW has 19 observations and 2 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28493      /* abovetext */
+28494      data tempoutrules;
+MPRINT(EM_DIAGRAM):   data tempoutrules;
+28495      set WORK.OUTRULES_TREE_1LQ2V0Y;
+MPRINT(EM_DIAGRAM):   set WORK.OUTRULES_TREE_1LQ2V0Y;
+28496      if ((ROLE='PRIMARY') AND(STAT in ("INTERVAL", "ORDINAL", "NOMINAL")));
+MPRINT(EM_DIAGRAM):   if ((ROLE='PRIMARY') AND(STAT in ("INTERVAL", "ORDINAL", "NOMINAL")));
+28497      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 628 observations read from the data set WORK.OUTRULES_TREE_1LQ2V0Y.
+NOTE: The data set WORK.TEMPOUTRULES has 20 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+28498      proc sort data=tempoutrules;
+MPRINT(EM_DIAGRAM):   proc sort data=tempoutrules;
+28499      by node numeric_value;
+MPRINT(EM_DIAGRAM):   by node numeric_value;
+28500      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 20 observations read from the data set WORK.TEMPOUTRULES.
+NOTE: The data set WORK.TEMPOUTRULES has 20 observations and 6 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28501      data tempabove;
+MPRINT(EM_DIAGRAM):   data tempabove;
+28502      set tempoutrules(rename=(node=parent));
+MPRINT(EM_DIAGRAM):   set tempoutrules(rename=(node=parent));
+28503      by parent numeric_value;
+MPRINT(EM_DIAGRAM):   by parent numeric_value;
+28504      retain abovetext tempstring flag branch origval origchar;
+MPRINT(EM_DIAGRAM):   retain abovetext tempstring flag branch origval origchar;
+28505      length abovetext tempstring origchar $45;
+MPRINT(EM_DIAGRAM):   length abovetext tempstring origchar $45;
+28506      if STAT in ("INTERVAL", "ORDINAL") then do;
+MPRINT(EM_DIAGRAM):   if STAT in ("INTERVAL", "ORDINAL") then do;
+28507      if first.parent then do;
+MPRINT(EM_DIAGRAM):   if first.parent then do;
+28508      if missing(character_value) then do;
+MPRINT(EM_DIAGRAM):   if missing(character_value) then do;
+28509      numeric_value = round(numeric_value, 0.0001);
+MPRINT(EM_DIAGRAM):   numeric_value = round(numeric_value, 0.0001);
+28510      abovetext = "< "||strip(NUMERIC_VALUE);
+MPRINT(EM_DIAGRAM):   abovetext = "< "||strip(NUMERIC_VALUE);
+28511      branch = 1;
+MPRINT(EM_DIAGRAM):   branch = 1;
+28512      origval = numeric_value;
+MPRINT(EM_DIAGRAM):   origval = numeric_value;
+28513      output;
+MPRINT(EM_DIAGRAM):   output;
+28514      end;
+MPRINT(EM_DIAGRAM):   end;
+28515      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28516      abovetext = "< "||strip(CHARACTER_VALUE);
+MPRINT(EM_DIAGRAM):   abovetext = "< "||strip(CHARACTER_VALUE);
+28517      branch = 1;
+MPRINT(EM_DIAGRAM):   branch = 1;
+28518      origchar = character_value;
+MPRINT(EM_DIAGRAM):   origchar = character_value;
+28519      output;
+MPRINT(EM_DIAGRAM):   output;
+28520      end;
+MPRINT(EM_DIAGRAM):   end;
+28521      if first.parent AND last.parent then do;
+MPRINT(EM_DIAGRAM):   if first.parent AND last.parent then do;
+28522      if missing(character_value) then do;
+MPRINT(EM_DIAGRAM):   if missing(character_value) then do;
+28523      numeric_value = round(numeric_value, 0.0001);
+MPRINT(EM_DIAGRAM):   numeric_value = round(numeric_value, 0.0001);
+28524      branch = branch + 1;
+MPRINT(EM_DIAGRAM):   branch = branch + 1;
+28525      abovetext = ">= "||strip(NUMERIC_VALUE);
+MPRINT(EM_DIAGRAM):   abovetext = ">= "||strip(NUMERIC_VALUE);
+28526      output;
+MPRINT(EM_DIAGRAM):   output;
+28527      end;
+MPRINT(EM_DIAGRAM):   end;
+28528      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28529      branch = branch + 1;
+MPRINT(EM_DIAGRAM):   branch = branch + 1;
+28530      abovetext = ">= "||strip(CHARACTER_VALUE);
+MPRINT(EM_DIAGRAM):   abovetext = ">= "||strip(CHARACTER_VALUE);
+28531      output;
+MPRINT(EM_DIAGRAM):   output;
+28532      end;
+MPRINT(EM_DIAGRAM):   end;
+28533      end;
+MPRINT(EM_DIAGRAM):   end;
+28534      end;
+MPRINT(EM_DIAGRAM):   end;
+28535      else if last.parent then do;
+MPRINT(EM_DIAGRAM):   else if last.parent then do;
+28536      if ( missing(character_value) AND (origval ne numeric_value)) or ( ^missing(character_value) AND (origchar ne character_value)) then do;
+MPRINT(EM_DIAGRAM):   if ( missing(character_value) AND (origval ne numeric_value)) or ( ^missing(character_value) AND (origchar ne character_value)) then do;
+28537      if missing(character_value) then do;
+MPRINT(EM_DIAGRAM):   if missing(character_value) then do;
+28538      numeric_value = round(numeric_value, 0.0001);
+MPRINT(EM_DIAGRAM):   numeric_value = round(numeric_value, 0.0001);
+28539      abovetext= "[ "||strip(origval)||", "|| strip(numeric_value)||" )";
+MPRINT(EM_DIAGRAM):   abovetext= "[ "||strip(origval)||", "|| strip(numeric_value)||" )";
+28540      end;
+MPRINT(EM_DIAGRAM):   end;
+28541      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28542      abovetext= ">= "||strip(origchar)||" AND < "|| strip(character_value);
+MPRINT(EM_DIAGRAM):   abovetext= ">= "||strip(origchar)||" AND < "|| strip(character_value);
+28543      end;
+MPRINT(EM_DIAGRAM):   end;
+28544      branch = branch + 1;
+MPRINT(EM_DIAGRAM):   branch = branch + 1;
+28545      output;
+MPRINT(EM_DIAGRAM):   output;
+28546      if missing(character_value) then do;
+MPRINT(EM_DIAGRAM):   if missing(character_value) then do;
+28547      numeric_value = round(numeric_value, 0.0001);
+MPRINT(EM_DIAGRAM):   numeric_value = round(numeric_value, 0.0001);
+28548      abovetext = ">= "||strip(NUMERIC_VALUE);
+MPRINT(EM_DIAGRAM):   abovetext = ">= "||strip(NUMERIC_VALUE);
+28549      end;
+MPRINT(EM_DIAGRAM):   end;
+28550      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28551      abovetext = ">= "||strip(CHARACTER_VALUE);
+MPRINT(EM_DIAGRAM):   abovetext = ">= "||strip(CHARACTER_VALUE);
+28552      end;
+MPRINT(EM_DIAGRAM):   end;
+28553      branch = branch + 1;
+MPRINT(EM_DIAGRAM):   branch = branch + 1;
+28554      output;
+MPRINT(EM_DIAGRAM):   output;
+28555      end;
+MPRINT(EM_DIAGRAM):   end;
+28556      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28557      if missing(character_value) then do;
+MPRINT(EM_DIAGRAM):   if missing(character_value) then do;
+28558      numeric_value = round(numeric_value, 0.0001);
+MPRINT(EM_DIAGRAM):   numeric_value = round(numeric_value, 0.0001);
+28559      abovetext = ">= "||strip(NUMERIC_VALUE);
+MPRINT(EM_DIAGRAM):   abovetext = ">= "||strip(NUMERIC_VALUE);
+28560      end;
+MPRINT(EM_DIAGRAM):   end;
+28561      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28562      abovetext = ">= "||strip(CHARACTER_VALUE);
+MPRINT(EM_DIAGRAM):   abovetext = ">= "||strip(CHARACTER_VALUE);
+28563      end;
+MPRINT(EM_DIAGRAM):   end;
+28564      branch = branch + 1;
+MPRINT(EM_DIAGRAM):   branch = branch + 1;
+28565      output;
+MPRINT(EM_DIAGRAM):   output;
+28566      end;
+MPRINT(EM_DIAGRAM):   end;
+28567      end;
+MPRINT(EM_DIAGRAM):   end;
+28568      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28569      if ( missing(character_value) AND (origval ne numeric_value)) or ( ^missing(character_value) AND (origchar ne character_value)) then do;
+MPRINT(EM_DIAGRAM):   if ( missing(character_value) AND (origval ne numeric_value)) or ( ^missing(character_value) AND (origchar ne character_value)) then do;
+28570      if missing(character_value) then do;
+MPRINT(EM_DIAGRAM):   if missing(character_value) then do;
+28571      numeric_value = round(numeric_value,0.0001);
+MPRINT(EM_DIAGRAM):   numeric_value = round(numeric_value,0.0001);
+28572      abovetext= "[ "||strip(origval)||", "|| strip(numeric_value)||" )";
+MPRINT(EM_DIAGRAM):   abovetext= "[ "||strip(origval)||", "|| strip(numeric_value)||" )";
+28573      origval = numeric_value;
+MPRINT(EM_DIAGRAM):   origval = numeric_value;
+28574      end;
+MPRINT(EM_DIAGRAM):   end;
+28575      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28576      abovetext= ">= "||strip(origchar)||" AND < "|| strip(character_value);
+MPRINT(EM_DIAGRAM):   abovetext= ">= "||strip(origchar)||" AND < "|| strip(character_value);
+28577      origchar = character_value;
+MPRINT(EM_DIAGRAM):   origchar = character_value;
+28578      end;
+MPRINT(EM_DIAGRAM):   end;
+28579      branch = branch + 1;
+MPRINT(EM_DIAGRAM):   branch = branch + 1;
+28580      output;
+MPRINT(EM_DIAGRAM):   output;
+28581      end;
+MPRINT(EM_DIAGRAM):   end;
+28582      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28583      if missing(character_value) then do;
+MPRINT(EM_DIAGRAM):   if missing(character_value) then do;
+28584      numeric_value = round(numeric_value, 0.0001);
+MPRINT(EM_DIAGRAM):   numeric_value = round(numeric_value, 0.0001);
+28585      abovetext = ">= "||strip(NUMERIC_VALUE);
+MPRINT(EM_DIAGRAM):   abovetext = ">= "||strip(NUMERIC_VALUE);
+28586      origval = numeric_value;
+MPRINT(EM_DIAGRAM):   origval = numeric_value;
+28587      end;
+MPRINT(EM_DIAGRAM):   end;
+28588      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28589      abovetext = ">= "||strip(CHARACTER_VALUE);
+MPRINT(EM_DIAGRAM):   abovetext = ">= "||strip(CHARACTER_VALUE);
+28590      origval = character_value;
+MPRINT(EM_DIAGRAM):   origval = character_value;
+28591      end;
+MPRINT(EM_DIAGRAM):   end;
+28592      branch = branch + 1;
+MPRINT(EM_DIAGRAM):   branch = branch + 1;
+28593      output;
+MPRINT(EM_DIAGRAM):   output;
+28594      end;
+MPRINT(EM_DIAGRAM):   end;
+28595      end;
+MPRINT(EM_DIAGRAM):   end;
+28596      end;
+MPRINT(EM_DIAGRAM):   end;
+28597      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28598      if first.numeric_value then do;
+MPRINT(EM_DIAGRAM):   if first.numeric_value then do;
+28599      flag = 0;
+MPRINT(EM_DIAGRAM):   flag = 0;
+28600      abovetext = CHARACTER_VALUE;
+MPRINT(EM_DIAGRAM):   abovetext = CHARACTER_VALUE;
+28601      branch = numeric_value;
+MPRINT(EM_DIAGRAM):   branch = numeric_value;
+28602      if first.numeric_value AND last.numeric_value then do;
+MPRINT(EM_DIAGRAM):   if first.numeric_value AND last.numeric_value then do;
+28603      output;
+MPRINT(EM_DIAGRAM):   output;
+28604      end;
+MPRINT(EM_DIAGRAM):   end;
+28605      end;
+MPRINT(EM_DIAGRAM):   end;
+28606      else if last.numeric_value then do;
+MPRINT(EM_DIAGRAM):   else if last.numeric_value then do;
+28607      if flag=0 then do;
+MPRINT(EM_DIAGRAM):   if flag=0 then do;
+28608      tempstring = strip(abovetext)||", "||CHARACTER_VALUE;
+MPRINT(EM_DIAGRAM):   tempstring = strip(abovetext)||", "||CHARACTER_VALUE;
+28609      length = length(strip(tempstring));
+MPRINT(EM_DIAGRAM):   length = length(strip(tempstring));
+28610      if length < 32 then do;
+MPRINT(EM_DIAGRAM):   if length < 32 then do;
+28611      abovetext = strip(tempstring);
+MPRINT(EM_DIAGRAM):   abovetext = strip(tempstring);
+28612      end;
+MPRINT(EM_DIAGRAM):   end;
+28613      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28614      abovetext = strip(abovetext)||", ...";
+MPRINT(EM_DIAGRAM):   abovetext = strip(abovetext)||", ...";
+28615      flag = 1;
+MPRINT(EM_DIAGRAM):   flag = 1;
+28616      end;
+MPRINT(EM_DIAGRAM):   end;
+28617      end;
+MPRINT(EM_DIAGRAM):   end;
+28618      branch = numeric_value;
+MPRINT(EM_DIAGRAM):   branch = numeric_value;
+28619      output;
+MPRINT(EM_DIAGRAM):   output;
+28620      end;
+MPRINT(EM_DIAGRAM):   end;
+28621      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28622      if flag=0 then do;
+MPRINT(EM_DIAGRAM):   if flag=0 then do;
+28623      tempstring = strip(abovetext)||", "||CHARACTER_VALUE;
+MPRINT(EM_DIAGRAM):   tempstring = strip(abovetext)||", "||CHARACTER_VALUE;
+28624      length = length(strip(tempstring));
+MPRINT(EM_DIAGRAM):   length = length(strip(tempstring));
+28625      if length < 32 then do;
+MPRINT(EM_DIAGRAM):   if length < 32 then do;
+28626      abovetext = strip(tempstring);
+MPRINT(EM_DIAGRAM):   abovetext = strip(tempstring);
+28627      end;
+MPRINT(EM_DIAGRAM):   end;
+28628      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28629      abovetext = strip(abovetext)||", ...";
+MPRINT(EM_DIAGRAM):   abovetext = strip(abovetext)||", ...";
+28630      flag=1;
+MPRINT(EM_DIAGRAM):   flag=1;
+28631      end;
+MPRINT(EM_DIAGRAM):   end;
+28632      end;
+MPRINT(EM_DIAGRAM):   end;
+28633      branch = numeric_value;
+MPRINT(EM_DIAGRAM):   branch = numeric_value;
+28634      end;
+MPRINT(EM_DIAGRAM):   end;
+28635      end;
+MPRINT(EM_DIAGRAM):   end;
+28636      keep parent branch abovetext;
+MPRINT(EM_DIAGRAM):   keep parent branch abovetext;
+28637      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: Numeric values have been converted to character values at the places given by: (Line):(Column).
+      28510:25   28525:26   28539:24   28539:47   28548:26   28559:26   28572:24   28572:47   28585:26   
+NOTE: Character values have been converted to numeric values at the places given by: (Line):(Column).
+      28590:11   
+NOTE: There were 20 observations read from the data set WORK.TEMPOUTRULES.
+NOTE: The data set WORK.TEMPABOVE has 38 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28638      /* MIssing value to abovetext */
+28639      data tempmissing;
+MPRINT(EM_DIAGRAM):   data tempmissing;
+28640      set WORK.OUTRULES_TREE_1LQ2V0Y;
+MPRINT(EM_DIAGRAM):   set WORK.OUTRULES_TREE_1LQ2V0Y;
+28641      if ((ROLE="PRIMARY") AND (STAT in ("MISSING")));
+MPRINT(EM_DIAGRAM):   if ((ROLE="PRIMARY") AND (STAT in ("MISSING")));
+28642      rename node=parent numeric_value=branch character_value=misschar;
+MPRINT(EM_DIAGRAM):   rename node=parent numeric_value=branch character_value=misschar;
+28643      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 628 observations read from the data set WORK.OUTRULES_TREE_1LQ2V0Y.
+NOTE: The data set WORK.TEMPMISSING has 19 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+28644      proc sort data=work.tempabove;
+MPRINT(EM_DIAGRAM):   proc sort data=work.tempabove;
+28645      by parent branch;
+MPRINT(EM_DIAGRAM):   by parent branch;
+28646      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 38 observations read from the data set WORK.TEMPABOVE.
+NOTE: The data set WORK.TEMPABOVE has 38 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28647      proc sort data=EMWS1.Clus_OUTNODES out=tempoutnodes;
+MPRINT(EM_DIAGRAM):   proc sort data=EMWS1.Clus_OUTNODES out=tempoutnodes;
+28648      by parent branch;
+MPRINT(EM_DIAGRAM):   by parent branch;
+28649      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set EMWS1.CLUS_OUTNODES.
+NOTE: The data set WORK.TEMPOUTNODES has 39 observations and 22 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28650      proc sort data=tempmissing;
+MPRINT(EM_DIAGRAM):   proc sort data=tempmissing;
+28651      by parent branch;
+MPRINT(EM_DIAGRAM):   by parent branch;
+28652      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 19 observations read from the data set WORK.TEMPMISSING.
+NOTE: The data set WORK.TEMPMISSING has 19 observations and 6 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28653      data WORK.Clus_outnodes;
+MPRINT(EM_DIAGRAM):   data WORK.Clus_outnodes;
+28654      merge work.tempabove tempoutNodes(drop=abovetext ) tempmissing(in=_a);
+MPRINT(EM_DIAGRAM):   merge work.tempabove tempoutNodes(drop=abovetext ) tempmissing(in=_a);
+28655      by parent branch;
+MPRINT(EM_DIAGRAM):   by parent branch;
+28656      length traintotal validtotal 8;
+MPRINT(EM_DIAGRAM):   length traintotal validtotal 8;
+28657      retain traintotal validtotal;
+MPRINT(EM_DIAGRAM):   retain traintotal validtotal;
+28658      if _a then do;
+MPRINT(EM_DIAGRAM):   if _a then do;
+28659      if ^MISSING(abovetext) then do;
+MPRINT(EM_DIAGRAM):   if ^MISSING(abovetext) then do;
+28660      abovetext= strip(abovetext)||" %sysfunc(sasmsg(sashelp.dmine, tree_ormiss_vlabel, noquote))";
+MPRINT(EM_DIAGRAM):   abovetext= strip(abovetext)||" Or Missing";
+28661      end;
+MPRINT(EM_DIAGRAM):   end;
+28662      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28663      abovetext = " %sysfunc(sasmsg(sashelp.dmine, tree_missonly_vlabel, noquote))";
+MPRINT(EM_DIAGRAM):   abovetext = " Missing Values Only";
+28664      end;
+MPRINT(EM_DIAGRAM):   end;
+28665      end;
+MPRINT(EM_DIAGRAM):   end;
+28666      if MISSING(abovetext) then abovetext="%sysfunc(sasmsg(sashelp.dmine, tree_nonmiss_vlabel, noquote))";
+MPRINT(EM_DIAGRAM):   if MISSING(abovetext) then abovetext="Non-Missing Values";
+28667      if node=1 then do;
+MPRINT(EM_DIAGRAM):   if node=1 then do;
+28668      traintotal = N;
+MPRINT(EM_DIAGRAM):   traintotal = N;
+28669      validtotal=VN;
+MPRINT(EM_DIAGRAM):   validtotal=VN;
+28670      end;
+MPRINT(EM_DIAGRAM):   end;
+28671      drop role rank stat misschar belowtext;
+MPRINT(EM_DIAGRAM):   drop role rank stat misschar belowtext;
+28672      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: Variable VN is uninitialized.
+NOTE: There were 38 observations read from the data set WORK.TEMPABOVE.
+NOTE: There were 39 observations read from the data set WORK.TEMPOUTNODES.
+NOTE: There were 19 observations read from the data set WORK.TEMPMISSING.
+NOTE: The data set WORK.CLUS_OUTNODES has 39 observations and 24 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+28673      proc sort data=WORK.Clus_outnodes;
+MPRINT(EM_DIAGRAM):   proc sort data=WORK.Clus_outnodes;
+28674      by node;
+MPRINT(EM_DIAGRAM):   by node;
+28675      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set WORK.CLUS_OUTNODES.
+NOTE: The data set WORK.CLUS_OUTNODES has 39 observations and 24 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28676      proc sort data=tempbelow;
+MPRINT(EM_DIAGRAM):   proc sort data=tempbelow;
+28677      by node;
+MPRINT(EM_DIAGRAM):   by node;
+28678      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: Input data set is already sorted, no sorting done.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28679      data WORK.Clus_outnodes;
+MPRINT(EM_DIAGRAM):   data WORK.Clus_outnodes;
+28680      merge WORK.Clus_outnodes tempbelow;
+MPRINT(EM_DIAGRAM):   merge WORK.Clus_outnodes tempbelow;
+28681      by node;
+MPRINT(EM_DIAGRAM):   by node;
+28682      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set WORK.CLUS_OUTNODES.
+NOTE: There were 19 observations read from the data set WORK.TEMPBELOW.
+NOTE: The data set WORK.CLUS_OUTNODES has 39 observations and 25 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Variable IMP_FirstPolicyYear is uninitialized.
+NOTE: Variable _WARN_ is uninitialized.
+NOTE: There were 10296 observations read from the data set INS_PROJ.A2ZINSURANCE.
+NOTE: There were 10296 observations read from the data set EMWS1.IDS_DATA.
+NOTE: There were 10296 observations read from the data set EMWS1.REPL_TRAIN.
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      10296 at 56659:24   
+NOTE: There were 10296 observations read from the data set EMWS1.IMPT_TRAIN.
+NOTE: There were 10296 observations read from the data set EMWS1.TRANS_TRAIN.
+NOTE: View EMWS1.EM_CLUS.VIEW used (Total process time):
+      real time           0.28 seconds
+      cpu time            0.26 seconds
+      
+NOTE: There were 10296 observations read from the data set EMWS1.CLUS_TRAIN.
+28683      data tempoutstats;
+MPRINT(EM_DIAGRAM):    data tempoutstats;
+28684      set WORK.OUTSTATS_TREE_1LQ2V0Y;
+MPRINT(EM_DIAGRAM):   set WORK.OUTSTATS_TREE_1LQ2V0Y;
+28685      length tarlevel $8;
+MPRINT(EM_DIAGRAM):   length tarlevel $8;
+28686      tarlevel ="NOMINAL";
+MPRINT(EM_DIAGRAM):   tarlevel ="NOMINAL";
+28687      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 195 observations read from the data set WORK.OUTSTATS_TREE_1LQ2V0Y.
+NOTE: The data set WORK.TEMPOUTSTATS has 195 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+28688      data EMWS1.Clus_TREE_PLOT;
+MPRINT(EM_DIAGRAM):    data EMWS1.Clus_TREE_PLOT;
+28689      length NODETEXT TEXTALL $800 N NODECOLOR 8;
+MPRINT(EM_DIAGRAM):   length NODETEXT TEXTALL $800 N NODECOLOR 8;
+28690      set WORK.Clus_outnodes;
+MPRINT(EM_DIAGRAM):   set WORK.Clus_outnodes;
+28691      label parent = "%sysfunc(sasmsg(sashelp.dmine, rpt_parentID_vlabel, noquote))" depth = "%sysfunc(sasmsg(sashelp.dmine, rpt_depth_vlabel, noquote))" belowtext= "%sysfunc(sasmsg(sashelp.dmine, rpt_belowtext_vlabel, noquote))" abovetext =
+28692         "%sysfunc(sasmsg(sashelp.dmine, rpt_abovetext_vlabel, noquote))" linkwidth = "%sysfunc(sasmsg(sashelp.dmine, rpt_linkwidth_vlabel, noquote))" nodetext = "%sysfunc(sasmsg(sashelp.dmine, rpt_nodetext_vlabel, noquote))" textall =
+28693         "%sysfunc(sasmsg(sashelp.dmine, rpt_textall_vlabel, noquote))" N = "%sysfunc(sasmsg(sashelp.dmine, rpt_trainn_vlabel, noquote))" nodecolor = "%sysfunc(sasmsg(sashelp.dmine, rpt_nodecolor_vlabel, noquote))" node =
+28694         "%sysfunc(sasmsg(sashelp.dmine, rpt_node_vlabel, noquote))";
+MPRINT(EM_DIAGRAM):   label parent = "Parent Id" depth = "Depth" belowtext= "Below Text" abovetext = "Above Text" linkwidth = "Link Width" nodetext = "Node Text" textall = "All Text" N = "Train: Number of Observations" nodecolor = "Node Color" node = 
+"Node";
+28695      keep NODE PARENT DEPTH BELOWTEXT ABOVETEXT LINKWIDTH NODETEXT TEXTALL N NODECOLOR;
+MPRINT(EM_DIAGRAM):   keep NODE PARENT DEPTH BELOWTEXT ABOVETEXT LINKWIDTH NODETEXT TEXTALL N NODECOLOR;
+28696      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: Variable TEXTALL is uninitialized.
+NOTE: Variable NODECOLOR is uninitialized.
+NOTE: There were 39 observations read from the data set WORK.CLUS_OUTNODES.
+NOTE: The data set EMWS1.CLUS_TREE_PLOT has 39 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+28697      proc sort data=EMWS1.Clus_TREE_PLOT;
+MPRINT(EM_DIAGRAM):   proc sort data=EMWS1.Clus_TREE_PLOT;
+28698      by node;
+MPRINT(EM_DIAGRAM):   by node;
+28699      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set EMWS1.CLUS_TREE_PLOT.
+NOTE: The data set EMWS1.CLUS_TREE_PLOT has 39 observations and 10 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+28700      proc sort data=tempoutstats;
+MPRINT(EM_DIAGRAM):   proc sort data=tempoutstats;
+28701      by node;
+MPRINT(EM_DIAGRAM):   by node;
+28702      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 195 observations read from the data set WORK.TEMPOUTSTATS.
+NOTE: The data set WORK.TEMPOUTSTATS has 195 observations and 6 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28703      data EMWS1.Clus_TREE_PLOT;
+MPRINT(EM_DIAGRAM):    data EMWS1.Clus_TREE_PLOT;
+28704      merge EMWS1.Clus_TREE_PLOT tempoutstats;
+MPRINT(EM_DIAGRAM):   merge EMWS1.Clus_TREE_PLOT tempoutstats;
+28705      length text $800 _RASE_ P__SEGMENT_1 8;
+MPRINT(EM_DIAGRAM):   length text $800 _RASE_ P__SEGMENT_1 8;
+28706      retain P__SEGMENT_1 eventlevel;
+MPRINT(EM_DIAGRAM):   retain P__SEGMENT_1 eventlevel;
+28707      by node;
+MPRINT(EM_DIAGRAM):   by node;
+28708      if statname='N' then N=statvalue;
+MPRINT(EM_DIAGRAM):   if statname='N' then N=statvalue;
+28709      if statname='NPRIORS' then N=statvalue;
+MPRINT(EM_DIAGRAM):   if statname='NPRIORS' then N=statvalue;
+28710      if statname='PREDICTION' then eventlevel=category;
+MPRINT(EM_DIAGRAM):   if statname='PREDICTION' then eventlevel=category;
+28711      _RASE_ = .;
+MPRINT(EM_DIAGRAM):   _RASE_ = .;
+28712      if tarlevel ^= 'INTERVAL' then do;
+MPRINT(EM_DIAGRAM):   if tarlevel ^= 'INTERVAL' then do;
+28713      if STATNAME = 'PROBABILITY' then do;
+MPRINT(EM_DIAGRAM):   if STATNAME = 'PROBABILITY' then do;
+28714      if CATEGORY=EVENTLEVEL then do;
+MPRINT(EM_DIAGRAM):   if CATEGORY=EVENTLEVEL then do;
+28715      nodetext = right(put(strip(CATEGORY)||':', $12.))|| right(put(STATVALUE, percent13.1));
+MPRINT(EM_DIAGRAM):   nodetext = right(put(strip(CATEGORY)||':', $12.))|| right(put(STATVALUE, percent13.1));
+28716      text = right(put(strip(CATEGORY)||':', $12.))|| right(put(STATVALUE, percent13.1));
+MPRINT(EM_DIAGRAM):   text = right(put(strip(CATEGORY)||':', $12.))|| right(put(STATVALUE, percent13.1));
+28717      P__SEGMENT_1 = round(STATVALUE, .01);
+MPRINT(EM_DIAGRAM):   P__SEGMENT_1 = round(STATVALUE, .01);
+28718      end;
+MPRINT(EM_DIAGRAM):   end;
+28719      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28720      text = right(put(strip(CATEGORY)||':', $12.))|| right(put(STATVALUE, percent13.1));
+MPRINT(EM_DIAGRAM):   text = right(put(strip(CATEGORY)||':', $12.))|| right(put(STATVALUE, percent13.1));
+28721      end;
+MPRINT(EM_DIAGRAM):   end;
+28722      textall = strip(textall)||'0A'x||strip( text);
+MPRINT(EM_DIAGRAM):   textall = strip(textall)||'0A'x||strip( text);
+28723      end;
+MPRINT(EM_DIAGRAM):   end;
+28724      if last.node then do;
+MPRINT(EM_DIAGRAM):   if last.node then do;
+28725      nodetext = trim(nodetext)||'0A'x||" %sysfunc(sasmsg(sashelp.dmine, rpt_rptcount_vlabel, noquote )):"|| put(N, 13.);
+MPRINT(EM_DIAGRAM):   nodetext = trim(nodetext)||'0A'x||" Count:"|| put(N, 13.);
+28726      textall = trim(textall)||'0A'x||" %sysfunc(sasmsg(sashelp.dmine, rpt_rptcount_vlabel, noquote )):"|| put(N, 13.);
+MPRINT(EM_DIAGRAM):   textall = trim(textall)||'0A'x||" Count:"|| put(N, 13.);
+28727      output EMWS1.Clus_TREE_PLOT;
+MPRINT(EM_DIAGRAM):   output EMWS1.Clus_TREE_PLOT;
+28728      end;
+MPRINT(EM_DIAGRAM):   end;
+28729      end;
+MPRINT(EM_DIAGRAM):   end;
+28730      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28731      if statname='RASE' then _RASE_=statvalue;
+MPRINT(EM_DIAGRAM):   if statname='RASE' then _RASE_=statvalue;
+28732      label _RASE_ = "%sysfunc(sasmsg(sashelp.dmine, rpt_trase_vlabel, noquote))";
+MPRINT(EM_DIAGRAM):   label _RASE_ = "Train: Root Average Square Error";
+28733      if STATNAME = 'PREDICTION' then do;
+MPRINT(EM_DIAGRAM):   if STATNAME = 'PREDICTION' then do;
+28734      nodetext= "%sysfunc(sasmsg(sashelp.dmine, rpt_average_vlabel, noquote))"|| put(STATVALUE, 13.4)||'0A'x|| "%sysfunc(sasmsg(sashelp.dmine, rpt_rptcount_vlabel, noquote )):"|| put(N, 13.);
+MPRINT(EM_DIAGRAM):   nodetext= "Average"|| put(STATVALUE, 13.4)||'0A'x|| "Count:"|| put(N, 13.);
+28735      textall = nodetext;
+MPRINT(EM_DIAGRAM):   textall = nodetext;
+28736      P__SEGMENT_1 = STATVALUE;
+MPRINT(EM_DIAGRAM):   P__SEGMENT_1 = STATVALUE;
+28737      ;
+MPRINT(EM_DIAGRAM):   ;
+28738      ;
+MPRINT(EM_DIAGRAM):   ;
+28739      end;
+MPRINT(EM_DIAGRAM):   end;
+28740      if last.node then do;
+MPRINT(EM_DIAGRAM):   if last.node then do;
+28741      output EMWS1.Clus_TREE_PLOT;
+MPRINT(EM_DIAGRAM):   output EMWS1.Clus_TREE_PLOT;
+28742      end;
+MPRINT(EM_DIAGRAM):   end;
+28743      ;
+MPRINT(EM_DIAGRAM):   ;
+28744      end;
+MPRINT(EM_DIAGRAM):   end;
+28745      label P__SEGMENT_1 = "%sysfunc(sasmsg(sashelp.dmine, rpt_predictedvar_vlabel, noquote))";
+MPRINT(EM_DIAGRAM):   label P__SEGMENT_1 = "Predicted Variable";
+28746      keep NODE PARENT DEPTH BELOWTEXT ABOVETEXT LINKWIDTH NODETEXT TEXTALL N NODECOLOR _RASE_ P__SEGMENT_1;
+MPRINT(EM_DIAGRAM):   keep NODE PARENT DEPTH BELOWTEXT ABOVETEXT LINKWIDTH NODETEXT TEXTALL N NODECOLOR _RASE_ P__SEGMENT_1;
+28747      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set EMWS1.CLUS_TREE_PLOT.
+NOTE: There were 195 observations read from the data set WORK.TEMPOUTSTATS.
+NOTE: The data set EMWS1.CLUS_TREE_PLOT has 39 observations and 12 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+      
+
+28748      data tempcolor;
+MPRINT(EM_DIAGRAM):   data tempcolor;
+28749      set WORK.OUTSTATS_TREE_1LQ2V0Y;
+MPRINT(EM_DIAGRAM):   set WORK.OUTSTATS_TREE_1LQ2V0Y;
+28750      retain eventlevel;
+MPRINT(EM_DIAGRAM):   retain eventlevel;
+28751      if STATNAME='PREDICTION' then eventlevel=CATEGORY;
+MPRINT(EM_DIAGRAM):   if STATNAME='PREDICTION' then eventlevel=CATEGORY;
+28752      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 195 observations read from the data set WORK.OUTSTATS_TREE_1LQ2V0Y.
+NOTE: The data set WORK.TEMPCOLOR has 195 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28753      data tempcolor;
+MPRINT(EM_DIAGRAM):   data tempcolor;
+28754      set tempcolor;
+MPRINT(EM_DIAGRAM):   set tempcolor;
+28755      if 'NOMINAL' ne 'INTERVAL' then do;
+MPRINT(EM_DIAGRAM):   if 'NOMINAL' ne 'INTERVAL' then do;
+28756      if CATEGORY=EVENTLEVEL AND STATNAME="PROBABILITY";
+MPRINT(EM_DIAGRAM):   if CATEGORY=EVENTLEVEL AND STATNAME="PROBABILITY";
+28757      end;
+MPRINT(EM_DIAGRAM):   end;
+28758      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28759      if STATNAME="PREDICTION";
+MPRINT(EM_DIAGRAM):   if STATNAME="PREDICTION";
+28760      end;
+MPRINT(EM_DIAGRAM):   end;
+28761      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 195 observations read from the data set WORK.TEMPCOLOR.
+NOTE: The data set WORK.TEMPCOLOR has 39 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28762      data tempcolor;
+MPRINT(EM_DIAGRAM):   data tempcolor;
+28763      set tempcolor;
+MPRINT(EM_DIAGRAM):   set tempcolor;
+28764      length nodecolor 8;
+MPRINT(EM_DIAGRAM):   length nodecolor 8;
+28765      if 'NOMINAL' ne 'INTERVAL' then do;
+MPRINT(EM_DIAGRAM):   if 'NOMINAL' ne 'INTERVAL' then do;
+28766      nodecolor = round(100*(STATVALUE), .01);
+MPRINT(EM_DIAGRAM):   nodecolor = round(100*(STATVALUE), .01);
+28767      end;
+MPRINT(EM_DIAGRAM):   end;
+28768      else do;
+MPRINT(EM_DIAGRAM):   else do;
+28769      nodecolor=round(statvalue, .01);
+MPRINT(EM_DIAGRAM):   nodecolor=round(statvalue, .01);
+28770      end;
+MPRINT(EM_DIAGRAM):   end;
+28771      keep node nodecolor;
+MPRINT(EM_DIAGRAM):   keep node nodecolor;
+28772      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set WORK.TEMPCOLOR.
+NOTE: The data set WORK.TEMPCOLOR has 39 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28773      proc sort data=EMWS1.Clus_TREE_PLOT;
+MPRINT(EM_DIAGRAM):   proc sort data=EMWS1.Clus_TREE_PLOT;
+28774      by node;
+MPRINT(EM_DIAGRAM):   by node;
+28775      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set EMWS1.CLUS_TREE_PLOT.
+NOTE: The data set EMWS1.CLUS_TREE_PLOT has 39 observations and 12 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28776      proc sort data=tempcolor;
+MPRINT(EM_DIAGRAM):   proc sort data=tempcolor;
+28777      by node;
+MPRINT(EM_DIAGRAM):   by node;
+28778      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set WORK.TEMPCOLOR.
+NOTE: The data set WORK.TEMPCOLOR has 39 observations and 2 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+28779      data EMWS1.Clus_TREE_PLOT;
+MPRINT(EM_DIAGRAM):   data EMWS1.Clus_TREE_PLOT;
+28780      merge EMWS1.Clus_TREE_PLOT tempcolor;
+MPRINT(EM_DIAGRAM):   merge EMWS1.Clus_TREE_PLOT tempcolor;
+28781      by node;
+MPRINT(EM_DIAGRAM):   by node;
+28782      length traintotal 8;
+MPRINT(EM_DIAGRAM):   length traintotal 8;
+28783      retain traintotal;
+MPRINT(EM_DIAGRAM):   retain traintotal;
+28784      if node=1 then do;
+MPRINT(EM_DIAGRAM):   if node=1 then do;
+28785      traintotal = N;
+MPRINT(EM_DIAGRAM):   traintotal = N;
+28786      end;
+MPRINT(EM_DIAGRAM):   end;
+28787      if NODE eq . then delete;
+MPRINT(EM_DIAGRAM):   if NODE eq . then delete;
+28788      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set EMWS1.CLUS_TREE_PLOT.
+NOTE: There were 39 observations read from the data set WORK.TEMPCOLOR.
+NOTE: The data set EMWS1.CLUS_TREE_PLOT has 39 observations and 13 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28789      data EMWS1.Clus_TREE_PLOT;
+MPRINT(EM_DIAGRAM):   data EMWS1.Clus_TREE_PLOT;
+28790      set EMWS1.Clus_TREE_PLOT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Clus_TREE_PLOT;
+28791      textall = "%sysfunc(sasmsg(sashelp.dmine, rpt_nodeId_vlabel, noquote, )):"|| put(Node, 13.)||'0A'x||trim(textall);
+MPRINT(EM_DIAGRAM):   textall = "Node Id:"|| put(Node, 13.)||'0A'x||trim(textall);
+28792      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set EMWS1.CLUS_TREE_PLOT.
+NOTE: The data set EMWS1.CLUS_TREE_PLOT has 39 observations and 13 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+28793      data tempout;
+MPRINT(EM_DIAGRAM):   data tempout;
+28794      set WORK.Clus_outnodes;
+MPRINT(EM_DIAGRAM):   set WORK.Clus_outnodes;
+28795      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set WORK.CLUS_OUTNODES.
+NOTE: The data set WORK.TEMPOUT has 39 observations and 25 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28796      proc sort data=tempout;
+MPRINT(EM_DIAGRAM):   proc sort data=tempout;
+28797      by descending P__SEGMENT_1;
+MPRINT(EM_DIAGRAM):   by descending P__SEGMENT_1;
+28798      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set WORK.TEMPOUT.
+NOTE: The data set WORK.TEMPOUT has 39 observations and 25 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28799      data tree_temp;
+MPRINT(EM_DIAGRAM):   data tree_temp;
+28800      set tempout;
+MPRINT(EM_DIAGRAM):   set tempout;
+28801      if LEAF ne .;
+MPRINT(EM_DIAGRAM):   if LEAF ne .;
+28802      label index="%sysfunc(sasmsg(sashelp.dmine, rpt_leafindex_vlabel  , NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label index= "Leaf Index";
+28803      label percevent_train = "%sysfunc(sasmsg(sashelp.dmine, rpt_perc_train_vlabel  , NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label percevent_train = "Event Percentage";
+28804      label perc_train = "%sysfunc(sasmsg(sashelp.dmine, rpt_percevent_train_vlabel  , NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label perc_train = "Percent Cases";
+28805      label tprob="%sysfunc(sasmsg(sashelp.dmine, rpt_prob_vlabel  , NOQUOTE, %nrbquote()))";
+MPRINT(EM_DIAGRAM):   label tprob= "Training Percent ";
+28806      tprob = round(P__SEGMENT_1, .01);
+MPRINT(EM_DIAGRAM):   tprob = round(P__SEGMENT_1, .01);
+28807      percevent_train = round ( tprob*100, .01);
+MPRINT(EM_DIAGRAM):   percevent_train = round ( tprob*100, .01);
+28808      *perc_train =round( ( N / traintotal)*100, .001);
+MPRINT(EM_DIAGRAM):   *perc_train =round( ( N / traintotal)*100, .001);
+28809      perc_train =round( ( N / traintotal), .01);
+MPRINT(EM_DIAGRAM):   perc_train =round( ( N / traintotal), .01);
+28810      if missing(perc_train) then perc_train = round( linkwidth*100, .001);
+MPRINT(EM_DIAGRAM):   if missing(perc_train) then perc_train = round( linkwidth*100, .001);
+28811      index = _n_;
+MPRINT(EM_DIAGRAM):   index = _n_;
+28812      keep NODE index tprob perc_train percevent_train
+28813      ;
+MPRINT(EM_DIAGRAM):   keep NODE index tprob perc_train percevent_train ;
+28814      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set WORK.TEMPOUT.
+NOTE: The data set WORK.TREE_TEMP has 20 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28815      proc sort data=tree_temp;
+MPRINT(EM_DIAGRAM):   proc sort data=tree_temp;
+28816      by NODE;
+MPRINT(EM_DIAGRAM):   by NODE;
+28817      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 20 observations read from the data set WORK.TREE_TEMP.
+NOTE: The data set WORK.TREE_TEMP has 20 observations and 5 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28818      proc sort data=EMWS1.Clus_TREE_PLOT;
+MPRINT(EM_DIAGRAM):   proc sort data=EMWS1.Clus_TREE_PLOT;
+28819      by NODE;
+MPRINT(EM_DIAGRAM):   by NODE;
+28820      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set EMWS1.CLUS_TREE_PLOT.
+NOTE: The data set EMWS1.CLUS_TREE_PLOT has 39 observations and 13 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28821      data EMWS1.Clus_TREE_PLOT;
+MPRINT(EM_DIAGRAM):   data EMWS1.Clus_TREE_PLOT;
+28822      merge EMWS1.Clus_TREE_PLOT tree_temp;
+MPRINT(EM_DIAGRAM):   merge EMWS1.Clus_TREE_PLOT tree_temp;
+28823      by NODE;
+MPRINT(EM_DIAGRAM):   by NODE;
+28824      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set EMWS1.CLUS_TREE_PLOT.
+NOTE: There were 20 observations read from the data set WORK.TREE_TEMP.
+NOTE: The data set EMWS1.CLUS_TREE_PLOT has 39 observations and 17 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+28825      proc sort data=EMWS1.Clus_TREE_PLOT;
+MPRINT(EM_DIAGRAM):   proc sort data=EMWS1.Clus_TREE_PLOT;
+28826      by node index;
+MPRINT(EM_DIAGRAM):   by node index;
+28827      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 39 observations read from the data set EMWS1.CLUS_TREE_PLOT.
+NOTE: The data set EMWS1.CLUS_TREE_PLOT has 39 observations and 17 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+28828      title9 ' ';
+MPRINT(EM_DIAGRAM):    title9 ' ';
+28829      title10 "%sysfunc(sasmsg(sashelp.dmine, rpt_VariableImportance_title, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   title10 "Variable Importance";
+28830      proc print data=EMWS1.Clus_OUTIMPORT(where=(IMPORTANCE>0)) noobs;
+MPRINT(EM_DIAGRAM):   proc print data=EMWS1.Clus_OUTIMPORT(where=(IMPORTANCE>0)) noobs;
+28831      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 8 observations read from the data set EMWS1.CLUS_OUTIMPORT.
+      WHERE IMPORTANCE>0;
+NOTE: The PROCEDURE PRINT printed page 3.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28832      title10;
+MPRINT(EM_DIAGRAM):   title10;
+28833      data WORK.M1DMZJZ8;
+MPRINT(EM_DIAGRAM):    data WORK.M1DMZJZ8;
+28834      set WORK.M1DMZJZ8;
+MPRINT(EM_DIAGRAM):   set WORK.M1DMZJZ8;
+28835      if role eq 'REJECTED' then role = 'INPUT';
+MPRINT(EM_DIAGRAM):   if role eq 'REJECTED' then role = 'INPUT';
+28836      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 18 observations read from the data set WORK.M1DMZJZ8.
+NOTE: The data set WORK.M1DMZJZ8 has 18 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28837      proc sort data=EMWS1.Clus_OUTIMPORT out=WORK.Clus_GRAPHVARS(keep=NAME);
+MPRINT(EM_DIAGRAM):    proc sort data=EMWS1.Clus_OUTIMPORT out=WORK.Clus_GRAPHVARS(keep=NAME);
+28838      where IMPORTANCE>0;
+MPRINT(EM_DIAGRAM):   where IMPORTANCE>0;
+28839      by NAME;
+MPRINT(EM_DIAGRAM):   by NAME;
+28840      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 8 observations read from the data set EMWS1.CLUS_OUTIMPORT.
+      WHERE IMPORTANCE>0;
+NOTE: The data set WORK.CLUS_GRAPHVARS has 8 observations and 1 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28841      proc sort data = WORK.M1DMZJZ8;
+MPRINT(EM_DIAGRAM):   proc sort data = WORK.M1DMZJZ8;
+28842      by NAME;
+MPRINT(EM_DIAGRAM):   by NAME;
+28843      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 18 observations read from the data set WORK.M1DMZJZ8.
+NOTE: The data set WORK.M1DMZJZ8 has 18 observations and 21 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28844      data WORK.M1DMZJZ8;
+MPRINT(EM_DIAGRAM):   data WORK.M1DMZJZ8;
+28845      merge WORK.M1DMZJZ8 WORK.Clus_GRAPHVARS(in=_b_);
+MPRINT(EM_DIAGRAM):   merge WORK.M1DMZJZ8 WORK.Clus_GRAPHVARS(in=_b_);
+28846      by NAME;
+MPRINT(EM_DIAGRAM):   by NAME;
+28847      if _b_ or ROLE = "FREQ" or REPORT="Y" then output;
+MPRINT(EM_DIAGRAM):   if _b_ or ROLE = "FREQ" or REPORT="Y" then output;
+28848      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 18 observations read from the data set WORK.M1DMZJZ8.
+NOTE: There were 8 observations read from the data set WORK.CLUS_GRAPHVARS.
+NOTE: The data set WORK.M1DMZJZ8 has 8 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28849      data WORK.M1DMZJZ8;
+MPRINT(EM_DIAGRAM):    data WORK.M1DMZJZ8;
+28850      set WORK.M1DMZJZ8 end=_eof_ nobs=_nobs_;
+MPRINT(EM_DIAGRAM):   set WORK.M1DMZJZ8 end=_eof_ nobs=_nobs_;
+28851      output;
+MPRINT(EM_DIAGRAM):   output;
+28852      if _eof_ then do;
+MPRINT(EM_DIAGRAM):   if _eof_ then do;
+28853      name = '_SEGMENT_';
+MPRINT(EM_DIAGRAM):   name = '_SEGMENT_';
+28854      ROLE = 'BY';
+MPRINT(EM_DIAGRAM):   ROLE = 'BY';
+28855      LEVEL = 'NOMINAL';
+MPRINT(EM_DIAGRAM):   LEVEL = 'NOMINAL';
+28856      LABEL = 'Segment Variable';
+MPRINT(EM_DIAGRAM):   LABEL = 'Segment Variable';
+28857      TYPE = 'N';
+MPRINT(EM_DIAGRAM):   TYPE = 'N';
+28858      FORMAT = '';
+MPRINT(EM_DIAGRAM):   FORMAT = '';
+28859      INFORMAT = '';
+MPRINT(EM_DIAGRAM):   INFORMAT = '';
+28860      output;
+MPRINT(EM_DIAGRAM):   output;
+28861      end;
+MPRINT(EM_DIAGRAM):   end;
+28862      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 8 observations read from the data set WORK.M1DMZJZ8.
+NOTE: The data set WORK.M1DMZJZ8 has 9 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28863      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------* ;
+28864      * Clus: STDIZE Variables Macro ;
+MPRINT(EM_DIAGRAM):   * Clus: STDIZE Variables Macro ;
+28865      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+28866      %macro stdizevar;
+28867          ClaimsRate CustomerMonetaryValue IMP_GrossMonthlySalary
+28868         IMP_REP_FirstPolicyYear TOTAL_PREMIUM
+28869      %mend stdizevar;
+28870      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+28871      * Clus: Computing Summary Statistics;
+MPRINT(EM_DIAGRAM):   * Clus: Computing Summary Statistics;
+28872      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+28873      proc stdize
+28874      data = EMWS1.Clus_TRAIN
+28875      out=_null_
+28876      outstat=WORK.Clus_STAT
+28877      add=0 fuzz=1E-14 initial=MAD
+28878      vardef=df
+28879      method=STD
+28880      mult=1
+28881      pctlmtd=ORD_STAT pctldef=2
+28882      pctlpts=(
+28883      0
+28884      100
+28885      )
+28886      ;
+MPRINT(EM_DIAGRAM):   proc stdize data = EMWS1.Clus_TRAIN out=_null_ outstat=WORK.Clus_STAT add=0 fuzz=1E-14 initial=MAD vardef=df method=STD mult=1 pctlmtd=ORD_STAT pctldef=2 pctlpts=( 0 100 ) ;
+MPRINT(EM_DIAGRAM):   var
+28887      var %stdizevar;
+MPRINT(STDIZEVAR):   ClaimsRate CustomerMonetaryValue IMP_GrossMonthlySalary IMP_REP_FirstPolicyYear TOTAL_PREMIUM
+MPRINT(EM_DIAGRAM):  ;
+28888      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: INITIAL= will be ignored.
+NOTE: Variable IMP_FirstPolicyYear is uninitialized.
+NOTE: Variable _WARN_ is uninitialized.
+NOTE: There were 10296 observations read from the data set INS_PROJ.A2ZINSURANCE.
+NOTE: There were 10296 observations read from the data set EMWS1.IDS_DATA.
+NOTE: There were 10296 observations read from the data set EMWS1.REPL_TRAIN.
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      10296 at 56659:24   
+NOTE: There were 10296 observations read from the data set EMWS1.IMPT_TRAIN.
+NOTE: View EMWS1.CLUS_TRAIN.VIEW used (Total process time):
+      real time           0.26 seconds
+      cpu time            0.25 seconds
+      
+NOTE: There were 10296 observations read from the data set EMWS1.TRANS_TRAIN.
+NOTE: There were 10296 observations read from the data set EMWS1.CLUS_TRAIN.
+NOTE: The data set WORK.CLUS_STAT has 10 observations and 6 variables.
+NOTE: PROCEDURE STDIZE used (Total process time):
+      real time           0.27 seconds
+      cpu time            0.26 seconds
+      
+
+MPRINT(EM_DIAGRAM):   quit;
+28889      quit;
+
+28890      data WORK.Clus_MINMAX;
+MPRINT(EM_DIAGRAM):    data WORK.Clus_MINMAX;
+28891      set WORK.Clus_STAT;
+MPRINT(EM_DIAGRAM):   set WORK.Clus_STAT;
+28892      where _TYPE_ in('P0','P100');
+MPRINT(EM_DIAGRAM):   where _TYPE_ in('P0','P100');
+28893      if _TYPE_='P0' then _TYPE_='MIN';
+MPRINT(EM_DIAGRAM):   if _TYPE_='P0' then _TYPE_='MIN';
+28894      else if _TYPE_='P100' then _TYPE_='MAX';
+MPRINT(EM_DIAGRAM):   else if _TYPE_='P100' then _TYPE_='MAX';
+28895      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 2 observations read from the data set WORK.CLUS_STAT.
+      WHERE _TYPE_ in ('P0', 'P100');
+NOTE: The data set WORK.CLUS_MINMAX has 2 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28896      proc transpose data=WORK.Clus_MINMAX out=WORK.Clus_MINMAX(drop=_LABEL_ rename=(_NAME_=_VARIABLE_));
+MPRINT(EM_DIAGRAM):   proc transpose data=WORK.Clus_MINMAX out=WORK.Clus_MINMAX(drop=_LABEL_ rename=(_NAME_=_VARIABLE_));
+28897      id _TYPE_;
+MPRINT(EM_DIAGRAM):   id _TYPE_;
+28898      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 2 observations read from the data set WORK.CLUS_MINMAX.
+NOTE: The data set WORK.CLUS_MINMAX has 5 observations and 3 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28899      data WORK.Clus_UGRID;
+MPRINT(EM_DIAGRAM):    data WORK.Clus_UGRID;
+28900      set WORK.Clus_MINMAX;
+MPRINT(EM_DIAGRAM):   set WORK.Clus_MINMAX;
+28901      B1 = MIN + (1-1)*(MAX-MIN)/8;
+MPRINT(EM_DIAGRAM):   B1 = MIN + (1-1)*(MAX-MIN)/8;
+28902      B2 = MIN + (2-1)*(MAX-MIN)/8;
+MPRINT(EM_DIAGRAM):   B2 = MIN + (2-1)*(MAX-MIN)/8;
+28903      B3 = MIN + (3-1)*(MAX-MIN)/8;
+MPRINT(EM_DIAGRAM):   B3 = MIN + (3-1)*(MAX-MIN)/8;
+28904      B4 = MIN + (4-1)*(MAX-MIN)/8;
+MPRINT(EM_DIAGRAM):   B4 = MIN + (4-1)*(MAX-MIN)/8;
+28905      B5 = MIN + (5-1)*(MAX-MIN)/8;
+MPRINT(EM_DIAGRAM):   B5 = MIN + (5-1)*(MAX-MIN)/8;
+28906      B6 = MIN + (6-1)*(MAX-MIN)/8;
+MPRINT(EM_DIAGRAM):   B6 = MIN + (6-1)*(MAX-MIN)/8;
+28907      B7 = MIN + (7-1)*(MAX-MIN)/8;
+MPRINT(EM_DIAGRAM):   B7 = MIN + (7-1)*(MAX-MIN)/8;
+28908      B8 = MIN + (8-1)*(MAX-MIN)/8;
+MPRINT(EM_DIAGRAM):   B8 = MIN + (8-1)*(MAX-MIN)/8;
+28909      B9 = MIN + (9-1)*(MAX-MIN)/8;
+MPRINT(EM_DIAGRAM):   B9 = MIN + (9-1)*(MAX-MIN)/8;
+28910      drop MIN MAX;
+MPRINT(EM_DIAGRAM):   drop MIN MAX;
+28911      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 5 observations read from the data set WORK.CLUS_MINMAX.
+NOTE: The data set WORK.CLUS_UGRID has 5 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28912      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+28913      * Clus: Creating formats for binning interval variables;
+MPRINT(EM_DIAGRAM):   * Clus: Creating formats for binning interval variables;
+28914      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+28915      proc format;
+MPRINT(EM_DIAGRAM):   proc format;
+28916      value F1_
+28917      0-32.025 = "0:32.025"
+28918      32.025-64.05 = "32.025:64.05"
+28919      64.05-96.075 = "64.05:96.075"
+28920      96.075-128.1 = "96.075:128.1"
+28921      128.1-160.125 = "128.1:160.13"
+28922      160.125-192.15 = "160.13:192.15"
+28923      192.15-224.175 = "192.15:224.18"
+28924      224.175-256.2 = "224.18:256.2"
+28925      ;
+MPRINT(EM_DIAGRAM):   value F1_ 0-32.025 = "0:32.025" 32.025-64.05 = "32.025:64.05" 64.05-96.075 = "64.05:96.075" 96.075-128.1 = "96.075:128.1" 128.1-160.125 = "128.1:160.13" 160.125-192.15 = "160.13:192.15" 192.15-224.175 = "192.15:224.18" 224.175-256.2 
+= "224.18:256.2" ;
+NOTE: Format F1_ has been output.
+28926      value F2_
+28927      -165680.424--143485.88475 = "-166E3:-143E3"
+28928      -143485.88475--121291.3455 = "-143E3:-121E3"
+28929      -121291.3455--99096.80625 = "-121E3:-99097"
+28930      -99096.80625--76902.267 = "-99097:-76902"
+28931      -76902.267--54707.72775 = "-76902:-54708"
+28932      -54707.72775--32513.1884999999 = "-54708:-32513"
+28933      -32513.1884999999--10318.6492499999 = "-32513:-10319"
+28934      -10318.6492499999-11875.89 = "-10319:11876"
+28935      ;
+MPRINT(EM_DIAGRAM):   value F2_ -165680.424--143485.88475 = "-166E3:-143E3" -143485.88475--121291.3455 = "-143E3:-121E3" -121291.3455--99096.80625 = "-121E3:-99097" -99096.80625--76902.267 = "-99097:-76902" -76902.267--54707.72775 = "-76902:-54708" 
+-54707.72775--32513.1884999999 = "-54708:-32513" -32513.1884999999--10318.6492499999 = "-32513:-10319" -10318.6492499999-11875.89 = "-10319:11876" ;
+NOTE: Format F2_ has been output.
+28936      value F3_
+28937      665-14385.595 = "665:14386"
+28938      14385.595-28106.19 = "14386:28106"
+28939      28106.19-41826.785 = "28106:41827"
+28940      41826.785-55547.38 = "41827:55547"
+28941      55547.38-69267.975 = "55547:69268"
+28942      69267.975-82988.57 = "69268:82989"
+28943      82988.57-96709.165 = "82989:96709"
+28944      96709.165-110429.76 = "96709:110430"
+28945      ;
+MPRINT(EM_DIAGRAM):   value F3_ 665-14385.595 = "665:14386" 14385.595-28106.19 = "14386:28106" 28106.19-41826.785 = "28106:41827" 41826.785-55547.38 = "41827:55547" 55547.38-69267.975 = "55547:69268" 69267.975-82988.57 = "69268:82989" 82988.57-96709.165 = 
+"82989:96709" 96709.165-110429.76 = "96709:110430" ;
+NOTE: Format F3_ has been output.
+28946      value F4_
+28947      1974-1977 = "1974:1977"
+28948      1977-1980 = "1977:1980"
+28949      1980-1983 = "1980:1983"
+28950      1983-1986 = "1983:1986"
+28951      1986-1989 = "1986:1989"
+28952      1989-1992 = "1989:1992"
+28953      1992-1995 = "1992:1995"
+28954      1995-1998 = "1995:1998"
+28955      ;
+MPRINT(EM_DIAGRAM):   value F4_ 1974-1977 = "1974:1977" 1977-1980 = "1977:1980" 1980-1983 = "1980:1983" 1983-1986 = "1983:1986" 1986-1989 = "1986:1989" 1989-1992 = "1989:1992" 1992-1995 = "1992:1995" 1995-1998 = "1995:1998" ;
+NOTE: Format F4_ has been output.
+28956      value F5_
+28957      354.18-3976.3225 = "354.18:3976.3"
+28958      3976.3225-7598.465 = "3976.3:7598.5"
+28959      7598.465-11220.6075 = "7598.5:11221"
+28960      11220.6075-14842.75 = "11221:14843"
+28961      14842.75-18464.8925 = "14843:18465"
+28962      18464.8925-22087.035 = "18465:22087"
+28963      22087.035-25709.1775 = "22087:25709"
+28964      25709.1775-29331.32 = "25709:29331"
+28965      ;
+MPRINT(EM_DIAGRAM):   value F5_ 354.18-3976.3225 = "354.18:3976.3" 3976.3225-7598.465 = "3976.3:7598.5" 7598.465-11220.6075 = "7598.5:11221" 11220.6075-14842.75 = "11221:14843" 14842.75-18464.8925 = "14843:18465" 18464.8925-22087.035 = "18465:22087" 
+22087.035-25709.1775 = "22087:25709" 25709.1775-29331.32 = "25709:29331" ;
+NOTE: Format F5_ has been output.
+MPRINT(EM_DIAGRAM):   run;
+28966      run;
+
+NOTE: PROCEDURE FORMAT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28967      ods listing close;
+MPRINT(EM_DIAGRAM):    ods listing close;
+28968      ods output crosstabfreqs=WORK.TEMPFREQ;
+MPRINT(EM_DIAGRAM):   ods output crosstabfreqs=WORK.TEMPFREQ;
+28969      proc freq data = EMWS1.Clus_TRAIN order=formatted addnames;
+MPRINT(EM_DIAGRAM):   proc freq data = EMWS1.Clus_TRAIN order=formatted addnames;
+28970      table ClaimsRate * _SEGMENT_ / missing;
+MPRINT(EM_DIAGRAM):   table ClaimsRate * _SEGMENT_ / missing;
+28971      table CustomerMonetaryValue * _SEGMENT_ / missing;
+MPRINT(EM_DIAGRAM):   table CustomerMonetaryValue * _SEGMENT_ / missing;
+28972      table IMP_CustomerAge * _SEGMENT_ / missing;
+MPRINT(EM_DIAGRAM):   table IMP_CustomerAge * _SEGMENT_ / missing;
+28973      table IMP_EducationalDegree * _SEGMENT_ / missing;
+MPRINT(EM_DIAGRAM):   table IMP_EducationalDegree * _SEGMENT_ / missing;
+28974      table IMP_GrossMonthlySalary * _SEGMENT_ / missing;
+MPRINT(EM_DIAGRAM):   table IMP_GrossMonthlySalary * _SEGMENT_ / missing;
+28975      table IMP_HasChildren * _SEGMENT_ / missing;
+MPRINT(EM_DIAGRAM):   table IMP_HasChildren * _SEGMENT_ / missing;
+28976      table IMP_REP_FirstPolicyYear * _SEGMENT_ / missing;
+MPRINT(EM_DIAGRAM):   table IMP_REP_FirstPolicyYear * _SEGMENT_ / missing;
+28977      table TOTAL_PREMIUM * _SEGMENT_ / missing;
+MPRINT(EM_DIAGRAM):   table TOTAL_PREMIUM * _SEGMENT_ / missing;
+28978      format CLAIMSRATE F1_.;
+MPRINT(EM_DIAGRAM):   format CLAIMSRATE F1_.;
+28979      format CUSTOMERMONETARYVALUE F2_.;
+MPRINT(EM_DIAGRAM):   format CUSTOMERMONETARYVALUE F2_.;
+28980      format IMP_GROSSMONTHLYSALARY F3_.;
+MPRINT(EM_DIAGRAM):   format IMP_GROSSMONTHLYSALARY F3_.;
+28981      format IMP_REP_FIRSTPOLICYYEAR F4_.;
+MPRINT(EM_DIAGRAM):   format IMP_REP_FIRSTPOLICYYEAR F4_.;
+28982      format TOTAL_PREMIUM F5_.;
+MPRINT(EM_DIAGRAM):   format TOTAL_PREMIUM F5_.;
+28983      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: Variable IMP_FirstPolicyYear is uninitialized.
+NOTE: Variable _WARN_ is uninitialized.
+NOTE: There were 10296 observations read from the data set INS_PROJ.A2ZINSURANCE.
+NOTE: There were 10296 observations read from the data set EMWS1.IDS_DATA.
+NOTE: There were 10296 observations read from the data set EMWS1.REPL_TRAIN.
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      10296 at 56659:24   
+NOTE: There were 10296 observations read from the data set EMWS1.IMPT_TRAIN.
+NOTE: View EMWS1.CLUS_TRAIN.VIEW used (Total process time):
+      real time           0.18 seconds
+      cpu time            0.18 seconds
+      
+NOTE: There were 10296 observations read from the data set EMWS1.TRANS_TRAIN.
+NOTE: The data set WORK.TEMPFREQ has 432 observations and 19 variables.
+NOTE: There were 10296 observations read from the data set EMWS1.CLUS_TRAIN.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.20 seconds
+      cpu time            0.20 seconds
+      
+
+MPRINT(EM_DIAGRAM):   quit;
+28984      quit;
+28985      ods listing;
+MPRINT(EM_DIAGRAM):   ods listing;
+28986      data EMWS1.Clus_PROFILE(keep=_VARIABLE_ _SEGMENT_ TYPE COUNT PERCENT _X_ _XLABEL_);
+MPRINT(EM_DIAGRAM):    data EMWS1.Clus_PROFILE(keep=_VARIABLE_ _SEGMENT_ TYPE COUNT PERCENT _X_ _XLABEL_);
+28987      label _VARIABLE_ = "%sysfunc(sasmsg(sashelp.dmine, rpt_variable_vlabel, NOQUOTE))" _SEGMENT_ = "Segment Variable" Type = "%sysfunc(sasmsg(sashelp.dmine, rpt_type_vlabel,         NOQUOTE))" _X_ =
+28988         "%sysfunc(sasmsg(sashelp.dmine, rpt_numValue_vlabel, NOQUOTE))" _XLABEL_ = "%sysfunc(sasmsg(sashelp.dmine, rpt_fmtValue_vlabel ,    NOQUOTE))" COUNT = "%sysfunc(sasmsg(sashelp.dmine, rpt_count_vlabel,        NOQUOTE))" PERCENT =
+28989         "%sysfunc(sasmsg(sashelp.dmine, rpt_percent_vlabel,      NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label _VARIABLE_ = "Variable" _SEGMENT_ = "Segment Variable" Type = "Type" _X_ = "Numeric Value" _XLABEL_ = "Formatted Value" COUNT = "Frequency Count" PERCENT = "Percent";
+28990      dsid = open("WORK.TEMPFREQ");
+MPRINT(EM_DIAGRAM):   dsid = open("WORK.TEMPFREQ");
+28991      varnum = varnum(dsid, 'ROWVARIABLE');
+MPRINT(EM_DIAGRAM):   varnum = varnum(dsid, 'ROWVARIABLE');
+28992      freqnum = varnum(dsid, 'FREQUENCY');
+MPRINT(EM_DIAGRAM):   freqnum = varnum(dsid, 'FREQUENCY');
+28993      pvarnum = varnum(dsid, 'PERCENT');
+MPRINT(EM_DIAGRAM):   pvarnum = varnum(dsid, 'PERCENT');
+28994      typenum = varnum(dsid, '_TYPE_');
+MPRINT(EM_DIAGRAM):   typenum = varnum(dsid, '_TYPE_');
+28995      bynum = varnum(dsid, "_SEGMENT_");
+MPRINT(EM_DIAGRAM):   bynum = varnum(dsid, "_SEGMENT_");
+28996      length varformat _VARIABLE_ $32 _XLABEL_ $32 TYPE $1;
+MPRINT(EM_DIAGRAM):   length varformat _VARIABLE_ $32 _XLABEL_ $32 TYPE $1;
+28997      do while(^fetch(dsid));
+MPRINT(EM_DIAGRAM):   do while(^fetch(dsid));
+28998      count = getvarn(dsid, freqnum);
+MPRINT(EM_DIAGRAM):   count = getvarn(dsid, freqnum);
+28999      percent = getvarn(dsid, pvarnum);
+MPRINT(EM_DIAGRAM):   percent = getvarn(dsid, pvarnum);
+29000      _VARIABLE_ = strip(getvarc(dsid, varnum));
+MPRINT(EM_DIAGRAM):   _VARIABLE_ = strip(getvarc(dsid, varnum));
+29001      varblnum = varnum(dsid, _VARIABLE_);
+MPRINT(EM_DIAGRAM):   varblnum = varnum(dsid, _VARIABLE_);
+29002      _SEGMENT_ = getvarn(dsid, bynum);
+MPRINT(EM_DIAGRAM):   _SEGMENT_ = getvarn(dsid, bynum);
+29003      type = vartype(dsid, varblnum);
+MPRINT(EM_DIAGRAM):   type = vartype(dsid, varblnum);
+29004      varformat = varfmt(dsid, varblnum);
+MPRINT(EM_DIAGRAM):   varformat = varfmt(dsid, varblnum);
+29005      if varformat eq '' then varformat = 'best12.';
+MPRINT(EM_DIAGRAM):   if varformat eq '' then varformat = 'best12.';
+29006      _X_=.;
+MPRINT(EM_DIAGRAM):   _X_=.;
+29007      if type = 'N' then do;
+MPRINT(EM_DIAGRAM):   if type = 'N' then do;
+29008      _X_ = getvarn(dsid, varblnum);
+MPRINT(EM_DIAGRAM):   _X_ = getvarn(dsid, varblnum);
+29009      _XLABEL_ = left(putn(_X_, varformat));
+MPRINT(EM_DIAGRAM):   _XLABEL_ = left(putn(_X_, varformat));
+29010      end;
+MPRINT(EM_DIAGRAM):   end;
+29011      else _XLABEL_ = getvarc(dsid, varblnum);
+MPRINT(EM_DIAGRAM):   else _XLABEL_ = getvarc(dsid, varblnum);
+29012      if getvarc(dsid, typenum) = '11' then output;
+MPRINT(EM_DIAGRAM):   if getvarc(dsid, typenum) = '11' then output;
+29013      end;
+MPRINT(EM_DIAGRAM):   end;
+29014      dsid = close(dsid);
+MPRINT(EM_DIAGRAM):   dsid = close(dsid);
+29015      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The data set EMWS1.CLUS_PROFILE has 300 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+29016      proc sort data=EMWS1.Clus_PROFILE NOTHREADS;
+MPRINT(EM_DIAGRAM):   proc sort data=EMWS1.Clus_PROFILE NOTHREADS;
+29017      by _VARIABLE_ _SEGMENT_;
+MPRINT(EM_DIAGRAM):   by _VARIABLE_ _SEGMENT_;
+29018      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 300 observations read from the data set EMWS1.CLUS_PROFILE.
+NOTE: The data set EMWS1.CLUS_PROFILE has 300 observations and 7 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+29019      proc means data=EMWS1.Clus_PROFILE noprint missing NWAY;
+MPRINT(EM_DIAGRAM):   proc means data=EMWS1.Clus_PROFILE noprint missing NWAY;
+29020      class _VARIABLE_ _SEGMENT_;
+MPRINT(EM_DIAGRAM):   class _VARIABLE_ _SEGMENT_;
+29021      var COUNT;
+MPRINT(EM_DIAGRAM):   var COUNT;
+29022      output out=WORK.Clus_STATCOUNT(keep=_SEGMENT_ _VARIABLE_ SUM) SUM=SUM;
+MPRINT(EM_DIAGRAM):   output out=WORK.Clus_STATCOUNT(keep=_SEGMENT_ _VARIABLE_ SUM) SUM=SUM;
+29023      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 300 observations read from the data set EMWS1.CLUS_PROFILE.
+NOTE: The data set WORK.CLUS_STATCOUNT has 24 observations and 3 variables.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+29024      proc sort data=WORK.Clus_STATCOUNT NOTHREADS;
+MPRINT(EM_DIAGRAM):   proc sort data=WORK.Clus_STATCOUNT NOTHREADS;
+29025      by _VARIABLE_ _SEGMENT_;
+MPRINT(EM_DIAGRAM):   by _VARIABLE_ _SEGMENT_;
+29026      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 24 observations read from the data set WORK.CLUS_STATCOUNT.
+NOTE: The data set WORK.CLUS_STATCOUNT has 24 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29027      data EMWS1.Clus_PROFILE(drop=SUM);
+MPRINT(EM_DIAGRAM):   data EMWS1.Clus_PROFILE(drop=SUM);
+29028      label BYPERCENT= "%sysfunc(sasmsg(sashelp.dmine, rpt_percent_vlabel, NOQUOTE, _SEGMENT_))";
+MPRINT(EM_DIAGRAM):   label BYPERCENT= "Percent";
+29029      merge EMWS1.Clus_PROFILE WORK.Clus_STATCOUNT;
+MPRINT(EM_DIAGRAM):   merge EMWS1.Clus_PROFILE WORK.Clus_STATCOUNT;
+29030      by _VARIABLE_ _SEGMENT_;
+MPRINT(EM_DIAGRAM):   by _VARIABLE_ _SEGMENT_;
+29031      if SUM ne . then BYPERCENT = 100*COUNT/SUM;
+MPRINT(EM_DIAGRAM):   if SUM ne . then BYPERCENT = 100*COUNT/SUM;
+29032      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 300 observations read from the data set EMWS1.CLUS_PROFILE.
+NOTE: There were 24 observations read from the data set WORK.CLUS_STATCOUNT.
+NOTE: The data set EMWS1.CLUS_PROFILE has 300 observations and 8 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+29033      proc sort data=EMWS1.Clus_PROFILE NOTHREADS;
+MPRINT(EM_DIAGRAM):    proc sort data=EMWS1.Clus_PROFILE NOTHREADS;
+29034      by _VARIABLE_;
+MPRINT(EM_DIAGRAM):   by _VARIABLE_;
+29035      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 300 observations read from the data set EMWS1.CLUS_PROFILE.
+NOTE: The data set EMWS1.CLUS_PROFILE has 300 observations and 8 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+29036      proc sort data=WORK.M1DMZJZ8;
+MPRINT(EM_DIAGRAM):   proc sort data=WORK.M1DMZJZ8;
+29037      by Name;
+MPRINT(EM_DIAGRAM):   by Name;
+29038      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 9 observations read from the data set WORK.M1DMZJZ8.
+NOTE: The data set WORK.M1DMZJZ8 has 9 observations and 21 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29039      data EMWS1.Clus_PROFILE;
+MPRINT(EM_DIAGRAM):   data EMWS1.Clus_PROFILE;
+29040      merge EMWS1.Clus_PROFILE(in=_a) WORK.M1DMZJZ8(keep=Name Label Role rename=(Name=_Variable_ Label=_Label_));
+MPRINT(EM_DIAGRAM):   merge EMWS1.Clus_PROFILE(in=_a) WORK.M1DMZJZ8(keep=Name Label Role rename=(Name=_Variable_ Label=_Label_));
+29041      by _Variable_;
+MPRINT(EM_DIAGRAM):   by _Variable_;
+29042      label Role = "%sysfunc(sasmsg(sashelp.dmine, meta_role_vlabel ,  NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label Role = "Role";
+29043      label Label = "%sysfunc(sasmsg(sashelp.dmine, meta_label_vlabel , NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label Label = "Label";
+29044      if _a then output;
+MPRINT(EM_DIAGRAM):   if _a then output;
+29045      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: Variable Label is uninitialized.
+WARNING: Multiple lengths were specified for the BY variable _VARIABLE_ by input data sets. This may cause unexpected results.
+NOTE: There were 300 observations read from the data set EMWS1.CLUS_PROFILE.
+NOTE: There were 9 observations read from the data set WORK.M1DMZJZ8.
+NOTE: The data set EMWS1.CLUS_PROFILE has 300 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+29046      proc sort data=EMWS1.Clus_PROFILE;
+MPRINT(EM_DIAGRAM):    proc sort data=EMWS1.Clus_PROFILE;
+29047      by _SEGMENT_ _VARIABLE_ _X_;
+MPRINT(EM_DIAGRAM):   by _SEGMENT_ _VARIABLE_ _X_;
+29048      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 300 observations read from the data set EMWS1.CLUS_PROFILE.
+NOTE: The data set EMWS1.CLUS_PROFILE has 300 observations and 10 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+29049      data EMWS1.Clus_PROFILE(rename=(_VARIABLE_=Variable _X_=NumericValue _XLABEL_=FmtValue));
+MPRINT(EM_DIAGRAM):   data EMWS1.Clus_PROFILE(rename=(_VARIABLE_=Variable _X_=NumericValue _XLABEL_=FmtValue));
+29050      set EMWS1.Clus_PROFILE;
+MPRINT(EM_DIAGRAM):   set EMWS1.Clus_PROFILE;
+29051      retain orderedValue 0;
+MPRINT(EM_DIAGRAM):   retain orderedValue 0;
+29052      label OrderedValue = "%sysfunc(sasmsg(sashelp.dmine, rpt_OrderedValue_label, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label OrderedValue = "rpt_OrderedValue_label";
+29053      by _SEGMENT_ _VARIABLE_;
+MPRINT(EM_DIAGRAM):   by _SEGMENT_ _VARIABLE_;
+29054      if first._variable_ then orderedValue=1;
+MPRINT(EM_DIAGRAM):   if first._variable_ then orderedValue=1;
+29055      else orderedValue+1;
+MPRINT(EM_DIAGRAM):   else orderedValue+1;
+29056      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 300 observations read from the data set EMWS1.CLUS_PROFILE.
+NOTE: The data set EMWS1.CLUS_PROFILE has 300 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+29057      proc transpose data=EMWS1.Clus_OUTVAR out=WORK.Clus_OUTVAR(where=(COL1 ^in('IMPUTED','OMITTED')));
+MPRINT(EM_DIAGRAM):    proc transpose data=EMWS1.Clus_OUTVAR out=WORK.Clus_OUTVAR(where=(COL1 ^in('IMPUTED','OMITTED')));
+29058      var ClaimsRate--T_IMP_EducationalDegree;
+MPRINT(EM_DIAGRAM):   var ClaimsRate--T_IMP_EducationalDegree;
+29059      where _TYPE_ in('TYPE' 'VARIABLE');
+MPRINT(EM_DIAGRAM):   where _TYPE_ in('TYPE' 'VARIABLE');
+29060      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 2 observations read from the data set EMWS1.CLUS_OUTVAR.
+      WHERE _TYPE_ in ('TYPE', 'VARIABLE');
+NOTE: The data set WORK.CLUS_OUTVAR has 13 observations and 4 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29061      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------* ;
+29062      * Clus: DMVQ Variables;
+MPRINT(EM_DIAGRAM):   * Clus: DMVQ Variables;
+29063      *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+29064      %macro dmvqvars;
+29065          ClaimsRate CustomerMonetaryValue IMP_GrossMonthlySalary
+29066         IMP_REP_FirstPolicyYear TOTAL_PREMIUM IMP_GeographicLiving1
+29067         IMP_GeographicLiving2 IMP_GeographicLiving3 IMP_GeographicLiving4
+29068         IMP_HasChildren0 IMP_HasChildren1 T_IMP_CustomerAge T_IMP_EducationalDegree
+29069      %mend ;
+29070      
+29071      
+
+29072      data WORK.Clus_temp;
+MPRINT(EM_DIAGRAM):    data WORK.Clus_temp;
+29073      set EMWS1.Clus_OUTMEAN;
+MPRINT(EM_DIAGRAM):   set EMWS1.Clus_OUTMEAN;
+29074      _idvar_=left(put(_SEGMENT_,4.));
+MPRINT(EM_DIAGRAM):   _idvar_=left(put(_SEGMENT_,4.));
+29075      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 3 observations read from the data set EMWS1.CLUS_OUTMEAN.
+NOTE: The data set WORK.CLUS_TEMP has 3 observations and 23 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29076      proc distance data=WORK.Clus_temp out=EMWS1.Clus_DISTANCE method=l(2) shape=square;
+MPRINT(EM_DIAGRAM):   proc distance data=WORK.Clus_temp out=EMWS1.Clus_DISTANCE method=l(2) shape=square;
+29077      id _idvar_;
+MPRINT(EM_DIAGRAM):   id _idvar_;
+29078      var interval(%dmvqvars);
+MPRINT(EM_DIAGRAM):   var interval(
+MPRINT(DMVQVARS):  ClaimsRate CustomerMonetaryValue IMP_GrossMonthlySalary IMP_REP_FirstPolicyYear TOTAL_PREMIUM IMP_GeographicLiving1 IMP_GeographicLiving2 IMP_GeographicLiving3 IMP_GeographicLiving4 IMP_HasChildren0 IMP_HasChildren1 T_IMP_CustomerAge 
+T_IMP_EducationalDegree
+MPRINT(EM_DIAGRAM):  );
+29079      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The data set EMWS1.CLUS_DISTANCE has 3 observations and 4 variables.
+NOTE: PROCEDURE DISTANCE used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+29080      proc datasets lib=EMWS1 nolist;
+MPRINT(EM_DIAGRAM):    proc datasets lib=EMWS1 nolist;
+29081      modify Clus_DISTANCE;
+MPRINT(EM_DIAGRAM):   modify Clus_DISTANCE;
+29082      rename _idvar_=_SEGMENT_;
+MPRINT(EM_DIAGRAM):   rename _idvar_=_SEGMENT_;
+NOTE: Renaming variable _idvar_ to _SEGMENT_.
+MPRINT(EM_DIAGRAM):   run;
+29083      run;
+
+NOTE: MODIFY was successful for EMWS1.CLUS_DISTANCE.DATA.
+29084      quit;
+MPRINT(EM_DIAGRAM):   quit;
+
+NOTE: PROCEDURE DATASETS used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+      
+
+29085      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+29086      * Clus: Creating data set for Input Mean report;
+MPRINT(EM_DIAGRAM):   * Clus: Creating data set for Input Mean report;
+29087      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+29088      data temp(drop=_type_ over_all);
+MPRINT(EM_DIAGRAM):   data temp(drop=_type_ over_all);
+29089      set EMWS1.Clus_OUTSTAT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Clus_OUTSTAT;
+29090      where _type_ in('DMDB_MEAN', 'CLUS_MEAN');
+MPRINT(EM_DIAGRAM):   where _type_ in('DMDB_MEAN', 'CLUS_MEAN');
+29091      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 4 observations read from the data set EMWS1.CLUS_OUTSTAT.
+      WHERE _type_ in ('CLUS_MEAN', 'DMDB_MEAN');
+NOTE: The data set WORK.TEMP has 4 observations and 14 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29092      proc sort data=temp;
+MPRINT(EM_DIAGRAM):   proc sort data=temp;
+29093      by _SEGMENT_;
+MPRINT(EM_DIAGRAM):   by _SEGMENT_;
+29094      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 4 observations read from the data set WORK.TEMP.
+NOTE: The data set WORK.TEMP has 4 observations and 14 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29095      proc stdize data=temp out=stdtemp pctlpts=0 100 outstat=stat;
+MPRINT(EM_DIAGRAM):   proc stdize data=temp out=stdtemp pctlpts=0 100 outstat=stat;
+29096      var ClaimsRate--T_IMP_EducationalDegree;
+MPRINT(EM_DIAGRAM):   var ClaimsRate--T_IMP_EducationalDegree;
+29097      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 4 observations read from the data set WORK.TEMP.
+NOTE: The data set WORK.STDTEMP has 4 observations and 14 variables.
+NOTE: The data set WORK.STAT has 10 observations and 14 variables.
+NOTE: PROCEDURE STDIZE used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+29098      proc transpose data=stat out=tstat(rename=(COL1=MEAN COL2=STD COL3=MIN COL4=MAX));
+MPRINT(EM_DIAGRAM):   proc transpose data=stat out=tstat(rename=(COL1=MEAN COL2=STD COL3=MIN COL4=MAX));
+29099      where _type_ in ('LOCATION', 'SCALE','P0', 'P100');
+MPRINT(EM_DIAGRAM):   where _type_ in ('LOCATION', 'SCALE','P0', 'P100');
+29100      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 4 observations read from the data set WORK.STAT.
+      WHERE _type_ in ('LOCATION', 'P0', 'P100', 'SCALE');
+NOTE: The data set WORK.TSTAT has 13 observations and 6 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29101      data tstat( rename=(_NAME_=NAME) keep=_NAME_ cv stdmin stdmax);
+MPRINT(EM_DIAGRAM):   data tstat( rename=(_NAME_=NAME) keep=_NAME_ cv stdmin stdmax);
+29102      set tstat;
+MPRINT(EM_DIAGRAM):   set tstat;
+29103      if std ^in (0, .) then do;
+MPRINT(EM_DIAGRAM):   if std ^in (0, .) then do;
+29104      stdmin = abs((min-mean)/std);
+MPRINT(EM_DIAGRAM):   stdmin = abs((min-mean)/std);
+29105      stdmax = abs((max-mean)/std);
+MPRINT(EM_DIAGRAM):   stdmax = abs((max-mean)/std);
+29106      end;
+MPRINT(EM_DIAGRAM):   end;
+29107      if mean ^in(0, .) then cv = std/mean;
+MPRINT(EM_DIAGRAM):   if mean ^in(0, .) then cv = std/mean;
+29108      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 13 observations read from the data set WORK.TSTAT.
+NOTE: The data set WORK.TSTAT has 13 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29109      proc sort data=tstat;
+MPRINT(EM_DIAGRAM):   proc sort data=tstat;
+29110      by NAME;
+MPRINT(EM_DIAGRAM):   by NAME;
+29111      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 13 observations read from the data set WORK.TSTAT.
+NOTE: The data set WORK.TSTAT has 13 observations and 4 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29112      proc transpose data=stdtemp out=tstdtemp(rename=(_NAME_=NAME _LABEL_=LABEL COL1=MEAN));
+MPRINT(EM_DIAGRAM):   proc transpose data=stdtemp out=tstdtemp(rename=(_NAME_=NAME _LABEL_=LABEL COL1=MEAN));
+29113      by _SEGMENT_;
+MPRINT(EM_DIAGRAM):   by _SEGMENT_;
+29114      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 4 observations read from the data set WORK.STDTEMP.
+NOTE: The data set WORK.TSTDTEMP has 52 observations and 4 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+29115      proc sort data=tstdtemp;
+MPRINT(EM_DIAGRAM):   proc sort data=tstdtemp;
+29116      by NAME;
+MPRINT(EM_DIAGRAM):   by NAME;
+29117      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 52 observations read from the data set WORK.TSTDTEMP.
+NOTE: The data set WORK.TSTDTEMP has 52 observations and 4 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29118      data tstdtemp;
+MPRINT(EM_DIAGRAM):   data tstdtemp;
+29119      merge tstdtemp tstat;
+MPRINT(EM_DIAGRAM):   merge tstdtemp tstat;
+29120      by NAME;
+MPRINT(EM_DIAGRAM):   by NAME;
+29121      STDMEAN = (MEAN + stdmin)/(stdmin + stdmax);
+MPRINT(EM_DIAGRAM):   STDMEAN = (MEAN + stdmin)/(stdmin + stdmax);
+29122      drop stdmin stdmax mean;
+MPRINT(EM_DIAGRAM):   drop stdmin stdmax mean;
+29123      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 52 observations read from the data set WORK.TSTDTEMP.
+NOTE: There were 13 observations read from the data set WORK.TSTAT.
+NOTE: The data set WORK.TSTDTEMP has 52 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29124      proc transpose data=EMWS1.Clus_OUTVAR out=tempVar(drop=_LABEL_ rename=( _NAME_=NAME VARIABLE=INPUT));
+MPRINT(EM_DIAGRAM):   proc transpose data=EMWS1.Clus_OUTVAR out=tempVar(drop=_LABEL_ rename=( _NAME_=NAME VARIABLE=INPUT));
+29125      var ClaimsRate--T_IMP_EducationalDegree;
+MPRINT(EM_DIAGRAM):   var ClaimsRate--T_IMP_EducationalDegree;
+29126      id _type_;
+MPRINT(EM_DIAGRAM):   id _type_;
+29127      where _type_ = 'VARIABLE';
+MPRINT(EM_DIAGRAM):   where _type_ = 'VARIABLE';
+29128      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 1 observations read from the data set EMWS1.CLUS_OUTVAR.
+      WHERE _type_='VARIABLE';
+NOTE: The data set WORK.TEMPVAR has 15 observations and 2 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+29129      proc sort data=tempVar;
+MPRINT(EM_DIAGRAM):   proc sort data=tempVar;
+29130      by NAME;
+MPRINT(EM_DIAGRAM):   by NAME;
+29131      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 15 observations read from the data set WORK.TEMPVAR.
+NOTE: The data set WORK.TEMPVAR has 15 observations and 2 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29132      data EMWS1.Clus_INPUTMEAN(rename=(NAME=VARIABLE));
+MPRINT(EM_DIAGRAM):   data EMWS1.Clus_INPUTMEAN(rename=(NAME=VARIABLE));
+29133      Length _SEGMENT_CHAR_ $7;
+MPRINT(EM_DIAGRAM):   Length _SEGMENT_CHAR_ $7;
+29134      label _SEGMENT_ = "%sysfunc(sasmsg(sashelp.dmine, rpt_segmentName_vlabel,  NOQUOTE))" _SEGMENT_CHAR_ = "%sysfunc(sasmsg(sashelp.dmine, rpt_segmentId_vlabel,    NOQUOTE))" NAME = "%sysfunc(sasmsg(sashelp.dmine, rpt_variable_vlabel,     NOQUOTE))"
+29134    !  INPUT =
+29135         "%sysfunc(sasmsg(sashelp.dmine, rpt_input_vlabel,        NOQUOTE))" LABEL = "%sysfunc(sasmsg(sashelp.dmine, rpt_label_vlabel,        NOQUOTE))" CV = "%sysfunc(sasmsg(sashelp.dmine, rpt_cv_vlabel,           NOQUOTE))" STDMEAN =
+29136         "%sysfunc(sasmsg(sashelp.dmine, rpt_normmean_vlabel,     NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label _SEGMENT_ = "Segment Name" _SEGMENT_CHAR_ = "Segment Id" NAME = "Variable" INPUT = "Input" LABEL = "Label" CV = "Coefficient of Variation" STDMEAN = "Normalized Mean";
+29137      merge tempvar tstdtemp;
+MPRINT(EM_DIAGRAM):   merge tempvar tstdtemp;
+29138      by NAME;
+MPRINT(EM_DIAGRAM):   by NAME;
+29139      if LABEL='' then LABEL=NAME;
+MPRINT(EM_DIAGRAM):   if LABEL='' then LABEL=NAME;
+29140      _SEGMENT_CHAR_ = strip(put(_SEGMENT_, best.));
+MPRINT(EM_DIAGRAM):   _SEGMENT_CHAR_ = strip(put(_SEGMENT_, best.));
+29141      if _SEGMENT_ = . then _SEGMENT_CHAR_='Overall';
+MPRINT(EM_DIAGRAM):   if _SEGMENT_ = . then _SEGMENT_CHAR_='Overall';
+29142      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 15 observations read from the data set WORK.TEMPVAR.
+NOTE: There were 52 observations read from the data set WORK.TSTDTEMP.
+NOTE: The data set EMWS1.CLUS_INPUTMEAN has 54 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+29143      proc sort data=EMWS1.Clus_INPUTMEAN;
+MPRINT(EM_DIAGRAM):   proc sort data=EMWS1.Clus_INPUTMEAN;
+29144      by descending cv;
+MPRINT(EM_DIAGRAM):   by descending cv;
+29145      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 54 observations read from the data set EMWS1.CLUS_INPUTMEAN.
+NOTE: The data set EMWS1.CLUS_INPUTMEAN has 54 observations and 7 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+29146      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+29147      * Clus: Determining the important variables;
+MPRINT(EM_DIAGRAM):   * Clus: Determining the important variables;
+29148      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+
+29149      %let _nobs = 0;
+29150      data keepvars(rename=(NAME=INPUT));
+MPRINT(EM_DIAGRAM):    data keepvars(rename=(NAME=INPUT));
+29151      set EMWS1.Clus_OUTIMPORT(where=(IMPORTANCE>0.5)) end=eof;
+MPRINT(EM_DIAGRAM):   set EMWS1.Clus_OUTIMPORT(where=(IMPORTANCE>0.5)) end=eof;
+29152      if eof then call symput('_nobs', strip(put(_N_, best.)));
+MPRINT(EM_DIAGRAM):   if eof then call symput('_nobs', strip(put(_N_, best.)));
+29153      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 7 observations read from the data set EMWS1.CLUS_OUTIMPORT.
+      WHERE IMPORTANCE>0.5;
+NOTE: The data set WORK.KEEPVARS has 7 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.00 seconds
+      
+
+29154      proc transpose data=EMWS1.Clus_OUTVAR out=tempVar(drop=_LABEL_ rename=( _NAME_=NAME VARIABLE=INPUT));
+MPRINT(EM_DIAGRAM):    proc transpose data=EMWS1.Clus_OUTVAR out=tempVar(drop=_LABEL_ rename=( _NAME_=NAME VARIABLE=INPUT));
+29155      var ClaimsRate--T_IMP_EducationalDegree;
+MPRINT(EM_DIAGRAM):   var ClaimsRate--T_IMP_EducationalDegree;
+29156      id _type_;
+MPRINT(EM_DIAGRAM):   id _type_;
+29157      where _type_ = 'VARIABLE';
+MPRINT(EM_DIAGRAM):   where _type_ = 'VARIABLE';
+29158      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 1 observations read from the data set EMWS1.CLUS_OUTVAR.
+      WHERE _type_='VARIABLE';
+NOTE: The data set WORK.TEMPVAR has 15 observations and 2 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29159      proc sort data=keepvars;
+MPRINT(EM_DIAGRAM):   proc sort data=keepvars;
+29160      by INPUT;
+MPRINT(EM_DIAGRAM):   by INPUT;
+29161      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 7 observations read from the data set WORK.KEEPVARS.
+NOTE: The data set WORK.KEEPVARS has 7 observations and 5 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29162      proc sort data=tempvar;
+MPRINT(EM_DIAGRAM):   proc sort data=tempvar;
+29163      by INPUT;
+MPRINT(EM_DIAGRAM):   by INPUT;
+29164      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 15 observations read from the data set WORK.TEMPVAR.
+NOTE: The data set WORK.TEMPVAR has 15 observations and 2 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29165      data vars;
+MPRINT(EM_DIAGRAM):   data vars;
+29166      merge tempvar keepvars(in=b);
+MPRINT(EM_DIAGRAM):   merge tempvar keepvars(in=b);
+29167      by INPUT;
+MPRINT(EM_DIAGRAM):   by INPUT;
+29168      if b then output;
+MPRINT(EM_DIAGRAM):   if b then output;
+29169      run;
+MPRINT(EM_DIAGRAM):   run;
+
+WARNING: Multiple lengths were specified for the BY variable INPUT by input data sets. This may cause unexpected results.
+NOTE: There were 15 observations read from the data set WORK.TEMPVAR.
+NOTE: There were 7 observations read from the data set WORK.KEEPVARS.
+NOTE: The data set WORK.VARS has 8 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+29170      proc sort data=vars;
+MPRINT(EM_DIAGRAM):   proc sort data=vars;
+29171      by descending importance;
+MPRINT(EM_DIAGRAM):   by descending importance;
+29172      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 8 observations read from the data set WORK.VARS.
+NOTE: The data set WORK.VARS has 8 observations and 6 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29173      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+29174      set vars;
+MPRINT(EM_DIAGRAM):   set vars;
+29175      if _N_=1 then call symput('CLUS_PROFVARS', strip(NAME));
+MPRINT(EM_DIAGRAM):   if _N_=1 then call symput('CLUS_PROFVARS', strip(NAME));
+29176      else call symput('CLUS_PROFVARS',symget('CLUS_PROFVARS')!!' '!!strip(NAME));
+MPRINT(EM_DIAGRAM):   else call symput('CLUS_PROFVARS',symget('CLUS_PROFVARS')!!' '!!strip(NAME));
+29177      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 8 observations read from the data set WORK.VARS.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * mergeVarMeansandClusLabel;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+29178      *------------------------------------------------------------*;
+29179      * mergeVarMeansandClusLabel;
+29180      *------------------------------------------------------------*;
+29181      data temp(keep=_SEGMENT_ &CLUS_PROFVARS);
+MPRINT(EM_DIAGRAM):   data temp(keep=_SEGMENT_ T_IMP_CustomerAge IMP_GrossMonthlySalary TOTAL_PREMIUM IMP_HasChildren0 IMP_HasChildren1 CustomerMonetaryValue T_IMP_EducationalDegree ClaimsRate);
+29182      length _SEGMENT_ &CLUS_PROFVARS 8;
+MPRINT(EM_DIAGRAM):   length _SEGMENT_ T_IMP_CustomerAge IMP_GrossMonthlySalary TOTAL_PREMIUM IMP_HasChildren0 IMP_HasChildren1 CustomerMonetaryValue T_IMP_EducationalDegree ClaimsRate 8;
+29183      set EMWS1.Clus_OUTSTAT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Clus_OUTSTAT;
+29184      where _type_ ='CLUS_MEAN';
+MPRINT(EM_DIAGRAM):   where _type_ ='CLUS_MEAN';
+29185      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 3 observations read from the data set EMWS1.CLUS_OUTSTAT.
+      WHERE _type_='CLUS_MEAN';
+NOTE: The data set WORK.TEMP has 3 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29186      proc sort data=temp;
+MPRINT(EM_DIAGRAM):   proc sort data=temp;
+29187      by _SEGMENT_;
+MPRINT(EM_DIAGRAM):   by _SEGMENT_;
+29188      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 3 observations read from the data set WORK.TEMP.
+NOTE: The data set WORK.TEMP has 3 observations and 9 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+29189      data EMWS1.Clus_LABEL;
+MPRINT(EM_DIAGRAM):   data EMWS1.Clus_LABEL;
+29190      merge EMWS1.Clus_LABEL(keep=_SEGMENT_ LABEL) temp;
+MPRINT(EM_DIAGRAM):   merge EMWS1.Clus_LABEL(keep=_SEGMENT_ LABEL) temp;
+29191      by _SEGMENT_;
+MPRINT(EM_DIAGRAM):   by _SEGMENT_;
+29192      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 3 observations read from the data set EMWS1.CLUS_LABEL.
+NOTE: There were 3 observations read from the data set WORK.TEMP.
+NOTE: The data set EMWS1.CLUS_LABEL has 3 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(EM_DIAGRAM):    proc printto;
+MPRINT(EM_DIAGRAM):   run;

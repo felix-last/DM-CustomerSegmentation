@@ -4,71 +4,116 @@
  
 Variable Summary
 
-         Measurement    Frequency
-Role        Level         Count
+            Measurement    Frequency
+Role           Level         Count
 
-INPUT     INTERVAL          9    
-INPUT     NOMINAL           2    
-INPUT     ORDINAL           2    
+ASSESS       NOMINAL            1   
+INPUT        BINARY             1   
+INPUT        INTERVAL          12   
+INPUT        NOMINAL            1   
+INPUT        ORDINAL            2   
+REJECTED     INTERVAL           1   
  
                                                                                                                                                                                                                                                                 
  
 Class Variables
 
-Obs    NAME                 LEVEL                CODE     FREQUENCY    TYPE    CRAW               NRAW    FREQPERCENT    NMISSPERCENT
+Obs            NAME             LEVEL                CODE     FREQUENCY    TYPE    CRAW               NRAW    FREQPERCENT    NMISSPERCENT
 
-  1    EducationalDegree                            4            17     C                            .       0.1652           .      
-  2    EducationalDegree    1 - BASIC               1          1272     C      1 - Basic             .      12.3639         12.3844  
-  3    EducationalDegree    2 - HIGH SCHOOL         0          3507     C      2 - High School       .      34.0883         34.1447  
-  4    EducationalDegree    3 - BSC/MSC             2          4794     C      3 - BSc/MSc           .      46.5980         46.6751  
-  5    EducationalDegree    4 - PHD                 3           698     C      4 - PhD               .       6.7846          6.7958  
-  6    FirstPolicyYear      .                      25            30     N                            .       0.2916           .      
-  7    FirstPolicyYear      1974                   11           140     N                         1974       1.3608          1.3648  
-  8    FirstPolicyYear      1975                   24           285     N                         1975       2.7702          2.7783  
-  9    FirstPolicyYear      1976                    7           433     N                         1976       4.2088          4.2211  
- 10    FirstPolicyYear      1977                    9           453     N                         1977       4.4032          4.4161  
- 11    FirstPolicyYear      1978                   12           453     N                         1978       4.4032          4.4161  
- 12    FirstPolicyYear      1979                    5           443     N                         1979       4.3060          4.3186  
- 13    FirstPolicyYear      1980                   14           432     N                         1980       4.1991          4.2113  
- 14    FirstPolicyYear      1981                    1           444     N                         1981       4.3157          4.3283  
- 15    FirstPolicyYear      1982                   18           444     N                         1982       4.3157          4.3283  
- 16    FirstPolicyYear      1983                    8           423     N                         1983       4.1116          4.1236  
- 17    FirstPolicyYear      1984                   15           464     N                         1984       4.5101          4.5233  
- 18    FirstPolicyYear      1985                    0           429     N                         1985       4.1699          4.1821  
- 19    FirstPolicyYear      1986                    4           458     N                         1986       4.4518          4.4648  
- 20    FirstPolicyYear      1987                   17           438     N                         1987       4.2574          4.2698  
- 21    FirstPolicyYear      1988                    6           512     N                         1988       4.9767          4.9912  
- 22    FirstPolicyYear      1989                   16           466     N                         1989       4.5295          4.5428  
- 23    FirstPolicyYear      1990                    3           447     N                         1990       4.3449          4.3576  
- 24    FirstPolicyYear      1991                    2           430     N                         1991       4.1796          4.1919  
- 25    FirstPolicyYear      1992                   21           451     N                         1992       4.3837          4.3966  
- 26    FirstPolicyYear      1993                   20           472     N                         1993       4.5879          4.6013  
- 27    FirstPolicyYear      1994                   19           474     N                         1994       4.6073          4.6208  
- 28    FirstPolicyYear      1995                   13           444     N                         1995       4.3157          4.3283  
- 29    FirstPolicyYear      1996                   23           440     N                         1996       4.2768          4.2893  
- 30    FirstPolicyYear      1997                   22           271     N                         1997       2.6341          2.6418  
- 31    FirstPolicyYear      1998                   10           112     N                         1998       1.0886          1.0918  
- 32    GeographicLiving     .                       4             1     N                            .       0.0097           .      
- 33    GeographicLiving     1                       0          3046     N                            1      29.6073         29.6102  
- 34    GeographicLiving     2                       3          1036     N                            2      10.0700         10.0710  
- 35    GeographicLiving     3                       2          2064     N                            3      20.0622         20.0642  
- 36    GeographicLiving     4                       1          4141     N                            4      40.2508         40.2547  
- 37    HasChildren          .                       2            21     N                            .       0.2041           .      
- 38    HasChildren          0                       1          3008     N                            0      29.2379         29.2978  
- 39    HasChildren          1                       0          7259     N                            1      70.5579         70.7022  
+  1    IMP_CustomerAge          15                     66            12     N                           15       0.1166          0.1166  
+  2    IMP_CustomerAge          16                     13            35     N                           16       0.3399          0.3399  
+  3    IMP_CustomerAge          17                     57            69     N                           17       0.6702          0.6702  
+  4    IMP_CustomerAge          18                     65            94     N                           18       0.9130          0.9130  
+  5    IMP_CustomerAge          19                     54           133     N                           19       1.2918          1.2918  
+  6    IMP_CustomerAge          20                     61           137     N                           20       1.3306          1.3306  
+  7    IMP_CustomerAge          21                      1           155     N                           21       1.5054          1.5054  
+  8    IMP_CustomerAge          22                     52           177     N                           22       1.7191          1.7191  
+  9    IMP_CustomerAge          23                     58           155     N                           23       1.5054          1.5054  
+ 10    IMP_CustomerAge          24                     53           163     N                           24       1.5831          1.5831  
+ 11    IMP_CustomerAge          25                     56           159     N                           25       1.5443          1.5443  
+ 12    IMP_CustomerAge          26                     31           189     N                           26       1.8357          1.8357  
+ 13    IMP_CustomerAge          27                     16           170     N                           27       1.6511          1.6511  
+ 14    IMP_CustomerAge          28                     42           162     N                           28       1.5734          1.5734  
+ 15    IMP_CustomerAge          29                     60           168     N                           29       1.6317          1.6317  
+ 16    IMP_CustomerAge          30                     18           177     N                           30       1.7191          1.7191  
+ 17    IMP_CustomerAge          31                     40           158     N                           31       1.5346          1.5346  
+ 18    IMP_CustomerAge          32                     32           185     N                           32       1.7968          1.7968  
+ 19    IMP_CustomerAge          33                     43           157     N                           33       1.5249          1.5249  
+ 20    IMP_CustomerAge          34                      0           163     N                           34       1.5831          1.5831  
+ 21    IMP_CustomerAge          35                      3           190     N                           35       1.8454          1.8454  
+ 22    IMP_CustomerAge          36                     33           170     N                           36       1.6511          1.6511  
+ 23    IMP_CustomerAge          37                     15           164     N                           37       1.5929          1.5929  
+ 24    IMP_CustomerAge          38                      8           173     N                           38       1.6803          1.6803  
+ 25    IMP_CustomerAge          39                     38           185     N                           39       1.7968          1.7968  
+ 26    IMP_CustomerAge          40                     48           169     N                           40       1.6414          1.6414  
+ 27    IMP_CustomerAge          41                     14           176     N                           41       1.7094          1.7094  
+ 28    IMP_CustomerAge          42                      7           187     N                           42       1.8162          1.8162  
+ 29    IMP_CustomerAge          43                      4           163     N                           43       1.5831          1.5831  
+ 30    IMP_CustomerAge          44                     24           143     N                           44       1.3889          1.3889  
+ 31    IMP_CustomerAge          45                     49           150     N                           45       1.4569          1.4569  
+ 32    IMP_CustomerAge          46                      2           170     N                           46       1.6511          1.6511  
+ 33    IMP_CustomerAge          47                     51           130     N                           47       1.2626          1.2626  
+ 34    IMP_CustomerAge          48                     30           200     N                           48       1.9425          1.9425  
+ 35    IMP_CustomerAge          49                     37           179     N                           49       1.7385          1.7385  
+ 36    IMP_CustomerAge          50                     26           168     N                           50       1.6317          1.6317  
+ 37    IMP_CustomerAge          51                     35           160     N                           51       1.5540          1.5540  
+ 38    IMP_CustomerAge          52                     45           194     N                           52       1.8842          1.8842  
+ 39    IMP_CustomerAge          53                     55           186     N                           53       1.8065          1.8065  
+ 40    IMP_CustomerAge          54                     17           223     N                           54       2.1659          2.1659  
+ 41    IMP_CustomerAge          55                     19           155     N                           55       1.5054          1.5054  
+ 42    IMP_CustomerAge          56                     47           166     N                           56       1.6123          1.6123  
+ 43    IMP_CustomerAge          57                     41           171     N                           57       1.6608          1.6608  
+ 44    IMP_CustomerAge          58                     11           171     N                           58       1.6608          1.6608  
+ 45    IMP_CustomerAge          59                     36           173     N                           59       1.6803          1.6803  
+ 46    IMP_CustomerAge          60                      5           174     N                           60       1.6900          1.6900  
+ 47    IMP_CustomerAge          61                     27           172     N                           61       1.6706          1.6706  
+ 48    IMP_CustomerAge          62                     50           185     N                           62       1.7968          1.7968  
+ 49    IMP_CustomerAge          63                     25           193     N                           63       1.8745          1.8745  
+ 50    IMP_CustomerAge          64                     20           186     N                           64       1.8065          1.8065  
+ 51    IMP_CustomerAge          65                     39           186     N                           65       1.8065          1.8065  
+ 52    IMP_CustomerAge          66                     46           150     N                           66       1.4569          1.4569  
+ 53    IMP_CustomerAge          67                     12           179     N                           67       1.7385          1.7385  
+ 54    IMP_CustomerAge          68                      9           165     N                           68       1.6026          1.6026  
+ 55    IMP_CustomerAge          69                     59           171     N                           69       1.6608          1.6608  
+ 56    IMP_CustomerAge          70                     34           182     N                           70       1.7677          1.7677  
+ 57    IMP_CustomerAge          71                     10           165     N                           71       1.6026          1.6026  
+ 58    IMP_CustomerAge          72                     21           170     N                           72       1.6511          1.6511  
+ 59    IMP_CustomerAge          73                      6           163     N                           73       1.5831          1.5831  
+ 60    IMP_CustomerAge          74                     23           162     N                           74       1.5734          1.5734  
+ 61    IMP_CustomerAge          75                     28           145     N                           75       1.4083          1.4083  
+ 62    IMP_CustomerAge          76                     62           127     N                           76       1.2335          1.2335  
+ 63    IMP_CustomerAge          77                     44           101     N                           77       0.9810          0.9810  
+ 64    IMP_CustomerAge          78                     29            77     N                           78       0.7479          0.7479  
+ 65    IMP_CustomerAge          79                     22            57     N                           79       0.5536          0.5536  
+ 66    IMP_CustomerAge          80                     64            37     N                           80       0.3594          0.3594  
+ 67    IMP_CustomerAge          81                     63            14     N                           81       0.1360          0.1360  
+ 68    IMP_CustomerAge          988                    67             1     N                          988       0.0097          0.0097  
+ 69    IMP_EducationalDegree    1 - BASIC               1          1272     C      1 - Basic             .      12.3543         12.3543  
+ 70    IMP_EducationalDegree    2 - HIGH SCHOOL         0          3516     C      2 - High School       .      34.1492         34.1492  
+ 71    IMP_EducationalDegree    3 - BSC/MSC             2          4810     C      3 - BSc/MSc           .      46.7172         46.7172  
+ 72    IMP_EducationalDegree    4 - PHD                 3           698     C      4 - PhD               .       6.7793          6.7793  
+ 73    IMP_GeographicLiving     1                       0          3048     N                            1      29.6037         29.6037  
+ 74    IMP_GeographicLiving     2                       3          1037     N                            2      10.0719         10.0719  
+ 75    IMP_GeographicLiving     3                       2          2066     N                            3      20.0660         20.0660  
+ 76    IMP_GeographicLiving     4                       1          4145     N                            4      40.2584         40.2584  
+ 77    IMP_HasChildren          0                       1          3016     N                            0      29.2929         29.2929  
+ 78    IMP_HasChildren          1                       0          7280     N                            1      70.7071         70.7071  
  
                                                                                                                                                                                                                                                                 
  
 Interval Variables
 
-Obs    NAME                          NMISS            N          MIN         MAX       MEAN        STD    SKEWNESS    KURTOSIS
+Obs    NAME                             NMISS            N           MIN          MAX       MEAN        STD    SKEWNESS    KURTOSIS
 
- 1     ClaimsRate                        0        10288         0.00       35.00       0.70       0.68     30.7706     1344.97
- 2     CustomerAge                      17        10271        15.00       81.00      47.90      17.39     -0.0136       -1.16
- 3     CustomerMonetaryValue             0        10288    -28945.40    11875.89     209.04     545.08    -28.8912     1438.92
- 4     GrossMonthlySalary               36        10252       665.00    10042.00    4995.65    1968.82      0.0043       -0.92
- 5     PremiumsinLOBHealth              43        10245        -2.11    28272.00     171.58     296.52     84.4906     7908.54
- 6     PremiumsinLOBHousehold            0        10288       -75.00    25048.80     210.48     352.71     36.0460     2425.82
- 7     PremiumsinLOBLife               104        10184        -7.00      398.30      41.86      47.49      2.0903        5.72
- 8     PremiumsinLOBMotor               34        10254        -4.11    11604.42     300.47     211.97     23.8702     1095.94
- 9     PremiumsinLOBWorkComp            86        10202       -12.00     1988.70      41.28      51.52      7.4416      212.90
+  1    ClaimsRate                           0        10296          0.00       256.20       0.74       2.92     71.2099     5877.86
+  2    CustomerMonetaryValue                0        10296    -165680.42     11875.89     177.89    1945.81    -67.0427     5323.18
+  3    IMP_FirstPolicyYear              10296            0           .            .          .          .         .             .  
+  4    IMP_GrossMonthlySalary               0        10296        665.00    110429.76    5012.80    2310.85     11.2708      476.06
+  5    IMP_PremiumsinLOBHealth              0        10296         -2.11     28272.00     171.54     295.79     84.6964     7947.38
+  6    IMP_PremiumsinLOBLife                0        10296         -7.00       398.30      41.69      47.27      2.1068        5.81
+  7    IMP_PremiumsinLOBMotor               0        10296         -4.11     11604.42     300.46     211.56     23.9105     1099.93
+  8    IMP_PremiumsinLOBWorkComp            0        10296        -12.00      1988.70      41.15      51.32      7.4682      214.34
+  9    IMP_REP_FirstPolicyYear              0        10296       1974.00      1998.00    1986.02       6.60     -0.0219       -1.16
+ 10    LOYALTY                          10296            0           .            .          .          .         .             .  
+ 11    PremiumsinLOBHousehold               0        10296        -75.00     25048.80     210.43     352.60     36.0540     2427.16
+ 12    TOTAL_PREMIUM                        0        10296        354.18     29331.32     765.28     471.35     40.0524     2147.16

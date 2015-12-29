@@ -1,0 +1,42 @@
+*------------------------------------------------------------*
+User:                raquel
+Date:                December 29, 2015
+Time:                01:43:36
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+            Measurement    Frequency
+Role           Level         Count
+ 
+INPUT        BINARY            1
+INPUT        INTERVAL          9
+INPUT        NOMINAL           1
+INPUT        ORDINAL           2
+REJECTED     INTERVAL          1
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+Formula Transformations
+(maximum 500 observations printed)
+ 
+                          Measurement
+Variable Name    Role        Level       Formula
+ 
+TOTAL_PREMIUM    INPUT     INTERVAL      IMP_PremiumsinLOBHealth + IMP_PremiumsinLOBLife + IMP_PremiumsinLOBMotor + IMP_PremiumsinLOBWorkComp + PremiumsinLOBHousehold
+LOYALTY          INPUT     INTERVAL      YEAR( DATE()) -  IMP_FirstPolicyYear
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*

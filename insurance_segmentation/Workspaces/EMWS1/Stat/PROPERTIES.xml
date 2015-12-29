@@ -2,7 +2,7 @@
  ChiSquareIntervalNBins="5" MaximumVars="1000" HideVariable="Y" DropRejected="Y" UseValidate="N"
  UseTest="N" UseScore="N" NObs="ALL" IntervalDistribution="Y" ClassDistribution="Y"
  LevelSummary="Y" ForceRun="N" RunAction="Train" Component="StatExplore" RawCreateTime="1765363617"
- CreateTime="10DEC2015:10:46:57" RunId="2fef602e-04e7-475d-bdf9-153d7ddd8e8f">
+ CreateTime="10DEC2015:10:46:57" RunId="2c7bc5a2-38d7-4828-a81d-c0cab7ae1110">
 <VARIABLEPROPERTIES/>
 <FILEPROPERTIES ><![CDATA[
 CROSSTAB

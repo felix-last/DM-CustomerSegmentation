@@ -9,96 +9,29 @@ Traverser: Beginning flow traversal
 *------------------------------------------------------------* 
 * 
 * Ids : Beginning Update 
-* datetime : 28DEC2015:13:36:55 
+* datetime : 29DEC2015:12:37:59 
 * 
 *------------------------------------------------------------* 
 *------------------------------------------------------------* 
 * 
 * Ids : End Update 
-* datetime : 28DEC2015:13:36:55 
+* datetime : 29DEC2015:12:38:00 
 * 
 *------------------------------------------------------------* 
-Traverser: WaitingNode "PLOT2" 
-Traverser: WaitingNode "TRANS" 
 traverser_readyNode_note 
 *------------------------------------------------------------* 
 * 
 * Filter : Beginning Update 
-* datetime : 28DEC2015:13:36:56 
+* datetime : 29DEC2015:12:38:00 
 * 
 *------------------------------------------------------------* 
 *------------------------------------------------------------* 
 * 
 * Filter : End Update 
-* datetime : 28DEC2015:13:36:56 
-* 
-*------------------------------------------------------------* 
-Traverser: WaitingNode "TRANS" 
-traverser_readyNode_note 
-*------------------------------------------------------------* 
-* 
-* Plot2 : Beginning Update 
-* datetime : 28DEC2015:13:36:56 
-* 
-*------------------------------------------------------------* 
-*------------------------------------------------------------* 
-* 
-* Plot2 : End Update 
-* datetime : 28DEC2015:13:36:56 
-* 
-*------------------------------------------------------------* 
-traverser_readyNode_note 
-*------------------------------------------------------------* 
-* 
-* Trans : Beginning Update 
-* datetime : 28DEC2015:13:36:57 
-* 
-*------------------------------------------------------------* 
-21678      data _null_;
-21679      set EMWS1.Plot2_CMeta_TRAIN (obs=1);
-21680      run;
-
-NOTE: There were 1 observations read from the data set EMWS1.PLOT2_CMETA_TRAIN.
-NOTE: DATA statement used (Total process time):
-      real time           0.00 seconds
-      cpu time            0.00 seconds
-      
-
-21681      *------------------------------------------------------------*;
-21682      * Trans: Update Variables Set;
-21683      *------------------------------------------------------------*;
-
-21684      data EMWS1.Trans_VariableSet;
-21685      length METHOD $12;
-21686      length NUMBINS 8;
-21687      set EMWS1.Plot2_CMeta_TRAIN;
-21688      where(ROLE in("TARGET", "INPUT", "REJECTED", "FREQ"));
-21689      run;
-
-NOTE: Variable METHOD is uninitialized.
-NOTE: Variable NUMBINS is uninitialized.
-NOTE: There were 13 observations read from the data set EMWS1.PLOT2_CMETA_TRAIN.
-      WHERE ROLE in ('FREQ', 'INPUT', 'REJECTED', 'TARGET');
-NOTE: The data set EMWS1.TRANS_VARIABLESET has 13 observations and 22 variables.
-NOTE: DATA statement used (Total process time):
-      real time           0.01 seconds
-      cpu time            0.01 seconds
-      
-
-21690      * Trans: End of Update Variables Set;
-21691      *------------------------------------------------------------*;
-
-21692      *------------------------------------------------------------*;
-21693      * Trans: Computing metadata for TRAIN data;
-21694      *------------------------------------------------------------*;
-
-*------------------------------------------------------------* 
-* 
-* Trans : End Update 
-* datetime : 28DEC2015:13:36:57 
+* datetime : 29DEC2015:12:38:00 
 * 
 *------------------------------------------------------------* 
 Traverser: Run Completed 
-21705      proc printto;
-21706      run;
+10747      proc printto;
+10748      run;
 
