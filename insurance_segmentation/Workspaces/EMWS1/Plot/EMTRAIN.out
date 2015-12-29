@@ -7,10 +7,10 @@ Variable Summary
          Measurement    Frequency
 Role        Level         Count
 
-INPUT     BINARY            1    
-INPUT     INTERVAL          9    
-INPUT     NOMINAL           1    
-INPUT     ORDINAL           2    
+INPUT     BINARY             1   
+INPUT     INTERVAL          10   
+INPUT     NOMINAL            1   
+INPUT     ORDINAL            1   
  
                                                                                                                                                                                                                                                                 
  
@@ -18,88 +18,19 @@ Class Variables
 
 Obs    NAME                 LEVEL                CODE     FREQUENCY    TYPE    CRAW               NRAW    FREQPERCENT    NMISSPERCENT
 
-  1    CustomerAge          .                      65            17     N                            .       0.1651           .      
-  2    CustomerAge          15                     67            12     N                           15       0.1166          0.1167  
-  3    CustomerAge          16                     13            35     N                           16       0.3399          0.3405  
-  4    CustomerAge          17                     57            69     N                           17       0.6702          0.6713  
-  5    CustomerAge          18                     66            94     N                           18       0.9130          0.9145  
-  6    CustomerAge          19                     54           133     N                           19       1.2918          1.2939  
-  7    CustomerAge          20                     61           137     N                           20       1.3306          1.3328  
-  8    CustomerAge          21                      1           155     N                           21       1.5054          1.5079  
-  9    CustomerAge          22                     52           177     N                           22       1.7191          1.7220  
- 10    CustomerAge          23                     58           155     N                           23       1.5054          1.5079  
- 11    CustomerAge          24                     53           163     N                           24       1.5831          1.5858  
- 12    CustomerAge          25                     56           159     N                           25       1.5443          1.5468  
- 13    CustomerAge          26                     31           189     N                           26       1.8357          1.8387  
- 14    CustomerAge          27                     16           170     N                           27       1.6511          1.6539  
- 15    CustomerAge          28                     42           162     N                           28       1.5734          1.5760  
- 16    CustomerAge          29                     60           168     N                           29       1.6317          1.6344  
- 17    CustomerAge          30                     18           177     N                           30       1.7191          1.7220  
- 18    CustomerAge          31                     40           158     N                           31       1.5346          1.5371  
- 19    CustomerAge          32                     32           185     N                           32       1.7968          1.7998  
- 20    CustomerAge          33                     43           157     N                           33       1.5249          1.5274  
- 21    CustomerAge          34                      0           163     N                           34       1.5831          1.5858  
- 22    CustomerAge          35                      3           190     N                           35       1.8454          1.8484  
- 23    CustomerAge          36                     33           170     N                           36       1.6511          1.6539  
- 24    CustomerAge          37                     15           164     N                           37       1.5929          1.5955  
- 25    CustomerAge          38                      8           173     N                           38       1.6803          1.6830  
- 26    CustomerAge          39                     38           185     N                           39       1.7968          1.7998  
- 27    CustomerAge          40                     48           169     N                           40       1.6414          1.6441  
- 28    CustomerAge          41                     14           176     N                           41       1.7094          1.7122  
- 29    CustomerAge          42                      7           187     N                           42       1.8162          1.8192  
- 30    CustomerAge          43                      4           163     N                           43       1.5831          1.5858  
- 31    CustomerAge          44                     24           143     N                           44       1.3889          1.3912  
- 32    CustomerAge          45                     49           150     N                           45       1.4569          1.4593  
- 33    CustomerAge          46                      2           170     N                           46       1.6511          1.6539  
- 34    CustomerAge          47                     51           130     N                           47       1.2626          1.2647  
- 35    CustomerAge          48                     30           200     N                           48       1.9425          1.9457  
- 36    CustomerAge          49                     37           179     N                           49       1.7385          1.7414  
- 37    CustomerAge          50                     26           168     N                           50       1.6317          1.6344  
- 38    CustomerAge          51                     35           160     N                           51       1.5540          1.5566  
- 39    CustomerAge          52                     45           194     N                           52       1.8842          1.8873  
- 40    CustomerAge          53                     55           186     N                           53       1.8065          1.8095  
- 41    CustomerAge          54                     17           206     N                           54       2.0008          2.0041  
- 42    CustomerAge          55                     19           155     N                           55       1.5054          1.5079  
- 43    CustomerAge          56                     47           166     N                           56       1.6123          1.6149  
- 44    CustomerAge          57                     41           171     N                           57       1.6608          1.6636  
- 45    CustomerAge          58                     11           171     N                           58       1.6608          1.6636  
- 46    CustomerAge          59                     36           173     N                           59       1.6803          1.6830  
- 47    CustomerAge          60                      5           174     N                           60       1.6900          1.6928  
- 48    CustomerAge          61                     27           172     N                           61       1.6706          1.6733  
- 49    CustomerAge          62                     50           185     N                           62       1.7968          1.7998  
- 50    CustomerAge          63                     25           193     N                           63       1.8745          1.8776  
- 51    CustomerAge          64                     20           186     N                           64       1.8065          1.8095  
- 52    CustomerAge          65                     39           186     N                           65       1.8065          1.8095  
- 53    CustomerAge          66                     46           150     N                           66       1.4569          1.4593  
- 54    CustomerAge          67                     12           179     N                           67       1.7385          1.7414  
- 55    CustomerAge          68                      9           165     N                           68       1.6026          1.6052  
- 56    CustomerAge          69                     59           171     N                           69       1.6608          1.6636  
- 57    CustomerAge          70                     34           182     N                           70       1.7677          1.7706  
- 58    CustomerAge          71                     10           165     N                           71       1.6026          1.6052  
- 59    CustomerAge          72                     21           170     N                           72       1.6511          1.6539  
- 60    CustomerAge          73                      6           163     N                           73       1.5831          1.5858  
- 61    CustomerAge          74                     23           162     N                           74       1.5734          1.5760  
- 62    CustomerAge          75                     28           145     N                           75       1.4083          1.4106  
- 63    CustomerAge          76                     62           127     N                           76       1.2335          1.2355  
- 64    CustomerAge          77                     44           101     N                           77       0.9810          0.9826  
- 65    CustomerAge          78                     29            77     N                           78       0.7479          0.7491  
- 66    CustomerAge          79                     22            57     N                           79       0.5536          0.5545  
- 67    CustomerAge          80                     64            37     N                           80       0.3594          0.3600  
- 68    CustomerAge          81                     63            14     N                           81       0.1360          0.1362  
- 69    CustomerAge          988                    68             1     N                          988       0.0097          0.0097  
- 70    EducationalDegree                            4            17     C                            .       0.1651           .      
- 71    EducationalDegree    1 - BASIC               1          1272     C      1 - Basic             .      12.3543         12.3747  
- 72    EducationalDegree    2 - HIGH SCHOOL         0          3510     C      2 - High School       .      34.0909         34.1473  
- 73    EducationalDegree    3 - BSC/MSC             2          4799     C      3 - BSc/MSc           .      46.6103         46.6874  
- 74    EducationalDegree    4 - PHD                 3           698     C      4 - PhD               .       6.7793          6.7905  
- 75    GeographicLiving     .                       4             1     N                            .       0.0097           .      
- 76    GeographicLiving     1                       0          3048     N                            1      29.6037         29.6066  
- 77    GeographicLiving     2                       3          1036     N                            2      10.0622         10.0631  
- 78    GeographicLiving     3                       2          2066     N                            3      20.0660         20.0680  
- 79    GeographicLiving     4                       1          4145     N                            4      40.2584         40.2623  
- 80    HasChildren          .                       2            21     N                            .       0.2040           .      
- 81    HasChildren          0                       1          3013     N                            0      29.2638         29.3236  
- 82    HasChildren          1                       0          7262     N                            1      70.5322         70.6764  
+  1    EducationalDegree                            4            17     C                           .        0.1651           .      
+  2    EducationalDegree    1 - BASIC               1          1272     C      1 - Basic            .       12.3543         12.3747  
+  3    EducationalDegree    2 - HIGH SCHOOL         0          3510     C      2 - High School      .       34.0909         34.1473  
+  4    EducationalDegree    3 - BSC/MSC             2          4799     C      3 - BSc/MSc          .       46.6103         46.6874  
+  5    EducationalDegree    4 - PHD                 3           698     C      4 - PhD              .        6.7793          6.7905  
+  6    GeographicLiving     .                       4             1     N                           .        0.0097           .      
+  7    GeographicLiving     1                       0          3048     N                           1       29.6037         29.6066  
+  8    GeographicLiving     2                       3          1036     N                           2       10.0622         10.0631  
+  9    GeographicLiving     3                       2          2066     N                           3       20.0660         20.0680  
+ 10    GeographicLiving     4                       1          4145     N                           4       40.2584         40.2623  
+ 11    HasChildren          .                       2            21     N                           .        0.2040           .      
+ 12    HasChildren          0                       1          3013     N                           0       29.2638         29.3236  
+ 13    HasChildren          1                       0          7262     N                           1       70.5322         70.6764  
  
                                                                                                                                                                                                                                                                 
  
@@ -107,12 +38,13 @@ Interval Variables
 
 Obs    NAME                          NMISS            N           MIN          MAX       MEAN        STD    SKEWNESS    KURTOSIS
 
- 1     ClaimsRate                        0        10296          0.00       256.20       0.74       2.92      71.210     5877.86
- 2     CustomerMonetaryValue             0        10296    -165680.42     11875.89     177.89    1945.81     -67.043     5323.18
- 3     FirstPolicyYear                  30        10266       1974.00     53784.00    1991.06     511.27     101.296    10262.57
- 4     GrossMonthlySalary               36        10260        665.00    110429.76    5012.84    2314.90      11.251      474.39
- 5     PremiumsinLOBHealth              43        10253         -2.11     28272.00     171.58     296.41      84.519     7914.20
- 6     PremiumsinLOBHousehold            0        10296        -75.00     25048.80     210.43     352.60      36.054     2427.16
- 7     PremiumsinLOBLife               104        10192         -7.00       398.30      41.86      47.48       2.090        5.72
- 8     PremiumsinLOBMotor               34        10262         -4.11     11604.42     300.47     211.91      23.871     1096.29
- 9     PremiumsinLOBWorkComp            86        10210        -12.00      1988.70      41.28      51.51       7.438      212.78
+  1    ClaimsRate                        0        10296          0.00       256.20       0.74       2.92      71.210     5877.86
+  2    CustomerAge                      17        10279         15.00       988.00      47.99      19.71      10.537      501.81
+  3    CustomerMonetaryValue             0        10296    -165680.42     11875.89     177.89    1945.81     -67.043     5323.18
+  4    FirstPolicyYear                  30        10266       1974.00     53784.00    1991.06     511.27     101.296    10262.57
+  5    GrossMonthlySalary               36        10260        665.00    110429.76    5012.84    2314.90      11.251      474.39
+  6    PremiumsinLOBHealth              43        10253         -2.11     28272.00     171.58     296.41      84.519     7914.20
+  7    PremiumsinLOBHousehold            0        10296        -75.00     25048.80     210.43     352.60      36.054     2427.16
+  8    PremiumsinLOBLife               104        10192         -7.00       398.30      41.86      47.48       2.090        5.72
+  9    PremiumsinLOBMotor               34        10262         -4.11     11604.42     300.47     211.91      23.871     1096.29
+ 10    PremiumsinLOBWorkComp            86        10210        -12.00      1988.70      41.28      51.51       7.438      212.78

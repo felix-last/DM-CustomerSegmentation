@@ -1,7 +1,7 @@
 *------------------------------------------------------------*
-User:                raquel
+User:                D059331
 Date:                December 29, 2015
-Time:                01:23:37
+Time:                14:12:59
 *------------------------------------------------------------*
 * Training Output
 *------------------------------------------------------------*
@@ -14,10 +14,10 @@ Variable Summary
          Measurement    Frequency
 Role        Level         Count
  
-INPUT     BINARY            1
-INPUT     INTERVAL          9
-INPUT     NOMINAL           1
-INPUT     ORDINAL           2
+INPUT     BINARY             1
+INPUT     INTERVAL          10
+INPUT     NOMINAL            1
+INPUT     ORDINAL            1
 
 
 *------------------------------------------------------------*
@@ -33,7 +33,8 @@ Limits and Replacement Values for Interval Variables
                                           Lower    Replacement    Upper    Replacement
    Variable         Replace Variable      limit       Value       Limit       Value
  
-FirstPolicyYear    REP_FirstPolicyYear     1900         .          2015         .
+CustomerAge        REP_CustomerAge            .         .           150         .
+FirstPolicyYear    REP_FirstPolicyYear     1900         .          2016         .
 
 
 *------------------------------------------------------------*
@@ -47,4 +48,5 @@ Replacement Counts
  
 Obs       Variable             Label         Role     Train
  
- 1     FirstPolicyYear    FirstPolicyYear    INPUT      1
+ 1     CustomerAge        CustomerAge        INPUT      1
+ 2     FirstPolicyYear    FirstPolicyYear    INPUT      1

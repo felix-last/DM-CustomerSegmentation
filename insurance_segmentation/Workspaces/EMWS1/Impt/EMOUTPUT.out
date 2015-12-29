@@ -1,7 +1,7 @@
 *------------------------------------------------------------*
-User:                raquel
+User:                D059331
 Date:                December 29, 2015
-Time:                01:31:39
+Time:                14:13:07
 *------------------------------------------------------------*
 * Training Output
 *------------------------------------------------------------*
@@ -14,11 +14,11 @@ Variable Summary
             Measurement    Frequency
 Role           Level         Count
  
-INPUT        BINARY            1
-INPUT        INTERVAL          9
-INPUT        NOMINAL           1
-INPUT        ORDINAL           2
-REJECTED     INTERVAL          1
+INPUT        BINARY             1
+INPUT        INTERVAL          10
+INPUT        NOMINAL            1
+INPUT        ORDINAL            1
+REJECTED     INTERVAL           2
 
 
 *------------------------------------------------------------*
@@ -39,7 +39,6 @@ Number Of Observations
                          Impute                                    Impute             Measurement                                       Missing
 Variable Name            Method      Imputed Variable              Value     Role        Level                  Label                 for TRAIN
  
-CustomerAge              COUNT       IMP_CustomerAge                54.00    INPUT     ORDINAL                                               17
 EducationalDegree        TREESURR    IMP_EducationalDegree            .      INPUT     ORDINAL                                               17
 GeographicLiving         TREESURR    IMP_GeographicLiving             .      INPUT     NOMINAL                                                1
 GrossMonthlySalary       MEDIAN      IMP_GrossMonthlySalary       5002.50    INPUT     INTERVAL                                              36
@@ -48,6 +47,7 @@ PremiumsinLOBHealth      MEDIAN      IMP_PremiumsinLOBHealth       162.81    INP
 PremiumsinLOBLife        MEDIAN      IMP_PremiumsinLOBLife          25.56    INPUT     INTERVAL                                             104
 PremiumsinLOBMotor       MEDIAN      IMP_PremiumsinLOBMotor        298.61    INPUT     INTERVAL                                              34
 PremiumsinLOBWorkComp    MEDIAN      IMP_PremiumsinLOBWorkComp      25.67    INPUT     INTERVAL                                              86
+REP_CustomerAge          MEAN        IMP_REP_CustomerAge            47.90    INPUT     INTERVAL      Replacement: CustomerAge                18
 REP_FirstPolicyYear      MEAN        IMP_REP_FirstPolicyYear      1986.02    INPUT     INTERVAL      Replacement: FirstPolicyYear            31
  
  
@@ -59,12 +59,13 @@ Variable Distribution Training Data
           Missing    Number of    Percent of
 Obs     for TRAIN    Variables     Variables
  
- 1            104        1            10
- 2             86        1            10
- 3             43        1            10
- 4             36        1            10
- 5             34        1            10
- 6             31        1            10
- 7             21        1            10
- 8             17        2            20
- 9              1        1            10
+  1           104        1            10
+  2            86        1            10
+  3            43        1            10
+  4            36        1            10
+  5            34        1            10
+  6            31        1            10
+  7            21        1            10
+  8            18        1            10
+  9            17        1            10
+ 10             1        1            10

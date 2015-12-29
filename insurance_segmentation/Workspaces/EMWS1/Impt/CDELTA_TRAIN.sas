@@ -1,12 +1,3 @@
-if NAME = "CustomerAge" then delete;
-else 
-if NAME    = "IMP_CustomerAge"  then do;
-   ROLE    = "INPUT" ;
-   FAMILY  = "" ;
-   REPORT  = "N" ;
-   LEVEL   = "ORDINAL" ;
-   ORDER   = "" ;
-end;
 if NAME = "EducationalDegree" then delete;
 else 
 if NAME    = "IMP_EducationalDegree"  then do;
@@ -73,6 +64,15 @@ end;
 if NAME = "PremiumsinLOBWorkComp" then delete;
 else 
 if NAME    = "IMP_PremiumsinLOBWorkComp"  then do;
+   ROLE    = "INPUT" ;
+   FAMILY  = "" ;
+   REPORT  = "N" ;
+   LEVEL   = "INTERVAL" ;
+   ORDER   = "" ;
+end;
+if NAME = "REP_CustomerAge" then delete;
+else 
+if NAME    = "IMP_REP_CustomerAge"  then do;
    ROLE    = "INPUT" ;
    FAMILY  = "" ;
    REPORT  = "N" ;

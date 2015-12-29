@@ -78,19 +78,11 @@ ELSE IF NOT MISSING(PremiumsinLOBMotor ) AND
 107.965 <= PremiumsinLOBMotor THEN DO;
 _BRANCH_ = 2;
 END;
-IF _BRANCH_ LT 0 AND NOT MISSING(CustomerAge ) THEN DO;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ,'19' ,'20' ,'21' ,'22' ,'23' )
-THEN DO;
+IF _BRANCH_ LT 0 AND NOT MISSING(REP_CustomerAge ) THEN DO;
+IF REP_CustomerAge < 23.5 THEN DO;
 _BRANCH_ = 1;
 END;
-ELSE IF _ARBFMT_12 IN ('24' ,'25' ,'26' ,'27' ,'28' ,'29' ,'30' ,'31' ,
-'32' ,'33' ,'34' ,'35' ,'36' ,'37' ,'38' ,'39' ,'40' ,'41' ,'42' ,'43' ,
-'44' ,'45' ,'46' ,'47' ,'48' ,'49' ,'50' ,'51' ,'52' ,'53' ,'54' ,'55' ,
-'56' ,'57' ,'58' ,'59' ,'60' ,'61' ,'62' ,'63' ,'64' ,'65' ,'66' ,'67' ,
-'68' ,'69' ,'70' ,'71' ,'72' ,'73' ,'74' ,'75' ,'76' ,'77' ,'78' ,'79' ,
-'80' ,'81' ,'988' ) THEN DO;
+ELSE IF 23.5 <= REP_CustomerAge THEN DO;
 _BRANCH_ = 2;
 END;
 END;
@@ -105,17 +97,12 @@ END;
 IF _BRANCH_ LT 0 THEN _BRANCH_ = 2;
 IF _BRANCH_ EQ 1 THEN DO;
 _BRANCH_ = -1;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ,'19' ,'20' ) THEN DO;
+IF NOT MISSING(REP_CustomerAge ) AND
+REP_CustomerAge < 20.5 THEN DO;
 _BRANCH_ = 1;
 END;
-ELSE IF _ARBFMT_12 IN ('21' ,'22' ,'23' ,'24' ,'25' ,'26' ,'27' ,'28' ,
-'29' ,'30' ,'31' ,'32' ,'33' ,'34' ,'35' ,'36' ,'37' ,'38' ,'39' ,'40' ,
-'41' ,'42' ,'43' ,'44' ,'45' ,'46' ,'47' ,'48' ,'49' ,'50' ,'51' ,'52' ,
-'53' ,'54' ,'55' ,'56' ,'57' ,'58' ,'59' ,'60' ,'61' ,'62' ,'63' ,'64' ,
-'65' ,'66' ,'67' ,'68' ,'69' ,'70' ,'71' ,'72' ,'73' ,'74' ,'75' ,'76' ,
-'77' ,'78' ,'79' ,'80' ,'81' ,'988' ) THEN DO;
+ELSE IF NOT MISSING(REP_CustomerAge ) AND
+20.5 <= REP_CustomerAge THEN DO;
 _BRANCH_ = 2;
 END;
 IF _BRANCH_ LT 0 AND NOT MISSING(PremiumsinLOBHealth ) THEN DO;
@@ -191,18 +178,12 @@ END;
 IF _BRANCH_ LT 0 THEN _BRANCH_ = 2;
 IF _BRANCH_ EQ 1 THEN DO;
 _BRANCH_ = -1;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ,'19' ,'20' ,'21' ,'22' ,
-'23' ) THEN DO;
+IF NOT MISSING(REP_CustomerAge ) AND
+REP_CustomerAge < 23.5 THEN DO;
 _BRANCH_ = 1;
 END;
-ELSE IF _ARBFMT_12 IN ('24' ,'25' ,'26' ,'27' ,'28' ,'29' ,'30' ,
-'31' ,'32' ,'33' ,'34' ,'35' ,'36' ,'37' ,'38' ,'39' ,'40' ,'41' ,
-'42' ,'43' ,'44' ,'45' ,'46' ,'47' ,'48' ,'49' ,'50' ,'51' ,'52' ,
-'53' ,'54' ,'55' ,'56' ,'57' ,'58' ,'59' ,'60' ,'61' ,'62' ,'63' ,
-'64' ,'65' ,'66' ,'67' ,'68' ,'69' ,'70' ,'71' ,'72' ,'73' ,'74' ,
-'75' ,'76' ,'77' ,'78' ,'79' ,'80' ,'81' ,'988' ) THEN DO;
+ELSE IF NOT MISSING(REP_CustomerAge ) AND
+23.5 <= REP_CustomerAge THEN DO;
 _BRANCH_ = 2;
 END;
 IF _BRANCH_ LT 0 AND NOT MISSING(GrossMonthlySalary ) THEN DO;
@@ -668,18 +649,12 @@ END;
 END;
 ELSE DO;
 _BRANCH_ = -1;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ) THEN DO;
+IF NOT MISSING(REP_CustomerAge ) AND
+REP_CustomerAge < 18.5 THEN DO;
 _BRANCH_ = 1;
 END;
-ELSE IF _ARBFMT_12 IN ('19' ,'20' ,'21' ,'22' ,'23' ,'24' ,'25' ,
-'26' ,'27' ,'28' ,'29' ,'30' ,'31' ,'32' ,'33' ,'34' ,'35' ,'36' ,
-'37' ,'38' ,'39' ,'40' ,'41' ,'42' ,'43' ,'44' ,'45' ,'46' ,'47' ,
-'48' ,'49' ,'50' ,'51' ,'52' ,'53' ,'54' ,'55' ,'56' ,'57' ,'58' ,
-'59' ,'60' ,'61' ,'62' ,'63' ,'64' ,'65' ,'66' ,'67' ,'68' ,'69' ,
-'70' ,'71' ,'72' ,'73' ,'74' ,'75' ,'76' ,'77' ,'78' ,'79' ,'80' ,
-'81' ,'988' ) THEN DO;
+ELSE IF NOT MISSING(REP_CustomerAge ) AND
+18.5 <= REP_CustomerAge THEN DO;
 _BRANCH_ = 2;
 END;
 IF _BRANCH_ LT 0 AND NOT MISSING(CustomerMonetaryValue ) THEN DO;
@@ -766,18 +741,12 @@ U_EducationalDegree = '3 - BSc/MSc';
 END;
 ELSE DO;
 _BRANCH_ = -1;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ,'19' ,'20' ,'21' ,'22' ,
-'23' ,'24' ,'25' ,'26' ,'27' ,'28' ) THEN DO;
+IF NOT MISSING(REP_CustomerAge ) AND
+REP_CustomerAge < 28.5 THEN DO;
 _BRANCH_ = 1;
 END;
-ELSE IF _ARBFMT_12 IN ('29' ,'30' ,'31' ,'32' ,'33' ,'34' ,'35' ,
-'36' ,'37' ,'38' ,'39' ,'40' ,'41' ,'42' ,'43' ,'44' ,'45' ,'46' ,
-'47' ,'48' ,'49' ,'50' ,'51' ,'52' ,'53' ,'54' ,'55' ,'56' ,'57' ,
-'58' ,'59' ,'60' ,'61' ,'62' ,'63' ,'64' ,'65' ,'66' ,'67' ,'68' ,
-'69' ,'70' ,'71' ,'72' ,'73' ,'74' ,'75' ,'76' ,'77' ,'78' ,'79' ,
-'80' ,'81' ,'988' ) THEN DO;
+ELSE IF NOT MISSING(REP_CustomerAge ) AND
+28.5 <= REP_CustomerAge THEN DO;
 _BRANCH_ = 2;
 END;
 IF _BRANCH_ LT 0 AND NOT MISSING(GrossMonthlySalary ) THEN DO;
@@ -852,9 +821,8 @@ END;
 END;
 IF _BRANCH_ LT 0 THEN _BRANCH_ = 2;
 IF _BRANCH_ EQ 1 THEN DO;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ) THEN DO;
+IF NOT MISSING(REP_CustomerAge ) AND
+REP_CustomerAge < 17.5 THEN DO;
 P_EducationalDegr1___Basic = 1;
 P_EducationalDegr2___High_School = 0;
 P_EducationalDegr3___BSc_MSc = 0;
@@ -868,19 +836,12 @@ U_EducationalDegree = '1 - Basic';
 END;
 ELSE DO;
 _BRANCH_ = -1;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ,'19' ,'20' ,'21' ,'22' ,
-'23' ,'24' ,'25' ,'26' ,'27' ,'28' ,'29' ,'30' ,'31' ,'32' ,'33' ,
-'34' ,'35' ,'36' ,'37' ,'38' ,'39' ,'40' ,'41' ,'42' ,'43' ) THEN
-DO;
+IF NOT MISSING(REP_CustomerAge ) AND
+REP_CustomerAge < 43.5 THEN DO;
 _BRANCH_ = 1;
 END;
-ELSE IF _ARBFMT_12 IN ('44' ,'45' ,'46' ,'47' ,'48' ,'49' ,'50' ,
-'51' ,'52' ,'53' ,'54' ,'55' ,'56' ,'57' ,'58' ,'59' ,'60' ,'61' ,
-'62' ,'63' ,'64' ,'65' ,'66' ,'67' ,'68' ,'69' ,'70' ,'71' ,'72' ,
-'73' ,'74' ,'75' ,'76' ,'77' ,'78' ,'79' ,'80' ,'81' ,'988' )
-THEN DO;
+ELSE IF NOT MISSING(REP_CustomerAge ) AND
+43.5 <= REP_CustomerAge THEN DO;
 _BRANCH_ = 2;
 END;
 IF _BRANCH_ LT 0 AND NOT MISSING(GrossMonthlySalary ) THEN DO;
@@ -984,19 +945,12 @@ END;
 END;
 ELSE DO;
 _BRANCH_ = -1;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ,'19' ,'20' ,'21' ,'22' ,
-'23' ,'24' ,'25' ,'26' ,'27' ,'28' ,'29' ,'30' ,'31' ,'32' ) THEN
-DO;
+IF NOT MISSING(REP_CustomerAge ) AND
+REP_CustomerAge < 32.5 THEN DO;
 _BRANCH_ = 1;
 END;
-ELSE IF _ARBFMT_12 IN ('33' ,'34' ,'35' ,'36' ,'37' ,'38' ,'39' ,
-'40' ,'41' ,'42' ,'43' ,'44' ,'45' ,'46' ,'47' ,'48' ,'49' ,'50' ,
-'51' ,'52' ,'53' ,'54' ,'55' ,'56' ,'57' ,'58' ,'59' ,'60' ,'61' ,
-'62' ,'63' ,'64' ,'65' ,'66' ,'67' ,'68' ,'69' ,'70' ,'71' ,'72' ,
-'73' ,'74' ,'75' ,'76' ,'77' ,'78' ,'79' ,'80' ,'81' ,'988' )
-THEN DO;
+ELSE IF NOT MISSING(REP_CustomerAge ) AND
+32.5 <= REP_CustomerAge THEN DO;
 _BRANCH_ = 2;
 END;
 IF _BRANCH_ LT 0 AND NOT MISSING(GrossMonthlySalary ) THEN DO;
@@ -1300,15 +1254,8 @@ U_EducationalDegree = '3 - BSc/MSc';
 END;
 END;
 ELSE DO;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ,'19' ,'20' ,'21' ,'22' ,
-'23' ,'24' ,'25' ,'26' ,'27' ,'28' ,'29' ,'30' ,'31' ,'32' ,'33' ,
-'34' ,'35' ,'36' ,'37' ,'38' ,'39' ,'40' ,'41' ,'42' ,'43' ,'44' ,
-'45' ,'46' ,'47' ,'48' ,'49' ,'50' ,'51' ,'52' ,'53' ,'54' ,'55' ,
-'56' ,'57' ,'58' ,'59' ,'60' ,'61' ,'62' ,'63' ,'64' ,'65' ,'66' ,
-'67' ,'68' ,'69' ,'70' ,'71' ,'72' ,'73' ,'74' ,'75' ,'76' ,'77' )
-THEN DO;
+IF NOT MISSING(REP_CustomerAge ) AND
+REP_CustomerAge < 77 THEN DO;
 P_EducationalDegr1___Basic = 0.1;
 P_EducationalDegr2___High_School = 0.41;
 P_EducationalDegr3___BSc_MSc = 0.4675;
@@ -1435,18 +1382,12 @@ END;
 END;
 ELSE DO;
 _BRANCH_ = -1;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ,'19' ,'20' ,'21' ,'22' ,
-'23' ,'24' ,'25' ,'26' ,'27' ,'28' ,'29' ,'30' ,'31' ,'32' ,'33' ,
-'34' ,'35' ,'36' ,'37' ,'38' ,'39' ,'40' ,'41' ,'42' ,'43' ,'44' ,
-'45' ,'46' ,'47' ,'48' ,'49' ,'50' ,'51' ,'52' ,'53' ) THEN DO;
+IF NOT MISSING(REP_CustomerAge ) AND
+REP_CustomerAge < 53.5 THEN DO;
 _BRANCH_ = 1;
 END;
-ELSE IF _ARBFMT_12 IN ('54' ,'55' ,'56' ,'57' ,'58' ,'59' ,'60' ,
-'61' ,'62' ,'63' ,'64' ,'65' ,'66' ,'67' ,'68' ,'69' ,'70' ,'71' ,
-'72' ,'73' ,'74' ,'75' ,'76' ,'77' ,'78' ,'79' ,'80' ,'81' ,
-'988' ) THEN DO;
+ELSE IF NOT MISSING(REP_CustomerAge ) AND
+53.5 <= REP_CustomerAge THEN DO;
 _BRANCH_ = 2;
 END;
 IF _BRANCH_ LT 0 AND NOT MISSING(GrossMonthlySalary ) THEN DO;
@@ -1504,19 +1445,11 @@ ELSE IF NOT MISSING(GrossMonthlySalary ) AND
 5540 <= GrossMonthlySalary THEN DO;
 _BRANCH_ = 2;
 END;
-IF _BRANCH_ LT 0 AND NOT MISSING(CustomerAge ) THEN DO;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ,'19' ,'20' ,'21' ,'22' ,
-'23' ,'24' ,'25' ,'26' ,'27' ,'28' ,'29' ,'30' ,'31' ,'32' ,'33' ,
-'34' ,'35' ,'36' ,'37' ,'38' ,'39' ,'40' ,'41' ,'42' ,'43' ,'44' ,
-'45' ,'46' ,'47' ,'48' ,'49' ) THEN DO;
+IF _BRANCH_ LT 0 AND NOT MISSING(REP_CustomerAge ) THEN DO;
+IF REP_CustomerAge < 50.5 THEN DO;
 _BRANCH_ = 1;
 END;
-ELSE IF _ARBFMT_12 IN ('50' ,'51' ,'52' ,'53' ,'54' ,'55' ,'56' ,
-'57' ,'58' ,'59' ,'60' ,'61' ,'62' ,'63' ,'64' ,'65' ,'66' ,'67' ,
-'68' ,'69' ,'70' ,'71' ,'72' ,'73' ,'74' ,'75' ,'76' ,'77' ,'78' ,
-'79' ,'80' ,'81' ,'988' ) THEN DO;
+ELSE IF 50.5 <= REP_CustomerAge THEN DO;
 _BRANCH_ = 2;
 END;
 END;
@@ -1545,18 +1478,12 @@ U_EducationalDegree = '3 - BSc/MSc';
 END;
 ELSE DO;
 _BRANCH_ = -1;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ,'19' ,'20' ,'21' ,'22' ,
-'23' ,'24' ,'25' ,'26' ,'27' ,'28' ,'29' ,'30' ,'31' ) THEN DO;
+IF NOT MISSING(REP_CustomerAge ) AND
+REP_CustomerAge < 31.5 THEN DO;
 _BRANCH_ = 1;
 END;
-ELSE IF _ARBFMT_12 IN ('32' ,'33' ,'34' ,'35' ,'36' ,'37' ,'38' ,
-'39' ,'40' ,'41' ,'42' ,'43' ,'44' ,'45' ,'46' ,'47' ,'48' ,'49' ,
-'50' ,'51' ,'52' ,'53' ,'54' ,'55' ,'56' ,'57' ,'58' ,'59' ,'60' ,
-'61' ,'62' ,'63' ,'64' ,'65' ,'66' ,'67' ,'68' ,'69' ,'70' ,'71' ,
-'72' ,'73' ,'74' ,'75' ,'76' ,'77' ,'78' ,'79' ,'80' ,'81' ,
-'988' ) THEN DO;
+ELSE IF NOT MISSING(REP_CustomerAge ) AND
+31.5 <= REP_CustomerAge THEN DO;
 _BRANCH_ = 2;
 END;
 IF _BRANCH_ LT 0 AND NOT MISSING(GrossMonthlySalary ) THEN DO;
@@ -1660,19 +1587,11 @@ ELSE IF NOT MISSING(GrossMonthlySalary ) AND
 7433.5 <= GrossMonthlySalary THEN DO;
 _BRANCH_ = 2;
 END;
-IF _BRANCH_ LT 0 AND NOT MISSING(CustomerAge ) THEN DO;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ,'19' ,'20' ,'21' ,'22' ,
-'23' ,'24' ,'25' ,'26' ,'27' ,'28' ,'29' ,'30' ,'31' ,'32' ,'33' ,
-'34' ,'35' ,'36' ,'37' ,'38' ,'39' ,'40' ,'41' ,'42' ,'43' ,'44' ,
-'45' ,'46' ,'47' ,'48' ,'49' ,'50' ,'51' ,'52' ,'53' ,'54' ,'55' ,
-'56' ,'57' ,'58' ,'59' ,'60' ,'61' ,'62' ,'63' ,'64' ,'65' ,'66' ,
-'67' ,'68' ) THEN DO;
+IF _BRANCH_ LT 0 AND NOT MISSING(REP_CustomerAge ) THEN DO;
+IF REP_CustomerAge < 69 THEN DO;
 _BRANCH_ = 1;
 END;
-ELSE IF _ARBFMT_12 IN ('69' ,'70' ,'71' ,'72' ,'73' ,'74' ,'75' ,
-'76' ,'77' ,'78' ,'79' ,'80' ,'81' ,'988' ) THEN DO;
+ELSE IF 69 <= REP_CustomerAge THEN DO;
 _BRANCH_ = 2;
 END;
 END;
@@ -1776,18 +1695,12 @@ END;
 END;
 ELSE DO;
 _BRANCH_ = -1;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ,'19' ,'20' ,'21' ,'22' ,
-'23' ,'24' ,'25' ,'26' ,'27' ,'28' ,'29' ,'30' ,'31' ,'32' ,'33' ,
-'34' ,'35' ,'36' ,'37' ,'38' ,'39' ,'40' ,'41' ,'42' ,'43' ,'44' ,
-'45' ,'46' ,'47' ,'48' ,'49' ,'50' ,'51' ,'52' ,'53' ,'54' ,'55' ,
-'56' ,'57' ) THEN DO;
+IF NOT MISSING(REP_CustomerAge ) AND
+REP_CustomerAge < 57.5 THEN DO;
 _BRANCH_ = 1;
 END;
-ELSE IF _ARBFMT_12 IN ('58' ,'59' ,'60' ,'61' ,'62' ,'63' ,'64' ,
-'65' ,'66' ,'67' ,'68' ,'69' ,'70' ,'71' ,'72' ,'73' ,'74' ,'75' ,
-'76' ,'77' ,'78' ,'79' ,'80' ,'81' ,'988' ) THEN DO;
+ELSE IF NOT MISSING(REP_CustomerAge ) AND
+57.5 <= REP_CustomerAge THEN DO;
 _BRANCH_ = 2;
 END;
 IF _BRANCH_ LT 0 AND NOT MISSING(GrossMonthlySalary ) THEN DO;
@@ -1808,8 +1721,60 @@ ELSE IF _ARBFMT_12 IN ('0' ) THEN DO;
 _BRANCH_ = 2;
 END;
 END;
+IF _BRANCH_ LT 0 THEN _BRANCH_ = 2;
+IF _BRANCH_ EQ 1 THEN DO;
+_BRANCH_ = -1;
+IF NOT MISSING(REP_CustomerAge ) AND
+REP_CustomerAge < 41.5 THEN DO;
+_BRANCH_ = 1;
+END;
+ELSE IF NOT MISSING(REP_CustomerAge ) AND
+41.5 <= REP_CustomerAge THEN DO;
+_BRANCH_ = 2;
+END;
+IF _BRANCH_ LT 0 AND NOT MISSING(GrossMonthlySalary ) THEN DO;
+IF GrossMonthlySalary < 4203 THEN DO;
+_BRANCH_ = 1;
+END;
+ELSE IF 4203 <= GrossMonthlySalary THEN DO;
+_BRANCH_ = 2;
+END;
+END;
+IF _BRANCH_ LT 0 AND NOT MISSING(PremiumsinLOBHealth ) THEN DO;
+IF 149.305 <= PremiumsinLOBHealth THEN DO;
+_BRANCH_ = 1;
+END;
+ELSE IF PremiumsinLOBHealth < 149.305 THEN DO;
+_BRANCH_ = 2;
+END;
+END;
 IF _BRANCH_ LT 0 THEN _BRANCH_ = 1;
 IF _BRANCH_ EQ 2 THEN DO;
+P_EducationalDegr1___Basic = 0.10018552875695;
+P_EducationalDegr2___High_School = 0.40816326530612;
+P_EducationalDegr3___BSc_MSc = 0.45640074211502;
+P_EducationalDegr4___PhD = 0.03525046382189;
+Q_EducationalDegr1___Basic = 0.10018552875695;
+Q_EducationalDegr2___High_School = 0.40816326530612;
+Q_EducationalDegr3___BSc_MSc = 0.45640074211502;
+Q_EducationalDegr4___PhD = 0.03525046382189;
+I_EducationalDegree = '3 - BSC/MSC';
+U_EducationalDegree = '3 - BSc/MSc';
+END;
+ELSE DO;
+P_EducationalDegr1___Basic = 0.03928571428571;
+P_EducationalDegr2___High_School = 0.27142857142857;
+P_EducationalDegr3___BSc_MSc = 0.59642857142857;
+P_EducationalDegr4___PhD = 0.09285714285714;
+Q_EducationalDegr1___Basic = 0.03928571428571;
+Q_EducationalDegr2___High_School = 0.27142857142857;
+Q_EducationalDegr3___BSc_MSc = 0.59642857142857;
+Q_EducationalDegr4___PhD = 0.09285714285714;
+I_EducationalDegree = '3 - BSC/MSC';
+U_EducationalDegree = '3 - BSc/MSc';
+END;
+END;
+ELSE DO;
 _BRANCH_ = -1;
 IF NOT MISSING(PremiumsinLOBWorkComp ) AND
 PremiumsinLOBWorkComp < 74.235 THEN DO;
@@ -1849,72 +1814,14 @@ I_EducationalDegree = '2 - HIGH SCHOOL';
 U_EducationalDegree = '2 - High School';
 END;
 ELSE DO;
-P_EducationalDegr1___Basic = 0.02662721893491;
-P_EducationalDegr2___High_School = 0.22781065088757;
-P_EducationalDegr3___BSc_MSc = 0.65828402366863;
-P_EducationalDegr4___PhD = 0.08727810650887;
-Q_EducationalDegr1___Basic = 0.02662721893491;
-Q_EducationalDegr2___High_School = 0.22781065088757;
-Q_EducationalDegr3___BSc_MSc = 0.65828402366863;
-Q_EducationalDegr4___PhD = 0.08727810650887;
-I_EducationalDegree = '3 - BSC/MSC';
-U_EducationalDegree = '3 - BSc/MSc';
-END;
-END;
-ELSE DO;
-_BRANCH_ = -1;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ,'19' ,'20' ,'21' ,'22' ,
-'23' ,'24' ,'25' ,'26' ,'27' ,'28' ,'29' ,'30' ,'31' ,'32' ,'33' ,
-'34' ,'35' ,'36' ,'37' ,'38' ,'39' ,'40' ,'41' ) THEN DO;
-_BRANCH_ = 1;
-END;
-ELSE IF _ARBFMT_12 IN ('42' ,'43' ,'44' ,'45' ,'46' ,'47' ,'48' ,
-'49' ,'50' ,'51' ,'52' ,'53' ,'54' ,'55' ,'56' ,'57' ,'58' ,'59' ,
-'60' ,'61' ,'62' ,'63' ,'64' ,'65' ,'66' ,'67' ,'68' ,'69' ,'70' ,
-'71' ,'72' ,'73' ,'74' ,'75' ,'76' ,'77' ,'78' ,'79' ,'80' ,'81' ,
-'988' ) THEN DO;
-_BRANCH_ = 2;
-END;
-IF _BRANCH_ LT 0 AND NOT MISSING(GrossMonthlySalary ) THEN DO;
-IF GrossMonthlySalary < 4203 THEN DO;
-_BRANCH_ = 1;
-END;
-ELSE IF 4203 <= GrossMonthlySalary THEN DO;
-_BRANCH_ = 2;
-END;
-END;
-IF _BRANCH_ LT 0 AND NOT MISSING(PremiumsinLOBHealth ) THEN DO;
-IF 149.305 <= PremiumsinLOBHealth THEN DO;
-_BRANCH_ = 1;
-END;
-ELSE IF PremiumsinLOBHealth < 149.305 THEN DO;
-_BRANCH_ = 2;
-END;
-END;
-IF _BRANCH_ LT 0 THEN _BRANCH_ = 1;
-IF _BRANCH_ EQ 2 THEN DO;
-P_EducationalDegr1___Basic = 0.10037174721189;
-P_EducationalDegr2___High_School = 0.4089219330855;
-P_EducationalDegr3___BSc_MSc = 0.45539033457249;
-P_EducationalDegr4___PhD = 0.03531598513011;
-Q_EducationalDegr1___Basic = 0.10037174721189;
-Q_EducationalDegr2___High_School = 0.4089219330855;
-Q_EducationalDegr3___BSc_MSc = 0.45539033457249;
-Q_EducationalDegr4___PhD = 0.03531598513011;
-I_EducationalDegree = '3 - BSC/MSC';
-U_EducationalDegree = '3 - BSc/MSc';
-END;
-ELSE DO;
-P_EducationalDegr1___Basic = 0.03928571428571;
-P_EducationalDegr2___High_School = 0.27142857142857;
-P_EducationalDegr3___BSc_MSc = 0.59642857142857;
-P_EducationalDegr4___PhD = 0.09285714285714;
-Q_EducationalDegr1___Basic = 0.03928571428571;
-Q_EducationalDegr2___High_School = 0.27142857142857;
-Q_EducationalDegr3___BSc_MSc = 0.59642857142857;
-Q_EducationalDegr4___PhD = 0.09285714285714;
+P_EducationalDegr1___Basic = 0.02666666666666;
+P_EducationalDegr2___High_School = 0.22814814814814;
+P_EducationalDegr3___BSc_MSc = 0.65777777777777;
+P_EducationalDegr4___PhD = 0.0874074074074;
+Q_EducationalDegr1___Basic = 0.02666666666666;
+Q_EducationalDegr2___High_School = 0.22814814814814;
+Q_EducationalDegr3___BSc_MSc = 0.65777777777777;
+Q_EducationalDegr4___PhD = 0.0874074074074;
 I_EducationalDegree = '3 - BSC/MSC';
 U_EducationalDegree = '3 - BSc/MSc';
 END;

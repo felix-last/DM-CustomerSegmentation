@@ -1,0 +1,144 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+Filter Limits for Interval Variables
+(maximum 500 observations printed)
+
+                                                                         Keep
+                                                             Filter     Missing
+Variable                     Role     Minimum    Maximum     Method     Values                 Label
+
+ClaimsRate                   INPUT       0.00       1.30    PERCENTS       Y                                    
+CustomerMonetaryValue        INPUT    -250.93    1143.11    PERCENTS       Y                                    
+IMP_GrossMonthlySalary       INPUT     853.00    9085.00    PERCENTS       Y       Imputed GrossMonthlySalary   
+IMP_PremiumsinLOBHealth      INPUT      24.45     365.07    PERCENTS       Y       Imputed PremiumsinLOBHealth  
+IMP_PremiumsinLOBMotor       INPUT      18.78     559.44    PERCENTS       Y       Imputed PremiumsinLOBMotor   
+IMP_PremiumsinLOBWorkComp    INPUT     -11.00     254.38    PERCENTS       Y       Imputed PremiumsinLOBWorkComp
+PremiumsinLOBHousehold       INPUT     -70.00    1194.10    PERCENTS       Y                                    
+TOTAL_PREMIUM                INPUT     512.65    1568.31    PERCENTS       Y                                    
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Number Of Observations
+
+Data
+Role     Filtered    Excluded     DATA
+
+TRAIN      9791         505      10296
+ 
+                                                                                                                                                                                                                                                                
+ 
+Statistics for Original and FILTERED Data
+(maximum 500 observations printed)
+
+Data Role=TRAIN Variable=ClaimsRate
+
+Statistics            Original    Filtered
+
+Non Missing           10296.00     9791.00
+Missing                   0.00        0.00
+Minimum                   0.00        0.00
+Maximum                 256.20        1.30
+Mean                      0.74        0.68
+Standard Deviation        2.92        0.31
+Skewness                 71.21       -0.26
+Kurtosis               5877.86       -1.22
+
+
+Data Role=TRAIN Variable=CustomerMonetaryValue
+
+Statistics              Original    Filtered
+
+Non Missing             10296.00     9791.00
+Missing                     0.00        0.00
+Minimum               -165680.42     -250.93
+Maximum                 11875.89     1143.11
+Mean                      177.89      216.17
+Standard Deviation       1945.81      243.02
+Skewness                  -67.04        0.61
+Kurtosis                 5323.18       -0.11
+
+
+Data Role=TRAIN Variable=IMP_GrossMonthlySalary
+
+Statistics             Original    Filtered
+
+Non Missing            10296.00     9791.00
+Missing                    0.00        0.00
+Minimum                  665.00      866.00
+Maximum               110429.76     9085.00
+Mean                    5012.80     5037.92
+Standard Deviation      2310.85     1914.25
+Skewness                  11.27       -0.01
+Kurtosis                 476.06       -0.97
+
+
+Data Role=TRAIN Variable=IMP_PremiumsinLOBHealth
+
+Statistics             Original    Filtered
+
+Non Missing            10296.00     9791.00
+Missing                    0.00        0.00
+Minimum                   -2.11       24.45
+Maximum                28272.00      365.07
+Mean                     171.54      168.99
+Standard Deviation       295.79       71.79
+Skewness                  84.70        0.27
+Kurtosis                7947.38       -0.59
+
+
+Data Role=TRAIN Variable=IMP_PremiumsinLOBMotor
+
+Statistics             Original    Filtered
+
+Non Missing            10296.00     9791.00
+Missing                    0.00        0.00
+Minimum                   -4.11       18.78
+Maximum                11604.42      559.44
+Mean                     300.46      300.77
+Standard Deviation       211.56      132.84
+Skewness                  23.91       -0.09
+Kurtosis                1099.93       -0.90
+
+
+Data Role=TRAIN Variable=IMP_PremiumsinLOBWorkComp
+
+Statistics             Original    Filtered
+
+Non Missing            10296.00     9791.00
+Missing                    0.00        0.00
+Minimum                  -12.00      -11.00
+Maximum                 1988.70      254.38
+Mean                      41.15       39.01
+Standard Deviation        51.32       41.89
+Skewness                   7.47        1.77
+Kurtosis                 214.34        3.67
+
+
+Data Role=TRAIN Variable=PremiumsinLOBHousehold
+
+Statistics             Original    Filtered
+
+Non Missing            10296.00     9791.00
+Missing                    0.00        0.00
+Minimum                  -75.00      -70.00
+Maximum                25048.80     1194.10
+Mean                     210.43      198.29
+Standard Deviation       352.60      213.39
+Skewness                  36.05        1.56
+Kurtosis                2427.16        2.52
+
+
+Data Role=TRAIN Variable=TOTAL_PREMIUM
+
+Statistics            Original    Filtered
+
+Non Missing           10296.00     9791.00
+Missing                   0.00        0.00
+Minimum                 354.18      512.65
+Maximum               29331.32     1565.28
+Mean                    765.28      747.79
+Standard Deviation      471.35      173.52
+Skewness                 40.05        1.49
+Kurtosis               2147.16        2.37

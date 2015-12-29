@@ -31,17 +31,12 @@ _ARBFMT_15 = ' ';
 ****** ASSIGN OBSERVATION TO NODE ******;
 DROP _BRANCH_;
 _BRANCH_ = -1;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ,'19' ,'20' ,'21' ,'22' ,'23' ,
-'24' ,'25' ,'26' ,'27' ,'28' ,'29' ,'30' ,'31' ,'32' ,'33' ,'34' ,'35' ,
-'36' ,'37' ,'38' ,'39' ,'40' ,'41' ,'42' ,'43' ,'44' ,'45' ,'46' ,'47' ,
-'48' ,'49' ,'50' ,'51' ,'52' ,'53' ,'54' ,'55' ,'56' ,'57' ,'58' ,'59' ,
-'60' ,'61' ,'62' ,'63' ) THEN DO;
+IF NOT MISSING(REP_CustomerAge ) AND
+REP_CustomerAge < 63.5 THEN DO;
 _BRANCH_ = 1;
 END;
-ELSE IF _ARBFMT_12 IN ('64' ,'65' ,'66' ,'67' ,'68' ,'69' ,'70' ,'71' ,
-'72' ,'73' ,'74' ,'75' ,'76' ,'77' ,'78' ,'79' ,'80' ,'81' ,'988' ) THEN DO;
+ELSE IF NOT MISSING(REP_CustomerAge ) AND
+63.5 <= REP_CustomerAge THEN DO;
 _BRANCH_ = 2;
 END;
 IF _BRANCH_ LT 0 AND NOT MISSING(GrossMonthlySalary ) THEN DO;
@@ -82,17 +77,12 @@ END;
 IF _BRANCH_ LT 0 THEN _BRANCH_ = 2;
 IF _BRANCH_ EQ 1 THEN DO;
 _BRANCH_ = -1;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ,'19' ,'20' ,'21' ,'22' ,'23' ,
-'24' ,'25' ,'26' ,'27' ,'28' ,'29' ,'30' ,'31' ,'32' ,'33' ,'34' ,'35' ,
-'36' ,'37' ,'38' ,'39' ,'40' ,'41' ,'42' ,'43' ,'44' ,'45' ,'46' ,'47' ,
-'48' ,'49' ,'50' ,'51' ,'52' ,'53' ,'54' ,'55' ,'56' ,'57' ,'58' ,'59' ,
-'60' ,'61' ,'62' ,'63' ,'64' ,'65' ) THEN DO;
+IF NOT MISSING(REP_CustomerAge ) AND
+REP_CustomerAge < 65.5 THEN DO;
 _BRANCH_ = 1;
 END;
-ELSE IF _ARBFMT_12 IN ('66' ,'67' ,'68' ,'69' ,'70' ,'71' ,'72' ,'73' ,
-'74' ,'75' ,'76' ,'77' ,'78' ,'79' ,'80' ,'81' ,'988' ) THEN DO;
+ELSE IF NOT MISSING(REP_CustomerAge ) AND
+65.5 <= REP_CustomerAge THEN DO;
 _BRANCH_ = 2;
 END;
 IF _BRANCH_ LT 0 AND NOT MISSING(GrossMonthlySalary ) THEN DO;
@@ -226,10 +216,10 @@ I_HasChildren = '1';
 U_HasChildren = 1;
 END;
 ELSE DO;
-P_HasChildren1 = 0.27218934911242;
-P_HasChildren0 = 0.72781065088757;
-Q_HasChildren1 = 0.27218934911242;
-Q_HasChildren0 = 0.72781065088757;
+P_HasChildren1 = 0.27380952380952;
+P_HasChildren0 = 0.72619047619047;
+Q_HasChildren1 = 0.27380952380952;
+Q_HasChildren0 = 0.72619047619047;
 I_HasChildren = '0';
 U_HasChildren = 0;
 END;
@@ -274,11 +264,8 @@ END;
 END;
 IF _BRANCH_ LT 0 THEN _BRANCH_ = 1;
 IF _BRANCH_ EQ 2 THEN DO;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('62' ,'63' ,'64' ,'65' ,'66' ,'67' ,'68' ,'69' ,'70' ,
-'71' ,'72' ,'73' ,'74' ,'75' ,'76' ,'77' ,'78' ,'79' ,'80' ,'81' ,'988' )
-THEN DO;
+IF NOT MISSING(REP_CustomerAge ) AND
+61.5 <= REP_CustomerAge THEN DO;
 _BRANCH_ = -1;
 IF NOT MISSING(PremiumsinLOBMotor ) AND
 PremiumsinLOBMotor < 221.43 THEN DO;
@@ -333,17 +320,12 @@ END;
 END;
 ELSE DO;
 _BRANCH_ = -1;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ,'19' ,'20' ,'21' ,'22' ,'23' ,
-'24' ,'25' ,'26' ,'27' ,'28' ,'29' ,'30' ,'31' ,'32' ,'33' ,'34' ,'35' ,
-'36' ,'37' ,'38' ,'39' ,'40' ,'41' ,'42' ,'43' ,'44' ,'45' ,'46' ,'47' ,
-'48' ,'49' ,'50' ,'51' ,'52' ,'53' ,'54' ,'55' ) THEN DO;
+IF NOT MISSING(REP_CustomerAge ) AND
+REP_CustomerAge < 55.5 THEN DO;
 _BRANCH_ = 1;
 END;
-ELSE IF _ARBFMT_12 IN ('56' ,'57' ,'58' ,'59' ,'60' ,'61' ,'62' ,'63' ,
-'64' ,'65' ,'66' ,'67' ,'68' ,'69' ,'70' ,'71' ,'72' ,'73' ,'74' ,'75' ,
-'76' ,'77' ,'78' ,'79' ,'80' ,'81' ,'988' ) THEN DO;
+ELSE IF NOT MISSING(REP_CustomerAge ) AND
+55.5 <= REP_CustomerAge THEN DO;
 _BRANCH_ = 2;
 END;
 IF _BRANCH_ LT 0 AND NOT MISSING(GrossMonthlySalary ) THEN DO;
@@ -356,27 +338,21 @@ END;
 END;
 IF _BRANCH_ LT 0 THEN _BRANCH_ = 2;
 IF _BRANCH_ EQ 1 THEN DO;
-P_HasChildren1 = 0.93668711656441;
-P_HasChildren0 = 0.06331288343558;
-Q_HasChildren1 = 0.93668711656441;
-Q_HasChildren0 = 0.06331288343558;
+P_HasChildren1 = 0.9364573110893;
+P_HasChildren0 = 0.06354268891069;
+Q_HasChildren1 = 0.9364573110893;
+Q_HasChildren0 = 0.06354268891069;
 I_HasChildren = '1';
 U_HasChildren = 1;
 END;
 ELSE DO;
 _BRANCH_ = -1;
-_ARBFMT_12 = PUT( CustomerAge , BEST12.);
-%DMNORMIP( _ARBFMT_12);
-IF _ARBFMT_12 IN ('15' ,'16' ,'17' ,'18' ,'19' ,'20' ,'21' ,'22' ,
-'23' ,'24' ,'25' ,'26' ,'27' ,'28' ,'29' ,'30' ,'31' ,'32' ,'33' ,
-'34' ,'35' ,'36' ,'37' ,'38' ,'39' ,'40' ,'41' ,'42' ,'43' ,'44' ,
-'45' ,'46' ,'47' ,'48' ,'49' ,'50' ,'51' ,'52' ,'53' ,'54' ,'55' ,
-'56' ,'57' ,'58' ,'59' ,'60' ,'61' ,'62' ) THEN DO;
+IF NOT MISSING(REP_CustomerAge ) AND
+REP_CustomerAge < 62.5 THEN DO;
 _BRANCH_ = 1;
 END;
-ELSE IF _ARBFMT_12 IN ('63' ,'64' ,'65' ,'66' ,'67' ,'68' ,'69' ,
-'70' ,'71' ,'72' ,'73' ,'74' ,'75' ,'76' ,'77' ,'78' ,'79' ,'80' ,
-'81' ,'988' ) THEN DO;
+ELSE IF NOT MISSING(REP_CustomerAge ) AND
+62.5 <= REP_CustomerAge THEN DO;
 _BRANCH_ = 2;
 END;
 IF _BRANCH_ LT 0 AND NOT MISSING(PremiumsinLOBHousehold ) THEN DO;

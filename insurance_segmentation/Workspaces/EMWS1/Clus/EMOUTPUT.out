@@ -1,7 +1,7 @@
 *------------------------------------------------------------*
-User:                raquel
+User:                D059331
 Date:                December 29, 2015
-Time:                01:43:42
+Time:                14:50:12
 *------------------------------------------------------------*
 * Training Output
 *------------------------------------------------------------*
@@ -14,12 +14,12 @@ Variable Summary
             Measurement    Frequency
 Role           Level         Count
  
-ID           NOMINAL            1
+ID           INTERVAL           1
 INPUT        BINARY             1
-INPUT        INTERVAL          12
+INPUT        INTERVAL          13
 INPUT        NOMINAL            1
-INPUT        ORDINAL            2
-REJECTED     INTERVAL           1
+INPUT        ORDINAL            1
+REJECTED     INTERVAL           2
 
 
 *------------------------------------------------------------*
@@ -38,11 +38,12 @@ Variable Importance
  
 NAME                       LABEL                                    NRULES    NSURROGATES    IMPORTANCE
  
-IMP_CustomerAge            Imputed CustomerAge                         5           4           1.00000
-IMP_GrossMonthlySalary     Imputed GrossMonthlySalary                  7           6           0.96978
-TOTAL_PREMIUM                                                          0           9           0.69730
-IMP_HasChildren            Imputed HasChildren                         1           0           0.67249
-CustomerMonetaryValue                                                  0           8           0.66895
-IMP_EducationalDegree      Imputed EducationalDegree                   6           1           0.56614
-ClaimsRate                                                             0           6           0.54145
-IMP_REP_FirstPolicyYear    Imputed: Replacement: FirstPolicyYear       0           4           0.22887
+IMP_REP_CustomerAge        Imputed: Replacement: CustomerAge           7           18          1.00000
+TOTAL_PREMIUM                                                         10           15          0.94076
+IMP_GrossMonthlySalary     Imputed GrossMonthlySalary                  3           20          0.88239
+CustomerMonetaryValue                                                  5           22          0.87952
+ClaimsRate                                                             6           14          0.79076
+IMP_HasChildren            Imputed HasChildren                         1            0          0.59209
+IMP_EducationalDegree      Imputed EducationalDegree                   5            4          0.56655
+IMP_REP_FirstPolicyYear    Imputed: Replacement: FirstPolicyYear       0            6          0.14703
+IMP_GeographicLiving       Imputed GeographicLiving                    0            2          0.10367

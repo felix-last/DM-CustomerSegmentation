@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  DataSource="azinsurance" Scope="LOCAL" Role="RAW" Library="INS_PROJ" Table="A2ZINSURANCE"
- NCols="14" NObs="10296" NBytes="1254400" Segment="" DataSourceRole="RAW" OutputType="VIEW"
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  DataSource="azinsurance" Scope="LOCAL" Role="TRAIN" Library="INSPROJF" Table="A2ZINSURANCE"
+ NCols="14" NObs="10296" NBytes="1254400" Segment="" DataSourceRole="TRAIN" OutputType="VIEW"
  ForceRun="N" ComputeStatistics="N" DataSelection="DATASOURCE" NewTable="" MetaAdvisor="BASIC"
  ApplyIntervalLevelLowerLimit="Y" IntervalLowerLimit="20" ApplyMaxPercentMissing="Y"
  MaxPercentMissing="50" ApplyMaxClassLevels="Y" MaxClassLevels="20" IdentifyEmptyColumns="Y"
  VariableValidation="STRICT" NewVariableRole="REJECT" DropMapVariables="Y" DsId="azinsurance"
- DsSampleName="" DsSampleSizeType="" DsSampleSize="" DsCreatedBy="m2015382" DsCreateDate="1765295300.7"
- DsModifiedBy="m2015382" DsModifyDate="1765295300.7" DsScope="LOCAL" Sample="D" SampleSizeType="PERCENT"
+ DsSampleName="" DsSampleSizeType="" DsSampleSize="" DsCreatedBy="D059331" DsCreateDate="1767010717.1"
+ DsModifiedBy="D059331" DsModifyDate="1767010717.1" DsScope="LOCAL" Sample="D" SampleSizeType="PERCENT"
  SampleSizePercent="20" SampleSizeObs="10000" DBPassThrough="Y" RunAction="Train"
- Component="DataSource" RawCreateTime="1765363578.4" CreateTime="10DEC2015:10:46:18"
- Description="" Data="INS_PROJ.A2ZINSURANCE" CMeta="WORK.M2M2ICD3" RunId="2dc67aa1-12d4-44d5-8821-a71d8030c493"
- RawLastTimeRun="1766971412.4" RawRunTime="1.6689999104" LastTimeRun="29DEC2015:01:23:32"
- RunTime="0 Hr. 0 Min. 1.67 Sec.">
+ Component="DataSource" RawCreateTime="1767013863.8" CreateTime="29DEC2015:13:11:04"
+ Description="" Data="INSPROJF.A2ZINSURANCE" CMeta="WORK.M1UHDRF_" RunId="26ff2703-3f6c-4819-831f-901ac27a303b"
+ RawLastTimeRun="1767013939" RawRunTime="1.881000042" LastTimeRun="29DEC2015:13:12:19"
+ RunTime="0 Hr. 0 Min. 1.88 Sec.">
 <VARIABLEPROPERTIES/>
 <FILEPROPERTIES/>
 </_ROOT_>

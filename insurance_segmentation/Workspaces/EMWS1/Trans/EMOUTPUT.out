@@ -1,7 +1,7 @@
 *------------------------------------------------------------*
-User:                raquel
+User:                D059331
 Date:                December 29, 2015
-Time:                01:43:36
+Time:                14:13:13
 *------------------------------------------------------------*
 * Training Output
 *------------------------------------------------------------*
@@ -14,11 +14,11 @@ Variable Summary
             Measurement    Frequency
 Role           Level         Count
  
-INPUT        BINARY            1
-INPUT        INTERVAL          9
-INPUT        NOMINAL           1
-INPUT        ORDINAL           2
-REJECTED     INTERVAL          1
+INPUT        BINARY             1
+INPUT        INTERVAL          10
+INPUT        NOMINAL            1
+INPUT        ORDINAL            1
+REJECTED     INTERVAL           2
 
 
 *------------------------------------------------------------*

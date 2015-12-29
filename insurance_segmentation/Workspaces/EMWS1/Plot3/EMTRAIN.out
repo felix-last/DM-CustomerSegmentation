@@ -1,0 +1,52 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+            Measurement    Frequency
+Role           Level         Count
+
+ASSESS       NOMINAL            1   
+INPUT        BINARY             1   
+INPUT        INTERVAL          13   
+INPUT        NOMINAL            1   
+INPUT        ORDINAL            1   
+REJECTED     INTERVAL           2   
+ 
+                                                                                                                                                                                                                                                                
+ 
+Class Variables
+
+Obs            NAME             LEVEL                CODE     FREQUENCY    TYPE    CRAW               NRAW    FREQPERCENT    NMISSPERCENT
+
+  1    IMP_EducationalDegree    1 - BASIC               1          1108     C      1 - Basic            .       11.3165         11.3165  
+  2    IMP_EducationalDegree    2 - HIGH SCHOOL         0          3383     C      2 - High School      .       34.5521         34.5521  
+  3    IMP_EducationalDegree    3 - BSC/MSC             2          4647     C      3 - BSc/MSc          .       47.4620         47.4620  
+  4    IMP_EducationalDegree    4 - PHD                 3           653     C      4 - PhD              .        6.6694          6.6694  
+  5    IMP_GeographicLiving     1                       0          2897     N                           1       29.5884         29.5884  
+  6    IMP_GeographicLiving     2                       3           990     N                           2       10.1113         10.1113  
+  7    IMP_GeographicLiving     3                       2          1960     N                           3       20.0184         20.0184  
+  8    IMP_GeographicLiving     4                       1          3944     N                           4       40.2819         40.2819  
+  9    IMP_HasChildren          0                       1          2856     N                           0       29.1696         29.1696  
+ 10    IMP_HasChildren          1                       0          6935     N                           1       70.8304         70.8304  
+ 
+                                                                                                                                                                                                                                                                
+ 
+Interval Variables
+
+Obs    NAME                             NMISS            N         MIN        MAX       MEAN        STD    SKEWNESS    KURTOSIS
+
+  1    ClaimsRate                           0         9791        0.00       1.30       0.68       0.31    -0.25821    -1.22127
+  2    CustomerMonetaryValue                0         9791     -250.93    1143.11     216.17     243.02     0.60944    -0.11365
+  3    IMP_FirstPolicyYear               9791            0         .          .          .          .        .           .     
+  4    IMP_GrossMonthlySalary               0         9791      866.00    9085.00    5037.92    1914.25    -0.00631    -0.97171
+  5    IMP_PremiumsinLOBHealth              0         9791       24.45     365.07     168.99      71.79     0.26544    -0.58690
+  6    IMP_PremiumsinLOBLife                0         9791       -7.00     398.30      40.73      45.56     2.10694     5.96047
+  7    IMP_PremiumsinLOBMotor               0         9791       18.78     559.44     300.77     132.84    -0.09082    -0.90313
+  8    IMP_PremiumsinLOBWorkComp            0         9791      -11.00     254.38      39.01      41.89     1.77418     3.66802
+  9    IMP_REP_CustomerAge                  0         9791       15.00      81.00      48.30      17.09    -0.02266    -1.15021
+ 10    IMP_REP_FirstPolicyYear              0         9791     1974.00    1998.00    1986.00       6.59    -0.01923    -1.15215
+ 11    LOYALTY                           9791            0         .          .          .          .        .           .     
+ 12    PremiumsinLOBHousehold               0         9791      -70.00    1194.10     198.29     213.39     1.55960     2.52222
+ 13    TOTAL_PREMIUM                        0         9791      512.65    1565.28     747.79     173.52     1.48861     2.37036

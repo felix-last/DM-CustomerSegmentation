@@ -6,4 +6,5 @@ Replacement Counts
 
 Obs       Variable             Label         Role     Train
 
- 1     FirstPolicyYear    FirstPolicyYear    INPUT      1  
+ 1     CustomerAge        CustomerAge        INPUT      1  
+ 2     FirstPolicyYear    FirstPolicyYear    INPUT      1  

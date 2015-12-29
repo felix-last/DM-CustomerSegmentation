@@ -2,11 +2,11 @@
 * Plot2: DMDBClass Macro ;
 *------------------------------------------------------------* ;
 %macro DMDBClass;
-    ClaimsRate(ASC) CustomerMonetaryValue(ASC) IMP_CustomerAge(ASC)
-   IMP_EducationalDegree(ASC) IMP_FirstPolicyYear(ASC) IMP_GeographicLiving(ASC)
-   IMP_GrossMonthlySalary(ASC) IMP_HasChildren(ASC) IMP_PremiumsinLOBHealth(ASC)
-   IMP_PremiumsinLOBLife(ASC) IMP_PremiumsinLOBMotor(ASC)
-   IMP_PremiumsinLOBWorkComp(ASC) IMP_REP_FirstPolicyYear(ASC) LOYALTY(ASC)
+    ClaimsRate(ASC) CustomerMonetaryValue(ASC) IMP_EducationalDegree(ASC)
+   IMP_FirstPolicyYear(ASC) IMP_GeographicLiving(ASC) IMP_GrossMonthlySalary(ASC)
+   IMP_HasChildren(ASC) IMP_PremiumsinLOBHealth(ASC) IMP_PremiumsinLOBLife(ASC)
+   IMP_PremiumsinLOBMotor(ASC) IMP_PremiumsinLOBWorkComp(ASC)
+   IMP_REP_CustomerAge(ASC) IMP_REP_FirstPolicyYear(ASC) LOYALTY(ASC)
    PremiumsinLOBHousehold(ASC) TOTAL_PREMIUM(ASC)
 %mend DMDBClass;
 *------------------------------------------------------------*;
@@ -43,15 +43,6 @@ run;
 title "CustomerMonetaryValue";
 vbar CustomerMonetaryValue /
 name = "CustomerMonetaryValue" description = "CustomerMonetaryValue"
-FREQ
-type=FREQ
-noframe
-missing
-raxis=axis1 maxis=axis2;
-run;
-title "IMP_CustomerAge";
-vbar IMP_CustomerAge /
-name = "IMP_CustomerAge" description = "IMP_CustomerAge"
 FREQ
 type=FREQ
 noframe
@@ -141,6 +132,15 @@ noframe
 missing
 raxis=axis1 maxis=axis2;
 run;
+title "IMP_REP_CustomerAge";
+vbar IMP_REP_CustomerAge /
+name = "IMP_REP_CustomerAge" description = "IMP_REP_CustomerAge"
+FREQ
+type=FREQ
+noframe
+missing
+raxis=axis1 maxis=axis2;
+run;
 title "IMP_REP_FirstPolicyYear";
 vbar IMP_REP_FirstPolicyYear /
 name = "IMP_REP_FirstPolicyYear" description = "IMP_REP_FirstPolicyYear"
@@ -183,112 +183,112 @@ goptions display;
 *------------------------------------------------------------*;
 * Plot2: Copying graphs to node folder;
 *------------------------------------------------------------*;
-filename gsasfile "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\ClaimsRate.gif";
+filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\ClaimsRate.gif";
 goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
 proc greplay igout=WORK.PLOT2GRAPH nofs;
 replay CLAIMSRA;
 quit;
 goptions device=win;
 filename gsasfile;
-filename gsasfile "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\CustomerMonetaryValue.gif";
+filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\CustomerMonetaryValue.gif";
 goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
 proc greplay igout=WORK.PLOT2GRAPH nofs;
 replay CUSTOMER;
 quit;
 goptions device=win;
 filename gsasfile;
-filename gsasfile "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_CustomerAge.gif";
-goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
-proc greplay igout=WORK.PLOT2GRAPH nofs;
-replay IMP_CUST;
-quit;
-goptions device=win;
-filename gsasfile;
-filename gsasfile "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_EducationalDegree.gif";
+filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_EducationalDegree.gif";
 goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
 proc greplay igout=WORK.PLOT2GRAPH nofs;
 replay IMP_EDUC;
 quit;
 goptions device=win;
 filename gsasfile;
-filename gsasfile "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_FirstPolicyYear.gif";
+filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_FirstPolicyYear.gif";
 goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
 proc greplay igout=WORK.PLOT2GRAPH nofs;
 replay IMP_FIRS;
 quit;
 goptions device=win;
 filename gsasfile;
-filename gsasfile "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_GeographicLiving.gif";
+filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_GeographicLiving.gif";
 goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
 proc greplay igout=WORK.PLOT2GRAPH nofs;
 replay IMP_GEOG;
 quit;
 goptions device=win;
 filename gsasfile;
-filename gsasfile "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_GrossMonthlySalary.gif";
+filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_GrossMonthlySalary.gif";
 goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
 proc greplay igout=WORK.PLOT2GRAPH nofs;
 replay IMP_GROS;
 quit;
 goptions device=win;
 filename gsasfile;
-filename gsasfile "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_HasChildren.gif";
+filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_HasChildren.gif";
 goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
 proc greplay igout=WORK.PLOT2GRAPH nofs;
 replay IMP_HASC;
 quit;
 goptions device=win;
 filename gsasfile;
-filename gsasfile "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_PremiumsinLOBLife.gif";
+filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_PremiumsinLOBLife.gif";
 goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
 proc greplay igout=WORK.PLOT2GRAPH nofs;
 replay IMP_PRE1;
 quit;
 goptions device=win;
 filename gsasfile;
-filename gsasfile "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_PremiumsinLOBMotor.gif";
+filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_PremiumsinLOBMotor.gif";
 goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
 proc greplay igout=WORK.PLOT2GRAPH nofs;
 replay IMP_PRE2;
 quit;
 goptions device=win;
 filename gsasfile;
-filename gsasfile "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_PremiumsinLOBWorkComp.gif";
+filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_PremiumsinLOBWorkComp.gif";
 goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
 proc greplay igout=WORK.PLOT2GRAPH nofs;
 replay IMP_PRE3;
 quit;
 goptions device=win;
 filename gsasfile;
-filename gsasfile "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_PremiumsinLOBHealth.gif";
+filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_PremiumsinLOBHealth.gif";
 goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
 proc greplay igout=WORK.PLOT2GRAPH nofs;
 replay IMP_PREM;
 quit;
 goptions device=win;
 filename gsasfile;
-filename gsasfile "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_REP_FirstPolicyYear.gif";
+filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_REP_FirstPolicyYear.gif";
+goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
+proc greplay igout=WORK.PLOT2GRAPH nofs;
+replay IMP_REP1;
+quit;
+goptions device=win;
+filename gsasfile;
+filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\IMP_REP_CustomerAge.gif";
 goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
 proc greplay igout=WORK.PLOT2GRAPH nofs;
 replay IMP_REP_;
 quit;
 goptions device=win;
 filename gsasfile;
-filename gsasfile "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\LOYALTY.gif";
+filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\LOYALTY.gif";
 goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
 proc greplay igout=WORK.PLOT2GRAPH nofs;
 replay LOYALTY;
 quit;
 goptions device=win;
 filename gsasfile;
-filename gsasfile "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\PremiumsinLOBHousehold.gif";
+filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\PremiumsinLOBHousehold.gif";
 goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
 proc greplay igout=WORK.PLOT2GRAPH nofs;
 replay PREMIUMS;
 quit;
 goptions device=win;
 filename gsasfile;
-filename gsasfile "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\TOTAL_PREMIUM.gif";
+filename gsasfile "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Plot2\GRAPH\TOTAL_PREMIUM.gif";
 goptions device= GIF display gaccess= gsasfile gsfmode= replace cback= white;
 proc greplay igout=WORK.PLOT2GRAPH nofs;
 replay TOTAL_PR;

@@ -4,7 +4,7 @@ MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
 MPRINT(EM_DIAGRAM):   run;
 MPRINT(EM_DIAGRAM):   data _null_;
 MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "December 29, 2015" );
-MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "01:23:35" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "14:12:55" );
 MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
 MPRINT(EM_DIAGRAM):   put "* Training Log";
 MPRINT(EM_DIAGRAM):   put nldate;
@@ -14,31 +14,31 @@ MPRINT(EM_DIAGRAM):   run;
 *------------------------------------------------------------*
 * Training Log
 Date:                December 29, 2015
-Time:                01:23:35
+Time:                14:12:55
 *------------------------------------------------------------*
-MPRINT(EM_DIAGRAM):    filename O1KYOOML "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Repl\EMTRAIN.out" encoding="UTF-8" NOBOM;
-MPRINT(EM_DIAGRAM):   proc printto print=O1KYOOML new;
+MPRINT(EM_DIAGRAM):    filename O0TZYNUV "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Repl\EMTRAIN.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   proc printto print=O0TZYNUV new;
 MPRINT(EM_DIAGRAM):   run;
-MPRINT(EM_DIAGRAM):    filename _LOG "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Repl\EMLOG.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):    filename _LOG "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Repl\EMLOG.log" encoding="UTF-8" NOBOM;
 MPRINT(EM_DIAGRAM):    data _null_;
 MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
 MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
 MPRINT(EM_DIAGRAM):   run;
 MPRINT(EM_DIAGRAM):   data _null_;
 MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "December 29, 2015" );
-MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "01:23:35" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "14:12:55" );
 MPRINT(EM_DIAGRAM):   file _LOG;
 MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
-MPRINT(EM_DIAGRAM):   put "User:                raquel";
+MPRINT(EM_DIAGRAM):   put "User:                D059331";
 MPRINT(EM_DIAGRAM):   put nldate;
 MPRINT(EM_DIAGRAM):   put nltime;
 MPRINT(EM_DIAGRAM):   put "Site:                70107571";
-MPRINT(EM_DIAGRAM):   put "Platform:            X64_7PRO";
+MPRINT(EM_DIAGRAM):   put "Platform:            X64_8PRO";
 MPRINT(EM_DIAGRAM):   put "Maintenance Release: 9.03.01M2P081512";
 MPRINT(EM_DIAGRAM):   put "EM Version:          12.1";
 MPRINT(EM_DIAGRAM):   put "* ";
 MPRINT(EM_DIAGRAM):   run;
-MPRINT(EM_DIAGRAM):    filename _LOGIN "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Repl\EMTRAIN.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):    filename _LOGIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Repl\EMTRAIN.log" encoding="UTF-8" NOBOM;
 MPRINT(EM_COPYFILE):   data _null_;
 MPRINT(EM_COPYFILE):   length line $20000;
 MPRINT(EM_COPYFILE):   file _LOG MOD lrecl=20000;
@@ -60,34 +60,34 @@ MPRINT(EM_DIAGRAM):    data _null_;
 MPRINT(EM_DIAGRAM):   file _LOG mod;
 MPRINT(EM_DIAGRAM):   put _page_;
 MPRINT(EM_DIAGRAM):   run;
-MPRINT(EM_DIAGRAM):   filename _LOGIN "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Repl\EMSCORE.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   filename _LOGIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Repl\EMSCORE.log" encoding="UTF-8" NOBOM;
 MPRINT(EM_DIAGRAM):  ;
 MPRINT(EM_DIAGRAM):   data _null_;
 MPRINT(EM_DIAGRAM):   file _LOG mod;
 MPRINT(EM_DIAGRAM):   put _page_;
 MPRINT(EM_DIAGRAM):   run;
-MPRINT(EM_DIAGRAM):    filename _LOGIN "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Repl\EMREPORT.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):    filename _LOGIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Repl\EMREPORT.log" encoding="UTF-8" NOBOM;
 MPRINT(EM_DIAGRAM):  ;
 MPRINT(EM_DIAGRAM):   filename _LOGIN;
 MPRINT(EM_DIAGRAM):    filename _LOG;
-MPRINT(EM_DIAGRAM):    filename _OUT "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Repl\EMOUTPUT.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):    filename _OUT "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Repl\EMOUTPUT.out" encoding="UTF-8" NOBOM;
 MPRINT(EM_DIAGRAM):    data _null_;
 MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
 MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
 MPRINT(EM_DIAGRAM):   run;
 MPRINT(EM_DIAGRAM):   data _null_;
 MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "December 29, 2015" );
-MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "01:23:35" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "14:12:55" );
 MPRINT(EM_DIAGRAM):   file _OUT;
 MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
-MPRINT(EM_DIAGRAM):   put "User:                raquel";
+MPRINT(EM_DIAGRAM):   put "User:                D059331";
 MPRINT(EM_DIAGRAM):   put nldate;
 MPRINT(EM_DIAGRAM):   put nltime;
 MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
 MPRINT(EM_DIAGRAM):   put "* Training Output";
 MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
 MPRINT(EM_DIAGRAM):   run;
-MPRINT(EM_DIAGRAM):    filename _OUTIN "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Repl\EMTRAIN.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):    filename _OUTIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Repl\EMTRAIN.out" encoding="UTF-8" NOBOM;
 MPRINT(EM_DIAGRAM):   ;
 MPRINT(EM_COPYFILE):   data _null_;
 MPRINT(EM_COPYFILE):   length line $20000;
@@ -113,7 +113,7 @@ MPRINT(EM_DIAGRAM):   put // "*-------------------------------------------------
 MPRINT(EM_DIAGRAM):   put "* Score Output";
 MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
 MPRINT(EM_DIAGRAM):   run;
-MPRINT(EM_DIAGRAM):    filename _OUTIN "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Repl\EMSCORE.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):    filename _OUTIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Repl\EMSCORE.out" encoding="UTF-8" NOBOM;
 MPRINT(EM_DIAGRAM):  ;
 MPRINT(EM_DIAGRAM):   filename _OUTIN;
 MPRINT(EM_DIAGRAM):    data _null_;
@@ -123,48 +123,48 @@ MPRINT(EM_DIAGRAM):   put // "*-------------------------------------------------
 MPRINT(EM_DIAGRAM):   put "* Report Output";
 MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
 MPRINT(EM_DIAGRAM):   run;
-MPRINT(EM_DIAGRAM):    filename _OUTIN "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Repl\EMREPORT.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):    filename _OUTIN "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Repl\EMREPORT.out" encoding="UTF-8" NOBOM;
 MPRINT(EM_DIAGRAM):  ;
 MPRINT(EM_DIAGRAM):   filename _OUTIN;
 MPRINT(EM_DIAGRAM):    filename _OUT;
-MPRINT(EM_DIAGRAM):    filename _emtool_ '\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master\insurance_segmentation\Workspaces\EMWS1\Repl\EMRUNSTATUS.xml' encoding="UTF-8" NOBOM;
-26582      proc freq data=EMWS1.Repl_VariableSet noprint;
+MPRINT(EM_DIAGRAM):    filename _emtool_ 'C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Repl\EMRUNSTATUS.xml' encoding="UTF-8" NOBOM;
+20774      proc freq data=EMWS1.Repl_VariableSet noprint;
 MPRINT(EM_DIAGRAM):    proc freq data=EMWS1.Repl_VariableSet noprint;
-26583      table ROLE*LEVEL/out=WORK.ReplMETA;
+20775      table ROLE*LEVEL/out=WORK.ReplMETA;
 MPRINT(EM_DIAGRAM):   table ROLE*LEVEL/out=WORK.ReplMETA;
-26584      run;
+20776      run;
 MPRINT(EM_DIAGRAM):   run;
 
 NOTE: There were 13 observations read from the data set EMWS1.REPL_VARIABLESET.
 NOTE: The data set WORK.REPLMETA has 4 observations and 4 variables.
 NOTE: PROCEDURE FREQ used (Total process time):
-      real time           0.00 seconds
-      cpu time            0.00 seconds
-      
-
-26585      proc print data=WORK.ReplMETA label noobs;
-MPRINT(EM_DIAGRAM):   proc print data=WORK.ReplMETA label noobs;
-26586      var ROLE LEVEL COUNT;
-MPRINT(EM_DIAGRAM):   var ROLE LEVEL COUNT;
-26587      label ROLE = "%sysfunc(sasmsg(sashelp.dmine, meta_role_vlabel, NOQUOTE))" LEVEL = "%sysfunc(sasmsg(sashelp.dmine, meta_level_vlabel, NOQUOTE))" COUNT = "%sysfunc(sasmsg(sashelp.dmine, rpt_count_vlabel, NOQUOTE))";
-MPRINT(EM_DIAGRAM):   label ROLE = "Role" LEVEL = "Measurement Level" COUNT = "Frequency Count";
-26588      title9 ' ';
-MPRINT(EM_DIAGRAM):   title9 ' ';
-26589      title10 "%sysfunc(sasmsg(sashelp.dmine, rpt_varSummary_title  , NOQUOTE))";
-MPRINT(EM_DIAGRAM):   title10 "Variable Summary";
-MPRINT(EM_DIAGRAM):   run;
-26590      run;
-
-NOTE: There were 4 observations read from the data set WORK.REPLMETA.
-NOTE: The PROCEDURE PRINT printed page 4.
-NOTE: PROCEDURE PRINT used (Total process time):
-      real time           0.01 seconds
+      real time           0.03 seconds
       cpu time            0.01 seconds
       
 
-26591      title10;
+20777      proc print data=WORK.ReplMETA label noobs;
+MPRINT(EM_DIAGRAM):   proc print data=WORK.ReplMETA label noobs;
+20778      var ROLE LEVEL COUNT;
+MPRINT(EM_DIAGRAM):   var ROLE LEVEL COUNT;
+20779      label ROLE = "%sysfunc(sasmsg(sashelp.dmine, meta_role_vlabel, NOQUOTE))" LEVEL = "%sysfunc(sasmsg(sashelp.dmine, meta_level_vlabel, NOQUOTE))" COUNT = "%sysfunc(sasmsg(sashelp.dmine, rpt_count_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label ROLE = "Role" LEVEL = "Measurement Level" COUNT = "Frequency Count";
+20780      title9 ' ';
+MPRINT(EM_DIAGRAM):   title9 ' ';
+20781      title10 "%sysfunc(sasmsg(sashelp.dmine, rpt_varSummary_title  , NOQUOTE))";
+MPRINT(EM_DIAGRAM):   title10 "Variable Summary";
+MPRINT(EM_DIAGRAM):   run;
+20782      run;
+
+NOTE: There were 4 observations read from the data set WORK.REPLMETA.
+NOTE: The PROCEDURE PRINT printed page 1.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.00 seconds
+      
+
+20783      title10;
 MPRINT(EM_DIAGRAM):   title10;
-26592      %let EMEXCEPTIONSTRING=;
+20784      %let EMEXCEPTIONSTRING=;
 MPRINT(EM_DIAGRAM):     *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   * Repl: Generation of macros and macro variables;
 MPRINT(EM_DIAGRAM):   * To see the code generated, set the EM_DEBUG macro variable to SOURCE or _ALL_;
@@ -230,513 +230,513 @@ MPRINT(EM_DIAGRAM):   *---------------------------------------------------------
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   * End Create EM Macro Variables and Macros;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
-26932      *------------------------------------------------------------*;
+21124      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
-26933      * Repl: Generation of macros and macro variables;
+21125      * Repl: Generation of macros and macro variables;
 MPRINT(EM_DIAGRAM):   * Repl: Generation of macros and macro variables;
-26934      * To see the code generated, set the EM_DEBUG macro variable to SOURCE or _ALL_;
+21126      * To see the code generated, set the EM_DEBUG macro variable to SOURCE or _ALL_;
 MPRINT(EM_DIAGRAM):   * To see the code generated, set the EM_DEBUG macro variable to SOURCE or _ALL_;
-26935      *------------------------------------------------------------*;
+21127      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
 
-26936      %let EMEXCEPTIONSTRING=;
-26937      *------------------------------------------------------------*;
+21128      %let EMEXCEPTIONSTRING=;
+21129      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
-26938      * TRAIN: Repl;
+21130      * TRAIN: Repl;
 MPRINT(EM_DIAGRAM):   * TRAIN: Repl;
-26939      *------------------------------------------------------------*;
+21131      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
-26940      %let EM_ACTION = TRAIN;
-26941      %let syscc = 0;
-26942      filename x CATALOG 'SASHELP.EMUTIL.EM_VARMACRO.SOURCE';
+21132      %let EM_ACTION = TRAIN;
+21133      %let syscc = 0;
+21134      filename x CATALOG 'SASHELP.EMUTIL.EM_VARMACRO.SOURCE';
 MPRINT(EM_DIAGRAM):     filename x CATALOG 'SASHELP.EMUTIL.EM_VARMACRO.SOURCE';
-26943      %inc x;
+21135      %inc x;
 NOTE: %INCLUDE (level 1) file X is file SASHELP.EMUTIL.EM_VARMACRO.SOURCE.
-26944     +%macro em_varMacro(name=emMacro, metadata=, where=, key=NAME, nummacro=);
-26945     +   filename macFile catalog 'work.emutil.macro.source';
-26946     +   %let _METAOBS = 0;
-26948     +   %if (%sysfunc(exist(&metadata))<1 and %sysfunc(exist(&metadata, VIEW))<1)
-26949     +                   or (&metadata eq ) %then %do;
-26950     +       %goto doend;
-26951     +   %end;
-26952     +   data _null_;
-26953     +      length _STRING_ $80;
-26954     +      retain _STRING_;
-26955     +      set &metadata end=eof;
-26956     +      file macFile;
-26957     +      %if %nrbquote(&where) ne %then %do;
-26958     +          %let whereClause = where (%nrbquote(&where));
-26959     +          %unquote(&whereClause);
-26960     +      %end;
-26961     +      if _N_=1 then do;
-26962     +         string = "%"!!"macro &name;";
-26963     +         put string;
-26964     +      end;
-26965     +      if (length(_STRING_) + length(trim(&key))+ 1 < 80) then do;
-26966     +         _STRING_ = trim(_STRING_)!!' '!!trim(&key);
-26967     +         if eof then do;
-26968     +            put _STRING_;
-26969     +            string = "%"!!"mend &name;";
-26970     +            put string;
-26971     +            %if (&nummacro ne ) %then %do;
-26972     +                string = strip(put(_N_, best.));
-26973     +                put "%" "global &nummacro;";
-26974     +                put "%" "let &nummacro = " string ";";
-26975     +                call symput('_METAOBS', string);
-26976     +            %end;
-26977     +         end;
-26978     +      end;
-26979     +      else do;
-26980     +         put _STRING_;
-26981     +         _string_ = TRIM(&key);
-26982     +         if eof then do;
-26983     +            put _STRING_;
-26984     +            string = "%"!!"mend &name;";
-26985     +            put string;
-26986     +        end;
-26987     +      end;
-26988     +      if eof then do;
-26989     +         string = strip(put(_N_, best.));
-26990     +         call symput('_METAOBS', string);
-26991     +         %if (&nummacro ne ) %then %do;
-26992     +             put "%" "global &nummacro;";
-26993     +             put "%" "let &nummacro = " string ";";
-26994     +         %end;
-26995     +      end;
-26996     +   run;
-26998     +   %doend:
-26999     +   %if ^&_METAOBS %then %do;
-27000     +       data _null_;
-27001     +          file macFile;
-27002     +          put "%" "macro &name;";
-27003     +          put "%" "mend &name;";
-27004     +          %if (&nummacro ne ) %then %do;
-27005     +              put "%" "global &nummacro;";
-27006     +              put "%" "let &nummacro = 0;";
-27007     +          %end;
-27008     +      run;
-27009     +   %end;
-27010     +   %inc macFile;
-27011     +   filename macFile;
-27012     +%mend em_varMacro;
+21136     +%macro em_varMacro(name=emMacro, metadata=, where=, key=NAME, nummacro=);
+21137     +   filename macFile catalog 'work.emutil.macro.source';
+21138     +   %let _METAOBS = 0;
+21140     +   %if (%sysfunc(exist(&metadata))<1 and %sysfunc(exist(&metadata, VIEW))<1)
+21141     +                   or (&metadata eq ) %then %do;
+21142     +       %goto doend;
+21143     +   %end;
+21144     +   data _null_;
+21145     +      length _STRING_ $80;
+21146     +      retain _STRING_;
+21147     +      set &metadata end=eof;
+21148     +      file macFile;
+21149     +      %if %nrbquote(&where) ne %then %do;
+21150     +          %let whereClause = where (%nrbquote(&where));
+21151     +          %unquote(&whereClause);
+21152     +      %end;
+21153     +      if _N_=1 then do;
+21154     +         string = "%"!!"macro &name;";
+21155     +         put string;
+21156     +      end;
+21157     +      if (length(_STRING_) + length(trim(&key))+ 1 < 80) then do;
+21158     +         _STRING_ = trim(_STRING_)!!' '!!trim(&key);
+21159     +         if eof then do;
+21160     +            put _STRING_;
+21161     +            string = "%"!!"mend &name;";
+21162     +            put string;
+21163     +            %if (&nummacro ne ) %then %do;
+21164     +                string = strip(put(_N_, best.));
+21165     +                put "%" "global &nummacro;";
+21166     +                put "%" "let &nummacro = " string ";";
+21167     +                call symput('_METAOBS', string);
+21168     +            %end;
+21169     +         end;
+21170     +      end;
+21171     +      else do;
+21172     +         put _STRING_;
+21173     +         _string_ = TRIM(&key);
+21174     +         if eof then do;
+21175     +            put _STRING_;
+21176     +            string = "%"!!"mend &name;";
+21177     +            put string;
+21178     +        end;
+21179     +      end;
+21180     +      if eof then do;
+21181     +         string = strip(put(_N_, best.));
+21182     +         call symput('_METAOBS', string);
+21183     +         %if (&nummacro ne ) %then %do;
+21184     +             put "%" "global &nummacro;";
+21185     +             put "%" "let &nummacro = " string ";";
+21186     +         %end;
+21187     +      end;
+21188     +   run;
+21190     +   %doend:
+21191     +   %if ^&_METAOBS %then %do;
+21192     +       data _null_;
+21193     +          file macFile;
+21194     +          put "%" "macro &name;";
+21195     +          put "%" "mend &name;";
+21196     +          %if (&nummacro ne ) %then %do;
+21197     +              put "%" "global &nummacro;";
+21198     +              put "%" "let &nummacro = 0;";
+21199     +          %end;
+21200     +      run;
+21201     +   %end;
+21202     +   %inc macFile;
+21203     +   filename macFile;
+21204     +%mend em_varMacro;
 NOTE: %INCLUDE (level 1) ending.
-27013      filename X;
+21205      filename X;
 MPRINT(EM_DIAGRAM):   filename X;
 NOTE: Fileref X has been deassigned.
-27014       %macro main;
-27015      
-27016         filename temp catalog 'sashelp.emmdfy.Replace_macros.source';
-27017         %include temp;
-27018         filename temp;
-27019      
-27020         %if %upcase(&EM_ACTION) = CREATE %then %do;
-27021      
-27022             filename temp catalog 'sashelp.emmdfy.Replace_create.source';
-27023             %include temp;
-27024             filename temp;
-27025             %create;
-27026         %end;
-27027         %else
-27028         %if %upcase(&EM_ACTION) = TRAIN %then %do;
-27029      
-27030             filename temp catalog 'sashelp.emmdfy.Replace_train.source';
-27031             %include temp;
-27032             filename temp;
-27033             %train;
-27034         %end;
-27035         %else
-27036         %if %upcase(&EM_ACTION) = SCORE %then %do;
-27037      
-27038             filename temp catalog 'sashelp.emmdfy.Replace_score.source';
-27039             %include temp;
-27040             filename temp;
-27041             %score;
-27042         %end;
-27043         %if %upcase(&EM_ACTION) = REPORT %then %do;
-27044      
-27045             filename temp catalog 'sashelp.emmdfy.Replace_report.source';
-27046             %include temp;
-27047             filename temp;
-27048             %report;
-27049         %end;
-27050         %if %upcase(&EM_ACTION) = OPENOUTCLASSTABLE %then %do;
-27051             filename temp catalog 'sashelp.emmdfy.replace_makeoutclass.source';
-27052             %include temp;
-27053             filename temp;
-27054             %em_replace_openoutclass;
-27055         %end;
-27056         %if %upcase(&EM_ACTION) = CLOSEOUTCLASSTABLE %then %do;
-27057             filename temp catalog 'sashelp.emmdfy.replace_makeoutclass.source';
-27058             %include temp;
-27059             filename temp;
-27060             %em_replace_closeoutclass;
-27061         %end;
-27062      %mend main;
-27063      
-27064      %main;
+21206       %macro main;
+21207      
+21208         filename temp catalog 'sashelp.emmdfy.Replace_macros.source';
+21209         %include temp;
+21210         filename temp;
+21211      
+21212         %if %upcase(&EM_ACTION) = CREATE %then %do;
+21213      
+21214             filename temp catalog 'sashelp.emmdfy.Replace_create.source';
+21215             %include temp;
+21216             filename temp;
+21217             %create;
+21218         %end;
+21219         %else
+21220         %if %upcase(&EM_ACTION) = TRAIN %then %do;
+21221      
+21222             filename temp catalog 'sashelp.emmdfy.Replace_train.source';
+21223             %include temp;
+21224             filename temp;
+21225             %train;
+21226         %end;
+21227         %else
+21228         %if %upcase(&EM_ACTION) = SCORE %then %do;
+21229      
+21230             filename temp catalog 'sashelp.emmdfy.Replace_score.source';
+21231             %include temp;
+21232             filename temp;
+21233             %score;
+21234         %end;
+21235         %if %upcase(&EM_ACTION) = REPORT %then %do;
+21236      
+21237             filename temp catalog 'sashelp.emmdfy.Replace_report.source';
+21238             %include temp;
+21239             filename temp;
+21240             %report;
+21241         %end;
+21242         %if %upcase(&EM_ACTION) = OPENOUTCLASSTABLE %then %do;
+21243             filename temp catalog 'sashelp.emmdfy.replace_makeoutclass.source';
+21244             %include temp;
+21245             filename temp;
+21246             %em_replace_openoutclass;
+21247         %end;
+21248         %if %upcase(&EM_ACTION) = CLOSEOUTCLASSTABLE %then %do;
+21249             filename temp catalog 'sashelp.emmdfy.replace_makeoutclass.source';
+21250             %include temp;
+21251             filename temp;
+21252             %em_replace_closeoutclass;
+21253         %end;
+21254      %mend main;
+21255      
+21256      %main;
 MPRINT(MAIN):   filename temp catalog 'sashelp.emmdfy.Replace_macros.source';
 NOTE: %INCLUDE (level 1) file TEMP is file SASHELP.EMMDFY.REPLACE_MACROS.SOURCE.
-27065     +%macro SetProperties;
-27066     +   %em_checkmacro(name=EM_PROPERTY_UNKNOWNLEVEL,    global=Y, value=MODE);
-27067     +   %em_checkmacro(name=EM_PROPERTY_CALCMETHOD,      global=Y, value=NONE);
-27068     +   %em_checkmacro(name=EM_PROPERTY_PERCENTSCUTOFF,  global=Y, value=0.5);
-27069     +   %em_checkmacro(name=EM_PROPERTY_SPACINGSCUTOFF,  global=Y, value=9);
-27070     +   %em_checkMacro(name=EM_PROPERTY_MADSCUTOFF,      global=Y, value=9);
-27071     +   %em_checkMacro(name=EM_PROPERTY_STDDEVCUTOFF,    global=Y, value=3);
-27072     +   %em_checkmacro(name=EM_PROPERTY_REPLACEMETHOD,   global=Y, value=COMPUTED);
-27073     +   %em_checkmacro(name=EM_PROPERTY_HIDEVARIABLE,    global=Y, value=N);
-27074     +   %em_checkmacro(name=EM_PROPERTY_INTERVALMETHOD,  global=Y, value=NONE);
-27075     +   %em_checkmacro(name=EM_PROPERTY_REPORTCOUNT,     global=Y, value=Y);
-27077     +%mend SetProperties;
+21257     +%macro SetProperties;
+21258     +   %em_checkmacro(name=EM_PROPERTY_UNKNOWNLEVEL,    global=Y, value=MODE);
+21259     +   %em_checkmacro(name=EM_PROPERTY_CALCMETHOD,      global=Y, value=NONE);
+21260     +   %em_checkmacro(name=EM_PROPERTY_PERCENTSCUTOFF,  global=Y, value=0.5);
+21261     +   %em_checkmacro(name=EM_PROPERTY_SPACINGSCUTOFF,  global=Y, value=9);
+21262     +   %em_checkMacro(name=EM_PROPERTY_MADSCUTOFF,      global=Y, value=9);
+21263     +   %em_checkMacro(name=EM_PROPERTY_STDDEVCUTOFF,    global=Y, value=3);
+21264     +   %em_checkmacro(name=EM_PROPERTY_REPLACEMETHOD,   global=Y, value=COMPUTED);
+21265     +   %em_checkmacro(name=EM_PROPERTY_HIDEVARIABLE,    global=Y, value=N);
+21266     +   %em_checkmacro(name=EM_PROPERTY_INTERVALMETHOD,  global=Y, value=NONE);
+21267     +   %em_checkmacro(name=EM_PROPERTY_REPORTCOUNT,     global=Y, value=Y);
+21269     +%mend SetProperties;
 NOTE: %INCLUDE (level 1) ending.
 MPRINT(MAIN):   filename temp;
 NOTE: Fileref TEMP has been deassigned.
 MPRINT(MAIN):   filename temp catalog 'sashelp.emmdfy.Replace_train.source';
 NOTE: %INCLUDE (level 1) file TEMP is file SASHELP.EMMDFY.REPLACE_TRAIN.SOURCE.
-27079     +%macro getLevels(outData=);
-27080     +   %if (%EM_BINARY_TARGET %EM_ORDINAL_TARGET %EM_NOMINAL_TARGET
-27081     +       %EM_BINARY_INPUT %EM_ORDINAL_INPUT %EM_NOMINAL_INPUT
-27082     +       %EM_BINARY_REJECTED %EM_ORDINAL_REJECTED %EM_NOMINAL_REJECTED) eq %then %do;
-27083     +       data &outData;
-27084     +          length NAME $32 LEVEL $8 FREQUENCY 8 TYPE $1 CRAW $8 NRAW 8 REPLACE_VALUE $200;
-27085     +          label NAME =     "%sysfunc(sasmsg(sashelp.dmine, rpt_variable_vlabel, NOQUOTE))"
-27086     +                LEVEL=     "%sysfunc(sasmsg(sashelp.dmine, rpt_fmtValue_vlabel, NOQUOTE))"
-27087     +                FREQUENCY= "%sysfunc(sasmsg(sashelp.dmine, rpt_count_vlabel, NOQUOTE))"
-27088     +                TYPE=      "%sysfunc(sasmsg(sashelp.dmine, meta_type_vlabel, NOQUOTE))"
-27089     +                CRAW=      "%sysfunc(sasmsg(sashelp.dmine, rpt_craw_vlabel, NOQUOTE))"
-27090     +                NRAW=      "%sysfunc(sasmsg(sashelp.dmine, rpt_nraw_vlabel, NOQUOTE))"
-27091     +                REPLACE_VALUE= "%sysfunc(sasmsg(sashelp.dmine, rpt_replace_vlabel, NOQUOTE))";
-27092     +          stop;
-27093     +       run;
-27094     +   %end;
-27095     +   %else %do;
-27096     +       %em_checkmacro(name=EM_TRAIN_MAXLEVELS, global=Y, value=512);
-27097     +        %if "&EM_TRAIN_MAXLEVELS" = "" or "&EM_TRAIN_MAXLEVELS" = "." %then
-27098     +            %let EM_TRAIN_MAXLEVELS= 512;
-27100     +        proc dmdb data=&EM_IMPORT_DATA dmdbcat=emdmdb maxlevel=&EM_TRAIN_MAXLEVELS nonorm CLASSOUT=&outData(drop=CODE FREQPERCENT NMISSPERCENT);
-27101     +          class
-27102     +            %EM_BINARY_TARGET
-27103     +            %EM_ORDINAL_TARGET
-27104     +            %EM_NOMINAL_TARGET
-27105     +            %EM_BINARY_INPUT
-27106     +            %EM_ORDINAL_INPUT
-27107     +            %EM_NOMINAL_INPUT
-27108     +            %EM_BINARY_REJECTED
-27109     +            %EM_ORDINAL_REJECTED
-27110     +            %EM_NOMINAL_REJECTED;
-27111     +          %if (%EM_FREQ ne ) %then %do;
-27112     +             freq %EM_FREQ;
-27113     +         %end;
-27114     +       run;
-27115     +   %end;
-27116     +%mend getLevels;
-27118     +%macro makeOutCLass;
-27119     +   %em_getname(key=OUTCLASS,  type=DATA);
-27120     +   %em_getname(key=NEWVALUES, type=DATA);
-27122     +   %let data= REPLACE_DATA;
-27123     +   %if %sysfunc(exist(&EM_USER_OUTCLASS)) %then %do;
-27124     +       data &data(rename=(REPLACE_VALUE=NEW_REPLACE_VALUE));
-27125     +          set &EM_USER_OUTCLASS;
-27126     +          keep NAME TYPE LEVEL REPLACE_VALUE;
-27127     +          where REPLACE_VALUE ne '';
-27128     +       run;
-27129     +       proc sort data=&Data;
-27130     +          by NAME TYPE LEVEL;
-27131     +       run;
-27132     +   %end;
-27134     +   %getLevels(outdata=&EM_USER_OUTCLASS);
-27136     +   /* Determine Mode */
-27137     +   proc sort data=&EM_USER_OUTCLASS;
-27138     +      by NAME DESCENDING FREQUENCY;
-27139     +   run;
-27140     +   data _null_;
-27141     +      dsid = open("&EM_USER_OUTCLASS");
-27142     +      levelLen = varlen(dsid, varnum(dsid, "LEVEL"));
-27143     +      dsid = close(dsid);
-27144     +      call symput("levelLen", put(max(levelLen, 9), BEST.));
-27145     +   run;
-27147     +   data &EM_USER_OUTCLASS;
-27148     +      length Name $32 LEVEL $&levelLen;
-27149     +      set &EM_USER_OUTCLASS;
-27150     +      length REPLACE_VALUE $200;
-27151     +      label REPLACE_VALUE="%sysfunc(sasmsg(sashelp.dmine, rpt_replace_vlabel, NOQUOTE))";
-27152     +      by NAME;
-27153     +      output;
-27154     +      if last.name then do;
-27155     +         LEVEL="_UNKNOWN_";
-27156     +         Frequency=.;
-27157     +         CRAW='';
-27158     +         NRAW=.;
-27159     +         REPLACE_VALUE="_DEFAULT_";
-27160     +         output;
-27161     +      end;
-27162     +   run;
-27164     +   /* If the file is a copy of an existing one.  Merge previously specified values */
-27165     +   %if %sysfunc(exist(&EM_USER_NEWVALUES)) and (&EM_USER_NEWVALUES ne ) %then %do;
-27166     +       proc sort data=&EM_USER_NEWVALUES(rename=(REPLACE_VALUE=NEW_REPLACE_VALUE));
-27167     +          by NAME TYPE LEVEL;
-27168     +       run;
-27169     +       proc sort data=&EM_USER_OUTCLASS;
-27170     +          by NAME TYPE LEVEL;
-27171     +       run;
-27172     +       data &EM_USER_OUTCLASS(drop=NEW_REPLACE_VALUE);
-27173     +          merge &EM_USER_OUTCLASS(in=_a) &EM_USER_NEWVALUES(in=_b);
-27174     +          by NAME TYPE LEVEL;
-27175     +          if _a then do;
-27176     +             if _b then REPLACE_VALUE=NEW_REPLACE_VALUE;
-27177     +             output;
-27178     +          end;
-27179     +       run;
-27180     +       %let lib    = %scan(&EM_USER_NEWVALUES, 1, .);
-27181     +       %let member = %scan(&EM_USER_NEWVALUES, 2, .);
-27182     +       proc datasets lib=&lib nolist;
-27183     +          delete &member;
-27184     +       run;
-27186     +   %end;
-27188     +   /*  Update the OUTCLASS data using REPLACEMENT values previously specified */
-27189     +   %if %sysfunc(exist(&Data)) %then %do;
-27190     +       proc sort data=&EM_USER_OUTCLASS;
-27191     +          by NAME TYPE LEVEL;
-27192     +       run;
-27193     +       proc sort data=&data;
-27194     +          by NAME TYPE LEVEL;
-27195     +       run;
-27196     +       data &EM_USER_OUTCLASS(drop=NEW_REPLACE_VALUE);
-27197     +          merge &EM_USER_OUTCLASS(in=_a) &Data(in=_b);
-27198     +          by NAME TYPE LEVEL;
-27199     +          if _a then do;
-27200     +             if _b then REPLACE_VALUE=NEW_REPLACE_VALUE;
-27201     +             output;
-27202     +          end;
-27203     +       run;
-27204     +   %end;
-27205     +   proc sort data=&EM_USER_OUTCLASS;
-27206     +      by NAME DESCENDING FREQUENCY;
-27207     +   run;
-27209     +   %let lib = WORK;
-27210     +   %if %index(&EM_USER_OUTCLASS, .) %then %do;
-27211     +       %let lib    = %scan(&EM_USER_OUTCLASS, 1, .);
-27212     +       %let member = %scan(&EM_USER_OUTCLASS, 2, .);
-27213     +   %end;
-27214     +   %else
-27215     +       %let member = &EM_USER_OUTCLASS;
-27217     +   proc datasets lib=&lib nolist;
-27218     +      modify &member;
-27219     +      label NAME =     "%sysfunc(sasmsg(sashelp.dmine, rpt_variable_vlabel, NOQUOTE))"
-27220     +            LEVEL=     "%sysfunc(sasmsg(sashelp.dmine, rpt_fmtValue_vlabel, NOQUOTE))"
-27221     +            FREQUENCY= "%sysfunc(sasmsg(sashelp.dmine, rpt_count_vlabel, NOQUOTE))"
-27222     +            TYPE=      "%sysfunc(sasmsg(sashelp.dmine, meta_type_vlabel, NOQUOTE))"
-27223     +            CRAW=      "%sysfunc(sasmsg(sashelp.dmine, rpt_craw_vlabel, NOQUOTE))"
-27224     +            NRAW=      "%sysfunc(sasmsg(sashelp.dmine, rpt_nraw_vlabel, NOQUOTE))"
-27225     +            REPLACE_VALUE= "%sysfunc(sasmsg(sashelp.dmine, rpt_replace_vlabel, NOQUOTE))";
-27226     +     %if %sysfunc(exist(&data)) %then %do;
-27227     +          delete &data;
-27228     +     %end;
-27229     +   run;
-27231     +   /* Create property file.  Only the records with non-missing REPLACE_VALUE */
-27232     +   data &EM_USER_NEWVALUES / view=&EM_USER_NEWVALUES;
-27233     +      set &EM_USER_OUTCLASS(in=_a);
-27234     +      where REPLACE_VALUE ne '';
-27235     +      keep NAME TYPE LEVEL REPLACE_VALUE;
-27236     +   run;
-27237     +%mend makeOutClass;
-27239     +%macro makeVarLimits;
-27240     +     %let madsString =;
-27241     +     %stdize(data=&em_import_data, metadata=VARIABLESET, method=MADS,     outStat=work.MADS);
-27242     +     %if %sysfunc(exist(work.MADS)) %then %do;
-27243     +         %makeLimits(StatsDs=work.MADS, cutoff=&EM_PROPERTY_MADSCUTOFF, method=MADS);
-27244     +         %let madsString = MADS;
-27245     +         proc append base=work.LIMITS data=work.MADS force;
-27246     +         run;
-27247     +     %end;
-27249     +     %let spacingString = ;
-27250     +     %stdize(data=&em_import_data, metadata=VARIABLESET, method=SPACINGS, outStat=work.SPACINGS);
-27251     +     %if %sysfunc(exist(work.SPACINGS)) %then %do;
-27252     +         %makeLimits(StatsDs=work.SPACINGS, cutoff=&EM_PROPERTY_SPACINGSCUTOFF, method=SPACINGS);
-27253     +         %let spacingString = SPACING;
-27254     +         proc append base=work.LIMITS data=work.SPACINGS force;
-27255     +         run;
-27256     +     %end;
-27258     +     %let percentString = ;
-27259     +     %stdize(data=&em_import_data, metadata=VARIABLESET, method=PERCENTS, outStat=work.PERCENTS);
-27260     +     %if %sysfunc(exist(work.PERCENTS)) %then %do;
-27261     +         %makePctLimits(StatsDs=work.PERCENTS);
-27262     +         %let percentString = PERCENTS;
-27263     +         proc append base=work.LIMITS data=work.PERCENTS(keep=NAME CALCMETHOD UPPERLIMIT LOWERLIMIT LABEL) force ;
-27264     +         run;
-27265     +     %end;
-27267     +     %makeFixedLimits(StatsDs=work.FIXED);
-27268     +     %if %sysfunc(exist(work.FIXED)) %then %do;
-27269     +         proc append base=work.LIMITS data=work.FIXED(keep=NAME CALCMETHOD UPPERLIMIT LOWERLIMIT LABEL) force ;
-27270     +         run;
-27271     +     %end;
-27273     +     %if %sysfunc(exist(work.LIMITS)) %then %do;
-27274     +         proc sort data=work.LIMITS;
-27275     +            by NAME;
-27276     +         run;
-27277     +         %em_getName(key=LIMITS, type=DATA);
-27278     +         data &EM_USER_LIMITS;
-27279     +              merge work.limits(in=_a) variableSet(keep=NAME ROLE LEVEL LABEL REPLACEMETHOD REPLACEMIN REPLACEMAX LABEL);
-27280     +              by NAME;
-27281     +              if _a then output;
-27282     +         run;
-27283     +     %end;
-27287     +     %if %upcase(&EM_DEBUG)=_ALL_ %then %do;
-27288     +          proc print data=&EM_USER_OUTCLASS;run;
-27289     +          proc print data=MADS;run;
-27290     +          proc print data=spacings;run;
-27291     +          proc print data=percents;run;
-27292     +          proc print data=limits;run;
-27293     +     %end;
-27294     +     proc datasets lib=work nolist;
-27295     +        delete &madsString &spacingString &percentString limits;
-27296     +     run;
-27297     +%mend makeVarLimits;
-27299     +%macro stdize(data=, metadata=, method=, outStat=work.StdizeStat);
-27301     +    %if &method ne PERCENTS %then %do;
-27302     +        %em_varmacro(Name=&method, metadata=&metadata,
-27303     +                  where=%nrbquote(CALCMETHOD="&method"));
-27304     +    %end;
-27305     +    %else %do;
-27306     +        %em_varmacro(Name=&method, metadata=&metadata,
-27307     +        where=%nrbquote(CALCMETHOD in("STDDEV", "PERCENTS")));
-27308     +    %end;
-27309     +    %if %&method eq %then %goto doend;
-27311     +    %let optionString=&method;
-27313     +    %if &method=MADS %then %let optionString = %nrbquote(method=MAD NORM);
-27314     +    %else
-27315     +        %if &method=SPACINGS %then %let optionString = %nrbquote(method=spacing(50) NORM);
-27316     +        %else
-27317     +           %if &method=PERCENTS %then %do;
-27318     +               %let uCutoff = %sysevalf(100-&em_property_percentsCutoff);
-27319     +               %let optionString = pctlpts=&em_property_PercentsCutoff &uCutoff;
-27320     +           %end;
-27322     +    &em_codebar;
-27323     +    * &EM_NODEID: Method &em_property_method;
-27324     +    &EM_codebar;
-27325     +    proc stdize data=&data outstat=&outstat out=_null_
-27326     +       &optionString
-27327     +       ;
-27328     +       var  %&method;
-27329     +       %if %em_freq ne %then %do;
-27330     +           freq %em_freq;
-27331     +       %end;
-27332     +    run;
-27334     +    %if &method=MADS or &method=SPACINGS %then %do;
-27335     +        proc transpose data=&outStat out=&outStat(drop=_LABEL_ rename=(_NAME_=NAME col1=LOCATION col2=SCALE));
-27336     +           where _TYPE_ in('LOCATION', 'SCALE');
-27337     +        run;
-27338     +    %end;
-27339     +    %else
-27340     +        %if &method=PERCENTS %then %do;
-27341     +            proc transpose data=&outStat out=&outStat(drop=_LABEL_ rename=(_NAME_=NAME col1=LOCATION col2=SCALE col3=PMin col4=PMax));
-27342     +               where _TYPE_ ^in ('ADD', 'MULT', 'N', 'SumFreqsRead', 'SumFreqsUsed', 'NObsRead', 'NObsUsed', 'NObsMiss');
-27343     +           run;
-27344     +       %end;
-27345     +   %doend:
-27346     +%mend stdize;
-27348     +%macro makeLimits(StatsDs=, cutoff=, method=);
-27349     +    %if ^%sysfunc(exist(&StatSDs)) %then %goto doendm;
-27350     +    data &StatsDs;
-27351     +       set &StatsDs;
-27352     +       length CALCMETHOD $10;
-27353     +       retain CALCMETHOD "&METHOD";
-27354     +       LowerLimit = location - &cutoff*scale;
-27355     +       UpperLimit = location + &cutoff*scale;
-27356     +       drop location scale;
-27357     +       Label LowerLimit =  "%sysfunc(sasmsg(sashelp.dmine, meta_lowerLimit_vlabel, NOQUOTE))"
-27358     +             UpperLimit =  "%sysfunc(sasmsg(sashelp.dmine, meta_upperLimit_vlabel, NOQUOTE))";
-27359     +    run;
-27361     +    %doendm:
-27362     +%mend makeLimits;
-27364     +%macro makeFixedLimits(statsDs=);
-27365     +    data &statsDs;
-27366     +       set VARIABLESET(where=(CALCMETHOD in('MANUAL', 'METALIMIT')) keep=NAME CALCMETHOD UPPERLIMIT LOWERLIMIT INTERVALMIN INTERVALMAX LABEL);
-27367     +       by NAME;
-27368     +       select(CALCMETHOD);
-27369     +          when('METALIMIT') do;
-27370     +             if UPPERLIMIT eq . and LOWERLIMIT eq . then delete;
-27371     +          end;
-27372     +          when('MANUAL') do;
-27373     +             if INTERVALMIN eq . and INTERVALMAX eq . then delete;
-27374     +             else do;
-27375     +                LOWERLIMIT = INTERVALMIN;
-27376     +                UPPERLIMIT = INTERVALMAX;
-27377     +             end;
-27378     +          end;
-27379     +          otherwise;
-27380     +       end;
-27381     +    run;
-27382     +    %let nobs=0;
-27383     +    %let dsid = %sysfunc(open(&statsDs));
-27384     +    %if &dsid>0 %then %do;
-27385     +        %let nobs = %sysfunc(attrn(&dsid, NOBS));
-27386     +        %let dsid = %sysfunc(close(&dsid));
-27387     +    %end;
-27388     +    %if ^&nobs %then %do;
-27389     +        %let nameDs = %scan(&statsDs, 2, .);
-27390     +        proc datasets lib=WORK nolist;
-27391     +           delete &nameDs;
-27392     +         run;
-27393     +    %end;
-27395     +%mend makeFixedLimits;
-27397     +%macro makePctLimits(StatsDs=);
-27398     +    %if ^%sysfunc(exist(&StatSDs)) %then %goto doendp;
-27399     +    data &statsDs;
-27400     +       merge &statsDs VARIABLESET(where=(CALCMETHOD in('PERCENTS', 'STDDEV')) keep=NAME CALCMETHOD UPPERLIMIT LOWERLIMIT INTERVALMIN INTERVALMAX LABEL);
-27401     +       by NAME;
-27402     +       select(CALCMETHOD);
-27403     +          when('PERCENTS') do;
-27404     +             if PMIN eq . and PMAX eq . then delete;
-27405     +             else do;
-27406     +                LOWERLIMIT = PMIN;
-27407     +                UPPERLIMIT = PMAX;
-27408     +             end;
-27409     +          end;
-27410     +          when('STDDEV') do;
-27411     +              LOWERLIMIT = LOCATION - (&EM_PROPERTY_STDDEVCUTOFF*SCALE);
-27412     +              UPPERLIMIT = LOCATION + (&EM_PROPERTY_STDDEVCUTOFF*SCALE);
-27413     +          end;
-27414     +          otherwise;
-27415     +       end;
-27416     +    run;
-27417     +   %doendp:
-27418     +%mend makePctLimits;
-27420     +%macro train;
-27422     +   %if "&em_import_data" eq "" %then %do;
-27423     +       %let emexceptionString = exception.server.IMPORT.NOTRAIN,1;
-27424     +       %goto doendm;
-27425     +   %end;
-27427     +    /* Process Class variables */
-27428     +    %makeOutClass;
-27430     +    /* Interval Variables */
-27431     +     data VARIABLESET;
-27432     +        set &EM_DATA_VARIABLESET(where=(LEVEL="INTERVAL" and ((ROLE in("REJECTED", "TARGET") and USE="Y")
-27433     +             or (ROLE="INPUT" and USE in("Y", "D")) )));
-27434     +        if CALCMETHOD eq "DEFAULT" then CALCMETHOD="&EM_PROPERTY_CALCMETHOD";
-27435     +        if CALCMETHOD ^in("NONE", "METALIMIT") or (CALCMETHOD eq "METALIMIT" and ^(LOWERLIMIT eq . and UPPERLIMIT eq .)) then output;
-27436     +     run;
-27437     +     proc sort data=VARIABLESET out=VARIABLESET;
-27438     +        by NAME;
-27439     +     run;
-27441     +     %let varnum=0;
-27442     +     %let dsid = %sysfunc(open(VARIABLESET));
-27443     +     %if &dsid>0 %then %do;
-27444     +         %let varnum = %sysfunc(attrn(&dsid, NOBS));
-27445     +         %let dsid = %sysfunc(close(&dsid));
-27446     +     %end;
-27447     +     %if ^&varnum %then %do;
-27448     +          %em_getName(key=LIMITS, type=DATA);
-27449     +          %let limitDs = %scan(&em_user_limits, 2, .);
-27450     +          proc datasets lib=&em_lib nolist;
-27451     +             delete &limitDs;
-27452     +          run;
-27453     +     %end;
-27454     +     %else %do;
-27455     +         %makeVarLimits;
-27456     +     %end;
-27458     +   %doendm:
-27460     +%mend train;
+21271     +%macro getLevels(outData=);
+21272     +   %if (%EM_BINARY_TARGET %EM_ORDINAL_TARGET %EM_NOMINAL_TARGET
+21273     +       %EM_BINARY_INPUT %EM_ORDINAL_INPUT %EM_NOMINAL_INPUT
+21274     +       %EM_BINARY_REJECTED %EM_ORDINAL_REJECTED %EM_NOMINAL_REJECTED) eq %then %do;
+21275     +       data &outData;
+21276     +          length NAME $32 LEVEL $8 FREQUENCY 8 TYPE $1 CRAW $8 NRAW 8 REPLACE_VALUE $200;
+21277     +          label NAME =     "%sysfunc(sasmsg(sashelp.dmine, rpt_variable_vlabel, NOQUOTE))"
+21278     +                LEVEL=     "%sysfunc(sasmsg(sashelp.dmine, rpt_fmtValue_vlabel, NOQUOTE))"
+21279     +                FREQUENCY= "%sysfunc(sasmsg(sashelp.dmine, rpt_count_vlabel, NOQUOTE))"
+21280     +                TYPE=      "%sysfunc(sasmsg(sashelp.dmine, meta_type_vlabel, NOQUOTE))"
+21281     +                CRAW=      "%sysfunc(sasmsg(sashelp.dmine, rpt_craw_vlabel, NOQUOTE))"
+21282     +                NRAW=      "%sysfunc(sasmsg(sashelp.dmine, rpt_nraw_vlabel, NOQUOTE))"
+21283     +                REPLACE_VALUE= "%sysfunc(sasmsg(sashelp.dmine, rpt_replace_vlabel, NOQUOTE))";
+21284     +          stop;
+21285     +       run;
+21286     +   %end;
+21287     +   %else %do;
+21288     +       %em_checkmacro(name=EM_TRAIN_MAXLEVELS, global=Y, value=512);
+21289     +        %if "&EM_TRAIN_MAXLEVELS" = "" or "&EM_TRAIN_MAXLEVELS" = "." %then
+21290     +            %let EM_TRAIN_MAXLEVELS= 512;
+21292     +        proc dmdb data=&EM_IMPORT_DATA dmdbcat=emdmdb maxlevel=&EM_TRAIN_MAXLEVELS nonorm CLASSOUT=&outData(drop=CODE FREQPERCENT NMISSPERCENT);
+21293     +          class
+21294     +            %EM_BINARY_TARGET
+21295     +            %EM_ORDINAL_TARGET
+21296     +            %EM_NOMINAL_TARGET
+21297     +            %EM_BINARY_INPUT
+21298     +            %EM_ORDINAL_INPUT
+21299     +            %EM_NOMINAL_INPUT
+21300     +            %EM_BINARY_REJECTED
+21301     +            %EM_ORDINAL_REJECTED
+21302     +            %EM_NOMINAL_REJECTED;
+21303     +          %if (%EM_FREQ ne ) %then %do;
+21304     +             freq %EM_FREQ;
+21305     +         %end;
+21306     +       run;
+21307     +   %end;
+21308     +%mend getLevels;
+21310     +%macro makeOutCLass;
+21311     +   %em_getname(key=OUTCLASS,  type=DATA);
+21312     +   %em_getname(key=NEWVALUES, type=DATA);
+21314     +   %let data= REPLACE_DATA;
+21315     +   %if %sysfunc(exist(&EM_USER_OUTCLASS)) %then %do;
+21316     +       data &data(rename=(REPLACE_VALUE=NEW_REPLACE_VALUE));
+21317     +          set &EM_USER_OUTCLASS;
+21318     +          keep NAME TYPE LEVEL REPLACE_VALUE;
+21319     +          where REPLACE_VALUE ne '';
+21320     +       run;
+21321     +       proc sort data=&Data;
+21322     +          by NAME TYPE LEVEL;
+21323     +       run;
+21324     +   %end;
+21326     +   %getLevels(outdata=&EM_USER_OUTCLASS);
+21328     +   /* Determine Mode */
+21329     +   proc sort data=&EM_USER_OUTCLASS;
+21330     +      by NAME DESCENDING FREQUENCY;
+21331     +   run;
+21332     +   data _null_;
+21333     +      dsid = open("&EM_USER_OUTCLASS");
+21334     +      levelLen = varlen(dsid, varnum(dsid, "LEVEL"));
+21335     +      dsid = close(dsid);
+21336     +      call symput("levelLen", put(max(levelLen, 9), BEST.));
+21337     +   run;
+21339     +   data &EM_USER_OUTCLASS;
+21340     +      length Name $32 LEVEL $&levelLen;
+21341     +      set &EM_USER_OUTCLASS;
+21342     +      length REPLACE_VALUE $200;
+21343     +      label REPLACE_VALUE="%sysfunc(sasmsg(sashelp.dmine, rpt_replace_vlabel, NOQUOTE))";
+21344     +      by NAME;
+21345     +      output;
+21346     +      if last.name then do;
+21347     +         LEVEL="_UNKNOWN_";
+21348     +         Frequency=.;
+21349     +         CRAW='';
+21350     +         NRAW=.;
+21351     +         REPLACE_VALUE="_DEFAULT_";
+21352     +         output;
+21353     +      end;
+21354     +   run;
+21356     +   /* If the file is a copy of an existing one.  Merge previously specified values */
+21357     +   %if %sysfunc(exist(&EM_USER_NEWVALUES)) and (&EM_USER_NEWVALUES ne ) %then %do;
+21358     +       proc sort data=&EM_USER_NEWVALUES(rename=(REPLACE_VALUE=NEW_REPLACE_VALUE));
+21359     +          by NAME TYPE LEVEL;
+21360     +       run;
+21361     +       proc sort data=&EM_USER_OUTCLASS;
+21362     +          by NAME TYPE LEVEL;
+21363     +       run;
+21364     +       data &EM_USER_OUTCLASS(drop=NEW_REPLACE_VALUE);
+21365     +          merge &EM_USER_OUTCLASS(in=_a) &EM_USER_NEWVALUES(in=_b);
+21366     +          by NAME TYPE LEVEL;
+21367     +          if _a then do;
+21368     +             if _b then REPLACE_VALUE=NEW_REPLACE_VALUE;
+21369     +             output;
+21370     +          end;
+21371     +       run;
+21372     +       %let lib    = %scan(&EM_USER_NEWVALUES, 1, .);
+21373     +       %let member = %scan(&EM_USER_NEWVALUES, 2, .);
+21374     +       proc datasets lib=&lib nolist;
+21375     +          delete &member;
+21376     +       run;
+21378     +   %end;
+21380     +   /*  Update the OUTCLASS data using REPLACEMENT values previously specified */
+21381     +   %if %sysfunc(exist(&Data)) %then %do;
+21382     +       proc sort data=&EM_USER_OUTCLASS;
+21383     +          by NAME TYPE LEVEL;
+21384     +       run;
+21385     +       proc sort data=&data;
+21386     +          by NAME TYPE LEVEL;
+21387     +       run;
+21388     +       data &EM_USER_OUTCLASS(drop=NEW_REPLACE_VALUE);
+21389     +          merge &EM_USER_OUTCLASS(in=_a) &Data(in=_b);
+21390     +          by NAME TYPE LEVEL;
+21391     +          if _a then do;
+21392     +             if _b then REPLACE_VALUE=NEW_REPLACE_VALUE;
+21393     +             output;
+21394     +          end;
+21395     +       run;
+21396     +   %end;
+21397     +   proc sort data=&EM_USER_OUTCLASS;
+21398     +      by NAME DESCENDING FREQUENCY;
+21399     +   run;
+21401     +   %let lib = WORK;
+21402     +   %if %index(&EM_USER_OUTCLASS, .) %then %do;
+21403     +       %let lib    = %scan(&EM_USER_OUTCLASS, 1, .);
+21404     +       %let member = %scan(&EM_USER_OUTCLASS, 2, .);
+21405     +   %end;
+21406     +   %else
+21407     +       %let member = &EM_USER_OUTCLASS;
+21409     +   proc datasets lib=&lib nolist;
+21410     +      modify &member;
+21411     +      label NAME =     "%sysfunc(sasmsg(sashelp.dmine, rpt_variable_vlabel, NOQUOTE))"
+21412     +            LEVEL=     "%sysfunc(sasmsg(sashelp.dmine, rpt_fmtValue_vlabel, NOQUOTE))"
+21413     +            FREQUENCY= "%sysfunc(sasmsg(sashelp.dmine, rpt_count_vlabel, NOQUOTE))"
+21414     +            TYPE=      "%sysfunc(sasmsg(sashelp.dmine, meta_type_vlabel, NOQUOTE))"
+21415     +            CRAW=      "%sysfunc(sasmsg(sashelp.dmine, rpt_craw_vlabel, NOQUOTE))"
+21416     +            NRAW=      "%sysfunc(sasmsg(sashelp.dmine, rpt_nraw_vlabel, NOQUOTE))"
+21417     +            REPLACE_VALUE= "%sysfunc(sasmsg(sashelp.dmine, rpt_replace_vlabel, NOQUOTE))";
+21418     +     %if %sysfunc(exist(&data)) %then %do;
+21419     +          delete &data;
+21420     +     %end;
+21421     +   run;
+21423     +   /* Create property file.  Only the records with non-missing REPLACE_VALUE */
+21424     +   data &EM_USER_NEWVALUES / view=&EM_USER_NEWVALUES;
+21425     +      set &EM_USER_OUTCLASS(in=_a);
+21426     +      where REPLACE_VALUE ne '';
+21427     +      keep NAME TYPE LEVEL REPLACE_VALUE;
+21428     +   run;
+21429     +%mend makeOutClass;
+21431     +%macro makeVarLimits;
+21432     +     %let madsString =;
+21433     +     %stdize(data=&em_import_data, metadata=VARIABLESET, method=MADS,     outStat=work.MADS);
+21434     +     %if %sysfunc(exist(work.MADS)) %then %do;
+21435     +         %makeLimits(StatsDs=work.MADS, cutoff=&EM_PROPERTY_MADSCUTOFF, method=MADS);
+21436     +         %let madsString = MADS;
+21437     +         proc append base=work.LIMITS data=work.MADS force;
+21438     +         run;
+21439     +     %end;
+21441     +     %let spacingString = ;
+21442     +     %stdize(data=&em_import_data, metadata=VARIABLESET, method=SPACINGS, outStat=work.SPACINGS);
+21443     +     %if %sysfunc(exist(work.SPACINGS)) %then %do;
+21444     +         %makeLimits(StatsDs=work.SPACINGS, cutoff=&EM_PROPERTY_SPACINGSCUTOFF, method=SPACINGS);
+21445     +         %let spacingString = SPACING;
+21446     +         proc append base=work.LIMITS data=work.SPACINGS force;
+21447     +         run;
+21448     +     %end;
+21450     +     %let percentString = ;
+21451     +     %stdize(data=&em_import_data, metadata=VARIABLESET, method=PERCENTS, outStat=work.PERCENTS);
+21452     +     %if %sysfunc(exist(work.PERCENTS)) %then %do;
+21453     +         %makePctLimits(StatsDs=work.PERCENTS);
+21454     +         %let percentString = PERCENTS;
+21455     +         proc append base=work.LIMITS data=work.PERCENTS(keep=NAME CALCMETHOD UPPERLIMIT LOWERLIMIT LABEL) force ;
+21456     +         run;
+21457     +     %end;
+21459     +     %makeFixedLimits(StatsDs=work.FIXED);
+21460     +     %if %sysfunc(exist(work.FIXED)) %then %do;
+21461     +         proc append base=work.LIMITS data=work.FIXED(keep=NAME CALCMETHOD UPPERLIMIT LOWERLIMIT LABEL) force ;
+21462     +         run;
+21463     +     %end;
+21465     +     %if %sysfunc(exist(work.LIMITS)) %then %do;
+21466     +         proc sort data=work.LIMITS;
+21467     +            by NAME;
+21468     +         run;
+21469     +         %em_getName(key=LIMITS, type=DATA);
+21470     +         data &EM_USER_LIMITS;
+21471     +              merge work.limits(in=_a) variableSet(keep=NAME ROLE LEVEL LABEL REPLACEMETHOD REPLACEMIN REPLACEMAX LABEL);
+21472     +              by NAME;
+21473     +              if _a then output;
+21474     +         run;
+21475     +     %end;
+21479     +     %if %upcase(&EM_DEBUG)=_ALL_ %then %do;
+21480     +          proc print data=&EM_USER_OUTCLASS;run;
+21481     +          proc print data=MADS;run;
+21482     +          proc print data=spacings;run;
+21483     +          proc print data=percents;run;
+21484     +          proc print data=limits;run;
+21485     +     %end;
+21486     +     proc datasets lib=work nolist;
+21487     +        delete &madsString &spacingString &percentString limits;
+21488     +     run;
+21489     +%mend makeVarLimits;
+21491     +%macro stdize(data=, metadata=, method=, outStat=work.StdizeStat);
+21493     +    %if &method ne PERCENTS %then %do;
+21494     +        %em_varmacro(Name=&method, metadata=&metadata,
+21495     +                  where=%nrbquote(CALCMETHOD="&method"));
+21496     +    %end;
+21497     +    %else %do;
+21498     +        %em_varmacro(Name=&method, metadata=&metadata,
+21499     +        where=%nrbquote(CALCMETHOD in("STDDEV", "PERCENTS")));
+21500     +    %end;
+21501     +    %if %&method eq %then %goto doend;
+21503     +    %let optionString=&method;
+21505     +    %if &method=MADS %then %let optionString = %nrbquote(method=MAD NORM);
+21506     +    %else
+21507     +        %if &method=SPACINGS %then %let optionString = %nrbquote(method=spacing(50) NORM);
+21508     +        %else
+21509     +           %if &method=PERCENTS %then %do;
+21510     +               %let uCutoff = %sysevalf(100-&em_property_percentsCutoff);
+21511     +               %let optionString = pctlpts=&em_property_PercentsCutoff &uCutoff;
+21512     +           %end;
+21514     +    &em_codebar;
+21515     +    * &EM_NODEID: Method &em_property_method;
+21516     +    &EM_codebar;
+21517     +    proc stdize data=&data outstat=&outstat out=_null_
+21518     +       &optionString
+21519     +       ;
+21520     +       var  %&method;
+21521     +       %if %em_freq ne %then %do;
+21522     +           freq %em_freq;
+21523     +       %end;
+21524     +    run;
+21526     +    %if &method=MADS or &method=SPACINGS %then %do;
+21527     +        proc transpose data=&outStat out=&outStat(drop=_LABEL_ rename=(_NAME_=NAME col1=LOCATION col2=SCALE));
+21528     +           where _TYPE_ in('LOCATION', 'SCALE');
+21529     +        run;
+21530     +    %end;
+21531     +    %else
+21532     +        %if &method=PERCENTS %then %do;
+21533     +            proc transpose data=&outStat out=&outStat(drop=_LABEL_ rename=(_NAME_=NAME col1=LOCATION col2=SCALE col3=PMin col4=PMax));
+21534     +               where _TYPE_ ^in ('ADD', 'MULT', 'N', 'SumFreqsRead', 'SumFreqsUsed', 'NObsRead', 'NObsUsed', 'NObsMiss');
+21535     +           run;
+21536     +       %end;
+21537     +   %doend:
+21538     +%mend stdize;
+21540     +%macro makeLimits(StatsDs=, cutoff=, method=);
+21541     +    %if ^%sysfunc(exist(&StatSDs)) %then %goto doendm;
+21542     +    data &StatsDs;
+21543     +       set &StatsDs;
+21544     +       length CALCMETHOD $10;
+21545     +       retain CALCMETHOD "&METHOD";
+21546     +       LowerLimit = location - &cutoff*scale;
+21547     +       UpperLimit = location + &cutoff*scale;
+21548     +       drop location scale;
+21549     +       Label LowerLimit =  "%sysfunc(sasmsg(sashelp.dmine, meta_lowerLimit_vlabel, NOQUOTE))"
+21550     +             UpperLimit =  "%sysfunc(sasmsg(sashelp.dmine, meta_upperLimit_vlabel, NOQUOTE))";
+21551     +    run;
+21553     +    %doendm:
+21554     +%mend makeLimits;
+21556     +%macro makeFixedLimits(statsDs=);
+21557     +    data &statsDs;
+21558     +       set VARIABLESET(where=(CALCMETHOD in('MANUAL', 'METALIMIT')) keep=NAME CALCMETHOD UPPERLIMIT LOWERLIMIT INTERVALMIN INTERVALMAX LABEL);
+21559     +       by NAME;
+21560     +       select(CALCMETHOD);
+21561     +          when('METALIMIT') do;
+21562     +             if UPPERLIMIT eq . and LOWERLIMIT eq . then delete;
+21563     +          end;
+21564     +          when('MANUAL') do;
+21565     +             if INTERVALMIN eq . and INTERVALMAX eq . then delete;
+21566     +             else do;
+21567     +                LOWERLIMIT = INTERVALMIN;
+21568     +                UPPERLIMIT = INTERVALMAX;
+21569     +             end;
+21570     +          end;
+21571     +          otherwise;
+21572     +       end;
+21573     +    run;
+21574     +    %let nobs=0;
+21575     +    %let dsid = %sysfunc(open(&statsDs));
+21576     +    %if &dsid>0 %then %do;
+21577     +        %let nobs = %sysfunc(attrn(&dsid, NOBS));
+21578     +        %let dsid = %sysfunc(close(&dsid));
+21579     +    %end;
+21580     +    %if ^&nobs %then %do;
+21581     +        %let nameDs = %scan(&statsDs, 2, .);
+21582     +        proc datasets lib=WORK nolist;
+21583     +           delete &nameDs;
+21584     +         run;
+21585     +    %end;
+21587     +%mend makeFixedLimits;
+21589     +%macro makePctLimits(StatsDs=);
+21590     +    %if ^%sysfunc(exist(&StatSDs)) %then %goto doendp;
+21591     +    data &statsDs;
+21592     +       merge &statsDs VARIABLESET(where=(CALCMETHOD in('PERCENTS', 'STDDEV')) keep=NAME CALCMETHOD UPPERLIMIT LOWERLIMIT INTERVALMIN INTERVALMAX LABEL);
+21593     +       by NAME;
+21594     +       select(CALCMETHOD);
+21595     +          when('PERCENTS') do;
+21596     +             if PMIN eq . and PMAX eq . then delete;
+21597     +             else do;
+21598     +                LOWERLIMIT = PMIN;
+21599     +                UPPERLIMIT = PMAX;
+21600     +             end;
+21601     +          end;
+21602     +          when('STDDEV') do;
+21603     +              LOWERLIMIT = LOCATION - (&EM_PROPERTY_STDDEVCUTOFF*SCALE);
+21604     +              UPPERLIMIT = LOCATION + (&EM_PROPERTY_STDDEVCUTOFF*SCALE);
+21605     +          end;
+21606     +          otherwise;
+21607     +       end;
+21608     +    run;
+21609     +   %doendp:
+21610     +%mend makePctLimits;
+21612     +%macro train;
+21614     +   %if "&em_import_data" eq "" %then %do;
+21615     +       %let emexceptionString = exception.server.IMPORT.NOTRAIN,1;
+21616     +       %goto doendm;
+21617     +   %end;
+21619     +    /* Process Class variables */
+21620     +    %makeOutClass;
+21622     +    /* Interval Variables */
+21623     +     data VARIABLESET;
+21624     +        set &EM_DATA_VARIABLESET(where=(LEVEL="INTERVAL" and ((ROLE in("REJECTED", "TARGET") and USE="Y")
+21625     +             or (ROLE="INPUT" and USE in("Y", "D")) )));
+21626     +        if CALCMETHOD eq "DEFAULT" then CALCMETHOD="&EM_PROPERTY_CALCMETHOD";
+21627     +        if CALCMETHOD ^in("NONE", "METALIMIT") or (CALCMETHOD eq "METALIMIT" and ^(LOWERLIMIT eq . and UPPERLIMIT eq .)) then output;
+21628     +     run;
+21629     +     proc sort data=VARIABLESET out=VARIABLESET;
+21630     +        by NAME;
+21631     +     run;
+21633     +     %let varnum=0;
+21634     +     %let dsid = %sysfunc(open(VARIABLESET));
+21635     +     %if &dsid>0 %then %do;
+21636     +         %let varnum = %sysfunc(attrn(&dsid, NOBS));
+21637     +         %let dsid = %sysfunc(close(&dsid));
+21638     +     %end;
+21639     +     %if ^&varnum %then %do;
+21640     +          %em_getName(key=LIMITS, type=DATA);
+21641     +          %let limitDs = %scan(&em_user_limits, 2, .);
+21642     +          proc datasets lib=&em_lib nolist;
+21643     +             delete &limitDs;
+21644     +          run;
+21645     +     %end;
+21646     +     %else %do;
+21647     +         %makeVarLimits;
+21648     +     %end;
+21650     +   %doendm:
+21652     +%mend train;
 NOTE: %INCLUDE (level 1) ending.
 MPRINT(MAIN):   filename temp;
 NOTE: Fileref TEMP has been deassigned.
@@ -748,20 +748,20 @@ MPRINT(MAKEOUTCLASS):   keep NAME TYPE LEVEL REPLACE_VALUE;
 MPRINT(MAKEOUTCLASS):   where REPLACE_VALUE ne '';
 MPRINT(MAKEOUTCLASS):   run;
 
-NOTE: There were 6 observations read from the data set EMWS1.REPL_OUTCLASS.
+NOTE: There were 3 observations read from the data set EMWS1.REPL_OUTCLASS.
       WHERE REPLACE_VALUE not = ' ';
-NOTE: The data set WORK.REPLACE_DATA has 6 observations and 4 variables.
+NOTE: The data set WORK.REPLACE_DATA has 3 observations and 4 variables.
 NOTE: DATA statement used (Total process time):
       real time           0.00 seconds
-      cpu time            0.00 seconds
+      cpu time            0.01 seconds
       
 
 MPRINT(MAKEOUTCLASS):   proc sort data=REPLACE_DATA;
 MPRINT(MAKEOUTCLASS):   by NAME TYPE LEVEL;
 MPRINT(MAKEOUTCLASS):   run;
 
-NOTE: There were 6 observations read from the data set WORK.REPLACE_DATA.
-NOTE: The data set WORK.REPLACE_DATA has 6 observations and 4 variables.
+NOTE: There were 3 observations read from the data set WORK.REPLACE_DATA.
+NOTE: The data set WORK.REPLACE_DATA has 3 observations and 4 variables.
 NOTE: PROCEDURE SORT used (Total process time):
       real time           0.00 seconds
       cpu time            0.00 seconds
@@ -771,7 +771,7 @@ MPRINT(GETLEVELS):  ;
 MPRINT(GETLEVELS):   proc dmdb data=EMWS1.Ids_DATA dmdbcat=emdmdb maxlevel=512 nonorm CLASSOUT=EMWS1.Repl_OUTCLASS(drop=CODE FREQPERCENT NMISSPERCENT);
 MPRINT(GETLEVELS):   class
 MPRINT(EM_BINARY_INPUT):   HasChildren
-MPRINT(EM_ORDINAL_INPUT):   CustomerAge EducationalDegree
+MPRINT(EM_ORDINAL_INPUT):   EducationalDegree
 MPRINT(EM_NOMINAL_INPUT):   GeographicLiving
 MPRINT(GETLEVELS):  ;
 MPRINT(GETLEVELS):   run;
@@ -779,14 +779,14 @@ MPRINT(GETLEVELS):   run;
 NOTE: Records processed = 10296   Memory used = 511K.
 NOTE: View EMWS1.IDS_DATA.VIEW used (Total process time):
       real time           0.04 seconds
-      cpu time            0.01 seconds
-      
-NOTE: There were 10296 observations read from the data set INS_PROJ.A2ZINSURANCE.
-NOTE: There were 10296 observations read from the data set EMWS1.IDS_DATA.
-NOTE: The data set EMWS1.REPL_OUTCLASS has 82 observations and 6 variables.
-NOTE: PROCEDURE DMDB used (Total process time):
-      real time           0.06 seconds
       cpu time            0.03 seconds
+      
+NOTE: There were 10296 observations read from the data set INSPROJF.A2ZINSURANCE.
+NOTE: There were 10296 observations read from the data set EMWS1.IDS_DATA.
+NOTE: The data set EMWS1.REPL_OUTCLASS has 13 observations and 6 variables.
+NOTE: PROCEDURE DMDB used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.06 seconds
       
 
 MPRINT(MAKEOUTCLASS):  ;
@@ -794,10 +794,10 @@ MPRINT(MAKEOUTCLASS):   proc sort data=EMWS1.Repl_OUTCLASS;
 MPRINT(MAKEOUTCLASS):   by NAME DESCENDING FREQUENCY;
 MPRINT(MAKEOUTCLASS):   run;
 
-NOTE: There were 82 observations read from the data set EMWS1.REPL_OUTCLASS.
-NOTE: The data set EMWS1.REPL_OUTCLASS has 82 observations and 6 variables.
+NOTE: There were 13 observations read from the data set EMWS1.REPL_OUTCLASS.
+NOTE: The data set EMWS1.REPL_OUTCLASS has 13 observations and 6 variables.
 NOTE: PROCEDURE SORT used (Total process time):
-      real time           0.01 seconds
+      real time           0.00 seconds
       cpu time            0.00 seconds
       
 
@@ -810,7 +810,7 @@ MPRINT(MAKEOUTCLASS):   run;
 
 NOTE: DATA statement used (Total process time):
       real time           0.00 seconds
-      cpu time            0.00 seconds
+      cpu time            0.01 seconds
       
 
 MPRINT(MAKEOUTCLASS):   data EMWS1.Repl_OUTCLASS;
@@ -830,8 +830,8 @@ MPRINT(MAKEOUTCLASS):   output;
 MPRINT(MAKEOUTCLASS):   end;
 MPRINT(MAKEOUTCLASS):   run;
 
-NOTE: There were 82 observations read from the data set EMWS1.REPL_OUTCLASS.
-NOTE: The data set EMWS1.REPL_OUTCLASS has 86 observations and 7 variables.
+NOTE: There were 13 observations read from the data set EMWS1.REPL_OUTCLASS.
+NOTE: The data set EMWS1.REPL_OUTCLASS has 16 observations and 7 variables.
 NOTE: DATA statement used (Total process time):
       real time           0.01 seconds
       cpu time            0.01 seconds
@@ -841,11 +841,11 @@ MPRINT(MAKEOUTCLASS):   proc sort data=EMWS1.Repl_OUTCLASS;
 MPRINT(MAKEOUTCLASS):   by NAME TYPE LEVEL;
 MPRINT(MAKEOUTCLASS):   run;
 
-NOTE: There were 86 observations read from the data set EMWS1.REPL_OUTCLASS.
-NOTE: The data set EMWS1.REPL_OUTCLASS has 86 observations and 7 variables.
+NOTE: There were 16 observations read from the data set EMWS1.REPL_OUTCLASS.
+NOTE: The data set EMWS1.REPL_OUTCLASS has 16 observations and 7 variables.
 NOTE: PROCEDURE SORT used (Total process time):
-      real time           0.01 seconds
-      cpu time            0.01 seconds
+      real time           0.00 seconds
+      cpu time            0.00 seconds
       
 
 MPRINT(MAKEOUTCLASS):   proc sort data=REPLACE_DATA;
@@ -867,9 +867,9 @@ MPRINT(MAKEOUTCLASS):   output;
 MPRINT(MAKEOUTCLASS):   end;
 MPRINT(MAKEOUTCLASS):   run;
 
-NOTE: There were 86 observations read from the data set EMWS1.REPL_OUTCLASS.
-NOTE: There were 6 observations read from the data set WORK.REPLACE_DATA.
-NOTE: The data set EMWS1.REPL_OUTCLASS has 86 observations and 7 variables.
+NOTE: There were 16 observations read from the data set EMWS1.REPL_OUTCLASS.
+NOTE: There were 3 observations read from the data set WORK.REPLACE_DATA.
+NOTE: The data set EMWS1.REPL_OUTCLASS has 16 observations and 7 variables.
 NOTE: DATA statement used (Total process time):
       real time           0.01 seconds
       cpu time            0.00 seconds
@@ -879,11 +879,11 @@ MPRINT(MAKEOUTCLASS):   proc sort data=EMWS1.Repl_OUTCLASS;
 MPRINT(MAKEOUTCLASS):   by NAME DESCENDING FREQUENCY;
 MPRINT(MAKEOUTCLASS):   run;
 
-NOTE: There were 86 observations read from the data set EMWS1.REPL_OUTCLASS.
-NOTE: The data set EMWS1.REPL_OUTCLASS has 86 observations and 7 variables.
+NOTE: There were 16 observations read from the data set EMWS1.REPL_OUTCLASS.
+NOTE: The data set EMWS1.REPL_OUTCLASS has 16 observations and 7 variables.
 NOTE: PROCEDURE SORT used (Total process time):
-      real time           0.01 seconds
-      cpu time            0.00 seconds
+      real time           0.00 seconds
+      cpu time            0.01 seconds
       
 
 MPRINT(MAKEOUTCLASS):   proc datasets lib=EMWS1 nolist;
@@ -896,7 +896,7 @@ MPRINT(MAKEOUTCLASS):   run;
 NOTE: The file EMWS1.REPLACE_DATA (memtype=DATA) was not found, but appears on a DELETE statement.
 
 NOTE: PROCEDURE DATASETS used (Total process time):
-      real time           0.04 seconds
+      real time           0.02 seconds
       cpu time            0.01 seconds
       
 
@@ -909,8 +909,8 @@ MPRINT(MAKEOUTCLASS):   run;
 NOTE: DATA STEP view saved on file EMWS1.REPL_NEWVALUES.
 NOTE: A stored DATA STEP view cannot run under a different operating system.
 NOTE: DATA statement used (Total process time):
-      real time           0.03 seconds
-      cpu time            0.01 seconds
+      real time           0.01 seconds
+      cpu time            0.00 seconds
       
 
 MPRINT(TRAIN):  ;
@@ -920,11 +920,11 @@ MPRINT(TRAIN):   if CALCMETHOD eq "DEFAULT" then CALCMETHOD="NONE";
 MPRINT(TRAIN):   if CALCMETHOD ^in("NONE", "METALIMIT") or (CALCMETHOD eq "METALIMIT" and ^(LOWERLIMIT eq . and UPPERLIMIT eq .)) then output;
 MPRINT(TRAIN):   run;
 
-NOTE: There were 9 observations read from the data set EMWS1.REPL_VARIABLESET.
+NOTE: There were 10 observations read from the data set EMWS1.REPL_VARIABLESET.
       WHERE (LEVEL='INTERVAL') and ((ROLE in ('REJECTED', 'TARGET') and (USE='Y')) or ((ROLE='INPUT') and USE in ('D', 'Y')));
-NOTE: The data set WORK.VARIABLESET has 1 observations and 27 variables.
+NOTE: The data set WORK.VARIABLESET has 2 observations and 27 variables.
 NOTE: DATA statement used (Total process time):
-      real time           0.00 seconds
+      real time           0.01 seconds
       cpu time            0.00 seconds
       
 
@@ -932,11 +932,11 @@ MPRINT(TRAIN):   proc sort data=VARIABLESET out=VARIABLESET;
 MPRINT(TRAIN):   by NAME;
 MPRINT(TRAIN):   run;
 
-NOTE: There were 1 observations read from the data set WORK.VARIABLESET.
-NOTE: The data set WORK.VARIABLESET has 1 observations and 27 variables.
+NOTE: There were 2 observations read from the data set WORK.VARIABLESET.
+NOTE: The data set WORK.VARIABLESET has 2 observations and 27 variables.
 NOTE: PROCEDURE SORT used (Total process time):
       real time           0.00 seconds
-      cpu time            0.00 seconds
+      cpu time            0.01 seconds
       
 
 MPRINT(EM_VARMACRO):   filename macFile catalog 'work.emutil.macro.source';
@@ -977,10 +977,10 @@ NOTE: The file MACFILE is:
       Catalog Name=WORK.EMUTIL.MACRO.SOURCE,
       Catalog Page Size=4096,
       Number of Catalog Pages=4,
-      Created=Tuesday, December 29, 2015 01:23:35 AM,
-      Last Modified=Tuesday, December 29, 2015 01:23:35 AM,
-      Filename=C:\Users\raquel\AppData\Local\Temp\SAS Temporary Files\_TD1708_RAQUEL5F3E_\Prc2\emutil.sas7bcat,
-      Release Created=9.0301M2,Host Created=X64_7PRO
+      Created=Tuesday, December 29, 2015 02:12:56 PM,
+      Last Modified=Tuesday, December 29, 2015 02:12:56 PM,
+      Filename=C:\Users\D059331\AppData\Local\Temp\SAS Temporary Files\_TD9824_WDFN33788459A_\Prc2\emutil.sas7bcat,
+      Release Created=9.0301M2,Host Created=X64_8PRO
 
 NOTE: 0 records were written to the file MACFILE.
 NOTE: There were 0 observations read from the data set WORK.VARIABLESET.
@@ -1000,10 +1000,10 @@ NOTE: The file MACFILE is:
       Catalog Name=WORK.EMUTIL.MACRO.SOURCE,
       Catalog Page Size=4096,
       Number of Catalog Pages=5,
-      Created=Tuesday, December 29, 2015 01:23:35 AM,
-      Last Modified=Tuesday, December 29, 2015 01:23:35 AM,
-      Filename=C:\Users\raquel\AppData\Local\Temp\SAS Temporary Files\_TD1708_RAQUEL5F3E_\Prc2\emutil.sas7bcat,
-      Release Created=9.0301M2,Host Created=X64_7PRO
+      Created=Tuesday, December 29, 2015 02:12:56 PM,
+      Last Modified=Tuesday, December 29, 2015 02:12:56 PM,
+      Filename=C:\Users\D059331\AppData\Local\Temp\SAS Temporary Files\_TD9824_WDFN33788459A_\Prc2\emutil.sas7bcat,
+      Release Created=9.0301M2,Host Created=X64_8PRO
 
 NOTE: 2 records were written to the file MACFILE.
       The minimum record length was 11.
@@ -1014,8 +1014,8 @@ NOTE: DATA statement used (Total process time):
       
 
 NOTE: %INCLUDE (level 1) file MACFILE is file WORK.EMUTIL.MACRO.SOURCE.
-27461     +%macro MADS;
-27462     +%mend MADS;
+21653     +%macro MADS;
+21654     +%mend MADS;
 NOTE: %INCLUDE (level 1) ending.
 MPRINT(EM_VARMACRO):   filename macFile;
 NOTE: Fileref MACFILE has been deassigned.
@@ -1059,10 +1059,10 @@ NOTE: The file MACFILE is:
       Catalog Name=WORK.EMUTIL.MACRO.SOURCE,
       Catalog Page Size=4096,
       Number of Catalog Pages=5,
-      Created=Tuesday, December 29, 2015 01:23:35 AM,
-      Last Modified=Tuesday, December 29, 2015 01:23:36 AM,
-      Filename=C:\Users\raquel\AppData\Local\Temp\SAS Temporary Files\_TD1708_RAQUEL5F3E_\Prc2\emutil.sas7bcat,
-      Release Created=9.0301M2,Host Created=X64_7PRO
+      Created=Tuesday, December 29, 2015 02:12:56 PM,
+      Last Modified=Tuesday, December 29, 2015 02:12:56 PM,
+      Filename=C:\Users\D059331\AppData\Local\Temp\SAS Temporary Files\_TD9824_WDFN33788459A_\Prc2\emutil.sas7bcat,
+      Release Created=9.0301M2,Host Created=X64_8PRO
 
 NOTE: 0 records were written to the file MACFILE.
 NOTE: There were 0 observations read from the data set WORK.VARIABLESET.
@@ -1082,10 +1082,10 @@ NOTE: The file MACFILE is:
       Catalog Name=WORK.EMUTIL.MACRO.SOURCE,
       Catalog Page Size=4096,
       Number of Catalog Pages=5,
-      Created=Tuesday, December 29, 2015 01:23:35 AM,
-      Last Modified=Tuesday, December 29, 2015 01:23:36 AM,
-      Filename=C:\Users\raquel\AppData\Local\Temp\SAS Temporary Files\_TD1708_RAQUEL5F3E_\Prc2\emutil.sas7bcat,
-      Release Created=9.0301M2,Host Created=X64_7PRO
+      Created=Tuesday, December 29, 2015 02:12:56 PM,
+      Last Modified=Tuesday, December 29, 2015 02:12:56 PM,
+      Filename=C:\Users\D059331\AppData\Local\Temp\SAS Temporary Files\_TD9824_WDFN33788459A_\Prc2\emutil.sas7bcat,
+      Release Created=9.0301M2,Host Created=X64_8PRO
 
 NOTE: 2 records were written to the file MACFILE.
       The minimum record length was 15.
@@ -1096,8 +1096,8 @@ NOTE: DATA statement used (Total process time):
       
 
 NOTE: %INCLUDE (level 1) file MACFILE is file WORK.EMUTIL.MACRO.SOURCE.
-27463     +%macro SPACINGS;
-27464     +%mend SPACINGS;
+21655     +%macro SPACINGS;
+21656     +%mend SPACINGS;
 NOTE: %INCLUDE (level 1) ending.
 MPRINT(EM_VARMACRO):   filename macFile;
 NOTE: Fileref MACFILE has been deassigned.
@@ -1141,17 +1141,17 @@ NOTE: The file MACFILE is:
       Catalog Name=WORK.EMUTIL.MACRO.SOURCE,
       Catalog Page Size=4096,
       Number of Catalog Pages=5,
-      Created=Tuesday, December 29, 2015 01:23:35 AM,
-      Last Modified=Tuesday, December 29, 2015 01:23:36 AM,
-      Filename=C:\Users\raquel\AppData\Local\Temp\SAS Temporary Files\_TD1708_RAQUEL5F3E_\Prc2\emutil.sas7bcat,
-      Release Created=9.0301M2,Host Created=X64_7PRO
+      Created=Tuesday, December 29, 2015 02:12:56 PM,
+      Last Modified=Tuesday, December 29, 2015 02:12:56 PM,
+      Filename=C:\Users\D059331\AppData\Local\Temp\SAS Temporary Files\_TD9824_WDFN33788459A_\Prc2\emutil.sas7bcat,
+      Release Created=9.0301M2,Host Created=X64_8PRO
 
 NOTE: 0 records were written to the file MACFILE.
 NOTE: There were 0 observations read from the data set WORK.VARIABLESET.
       WHERE CALCMETHOD in ('PERCENTS', 'STDDEV');
 NOTE: DATA statement used (Total process time):
       real time           0.00 seconds
-      cpu time            0.00 seconds
+      cpu time            0.01 seconds
       
 
 MPRINT(EM_VARMACRO):   data _null_;
@@ -1164,10 +1164,10 @@ NOTE: The file MACFILE is:
       Catalog Name=WORK.EMUTIL.MACRO.SOURCE,
       Catalog Page Size=4096,
       Number of Catalog Pages=5,
-      Created=Tuesday, December 29, 2015 01:23:35 AM,
-      Last Modified=Tuesday, December 29, 2015 01:23:36 AM,
-      Filename=C:\Users\raquel\AppData\Local\Temp\SAS Temporary Files\_TD1708_RAQUEL5F3E_\Prc2\emutil.sas7bcat,
-      Release Created=9.0301M2,Host Created=X64_7PRO
+      Created=Tuesday, December 29, 2015 02:12:56 PM,
+      Last Modified=Tuesday, December 29, 2015 02:12:56 PM,
+      Filename=C:\Users\D059331\AppData\Local\Temp\SAS Temporary Files\_TD9824_WDFN33788459A_\Prc2\emutil.sas7bcat,
+      Release Created=9.0301M2,Host Created=X64_8PRO
 
 NOTE: 2 records were written to the file MACFILE.
       The minimum record length was 15.
@@ -1178,8 +1178,8 @@ NOTE: DATA statement used (Total process time):
       
 
 NOTE: %INCLUDE (level 1) file MACFILE is file WORK.EMUTIL.MACRO.SOURCE.
-27465     +%macro PERCENTS;
-27466     +%mend PERCENTS;
+21657     +%macro PERCENTS;
+21658     +%mend PERCENTS;
 NOTE: %INCLUDE (level 1) ending.
 MPRINT(EM_VARMACRO):   filename macFile;
 NOTE: Fileref MACFILE has been deassigned.
@@ -1203,9 +1203,9 @@ MPRINT(MAKEFIXEDLIMITS):   otherwise;
 MPRINT(MAKEFIXEDLIMITS):   end;
 MPRINT(MAKEFIXEDLIMITS):   run;
 
-NOTE: There were 1 observations read from the data set WORK.VARIABLESET.
+NOTE: There were 2 observations read from the data set WORK.VARIABLESET.
       WHERE CALCMETHOD in ('MANUAL', 'METALIMIT');
-NOTE: The data set WORK.FIXED has 1 observations and 7 variables.
+NOTE: The data set WORK.FIXED has 2 observations and 7 variables.
 NOTE: DATA statement used (Total process time):
       real time           0.00 seconds
       cpu time            0.00 seconds
@@ -1217,10 +1217,10 @@ MPRINT(MAKEVARLIMITS):   run;
 
 NOTE: Appending WORK.FIXED to WORK.LIMITS.
 NOTE: BASE data set does not exist. DATA file is being copied to BASE file.
-NOTE: There were 1 observations read from the data set WORK.FIXED.
-NOTE: The data set WORK.LIMITS has 1 observations and 5 variables.
+NOTE: There were 2 observations read from the data set WORK.FIXED.
+NOTE: The data set WORK.LIMITS has 2 observations and 5 variables.
 NOTE: PROCEDURE APPEND used (Total process time):
-      real time           0.00 seconds
+      real time           0.01 seconds
       cpu time            0.00 seconds
       
 
@@ -1228,8 +1228,8 @@ MPRINT(MAKEVARLIMITS):   proc sort data=work.LIMITS;
 MPRINT(MAKEVARLIMITS):   by NAME;
 MPRINT(MAKEVARLIMITS):   run;
 
-NOTE: There were 1 observations read from the data set WORK.LIMITS.
-NOTE: The data set WORK.LIMITS has 1 observations and 5 variables.
+NOTE: There were 2 observations read from the data set WORK.LIMITS.
+NOTE: The data set WORK.LIMITS has 2 observations and 5 variables.
 NOTE: PROCEDURE SORT used (Total process time):
       real time           0.00 seconds
       cpu time            0.00 seconds
@@ -1242,11 +1242,11 @@ MPRINT(MAKEVARLIMITS):   by NAME;
 MPRINT(MAKEVARLIMITS):   if _a then output;
 MPRINT(MAKEVARLIMITS):   run;
 
-NOTE: There were 1 observations read from the data set WORK.LIMITS.
-NOTE: There were 1 observations read from the data set WORK.VARIABLESET.
-NOTE: The data set EMWS1.REPL_LIMITS has 1 observations and 10 variables.
+NOTE: There were 2 observations read from the data set WORK.LIMITS.
+NOTE: There were 2 observations read from the data set WORK.VARIABLESET.
+NOTE: The data set EMWS1.REPL_LIMITS has 2 observations and 10 variables.
 NOTE: DATA statement used (Total process time):
-      real time           0.01 seconds
+      real time           0.00 seconds
       cpu time            0.00 seconds
       
 
@@ -1258,28 +1258,28 @@ NOTE: Deleting WORK.LIMITS (memtype=DATA).
 MPRINT(TRAIN):  ;
 MPRINT(MAIN):  ;
 MPRINT(EM_DIAGRAM):  ;
-27467      
-27468      *------------------------------------------------------------*;
+21659      
+21660      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
-27469      * End TRAIN: Repl;
+21661      * End TRAIN: Repl;
 MPRINT(EM_DIAGRAM):   * End TRAIN: Repl;
-27470      *------------------------------------------------------------*;
+21662      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
-27471      *------------------------------------------------------------*;
+21663      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
-27472      * Close any missing semi colons;
+21664      * Close any missing semi colons;
 MPRINT(EM_DIAGRAM):   * Close any missing semi colons;
-27473      *------------------------------------------------------------*;
+21665      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
-27474      ;
+21666      ;
 MPRINT(EM_DIAGRAM):   ;
-27475      ;
+21667      ;
 MPRINT(EM_DIAGRAM):   ;
-27476      ;
+21668      ;
 MPRINT(EM_DIAGRAM):   ;
-27477      ;
+21669      ;
 MPRINT(EM_DIAGRAM):   ;
-27478      quit;
+21670      quit;
 MPRINT(EM_DIAGRAM):   quit;
 
 NOTE: PROCEDURE DATASETS used (Total process time):
@@ -1291,21 +1291,21 @@ MPRINT(EM_DIAGRAM):   *---------------------------------------------------------
 MPRINT(EM_DIAGRAM):   * Close any unbalanced quotes;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   ;
-27479      *------------------------------------------------------------*;
+21671      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   run;
-27480      * Close any unbalanced quotes;
+21672      * Close any unbalanced quotes;
 MPRINT(EM_DIAGRAM):   quit;
-27481      *------------------------------------------------------------*;
-27482      /*; *"; *'; */
-27483      ;
-27484      run;
-27485      quit;
-27486      /* Reset EM Options */
-27487      options formchar="|----|+|---+=|-/\<>*";
+21673      *------------------------------------------------------------*;
+21674      /*; *"; *'; */
+21675      ;
+21676      run;
+21677      quit;
+21678      /* Reset EM Options */
+21679      options formchar="|----|+|---+=|-/\<>*";
 MPRINT(EM_DIAGRAM):   options formchar="|----|+|---+=|-/\<>*";
-27488      options nocenter ls=256 ps=10000;
+21680      options nocenter ls=256 ps=10000;
 MPRINT(EM_DIAGRAM):   options nocenter ls=256 ps=10000;
-27489      goptions reset=all device=WMF NODISPLAY;
+21681      goptions reset=all device=WMF NODISPLAY;
 MPRINT(EM_DIAGRAM):   goptions reset=all device=WMF NODISPLAY;
 MPRINT(EM_DIAGRAM):    proc printto;
 MPRINT(EM_DIAGRAM):   run;
