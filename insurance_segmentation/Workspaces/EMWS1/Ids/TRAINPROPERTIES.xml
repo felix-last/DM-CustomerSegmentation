@@ -8,9 +8,9 @@
  DsModifiedBy="D059331" DsModifyDate="1767010717.1" DsScope="LOCAL" Sample="D" SampleSizeType="PERCENT"
  SampleSizePercent="20" SampleSizeObs="10000" DBPassThrough="Y" RunAction="Train"
  Component="DataSource" RawCreateTime="1767013863.8" CreateTime="29DEC2015:13:11:04"
- Description="" Data="INSPROJF.A2ZINSURANCE" CMeta="WORK.M1UHDRF_" RunId="26ff2703-3f6c-4819-831f-901ac27a303b"
- RawLastTimeRun="1767013939" RawRunTime="1.881000042" LastTimeRun="29DEC2015:13:12:19"
- RunTime="0 Hr. 0 Min. 1.88 Sec.">
+ Description="" Data="INSPROJF.A2ZINSURANCE" CMeta="WORK.M1UHDRF_" RunId="8262d7eb-81e8-4283-a840-bd2a2e9856b3"
+ RawLastTimeRun="1767108006.4" RawRunTime="1.7520000935" LastTimeRun="30DEC2015:15:20:06"
+ RunTime="0 Hr. 0 Min. 1.75 Sec.">
 <VARIABLEPROPERTIES/>
 <FILEPROPERTIES/>
 </_ROOT_>

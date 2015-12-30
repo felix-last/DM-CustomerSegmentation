@@ -1,0 +1,354 @@
+*------------------------------------------------------------*
+ Node = 13
+*------------------------------------------------------------*
+if TOTAL_PREMIUM >= 886.165
+AND Imputed: Replacement: CustomerAge < 42.5
+AND Imputed HasChildren IS ONE OF: 0
+then 
+ Tree Node Identifier   = 13
+ Number of Observations = 204
+ Predicted: _SEGMENT_=2  = 0.03
+ Predicted: _SEGMENT_=1  = 0.97
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 14
+*------------------------------------------------------------*
+if Imputed: Replacement: CustomerAge >= 42.5 or MISSING
+AND Imputed HasChildren IS ONE OF: 0
+AND Imputed GrossMonthlySalary < 3838.5
+then 
+ Tree Node Identifier   = 14
+ Number of Observations = 9
+ Predicted: _SEGMENT_=2  = 0.67
+ Predicted: _SEGMENT_=1  = 0.11
+ Predicted: _SEGMENT_=4  = 0.22
+ Predicted: _SEGMENT_=3  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 15
+*------------------------------------------------------------*
+if Imputed: Replacement: CustomerAge >= 42.5 or MISSING
+AND Imputed HasChildren IS ONE OF: 0
+AND Imputed GrossMonthlySalary >= 3838.5 or MISSING
+then 
+ Tree Node Identifier   = 15
+ Number of Observations = 2410
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=4  = 0.99
+ Predicted: _SEGMENT_=3  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 18
+*------------------------------------------------------------*
+if TOTAL_PREMIUM >= 822.38
+AND Imputed: Replacement: CustomerAge < 44.5 or MISSING
+AND Imputed HasChildren IS ONE OF: 1 or MISSING
+AND Imputed EducationalDegree <= 2 - HIGH SCHOOL or MISSING
+then 
+ Tree Node Identifier   = 18
+ Number of Observations = 817
+ Predicted: _SEGMENT_=2  = 0.05
+ Predicted: _SEGMENT_=1  = 0.95
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 22
+*------------------------------------------------------------*
+if TOTAL_PREMIUM >= 1043.24
+AND Imputed: Replacement: CustomerAge >= 44.5
+AND Imputed HasChildren IS ONE OF: 1 or MISSING
+AND Imputed GrossMonthlySalary < 6774 or MISSING
+then 
+ Tree Node Identifier   = 22
+ Number of Observations = 63
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=1  = 0.76
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.24
+ 
+*------------------------------------------------------------*
+ Node = 23
+*------------------------------------------------------------*
+if TOTAL_PREMIUM >= 1043.24
+AND Imputed: Replacement: CustomerAge >= 44.5
+AND Imputed HasChildren IS ONE OF: 1 or MISSING
+AND Imputed GrossMonthlySalary >= 6774
+then 
+ Tree Node Identifier   = 23
+ Number of Observations = 17
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=1  = 0.12
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.88
+ 
+*------------------------------------------------------------*
+ Node = 25
+*------------------------------------------------------------*
+if TOTAL_PREMIUM < 886.165 or MISSING
+AND Imputed: Replacement: CustomerAge < 42.5
+AND Imputed HasChildren IS ONE OF: 0
+AND Imputed GrossMonthlySalary >= 4708.5
+then 
+ Tree Node Identifier   = 25
+ Number of Observations = 12
+ Predicted: _SEGMENT_=2  = 0.17
+ Predicted: _SEGMENT_=1  = 0.08
+ Predicted: _SEGMENT_=4  = 0.75
+ Predicted: _SEGMENT_=3  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 30
+*------------------------------------------------------------*
+if TOTAL_PREMIUM < 758.54 or MISSING
+AND Imputed: Replacement: CustomerAge < 44.5 or MISSING
+AND Imputed HasChildren IS ONE OF: 1 or MISSING
+AND Imputed GrossMonthlySalary < 4821.5 or MISSING
+then 
+ Tree Node Identifier   = 30
+ Number of Observations = 2066
+ Predicted: _SEGMENT_=2  = 0.96
+ Predicted: _SEGMENT_=1  = 0.01
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.02
+ 
+*------------------------------------------------------------*
+ Node = 32
+*------------------------------------------------------------*
+if TOTAL_PREMIUM < 822.38 or MISSING
+AND Imputed: Replacement: CustomerAge < 44.5 or MISSING
+AND Imputed HasChildren IS ONE OF: 1 or MISSING
+AND Imputed GrossMonthlySalary >= 4821.5
+AND Imputed EducationalDegree <= 2 - HIGH SCHOOL
+then 
+ Tree Node Identifier   = 32
+ Number of Observations = 100
+ Predicted: _SEGMENT_=2  = 0.18
+ Predicted: _SEGMENT_=1  = 0.01
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.81
+ 
+*------------------------------------------------------------*
+ Node = 37
+*------------------------------------------------------------*
+if TOTAL_PREMIUM >= 822.38
+AND Imputed: Replacement: CustomerAge < 44.5 or MISSING
+AND Imputed HasChildren IS ONE OF: 1 or MISSING
+AND Imputed GrossMonthlySalary >= 4923
+AND Imputed EducationalDegree >= 3 - BSC/MSC
+then 
+ Tree Node Identifier   = 37
+ Number of Observations = 10
+ Predicted: _SEGMENT_=2  = 0.30
+ Predicted: _SEGMENT_=1  = 0.20
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.50
+ 
+*------------------------------------------------------------*
+ Node = 38
+*------------------------------------------------------------*
+if TOTAL_PREMIUM < 850.22 or MISSING
+AND Imputed: Replacement: CustomerAge >= 44.5
+AND Imputed HasChildren IS ONE OF: 1 or MISSING
+AND Imputed GrossMonthlySalary < 4411.5
+then 
+ Tree Node Identifier   = 38
+ Number of Observations = 254
+ Predicted: _SEGMENT_=2  = 0.70
+ Predicted: _SEGMENT_=1  = 0.01
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.29
+ 
+*------------------------------------------------------------*
+ Node = 39
+*------------------------------------------------------------*
+if TOTAL_PREMIUM < 1043.24 AND TOTAL_PREMIUM >= 850.22
+AND Imputed: Replacement: CustomerAge >= 44.5
+AND Imputed HasChildren IS ONE OF: 1 or MISSING
+AND Imputed GrossMonthlySalary < 4411.5
+then 
+ Tree Node Identifier   = 39
+ Number of Observations = 12
+ Predicted: _SEGMENT_=2  = 0.08
+ Predicted: _SEGMENT_=1  = 0.75
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.17
+ 
+*------------------------------------------------------------*
+ Node = 41
+*------------------------------------------------------------*
+if TOTAL_PREMIUM < 1043.24 or MISSING
+AND Imputed: Replacement: CustomerAge >= 44.5
+AND Imputed HasChildren IS ONE OF: 1 or MISSING
+AND Imputed GrossMonthlySalary >= 5160.5 or MISSING
+then 
+ Tree Node Identifier   = 41
+ Number of Observations = 2205
+ Predicted: _SEGMENT_=2  = 0.01
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.99
+ 
+*------------------------------------------------------------*
+ Node = 42
+*------------------------------------------------------------*
+if TOTAL_PREMIUM < 886.165 or MISSING
+AND Imputed: Replacement: CustomerAge < 42.5
+AND Imputed HasChildren IS ONE OF: 0
+AND Imputed GrossMonthlySalary < 4708.5 or MISSING
+AND Imputed EducationalDegree <= 1 - BASIC
+then 
+ Tree Node Identifier   = 42
+ Number of Observations = 38
+ Predicted: _SEGMENT_=2  = 0.11
+ Predicted: _SEGMENT_=1  = 0.87
+ Predicted: _SEGMENT_=4  = 0.03
+ Predicted: _SEGMENT_=3  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 43
+*------------------------------------------------------------*
+if TOTAL_PREMIUM < 886.165 or MISSING
+AND Imputed: Replacement: CustomerAge < 42.5
+AND Imputed HasChildren IS ONE OF: 0
+AND Imputed GrossMonthlySalary < 4708.5 or MISSING
+AND Imputed EducationalDegree >= 2 - HIGH SCHOOL or MISSING
+then 
+ Tree Node Identifier   = 43
+ Number of Observations = 183
+ Predicted: _SEGMENT_=2  = 0.78
+ Predicted: _SEGMENT_=1  = 0.20
+ Predicted: _SEGMENT_=4  = 0.02
+ Predicted: _SEGMENT_=3  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 52
+*------------------------------------------------------------*
+if TOTAL_PREMIUM < 822.38 AND TOTAL_PREMIUM >= 758.54
+AND Imputed: Replacement: CustomerAge < 44.5 or MISSING
+AND Imputed HasChildren IS ONE OF: 1 or MISSING
+AND Imputed GrossMonthlySalary < 4821.5 or MISSING
+AND Imputed EducationalDegree <= 2 - HIGH SCHOOL or MISSING
+then 
+ Tree Node Identifier   = 52
+ Number of Observations = 206
+ Predicted: _SEGMENT_=2  = 0.43
+ Predicted: _SEGMENT_=1  = 0.56
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.01
+ 
+*------------------------------------------------------------*
+ Node = 53
+*------------------------------------------------------------*
+if TOTAL_PREMIUM < 822.38 AND TOTAL_PREMIUM >= 758.54
+AND Imputed: Replacement: CustomerAge < 44.5 or MISSING
+AND Imputed HasChildren IS ONE OF: 1 or MISSING
+AND Imputed GrossMonthlySalary < 4821.5 or MISSING
+AND Imputed EducationalDegree >= 3 - BSC/MSC
+then 
+ Tree Node Identifier   = 53
+ Number of Observations = 183
+ Predicted: _SEGMENT_=2  = 1.00
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 56
+*------------------------------------------------------------*
+if TOTAL_PREMIUM < 822.38 or MISSING
+AND Imputed: Replacement: CustomerAge < 44.5 or MISSING
+AND Imputed HasChildren IS ONE OF: 1 or MISSING
+AND Imputed GrossMonthlySalary >= 4821.5
+AND Imputed EducationalDegree >= 3 - BSC/MSC or MISSING
+AND CustomerMonetaryValue < 380.805 or MISSING
+then 
+ Tree Node Identifier   = 56
+ Number of Observations = 110
+ Predicted: _SEGMENT_=2  = 0.93
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.07
+ 
+*------------------------------------------------------------*
+ Node = 57
+*------------------------------------------------------------*
+if TOTAL_PREMIUM < 822.38 or MISSING
+AND Imputed: Replacement: CustomerAge < 44.5 or MISSING
+AND Imputed HasChildren IS ONE OF: 1 or MISSING
+AND Imputed GrossMonthlySalary >= 4821.5
+AND Imputed EducationalDegree >= 3 - BSC/MSC or MISSING
+AND CustomerMonetaryValue >= 380.805
+then 
+ Tree Node Identifier   = 57
+ Number of Observations = 55
+ Predicted: _SEGMENT_=2  = 0.36
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.64
+ 
+*------------------------------------------------------------*
+ Node = 60
+*------------------------------------------------------------*
+if TOTAL_PREMIUM < 911.34 AND TOTAL_PREMIUM >= 822.38
+AND Imputed: Replacement: CustomerAge < 44.5 or MISSING
+AND Imputed HasChildren IS ONE OF: 1 or MISSING
+AND Imputed GrossMonthlySalary < 4923 or MISSING
+AND Imputed EducationalDegree >= 3 - BSC/MSC
+then 
+ Tree Node Identifier   = 60
+ Number of Observations = 109
+ Predicted: _SEGMENT_=2  = 0.92
+ Predicted: _SEGMENT_=1  = 0.08
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 61
+*------------------------------------------------------------*
+if TOTAL_PREMIUM >= 911.34 or MISSING
+AND Imputed: Replacement: CustomerAge < 44.5 or MISSING
+AND Imputed HasChildren IS ONE OF: 1 or MISSING
+AND Imputed GrossMonthlySalary < 4923 or MISSING
+AND Imputed EducationalDegree >= 3 - BSC/MSC
+then 
+ Tree Node Identifier   = 61
+ Number of Observations = 136
+ Predicted: _SEGMENT_=2  = 0.23
+ Predicted: _SEGMENT_=1  = 0.77
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.00
+ 
+*------------------------------------------------------------*
+ Node = 64
+*------------------------------------------------------------*
+if TOTAL_PREMIUM < 930.4 or MISSING
+AND Imputed: Replacement: CustomerAge >= 44.5
+AND Imputed HasChildren IS ONE OF: 1 or MISSING
+AND Imputed GrossMonthlySalary < 5160.5 AND Imputed GrossMonthlySalary >= 4411.5
+then 
+ Tree Node Identifier   = 64
+ Number of Observations = 575
+ Predicted: _SEGMENT_=2  = 0.22
+ Predicted: _SEGMENT_=1  = 0.00
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.78
+ 
+*------------------------------------------------------------*
+ Node = 65
+*------------------------------------------------------------*
+if TOTAL_PREMIUM < 1043.24 AND TOTAL_PREMIUM >= 930.4
+AND Imputed: Replacement: CustomerAge >= 44.5
+AND Imputed HasChildren IS ONE OF: 1 or MISSING
+AND Imputed GrossMonthlySalary < 5160.5 AND Imputed GrossMonthlySalary >= 4411.5
+then 
+ Tree Node Identifier   = 65
+ Number of Observations = 17
+ Predicted: _SEGMENT_=2  = 0.00
+ Predicted: _SEGMENT_=1  = 0.53
+ Predicted: _SEGMENT_=4  = 0.00
+ Predicted: _SEGMENT_=3  = 0.47
+ 

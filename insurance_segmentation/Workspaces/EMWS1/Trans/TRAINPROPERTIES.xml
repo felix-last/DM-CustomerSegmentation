@@ -3,13 +3,14 @@
  EmRandomSeed="12345" EmSampleSize="DEFAULT" EmSampleMethod="FIRSTN" MissingValue="USEINSEARCH"
  SummaryVariables="TRANSFORMED" SummaryStatistics="Y" UseMetaTransform="Y" MissingAsLevel="N"
  NumberofBins="VARIABLES" MaxOptimalBins="4" ForceRun="N" RunAction="Train" Component="Transform"
- RawCreateTime="1766931203.8" CreateTime="28DEC2015:14:13:24" RunId="4198145d-1643-4690-9662-7fcef6c0070b"
- RawLastTimeRun="1767017588.8" RawRunTime="4.620000124" LastTimeRun="29DEC2015:14:13:09"
- RunTime="0 Hr. 0 Min. 4.62 Sec.">
+ RawCreateTime="1767107855.8" CreateTime="30DEC2015:15:17:36" RunId="d025d50f-531a-45d6-b01d-f43ce39910a9"
+ RawLastTimeRun="1767108016.9" RawRunTime="5.7109999657" LastTimeRun="30DEC2015:15:20:17"
+ RunTime="0 Hr. 0 Min. 5.71 Sec.">
 <VARIABLEPROPERTIES/>
 <FILEPROPERTIES ><![CDATA[
 INTERACTION
 FORMULA
 EDITORCODE
+EMNOTES
 ]]>
 </FILEPROPERTIES></_ROOT_>

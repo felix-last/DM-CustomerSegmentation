@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  Location="CATALOG" Catalog="SASHELP.EMEXPL.SOM.SOURCE" Method="KohonenSOM" SegmentRole="SEGMENT"
+ StdMethod="STD" MaxC="10" NRow="2" NColumn="2" ExportedVars="All" Radius="0" InitialMethod="Default"
+ NominalEncoding="Default" OrdinalEncoding="Default" ImputationMethod="NONE" MissingInterval="DEFAULT"
+ MissingNominal="DEFAULT" MissingOrdinal="DEFAULT" HideVariable="Y" SOMDefaults="Y"
+ LLSOM="Y" NWSOM="Y" LLConverge="0.0001" LLMaxIter="10" NWConverge="0.0001" NWMaxIter="10"
+ NDefaults="Y" NSize="5" Kernel="1" KMetric="0" NInitial="5" NFinal="0" NReset="100"
+ NSteps="1000" NIter="3" KDefaults="Y" KBatch="N" Learn="0.9" LearnInitial="0.9" LearnFinal="0.2"
+ LearnSteps="1000" KMaxSteps="1200" KMaxIter="100" KConverge="0.0001" ForceRun="N"
+ RunAction="Train" Component="SOM" DataNeeded="Y" RawCreateTime="1767028871.4" CreateTime="29DEC2015:17:21:11"
+ RunId="fe7b51d8-deda-480b-bb2f-bb55dcfb274f" RawLastTimeRun="1767095377.3" RawRunTime="3.120000124"
+ LastTimeRun="30DEC2015:11:49:37" RunTime="0 Hr. 0 Min. 3.12 Sec.">
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES ><![CDATA[
+USERTRAINCODE
+USERSCORECODE
+USERREPORTCODE
+]]>
+</FILEPROPERTIES></_ROOT_>

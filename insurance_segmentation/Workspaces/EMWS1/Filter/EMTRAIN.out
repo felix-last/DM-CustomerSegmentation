@@ -7,7 +7,6 @@ Variable Summary
             Measurement    Frequency
 Role           Level         Count
 
-ASSESS       NOMINAL            1   
 INPUT        BINARY             1   
 INPUT        INTERVAL          13   
 INPUT        NOMINAL            1   

@@ -1,7 +1,7 @@
 *------------------------------------------------------------*
 User:                D059331
-Date:                December 29, 2015
-Time:                14:50:33
+Date:                December 30, 2015
+Time:                15:26:07
 *------------------------------------------------------------*
 * Training Output
 *------------------------------------------------------------*
@@ -14,8 +14,7 @@ Variable Summary
             Measurement    Frequency
 Role           Level         Count
  
-ASSESS       NOMINAL            1
-ID           INTERVAL           1
+ID           NOMINAL            1
 INPUT        BINARY             1
 INPUT        INTERVAL          13
 INPUT        NOMINAL            1
@@ -33,108 +32,82 @@ Frequencies: _SEGMENT_
  Segment     Segment    Frequency       Total
 Variable      Value       Count       Frequency
  
-_SEGMENT_       6           2295       23.4399
-_SEGMENT_       3           2256       23.0416
-_SEGMENT_       2           1767       18.0472
-_SEGMENT_       4           1592       16.2598
-_SEGMENT_       5           1091       11.1429
-_SEGMENT_       1            790        8.0686
+_SEGMENT_       2           2909       29.7231
+_SEGMENT_       1           2458       25.1149
+_SEGMENT_       3           2328       23.7867
+_SEGMENT_       4           2092       21.3753
  
  
  
-Variable: _SEGMENT_ Segment: 6 Count: 2295
+Variable: _SEGMENT_ Segment: 2 Count: 2909
 Decision Tree Importance Profiles
  
-Variable                    Worth     Rank
+Variable                      Worth     Rank
  
-IMP_HasChildren            0.26650      1
-IMP_REP_CustomerAge        0.22804      2
-IMP_GrossMonthlySalary     0.18006      3
-ClaimsRate                 0.01140      4
-TOTAL_PREMIUM              0.00591      5
-IMP_EducationalDegree      0.00117      6
-IMP_REP_FirstPolicyYear    0.00076      7
-IMP_GeographicLiving       0.00036      8
+CustomerMonetaryValue        0.15820      1
+ClaimsRate                   0.14532      2
+IMP_PremiumsinLOBMotor       0.06971      3
+IMP_REP_CustomerAge          0.05884      4
+IMP_HasChildren              0.04869      5
+PremiumsinLOBHousehold       0.04405      6
+TOTAL_PREMIUM                0.04295      7
+IMP_GrossMonthlySalary       0.04195      8
+IMP_PremiumsinLOBLife        0.03598      9
+IMP_PremiumsinLOBWorkComp    0.03261     10
  
  
  
-Variable: _SEGMENT_ Segment: 3 Count: 2256
+Variable: _SEGMENT_ Segment: 1 Count: 2458
 Decision Tree Importance Profiles
  
-Variable                    Worth     Rank
+Variable                      Worth     Rank
  
-ClaimsRate                 0.17746      1
-IMP_REP_CustomerAge        0.04269      2
-IMP_HasChildren            0.03247      3
-IMP_GrossMonthlySalary     0.03089      4
-TOTAL_PREMIUM              0.02475      5
-IMP_EducationalDegree      0.01885      6
-IMP_REP_FirstPolicyYear    0.00073      7
-IMP_GeographicLiving       0.00019      8
+ClaimsRate                   0.19568      1
+CustomerMonetaryValue        0.18353      2
+IMP_PremiumsinLOBMotor       0.07413      3
+IMP_REP_CustomerAge          0.04392      4
+IMP_PremiumsinLOBHealth      0.03666      5
+IMP_PremiumsinLOBLife        0.03253      6
+IMP_PremiumsinLOBWorkComp    0.03247      7
+IMP_GrossMonthlySalary       0.02917      8
+IMP_HasChildren              0.02750      9
+PremiumsinLOBHousehold       0.02413     10
  
  
  
-Variable: _SEGMENT_ Segment: 2 Count: 1767
+Variable: _SEGMENT_ Segment: 3 Count: 2328
 Decision Tree Importance Profiles
  
-Variable                    Worth     Rank
+Variable                      Worth     Rank
  
-IMP_REP_CustomerAge        0.10093      1
-IMP_GrossMonthlySalary     0.09878      2
-ClaimsRate                 0.03312      3
-IMP_EducationalDegree      0.01401      4
-TOTAL_PREMIUM              0.01287      5
-IMP_HasChildren            0.00911      6
-IMP_REP_FirstPolicyYear    0.00102      7
-IMP_GeographicLiving       0.00022      8
+IMP_REP_CustomerAge          0.23686      1
+IMP_HasChildren              0.21798      2
+IMP_GrossMonthlySalary       0.19496      3
+IMP_PremiumsinLOBMotor       0.04913      4
+IMP_PremiumsinLOBHealth      0.04863      5
+ClaimsRate                   0.01868      6
+IMP_PremiumsinLOBLife        0.01411      7
+CustomerMonetaryValue        0.01310      8
+PremiumsinLOBHousehold       0.01079      9
+IMP_PremiumsinLOBWorkComp    0.01063     10
  
  
  
-Variable: _SEGMENT_ Segment: 4 Count: 1592
+Variable: _SEGMENT_ Segment: 4 Count: 2092
 Decision Tree Importance Profiles
  
-Variable                     Worth     Rank
+Variable                      Worth     Rank
  
-ClaimsRate                 0.058869      1
-IMP_EducationalDegree      0.034865      2
-TOTAL_PREMIUM              0.027756      3
-IMP_REP_CustomerAge        0.025823      4
-IMP_GrossMonthlySalary     0.022554      5
-IMP_HasChildren            0.017006      6
-IMP_REP_FirstPolicyYear    0.002946      7
-IMP_GeographicLiving       0.000048      8
- 
- 
- 
-Variable: _SEGMENT_ Segment: 5 Count: 1091
-Decision Tree Importance Profiles
- 
-Variable                     Worth     Rank
- 
-IMP_REP_CustomerAge        0.022896      1
-IMP_EducationalDegree      0.017251      2
-IMP_GrossMonthlySalary     0.016712      3
-IMP_HasChildren            0.009971      4
-ClaimsRate                 0.009478      5
-TOTAL_PREMIUM              0.002504      6
-IMP_REP_FirstPolicyYear    0.000792      7
-IMP_GeographicLiving       0.000084      8
- 
- 
- 
-Variable: _SEGMENT_ Segment: 1 Count: 790
-Decision Tree Importance Profiles
- 
-Variable                     Worth     Rank
- 
-TOTAL_PREMIUM              0.057441      1
-IMP_REP_CustomerAge        0.034241      2
-IMP_GrossMonthlySalary     0.023337      3
-IMP_EducationalDegree      0.014081      4
-ClaimsRate                 0.009212      5
-IMP_REP_FirstPolicyYear    0.000255      6
-IMP_HasChildren            0.000106      7
-IMP_GeographicLiving       0.000015      8
+IMP_REP_CustomerAge          0.16184      1
+IMP_PremiumsinLOBMotor       0.16123      2
+IMP_GrossMonthlySalary       0.13151      3
+IMP_PremiumsinLOBLife        0.09939      4
+IMP_PremiumsinLOBWorkComp    0.09743      5
+PremiumsinLOBHousehold       0.09454      6
+TOTAL_PREMIUM                0.09214      7
+IMP_EducationalDegree        0.05485      8
+CustomerMonetaryValue        0.02640      9
+IMP_PremiumsinLOBHealth      0.01365     10
 
 
 *------------------------------------------------------------*

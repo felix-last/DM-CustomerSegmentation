@@ -1,7 +1,7 @@
 *------------------------------------------------------------*
 User:                D059331
-Date:                December 29, 2015
-Time:                14:13:07
+Date:                December 30, 2015
+Time:                15:20:16
 *------------------------------------------------------------*
 * Training Output
 *------------------------------------------------------------*
@@ -35,20 +35,20 @@ REJECTED     INTERVAL           2
 Imputation Summary
 Number Of Observations
  
-                                                                                                                                      Number of
-                         Impute                                    Impute             Measurement                                       Missing
-Variable Name            Method      Imputed Variable              Value     Role        Level                  Label                 for TRAIN
+                                                                                                                                         Number of
+                         Impute                                                          Measurement                                       Missing
+Variable Name            Method    Imputed Variable             Impute Value    Role        Level                  Label                 for TRAIN
  
-EducationalDegree        TREESURR    IMP_EducationalDegree            .      INPUT     ORDINAL                                               17
-GeographicLiving         TREESURR    IMP_GeographicLiving             .      INPUT     NOMINAL                                                1
-GrossMonthlySalary       MEDIAN      IMP_GrossMonthlySalary       5002.50    INPUT     INTERVAL                                              36
-HasChildren              TREESURR    IMP_HasChildren                  .      INPUT     BINARY                                                21
-PremiumsinLOBHealth      MEDIAN      IMP_PremiumsinLOBHealth       162.81    INPUT     INTERVAL                                              43
-PremiumsinLOBLife        MEDIAN      IMP_PremiumsinLOBLife          25.56    INPUT     INTERVAL                                             104
-PremiumsinLOBMotor       MEDIAN      IMP_PremiumsinLOBMotor        298.61    INPUT     INTERVAL                                              34
-PremiumsinLOBWorkComp    MEDIAN      IMP_PremiumsinLOBWorkComp      25.67    INPUT     INTERVAL                                              86
-REP_CustomerAge          MEAN        IMP_REP_CustomerAge            47.90    INPUT     INTERVAL      Replacement: CustomerAge                18
-REP_FirstPolicyYear      MEAN        IMP_REP_FirstPolicyYear      1986.02    INPUT     INTERVAL      Replacement: FirstPolicyYear            31
+EducationalDegree        COUNT     IMP_EducationalDegree        3 - BSc/MSc     INPUT     ORDINAL                                               17
+GeographicLiving         COUNT     IMP_GeographicLiving                    4    INPUT     NOMINAL                                                1
+GrossMonthlySalary       MEAN      IMP_GrossMonthlySalary       5012.8385565    INPUT     INTERVAL                                              36
+HasChildren              COUNT     IMP_HasChildren                         1    INPUT     BINARY                                                21
+PremiumsinLOBHealth      MEAN      IMP_PremiumsinLOBHealth      171.58083293    INPUT     INTERVAL                                              43
+PremiumsinLOBLife        MEAN      IMP_PremiumsinLOBLife        41.855781986    INPUT     INTERVAL                                             104
+PremiumsinLOBMotor       MEAN      IMP_PremiumsinLOBMotor       300.47025239    INPUT     INTERVAL                                              34
+PremiumsinLOBWorkComp    MEAN      IMP_PremiumsinLOBWorkComp    41.277514202    INPUT     INTERVAL                                              86
+REP_CustomerAge          MEAN      IMP_REP_CustomerAge          47.900758903    INPUT     INTERVAL      Replacement: CustomerAge                18
+REP_FirstPolicyYear      MEAN      IMP_REP_FirstPolicyYear      1986.0170482    INPUT     INTERVAL      Replacement: FirstPolicyYear            31
  
  
  

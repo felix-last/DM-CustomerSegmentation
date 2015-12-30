@@ -3,8 +3,8 @@ MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
 MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
 MPRINT(EM_DIAGRAM):   run;
 MPRINT(EM_DIAGRAM):   data _null_;
-MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "December 29, 2015" );
-MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "14:50:32" );
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "December 30, 2015" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "15:26:05" );
 MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
 MPRINT(EM_DIAGRAM):   put "* Score Log";
 MPRINT(EM_DIAGRAM):   put nldate;
@@ -13,131 +13,131 @@ MPRINT(EM_DIAGRAM):   put "*----------------------------------------------------
 MPRINT(EM_DIAGRAM):   run;
 *------------------------------------------------------------*
 * Score Log
-Date:                December 29, 2015
-Time:                14:50:32
+Date:                December 30, 2015
+Time:                15:26:05
 *------------------------------------------------------------*
-MPRINT(EM_DIAGRAM):    filename O2GIHS6F "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Prof\EMSCORE.out" encoding="UTF-8" NOBOM;
-MPRINT(EM_DIAGRAM):   proc printto print=O2GIHS6F new;
+MPRINT(EM_DIAGRAM):    filename O3RKBJUM "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Prof\EMSCORE.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   proc printto print=O3RKBJUM new;
 MPRINT(EM_DIAGRAM):   run;
-30684      %let EMEXCEPTIONSTRING=;
-30685      *------------------------------------------------------------*;
+23202      %let EMEXCEPTIONSTRING=;
+23203      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
-30686      * SCORE: Prof;
+23204      * SCORE: Prof;
 MPRINT(EM_DIAGRAM):   * SCORE: Prof;
-30687      *------------------------------------------------------------*;
+23205      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
-30688      %let EM_ACTION = SCORE;
-30689      %let syscc = 0;
-30690      %macro main;
-30691         %if %sysfunc(indexw(&EM_DEBUG, _ALL_)) or %sysfunc(indexw(&EM_DEBUG, SOURCE)) %then %do;
-30692             options MPRINT;
-30693         %end;
-30694      
-30695         filename temp catalog 'sashelp.emexpl.profile_macros.source';
-30696         %include temp;
-30697         filename temp;
-30698      
-30699         /* Initialize property macro variables */
-30700         %SetProperties;
-30701      
-30702         %if %upcase(&EM_ACTION) = CREATE %then %do;
-30703      
-30704             filename temp catalog 'sashelp.emexpl.profile_create.source';
-30705             %include temp;
-30706             filename temp;
-30707             %create;
-30708         %end;
-30709         %else
-30710         %if %upcase(&EM_ACTION) = TRAIN %then %do;
-30711      
-30712             filename temp catalog 'sashelp.emexpl.profile_train.source';
-30713             %include temp;
-30714             filename temp;
-30715             %train;
-30716         %end;
-30717      %mend main;
-30718      
-30719      %main;
+23206      %let EM_ACTION = SCORE;
+23207      %let syscc = 0;
+23208      %macro main;
+23209         %if %sysfunc(indexw(&EM_DEBUG, _ALL_)) or %sysfunc(indexw(&EM_DEBUG, SOURCE)) %then %do;
+23210             options MPRINT;
+23211         %end;
+23212      
+23213         filename temp catalog 'sashelp.emexpl.profile_macros.source';
+23214         %include temp;
+23215         filename temp;
+23216      
+23217         /* Initialize property macro variables */
+23218         %SetProperties;
+23219      
+23220         %if %upcase(&EM_ACTION) = CREATE %then %do;
+23221      
+23222             filename temp catalog 'sashelp.emexpl.profile_create.source';
+23223             %include temp;
+23224             filename temp;
+23225             %create;
+23226         %end;
+23227         %else
+23228         %if %upcase(&EM_ACTION) = TRAIN %then %do;
+23229      
+23230             filename temp catalog 'sashelp.emexpl.profile_train.source';
+23231             %include temp;
+23232             filename temp;
+23233             %train;
+23234         %end;
+23235      %mend main;
+23236      
+23237      %main;
 MPRINT(EM_DIAGRAM):    
 MPRINT(MAIN):   filename temp catalog 'sashelp.emexpl.profile_macros.source';
 NOTE: %INCLUDE (level 1) file TEMP is file SASHELP.EMEXPL.PROFILE_MACROS.SOURCE.
-30720     +%macro SetProperties;
-30721     +   %em_checkmacro(name=EM_PROPERTY_PROFILEALL,         global=Y, value=N);
-30722     +   %em_checkmacro(name=EM_PROPERTY_USEREPORTVARS,      global=Y, value=Y);
-30723     +   %em_checkmacro(name=EM_PROPERTY_OTHERPERCENTCUTOFF, global=Y, value=95);
-30724     +   %em_checkmacro(name=EM_PROPERTY_TARGETROLE,         global=Y, value=NONE);
-30725     +   %em_checkmacro(name=EM_PROPERTY_NUMHISTBARS,        global=Y, value=8);
-30726     +   %em_checkmacro(name=EM_PROPERTY_MINWORTH,           global=Y, value=0.01);
-30727     +   %em_checkmacro(name=EM_PROPERTY_MAXDEPTH,           global=Y, value=1);
-30728     +   %em_checkmacro(name=EM_PROPERTY_MAXNUMREPORT,       global=Y, value=10);
-30729     +   %em_checkmacro(name=EM_PROPERTY_MAXNUMINPUT,        global=Y, value=10);
-30730     +   %em_checkmacro(name=EM_PROPERTY_PRINTWORTH,         global=Y, value=Y);
-30731     +%mend SetProperties;
-30734     +%macro makeVarMacros(level= );
-30736     +    %let numvars = 0;
-30737     +    %let where   = '';
-30739     +    %if (%upcase(&EM_PROPERTY_TARGETROLE) eq INPUT) %then
-30740     +        %let where = (ROLE = 'REJECTED' and LEVEL="&level" and USE='Y') or (ROLE in('INPUT', 'TARGET') and LEVEL="&level"  and USE in('Y', 'D'));
-30741     +    %else
-30742     +        %let where = (ROLE = 'REJECTED' and LEVEL="&level" and USE='Y') or (ROLE ='INPUT' and LEVEL="&level" and USE in('Y', 'D'));
-30744     +    %if &level = INTERVAL %then %do;
-30745     +        %let numvars = %eval( &EM_NUM_INTERVAL_INPUT + &EM_NUM_INTERVAL_REJECTED);
-30746     +        %if (%upcase(&EM_PROPERTY_TARGETROLE) eq INPUT) %then
-30747     +             %let numvars = %eval(&numvars + &EM_NUM_INTERVAL_TARGET);
-30748     +    %end;
-30749     +    %else %do;
-30750     +        %if &level = NOMINAL %then %do;
-30751     +            %let numvars = %eval(&EM_NUM_BINARY_INPUT + &EM_NUM_NOMINAL_INPUT +  &EM_NUM_BINARY_REJECTED + &EM_NUM_NOMINAL_REJECTED);
-30752     +             %if (%upcase(&EM_PROPERTY_TARGETROLE) eq INPUT) %then %do;
-30753     +                 %let numvars = %eval(&numvars + &EM_NUM_BINARY_TARGET + &EM_NUM_NOMINAL_TARGET);
-30754     +                 %let where = (ROLE = 'REJECTED' and LEVEL in('NOMINAL', 'BINARY') and USE='Y') or (ROLE in('INPUT', 'TARGET') and LEVEL in('NOMINAL', 'BINARY') and USE in('Y', 'D'));
-30755     +             %end;
-30756     +             %else
-30757     +                 %let where = (ROLE = 'REJECTED' and LEVEL in('NOMINAL', 'BINARY') and USE='Y') or (ROLE ='INPUT' and LEVEL in("NOMINAL", "BINARY") and USE in('Y', 'D'));
-30759     +        %end;
-30760     +        %else %do;
-30761     +            %let numvars = %eval(&EM_NUM_ORDINAL_INPUT + &EM_NUM_ORDINAL_REJECTED);
-30762     +            %if (%upcase(&EM_PROPERTY_TARGETROLE) eq INPUT) %then
-30763     +                %let numvars = %eval(&numvars + &EM_NUM_ORDINAL_TARGET);
-30764     +        %end;
-30765     +    %end;
-30767     +    %if &numvars>0 %then %do;
-30768     +         %let numloop = %sysfunc(ceil(&numvars/10000));
-30769     +         %let loopcount = 0;
-30771     +         %do %while((&numloop - &loopcount) > 0);
-30772     +             %let first = %eval((&loopcount*10000) + 1);
-30773     +             %let last  = %eval(&first + 10000);
-30774     +             %let loopcount = %eval(&loopcount +1);
-30775     +             %let centry = &EM_LIB..&EM_NODEID._MACS.&LEVEL._&loopcount..SOURCE;
-30776     +             filename X catalog "&centry";
-30777     +             data _null_;
-30778     +                length _STRING_ $80;
-30779     +                retain _STRING_ ;
-30780     +                file X;
-30781     +                set &EM_DATA_VARIABLESET(firstobs=&first obs=&last) end=eof;
-30783     +                where &where;
-30785     +                if _N_=1 then
-30786     +                   put '%macro _PROFVAR;';
-30788     +                if (length(_STRING_) + length(trim(NAME))+ 1  < 80) then do;
-30789     +                   _STRING_ = trim(_STRING_)!!' '!!trim(NAME);
-30790     +                   if eof then do;
-30791     +                      put _STRING_;
-30792     +                      put '%mend _PROFVAR;';
-30793     +                   end;
-30794     +                end;
-30795     +                else do;
-30796     +                   put _STRING_;
-30797     +                  _string_ = TRIM(NAME);
-30798     +                   if eof then do;
-30799     +                      put _string_;
-30800     +                      put '%mend _PROFVAR;';
-30801     +                   end;
-30802     +                end;
-30803     +             run;
-30804     +             filename X;
-30805     +         %end;
-30806     +    %end;
-30808     +%mend makeVarMacros;
+23238     +%macro SetProperties;
+23239     +   %em_checkmacro(name=EM_PROPERTY_PROFILEALL,         global=Y, value=N);
+23240     +   %em_checkmacro(name=EM_PROPERTY_USEREPORTVARS,      global=Y, value=Y);
+23241     +   %em_checkmacro(name=EM_PROPERTY_OTHERPERCENTCUTOFF, global=Y, value=95);
+23242     +   %em_checkmacro(name=EM_PROPERTY_TARGETROLE,         global=Y, value=NONE);
+23243     +   %em_checkmacro(name=EM_PROPERTY_NUMHISTBARS,        global=Y, value=8);
+23244     +   %em_checkmacro(name=EM_PROPERTY_MINWORTH,           global=Y, value=0.01);
+23245     +   %em_checkmacro(name=EM_PROPERTY_MAXDEPTH,           global=Y, value=1);
+23246     +   %em_checkmacro(name=EM_PROPERTY_MAXNUMREPORT,       global=Y, value=10);
+23247     +   %em_checkmacro(name=EM_PROPERTY_MAXNUMINPUT,        global=Y, value=10);
+23248     +   %em_checkmacro(name=EM_PROPERTY_PRINTWORTH,         global=Y, value=Y);
+23249     +%mend SetProperties;
+23252     +%macro makeVarMacros(level= );
+23254     +    %let numvars = 0;
+23255     +    %let where   = '';
+23257     +    %if (%upcase(&EM_PROPERTY_TARGETROLE) eq INPUT) %then
+23258     +        %let where = (ROLE = 'REJECTED' and LEVEL="&level" and USE='Y') or (ROLE in('INPUT', 'TARGET') and LEVEL="&level"  and USE in('Y', 'D'));
+23259     +    %else
+23260     +        %let where = (ROLE = 'REJECTED' and LEVEL="&level" and USE='Y') or (ROLE ='INPUT' and LEVEL="&level" and USE in('Y', 'D'));
+23262     +    %if &level = INTERVAL %then %do;
+23263     +        %let numvars = %eval( &EM_NUM_INTERVAL_INPUT + &EM_NUM_INTERVAL_REJECTED);
+23264     +        %if (%upcase(&EM_PROPERTY_TARGETROLE) eq INPUT) %then
+23265     +             %let numvars = %eval(&numvars + &EM_NUM_INTERVAL_TARGET);
+23266     +    %end;
+23267     +    %else %do;
+23268     +        %if &level = NOMINAL %then %do;
+23269     +            %let numvars = %eval(&EM_NUM_BINARY_INPUT + &EM_NUM_NOMINAL_INPUT +  &EM_NUM_BINARY_REJECTED + &EM_NUM_NOMINAL_REJECTED);
+23270     +             %if (%upcase(&EM_PROPERTY_TARGETROLE) eq INPUT) %then %do;
+23271     +                 %let numvars = %eval(&numvars + &EM_NUM_BINARY_TARGET + &EM_NUM_NOMINAL_TARGET);
+23272     +                 %let where = (ROLE = 'REJECTED' and LEVEL in('NOMINAL', 'BINARY') and USE='Y') or (ROLE in('INPUT', 'TARGET') and LEVEL in('NOMINAL', 'BINARY') and USE in('Y', 'D'));
+23273     +             %end;
+23274     +             %else
+23275     +                 %let where = (ROLE = 'REJECTED' and LEVEL in('NOMINAL', 'BINARY') and USE='Y') or (ROLE ='INPUT' and LEVEL in("NOMINAL", "BINARY") and USE in('Y', 'D'));
+23277     +        %end;
+23278     +        %else %do;
+23279     +            %let numvars = %eval(&EM_NUM_ORDINAL_INPUT + &EM_NUM_ORDINAL_REJECTED);
+23280     +            %if (%upcase(&EM_PROPERTY_TARGETROLE) eq INPUT) %then
+23281     +                %let numvars = %eval(&numvars + &EM_NUM_ORDINAL_TARGET);
+23282     +        %end;
+23283     +    %end;
+23285     +    %if &numvars>0 %then %do;
+23286     +         %let numloop = %sysfunc(ceil(&numvars/10000));
+23287     +         %let loopcount = 0;
+23289     +         %do %while((&numloop - &loopcount) > 0);
+23290     +             %let first = %eval((&loopcount*10000) + 1);
+23291     +             %let last  = %eval(&first + 10000);
+23292     +             %let loopcount = %eval(&loopcount +1);
+23293     +             %let centry = &EM_LIB..&EM_NODEID._MACS.&LEVEL._&loopcount..SOURCE;
+23294     +             filename X catalog "&centry";
+23295     +             data _null_;
+23296     +                length _STRING_ $80;
+23297     +                retain _STRING_ ;
+23298     +                file X;
+23299     +                set &EM_DATA_VARIABLESET(firstobs=&first obs=&last) end=eof;
+23301     +                where &where;
+23303     +                if _N_=1 then
+23304     +                   put '%macro _PROFVAR;';
+23306     +                if (length(_STRING_) + length(trim(NAME))+ 1  < 80) then do;
+23307     +                   _STRING_ = trim(_STRING_)!!' '!!trim(NAME);
+23308     +                   if eof then do;
+23309     +                      put _STRING_;
+23310     +                      put '%mend _PROFVAR;';
+23311     +                   end;
+23312     +                end;
+23313     +                else do;
+23314     +                   put _STRING_;
+23315     +                  _string_ = TRIM(NAME);
+23316     +                   if eof then do;
+23317     +                      put _string_;
+23318     +                      put '%mend _PROFVAR;';
+23319     +                   end;
+23320     +                end;
+23321     +             run;
+23322     +             filename X;
+23323     +         %end;
+23324     +    %end;
+23326     +%mend makeVarMacros;
 NOTE: %INCLUDE (level 1) ending.
 MPRINT(MAIN):   filename temp;
 NOTE: Fileref TEMP has been deassigned.
@@ -156,45 +156,45 @@ MPRINT(EM_DIAGRAM):  ;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   * End SCORE: Prof;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
-30811      *------------------------------------------------------------*;
-30812      * End SCORE: Prof;
-30813      *------------------------------------------------------------*;
+23329      *------------------------------------------------------------*;
+23330      * End SCORE: Prof;
+23331      *------------------------------------------------------------*;
 
-30814      *------------------------------------------------------------*;
+23332      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
-30815      * Prof: Scoring DATA data;
+23333      * Prof: Scoring DATA data;
 MPRINT(EM_DIAGRAM):   * Prof: Scoring DATA data;
-30816      *------------------------------------------------------------*;
+23334      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
-30817      data EMWS1.Prof_TRAIN
-30818      / view=EMWS1.Prof_TRAIN
-30819      ;
+23335      data EMWS1.Prof_TRAIN
+23336      / view=EMWS1.Prof_TRAIN
+23337      ;
 MPRINT(EM_DIAGRAM):   data EMWS1.Prof_TRAIN / view=EMWS1.Prof_TRAIN ;
-30820      set EMWS1.Clus_TRAIN
-30821      ;
+23338      set EMWS1.Clus_TRAIN
+23339      ;
 MPRINT(EM_DIAGRAM):   set EMWS1.Clus_TRAIN ;
-30822      run;
+23340      run;
 MPRINT(EM_DIAGRAM):   run;
 
 NOTE: DATA STEP view saved on file EMWS1.PROF_TRAIN.
 NOTE: A stored DATA STEP view cannot run under a different operating system.
 NOTE: View EMWS1.CLUS_TRAIN.VIEW used (Total process time):
-      real time           0.16 seconds
-      cpu time            0.18 seconds
+      real time           0.14 seconds
+      cpu time            0.12 seconds
       
 NOTE: DATA statement used (Total process time):
-      real time           0.17 seconds
-      cpu time            0.20 seconds
+      real time           0.15 seconds
+      cpu time            0.14 seconds
       
 
 MPRINT(EM_DIAGRAM):   quit;
-30823      quit;
+23341      quit;
 
-30825      *------------------------------------------------------------*;
+23343      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):     *------------------------------------------------------------*;
-30826      * Prof: Computing metadata for TRAIN data;
+23344      * Prof: Computing metadata for TRAIN data;
 MPRINT(EM_DIAGRAM):   * Prof: Computing metadata for TRAIN data;
-30827      *------------------------------------------------------------*;
+23345      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
 
 NOTE: View EMWS1.PROF_TRAIN.VIEW used (Total process time):
@@ -219,12 +219,12 @@ MPRINT(EMADVISECOLUMNS):   call symput('_engineTable', attrc(dsid, 'ENGINE'));
 MPRINT(EMADVISECOLUMNS):   dsid = close(dsid);
 MPRINT(EMADVISECOLUMNS):   end;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    proc contents data=EMWS1.Prof_TRAIN out=WORK.M1AQS0OG noprint;
+MPRINT(EMADVISECOLUMNS):    proc contents data=EMWS1.Prof_TRAIN out=WORK.M2189Q38 noprint;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M1AQS0OG;
+MPRINT(EMADVISECOLUMNS):    data WORK.M2189Q38;
 MPRINT(EMADVISECOLUMNS):   length NAME $ 64 TYPE $ 1 LABEL $ 200 FORMAT $ 20 INFORMAT $20 INDEX $ 1 INDEXTYPE $ 9;
 MPRINT(EMADVISECOLUMNS):   label NAME =;
-MPRINT(EMADVISECOLUMNS):   set WORK.M1AQS0OG(keep=name type length label format formatl formatd informat informl informd idxusage rename=(type=itype));
+MPRINT(EMADVISECOLUMNS):   set WORK.M2189Q38(keep=name type length label format formatl formatd informat informl informd idxusage rename=(type=itype));
 MPRINT(EMADVISECOLUMNS):   if itype = 1 then type = 'N';
 MPRINT(EMADVISECOLUMNS):   else type = 'C';
 MPRINT(EMADVISECOLUMNS):   if formatl > 0 then do;
@@ -242,21 +242,21 @@ MPRINT(EMADVISECOLUMNS):   else index = "Y";
 MPRINT(EMADVISECOLUMNS):   indextype = idxusage;
 MPRINT(EMADVISECOLUMNS):   drop idxusage itype formatl formatd informl informd;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M1AQS0OG;
+MPRINT(EMADVISECOLUMNS):    data WORK.M2189Q38;
 MPRINT(EMADVISECOLUMNS):   length UNAME $64;
-MPRINT(EMADVISECOLUMNS):   set WORK.M1AQS0OG;
+MPRINT(EMADVISECOLUMNS):   set WORK.M2189Q38;
 MPRINT(EMADVISECOLUMNS):   UNAME = upcase(NAME);
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    proc sort data=WORK.M20X9WY8 NOTHREADS;
+MPRINT(EMADVISECOLUMNS):    proc sort data=WORK.M25VYZUZ NOTHREADS;
 MPRINT(EMADVISECOLUMNS):   by UNAME;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M20X9WY8;
+MPRINT(EMADVISECOLUMNS):    data WORK.M25VYZUZ;
 MPRINT(EMADVISECOLUMNS):   drop UNAME;
-MPRINT(EMADVISECOLUMNS):   set WORK.M20X9WY8;
+MPRINT(EMADVISECOLUMNS):   set WORK.M25VYZUZ;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M0Z8C8_O(keep=NAME ATTR);
+MPRINT(EMADVISECOLUMNS):    data WORK.M3A7VN6D(keep=NAME ATTR);
 MPRINT(EMADVISECOLUMNS):   length ATTR $ 20;
-MPRINT(EMADVISECOLUMNS):   set WORK.M20X9WY8;
+MPRINT(EMADVISECOLUMNS):   set WORK.M25VYZUZ;
 MPRINT(EMADVISECOLUMNS):   if level ne "INTERVAL" then do;
 MPRINT(EMADVISECOLUMNS):   if order = ' ' then do;
 MPRINT(EMADVISECOLUMNS):   attr = 'ORDER';
@@ -291,10 +291,10 @@ MPRINT(EMADVISECOLUMNS):   run;
 MPRINT(EMADVISECOLUMNS):   proc sort NOTHREADS;
 MPRINT(EMADVISECOLUMNS):   by attr;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M20X9WY8;
+MPRINT(EMADVISECOLUMNS):    data WORK.M25VYZUZ;
 MPRINT(EMADVISECOLUMNS):   length NAME $64 ROLE $ 32 LEVEL $ 10 ORDER $ 8 CREATOR $32 FORMATTYPE $ 10 FAMILY $ 10 LOWERLIMIT 8 UPPERLIMIT 8 REPORT $1 DISTRIBUTION $ 20 COMMENT $64;
 MPRINT(EMADVISECOLUMNS):   length levelAssigned 8 roleAssigned 8 PRICE 8;
-MPRINT(EMADVISECOLUMNS):   set WORK.M20X9WY8;
+MPRINT(EMADVISECOLUMNS):   set WORK.M25VYZUZ;
 MPRINT(EMADVISECOLUMNS):   if formattype = ' ' then do;
 MPRINT(EMADVISECOLUMNS):   if format ne ' ' then do;
 MPRINT(EMADVISECOLUMNS):   if type = 'N' then do;
@@ -432,8 +432,8 @@ MPRINT(EMADVISECOLUMNS):   end;
 MPRINT(EMADVISECOLUMNS):   else role = upcase(role);
 MPRINT(EMADVISECOLUMNS):   if REPORT = '' then REPORT = 'N';
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M20X9WY8;
-MPRINT(EMADVISECOLUMNS):   set WORK.M20X9WY8;
+MPRINT(EMADVISECOLUMNS):    data WORK.M25VYZUZ;
+MPRINT(EMADVISECOLUMNS):   set WORK.M25VYZUZ;
 MPRINT(EMADVISECOLUMNS):   label NAME = "Variable Name" TYPE = "Type" ROLE = "Role" LEVEL= "Measurement Level" ORDER= "Order" CREATOR= "Creator" FORMATTYPE= "Format Type" FAMILY= "Family" DISTRIBUTION= "Distribution" PRICE= "Price" LOWERLIMIT= "Lower 
 limit" UPPERLIMIT= "Upper Limit" REPORT= "Report" COMMENT= "Comment" INDEX= "Index" INDEXTYPE= "IndexType" LABEL= "Label" LENGTH= "Length";
 MPRINT(EMADVISECOLUMNS):   drop levelAssigned roleAssigned;
@@ -465,8 +465,8 @@ MPRINT(EM_DIAGRAM):   *---------------------------------------------------------
 MPRINT(EM_DIAGRAM):   run;
 MPRINT(EM_DIAGRAM):   filename _delta;
 NOTE: View EMWS1.PROF_TRAIN.VIEW used (Total process time):
-      real time           0.23 seconds
-      cpu time            0.21 seconds
+      real time           0.17 seconds
+      cpu time            0.17 seconds
       
 MPRINT(EM_DIAGRAM):    proc printto;
 MPRINT(EM_DIAGRAM):   run;

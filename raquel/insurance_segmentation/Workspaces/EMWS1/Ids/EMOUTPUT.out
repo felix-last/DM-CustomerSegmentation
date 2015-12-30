@@ -1,0 +1,81 @@
+*------------------------------------------------------------*
+User:                raquel
+Date:                December 29, 2015
+Time:                15:37:19
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+         Measurement    Frequency
+Role        Level         Count
+ 
+ID        NOMINAL            1
+INPUT     BINARY             1
+INPUT     INTERVAL          10
+INPUT     NOMINAL            1
+INPUT     ORDINAL            1
+ 
+ 
+ 
+ 
+Output Table Attributes
+ 
+Attribute            Value
+ 
+Output Table         EMWS1.Ids_DATA
+Output Type          View
+Dropped Variables    0
+Data Mining Role     Train
+ 
+ 
+ 
+ 
+Input Table Attributes
+ 
+Attribute                                  Value
+ 
+Data Source                                azinsurance
+ 
+Library Name                               INSPROJF
+Library Member Name                        A2ZINSURANCE
+Data Set Label
+Special Data Set Type (From TYPE=)
+Observations in Data Set                   10296
+Engine Name                                BASE
+Create Date                                09Dec15:15:43:03
+Last Modified Date                         09Dec15:15:43:03
+Deleted Observations in Data Set           0
+Use of Variable in Indexes                 NONE
+Library Member Type                        DATA
+Number of Indexes for Data Set             0
+Password Protection (Read Write Alter)     ---
+Update Flags (Protect Contribute Add)      ---
+Compression Routine                        NO
+Reuse Space                                NO
+Sorted and/or Validated                    .
+Position of Variable in Sortedby Clause    .
+Host Character Set
+Collating Sequence
+Sort Option: No Duplicate Keys             NO
+Sort Option: No Duplicate Records          NO
+Encryption Routine                         NO
+Point to Observations                      YES
+Maximum Number of Generations              0
+Generation Number                          .
+Next Generation Number                     .
+Variables                                  14
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*

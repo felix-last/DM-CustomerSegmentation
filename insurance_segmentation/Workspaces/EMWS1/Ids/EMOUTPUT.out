@@ -1,7 +1,7 @@
 *------------------------------------------------------------*
 User:                D059331
-Date:                December 29, 2015
-Time:                13:12:20
+Date:                December 30, 2015
+Time:                15:20:07
 *------------------------------------------------------------*
 * Training Output
 *------------------------------------------------------------*
@@ -14,7 +14,7 @@ Variable Summary
          Measurement    Frequency
 Role        Level         Count
  
-ID        INTERVAL           1
+ID        NOMINAL            1
 INPUT     BINARY             1
 INPUT     INTERVAL          10
 INPUT     NOMINAL            1

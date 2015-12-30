@@ -1,0 +1,49 @@
+*------------------------------------------------------------*
+User:                raquel
+Date:                December 29, 2015
+Time:                18:23:35
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+            Measurement    Frequency
+Role           Level         Count
+ 
+ID           NOMINAL            1
+INPUT        BINARY             1
+INPUT        INTERVAL          13
+INPUT        NOMINAL            1
+INPUT        ORDINAL            1
+REJECTED     INTERVAL           2
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Importance
+ 
+NAME                       LABEL                                    NRULES    NSURROGATES    IMPORTANCE
+ 
+IMP_REP_CustomerAge        Imputed: Replacement: CustomerAge           9            9          1.00000
+IMP_GrossMonthlySalary     Imputed GrossMonthlySalary                  5            9          0.95582
+CustomerMonetaryValue                                                  0           10          0.83640
+ClaimsRate                                                             0            9          0.78011
+TOTAL_PREMIUM                                                          0           13          0.75216
+IMP_EducationalDegree      Imputed EducationalDegree                   7            0          0.63414
+IMP_HasChildren            Imputed HasChildren                         1            0          0.57374
+IMP_REP_FirstPolicyYear    Imputed: Replacement: FirstPolicyYear       0            6          0.12569
+IMP_GeographicLiving       Imputed GeographicLiving                    0            1          0.07658

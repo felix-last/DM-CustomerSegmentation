@@ -1,0 +1,35 @@
+*------------------------------------------------------------*
+User:                raquel
+Date:                December 29, 2015
+Time:                18:01:00
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+            Measurement    Frequency
+Role           Level         Count
+ 
+ASSESS       NOMINAL            1
+ID           NOMINAL            1
+INPUT        BINARY             1
+INPUT        INTERVAL          13
+INPUT        NOMINAL            1
+INPUT        ORDINAL            1
+REJECTED     INTERVAL           3
+REJECTED     NOMINAL            1
+SEGMENT      NOMINAL            1
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*

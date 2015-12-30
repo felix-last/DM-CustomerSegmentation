@@ -9,7 +9,7 @@
 data workspace;
 length property $64 value $100;
 property= 'PROJECTLOCATION';
-value= "\\Mac\Home\Documents\DataMining\DM-CustomerSegmentation-master";
+value= "C:\Users\D059331\Desktop\DM_Insurance_segmentation";
 output;
 property= 'PROJECTNAME';
 value= "insurance_segmentation";

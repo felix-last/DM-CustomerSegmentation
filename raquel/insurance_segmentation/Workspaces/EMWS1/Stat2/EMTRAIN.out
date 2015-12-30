@@ -1,0 +1,64 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+            Measurement    Frequency
+Role           Level         Count
+
+ID           NOMINAL            1   
+INPUT        BINARY             1   
+INPUT        INTERVAL          13   
+INPUT        NOMINAL            1   
+INPUT        ORDINAL            1   
+REJECTED     INTERVAL           2   
+ 
+                                                                                                                                                                                                                                                                
+ 
+Variable Levels Summary
+(maximum 500 observations printed)
+
+                            Frequency
+    Variable        Role      Count
+
+CustomerIdentity     ID        9791  
+ 
+                                                                                                                                                                                                                                                                
+ 
+Class Variable Summary Statistics
+(maximum 500 observations printed)
+
+Data Role=TRAIN
+
+                                           Number
+Data                                         of                                   Mode                            Mode2
+Role         Variable Name        Role     Levels    Missing    Mode           Percentage    Mode2              Percentage
+
+TRAIN    IMP_EducationalDegree    INPUT       4         0       3 - BSc/MSc      47.46       2 - High School      34.55   
+TRAIN    IMP_GeographicLiving     INPUT       4         0       4                40.28       1                    29.59   
+TRAIN    IMP_HasChildren          INPUT       2         0       1                70.83       0                    29.17   
+ 
+                                                                                                                                                                                                                                                                
+ 
+Interval Variable Summary Statistics
+(maximum 500 observations printed)
+
+Data Role=TRAIN
+
+                                                  Standard          Non
+Variable                     Role         Mean    Deviation     Missing     Missing     Minimum      Median     Maximum    Skewness    Kurtosis
+
+ClaimsRate                   INPUT    0.677859    0.312623         9791           0           0    0.715936    1.297016    -0.25821    -1.22127
+CustomerMonetaryValue        INPUT    216.1748    243.0177         9791           0     -250.93      189.15     1143.11    0.609442    -0.11365
+IMP_FirstPolicyYear          INPUT           .           .            0        9791           .           .           .           .           .
+IMP_GrossMonthlySalary       INPUT    5037.917    1914.245         9791           0         866        5038        9085    -0.00631    -0.97171
+IMP_PremiumsinLOBHealth      INPUT    168.9934    71.79083         9791           0       24.45      163.81      365.07    0.265437     -0.5869
+IMP_PremiumsinLOBLife        INPUT    40.73361    45.55584         9791           0          -7       25.56       398.3    2.106942     5.96047
+IMP_PremiumsinLOBMotor       INPUT    300.7674    132.8364         9791           0       18.78      302.28      559.44    -0.09082    -0.90313
+IMP_PremiumsinLOBWorkComp    INPUT    39.00708    41.88989         9791           0         -11       25.67      254.38    1.774184    3.668017
+IMP_REP_CustomerAge          INPUT    48.29958    17.09173         9791           0          15          49          81    -0.02266    -1.15021
+IMP_REP_FirstPolicyYear      INPUT    1985.996    6.588045         9791           0        1974        1986        1998    -0.01923    -1.15215
+LOYALTY                      INPUT           .           .            0        9791           .           .           .           .           .
+PremiumsinLOBHousehold       INPUT    198.2877    213.3893         9791           0         -70       132.8      1194.1    1.559597    2.522224
+TOTAL_PREMIUM                INPUT    747.7891    173.5219         9791           0      512.65      697.68     1565.28    1.488614    2.370362

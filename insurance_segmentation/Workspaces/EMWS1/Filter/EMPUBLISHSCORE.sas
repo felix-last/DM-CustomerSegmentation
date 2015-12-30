@@ -6,7 +6,7 @@ and ( IMP_PremiumsinLOBHealth eq . or (24.45<=IMP_PremiumsinLOBHealth) and (IMP_
 and ( IMP_PremiumsinLOBMotor eq . or (18.78<=IMP_PremiumsinLOBMotor) and (IMP_PremiumsinLOBMotor<=559.44))
 and ( IMP_PremiumsinLOBWorkComp eq . or (-11<=IMP_PremiumsinLOBWorkComp) and (IMP_PremiumsinLOBWorkComp<=254.38))
 and ( PremiumsinLOBHousehold eq . or (-70<=PremiumsinLOBHousehold) and (PremiumsinLOBHousehold<=1194.1))
-and ( TOTAL_PREMIUM eq . or (512.65<=TOTAL_PREMIUM) and (TOTAL_PREMIUM<=1568.31))
+and ( TOTAL_PREMIUM eq . or (514.67<=TOTAL_PREMIUM) and (TOTAL_PREMIUM<=1568.31))
 then do;
 if M_FILTER eq . then M_FILTER = 0;
 else M_FILTER = M_FILTER + 0;

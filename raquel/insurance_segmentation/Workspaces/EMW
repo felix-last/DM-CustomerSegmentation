@@ -1,0 +1,659 @@
+﻿<SASReport version="1.0">
+      <Data>
+            <IQData type="2DEmbedded" name="TreeData">
+                  <EmbeddedData>
+                        <Variables>
+                              <Variable name="Var1" varName="Var1" type="String" />
+                              <Variable name="Var2" varName="Var2" type="String" />
+                              <Variable name="Var3" varName="Var3" type="Numeric" />
+                              <Variable name="Var4" varName="Var4" type="Numeric" />
+                              <Variable name="Var5" varName="Var5" type="Numeric" />
+                              <Variable name="Var6" varName="Var6" type="Numeric" />
+                              <Variable name="Var7" varName="Var7" type="String"  />
+                              <Variable name="Var8" varName="Var8" type="String" />
+                              <Variable name="Var9" varName="Var9" type="Numeric" />
+                        </Variables>
+                        <ValuesList>
+    <Values>
+      <Value>Non-Missing Values</Value>
+      <Value>Imputed HasChildren</Value>
+      <Value>10</Value>
+      <Value>31.35</Value>
+      <Value>1</Value>
+      <Value>0</Value>
+      <Value>          2:        31.3%
+ Count:         9791</Value>
+      <Value>Node Id:            1&#10;&#10;2:        31.3%&#10;1:        14.2%&#10;4:        24.6%&#10;3:        29.8%&#10; Count:         9791</Value>
+      <Value>9791</Value>
+    </Values>
+    <Values>
+      <Value>1 Or Missing</Value>
+      <Value>Imputed: Replacement: CustomerAg</Value>
+      <Value>7.0830354407</Value>
+      <Value>42.11</Value>
+      <Value>2</Value>
+      <Value>1</Value>
+      <Value>          3:        42.1%
+ Count:         6935</Value>
+      <Value>Node Id:            2&#10;&#10;2:        41.9%&#10;1:        16.0%&#10;4:         0.0%&#10;3:        42.1%&#10; Count:         6935</Value>
+      <Value>6935</Value>
+    </Values>
+    <Values>
+      <Value>0</Value>
+      <Value>Imputed: Replacement: CustomerAg</Value>
+      <Value>2.9169645593</Value>
+      <Value>84.38</Value>
+      <Value>3</Value>
+      <Value>1</Value>
+      <Value>          4:        84.4%
+ Count:         2856</Value>
+      <Value>Node Id:            3&#10;&#10;2:         5.8%&#10;1:         9.8%&#10;4:        84.4%&#10;3:         0.0%&#10; Count:         2856</Value>
+      <Value>2856</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 44.5 Or Missing</Value>
+      <Value>TOTAL_PREMIUM</Value>
+      <Value>3.8729445409</Value>
+      <Value>67.75</Value>
+      <Value>4</Value>
+      <Value>2</Value>
+      <Value>          2:        67.7%
+ Count:         3792</Value>
+      <Value>Node Id:            4&#10;&#10;2:        67.7%&#10;1:        27.3%&#10;4:         0.0%&#10;3:         4.9%&#10; Count:         3792</Value>
+      <Value>3792</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 44.5</Value>
+      <Value>TOTAL_PREMIUM</Value>
+      <Value>3.2100908998</Value>
+      <Value>86.96</Value>
+      <Value>5</Value>
+      <Value>2</Value>
+      <Value>          3:        87.0%
+ Count:         3143</Value>
+      <Value>Node Id:            5&#10;&#10;2:        10.6%&#10;1:         2.4%&#10;4:         0.0%&#10;3:        87.0%&#10; Count:         3143</Value>
+      <Value>3143</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 42.5</Value>
+      <Value>TOTAL_PREMIUM</Value>
+      <Value>0.4463282606</Value>
+      <Value>61.1</Value>
+      <Value>6</Value>
+      <Value>3</Value>
+      <Value>          1:        61.1%
+ Count:          437</Value>
+      <Value>Node Id:            6&#10;&#10;2:        35.5%&#10;1:        61.1%&#10;4:         3.4%&#10;3:         0.0%&#10; Count:          437</Value>
+      <Value>437</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 42.5 Or Missing</Value>
+      <Value>Imputed GrossMonthlySalary</Value>
+      <Value>2.4706362986</Value>
+      <Value>99.01</Value>
+      <Value>7</Value>
+      <Value>3</Value>
+      <Value>          4:        99.0%
+ Count:         2419</Value>
+      <Value>Node Id:            7&#10;&#10;2:         0.5%&#10;1:         0.5%&#10;4:        99.0%&#10;3:         0.0%&#10; Count:         2419</Value>
+      <Value>2419</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 822.38 Or Missing</Value>
+      <Value>Imputed GrossMonthlySalary</Value>
+      <Value>2.778061485</Value>
+      <Value>88.09</Value>
+      <Value>8</Value>
+      <Value>4</Value>
+      <Value>          2:        88.1%
+ Count:         2720</Value>
+      <Value>Node Id:            8&#10;&#10;2:        88.1%&#10;1:         5.4%&#10;4:         0.0%&#10;3:         6.5%&#10; Count:         2720</Value>
+      <Value>2720</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 822.38</Value>
+      <Value>Imputed EducationalDegree</Value>
+      <Value>1.0948830559</Value>
+      <Value>83.02</Value>
+      <Value>9</Value>
+      <Value>4</Value>
+      <Value>          1:        83.0%
+ Count:         1072</Value>
+      <Value>Node Id:            9&#10;&#10;2:        16.1%&#10;1:        83.0%&#10;4:         0.0%&#10;3:         0.8%&#10; Count:         1072</Value>
+      <Value>1072</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 1043.24 Or Missing</Value>
+      <Value>Imputed GrossMonthlySalary</Value>
+      <Value>3.1283832091</Value>
+      <Value>88.25</Value>
+      <Value>10</Value>
+      <Value>5</Value>
+      <Value>          3:        88.2%
+ Count:         3063</Value>
+      <Value>Node Id:           10&#10;&#10;2:        10.9%&#10;1:         0.8%&#10;4:         0.0%&#10;3:        88.2%&#10; Count:         3063</Value>
+      <Value>3063</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 1043.24</Value>
+      <Value>Imputed GrossMonthlySalary</Value>
+      <Value>0.0817076907</Value>
+      <Value>62.5</Value>
+      <Value>11</Value>
+      <Value>5</Value>
+      <Value>          1:        62.5%
+ Count:           80</Value>
+      <Value>Node Id:           11&#10;&#10;2:         0.0%&#10;1:        62.5%&#10;4:         0.0%&#10;3:        37.5%&#10; Count:           80</Value>
+      <Value>80</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 886.165 Or Missing</Value>
+      <Value>Imputed GrossMonthlySalary</Value>
+      <Value>0.2379736493</Value>
+      <Value>63.95</Value>
+      <Value>12</Value>
+      <Value>6</Value>
+      <Value>          2:        63.9%
+ Count:          233</Value>
+      <Value>Node Id:           12&#10;&#10;2:        63.9%&#10;1:        30.0%&#10;4:         6.0%&#10;3:         0.0%&#10; Count:          233</Value>
+      <Value>233</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 886.165</Value>
+      <Value></Value>
+      <Value>0.2083546114</Value>
+      <Value>96.57</Value>
+      <Value>13</Value>
+      <Value>6</Value>
+      <Value>          1:        96.6%
+ Count:          204</Value>
+      <Value>Node Id:           13&#10;&#10;2:         2.9%&#10;1:        96.6%&#10;4:         0.5%&#10;3:         0.0%&#10; Count:          204</Value>
+      <Value>204</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 3838.5</Value>
+      <Value></Value>
+      <Value>0.0091921152</Value>
+      <Value>66.67</Value>
+      <Value>14</Value>
+      <Value>7</Value>
+      <Value>          2:        66.7%
+ Count:            9</Value>
+      <Value>Node Id:           14&#10;&#10;2:        66.7%&#10;1:        11.1%&#10;4:        22.2%&#10;3:         0.0%&#10; Count:            9</Value>
+      <Value>9</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 3838.5 Or Missing</Value>
+      <Value></Value>
+      <Value>2.4614441834</Value>
+      <Value>99.29</Value>
+      <Value>15</Value>
+      <Value>7</Value>
+      <Value>          4:        99.3%
+ Count:         2410</Value>
+      <Value>Node Id:           15&#10;&#10;2:         0.2%&#10;1:         0.5%&#10;4:        99.3%&#10;3:         0.0%&#10; Count:         2410</Value>
+      <Value>2410</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 4821.5 Or Missing</Value>
+      <Value>TOTAL_PREMIUM</Value>
+      <Value>2.5074047595</Value>
+      <Value>91.89</Value>
+      <Value>16</Value>
+      <Value>8</Value>
+      <Value>          2:        91.9%
+ Count:         2455</Value>
+      <Value>Node Id:           16&#10;&#10;2:        91.9%&#10;1:         5.9%&#10;4:         0.0%&#10;3:         2.2%&#10; Count:         2455</Value>
+      <Value>2455</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 4821.5</Value>
+      <Value>Imputed EducationalDegree</Value>
+      <Value>0.2706567256</Value>
+      <Value>52.83</Value>
+      <Value>17</Value>
+      <Value>8</Value>
+      <Value>          2:        52.8%
+ Count:          265</Value>
+      <Value>Node Id:           17&#10;&#10;2:        52.8%&#10;1:         0.4%&#10;4:         0.0%&#10;3:        46.8%&#10; Count:          265</Value>
+      <Value>265</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 3 - BSC/MSC Or Missing</Value>
+      <Value></Value>
+      <Value>0.8344397916</Value>
+      <Value>94.74</Value>
+      <Value>18</Value>
+      <Value>9</Value>
+      <Value>          1:        94.7%
+ Count:          817</Value>
+      <Value>Node Id:           18&#10;&#10;2:         4.8%&#10;1:        94.7%&#10;4:         0.0%&#10;3:         0.5%&#10; Count:          817</Value>
+      <Value>817</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 3 - BSC/MSC</Value>
+      <Value>Imputed GrossMonthlySalary</Value>
+      <Value>0.2604432642</Value>
+      <Value>52.55</Value>
+      <Value>19</Value>
+      <Value>9</Value>
+      <Value>          2:        52.5%
+ Count:          255</Value>
+      <Value>Node Id:           19&#10;&#10;2:        52.5%&#10;1:        45.5%&#10;4:         0.0%&#10;3:         2.0%&#10; Count:          255</Value>
+      <Value>255</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 4411.5</Value>
+      <Value>TOTAL_PREMIUM</Value>
+      <Value>0.2716780717</Value>
+      <Value>67.29</Value>
+      <Value>20</Value>
+      <Value>10</Value>
+      <Value>          2:        67.3%
+ Count:          266</Value>
+      <Value>Node Id:           20&#10;&#10;2:        67.3%&#10;1:         4.1%&#10;4:         0.0%&#10;3:        28.6%&#10; Count:          266</Value>
+      <Value>266</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 4411.5 Or Missing</Value>
+      <Value>Imputed GrossMonthlySalary</Value>
+      <Value>2.8567051374</Value>
+      <Value>93.92</Value>
+      <Value>21</Value>
+      <Value>10</Value>
+      <Value>          3:        93.9%
+ Count:         2797</Value>
+      <Value>Node Id:           21&#10;&#10;2:         5.5%&#10;1:         0.5%&#10;4:         0.0%&#10;3:        93.9%&#10; Count:         2797</Value>
+      <Value>2797</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 6774 Or Missing</Value>
+      <Value></Value>
+      <Value>0.0643448065</Value>
+      <Value>76.19</Value>
+      <Value>22</Value>
+      <Value>11</Value>
+      <Value>          1:        76.2%
+ Count:           63</Value>
+      <Value>Node Id:           22&#10;&#10;2:         0.0%&#10;1:        76.2%&#10;4:         0.0%&#10;3:        23.8%&#10; Count:           63</Value>
+      <Value>63</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 6774</Value>
+      <Value></Value>
+      <Value>0.0173628843</Value>
+      <Value>88.24</Value>
+      <Value>23</Value>
+      <Value>11</Value>
+      <Value>          3:        88.2%
+ Count:           17</Value>
+      <Value>Node Id:           23&#10;&#10;2:         0.0%&#10;1:        11.8%&#10;4:         0.0%&#10;3:        88.2%&#10; Count:           17</Value>
+      <Value>17</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 4708.5 Or Missing</Value>
+      <Value>Imputed EducationalDegree</Value>
+      <Value>0.2257174957</Value>
+      <Value>66.52</Value>
+      <Value>24</Value>
+      <Value>12</Value>
+      <Value>          2:        66.5%
+ Count:          221</Value>
+      <Value>Node Id:           24&#10;&#10;2:        66.5%&#10;1:        31.2%&#10;4:         2.3%&#10;3:         0.0%&#10; Count:          221</Value>
+      <Value>221</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 4708.5</Value>
+      <Value></Value>
+      <Value>0.0122561536</Value>
+      <Value>75</Value>
+      <Value>25</Value>
+      <Value>12</Value>
+      <Value>          4:        75.0%
+ Count:           12</Value>
+      <Value>Node Id:           25&#10;&#10;2:        16.7%&#10;1:         8.3%&#10;4:        75.0%&#10;3:         0.0%&#10; Count:           12</Value>
+      <Value>12</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 758.54 Or Missing</Value>
+      <Value></Value>
+      <Value>2.1101011133</Value>
+      <Value>96.08</Value>
+      <Value>30</Value>
+      <Value>16</Value>
+      <Value>          2:        96.1%
+ Count:         2066</Value>
+      <Value>Node Id:           30&#10;&#10;2:        96.1%&#10;1:         1.5%&#10;4:         0.0%&#10;3:         2.5%&#10; Count:         2066</Value>
+      <Value>2066</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 758.54</Value>
+      <Value>Imputed EducationalDegree</Value>
+      <Value>0.3973036462</Value>
+      <Value>69.67</Value>
+      <Value>31</Value>
+      <Value>16</Value>
+      <Value>          2:        69.7%
+ Count:          389</Value>
+      <Value>Node Id:           31&#10;&#10;2:        69.7%&#10;1:        29.6%&#10;4:         0.0%&#10;3:         0.8%&#10; Count:          389</Value>
+      <Value>389</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 3 - BSC/MSC</Value>
+      <Value></Value>
+      <Value>0.1021346134</Value>
+      <Value>81</Value>
+      <Value>32</Value>
+      <Value>17</Value>
+      <Value>          3:        81.0%
+ Count:          100</Value>
+      <Value>Node Id:           32&#10;&#10;2:        18.0%&#10;1:         1.0%&#10;4:         0.0%&#10;3:        81.0%&#10; Count:          100</Value>
+      <Value>100</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 3 - BSC/MSC Or Missing</Value>
+      <Value>CustomerMonetaryValue</Value>
+      <Value>0.1685221121</Value>
+      <Value>73.94</Value>
+      <Value>33</Value>
+      <Value>17</Value>
+      <Value>          2:        73.9%
+ Count:          165</Value>
+      <Value>Node Id:           33&#10;&#10;2:        73.9%&#10;1:         0.0%&#10;4:         0.0%&#10;3:        26.1%&#10; Count:          165</Value>
+      <Value>165</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 4923 Or Missing</Value>
+      <Value>TOTAL_PREMIUM</Value>
+      <Value>0.2502298029</Value>
+      <Value>53.47</Value>
+      <Value>36</Value>
+      <Value>19</Value>
+      <Value>          2:        53.5%
+ Count:          245</Value>
+      <Value>Node Id:           36&#10;&#10;2:        53.5%&#10;1:        46.5%&#10;4:         0.0%&#10;3:         0.0%&#10; Count:          245</Value>
+      <Value>245</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 4923</Value>
+      <Value></Value>
+      <Value>0.0102134613</Value>
+      <Value>50</Value>
+      <Value>37</Value>
+      <Value>19</Value>
+      <Value>          3:        50.0%
+ Count:           10</Value>
+      <Value>Node Id:           37&#10;&#10;2:        30.0%&#10;1:        20.0%&#10;4:         0.0%&#10;3:        50.0%&#10; Count:           10</Value>
+      <Value>10</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 850.22 Or Missing</Value>
+      <Value></Value>
+      <Value>0.2594219181</Value>
+      <Value>70.08</Value>
+      <Value>38</Value>
+      <Value>20</Value>
+      <Value>          2:        70.1%
+ Count:          254</Value>
+      <Value>Node Id:           38&#10;&#10;2:        70.1%&#10;1:         0.8%&#10;4:         0.0%&#10;3:        29.1%&#10; Count:          254</Value>
+      <Value>254</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 850.22</Value>
+      <Value></Value>
+      <Value>0.0122561536</Value>
+      <Value>75</Value>
+      <Value>39</Value>
+      <Value>20</Value>
+      <Value>          1:        75.0%
+ Count:           12</Value>
+      <Value>Node Id:           39&#10;&#10;2:         8.3%&#10;1:        75.0%&#10;4:         0.0%&#10;3:        16.7%&#10; Count:           12</Value>
+      <Value>12</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 5160.5</Value>
+      <Value>TOTAL_PREMIUM</Value>
+      <Value>0.6046369114</Value>
+      <Value>76.86</Value>
+      <Value>40</Value>
+      <Value>21</Value>
+      <Value>          3:        76.9%
+ Count:          592</Value>
+      <Value>Node Id:           40&#10;&#10;2:        21.3%&#10;1:         1.9%&#10;4:         0.0%&#10;3:        76.9%&#10; Count:          592</Value>
+      <Value>592</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 5160.5 Or Missing</Value>
+      <Value></Value>
+      <Value>2.2520682259</Value>
+      <Value>98.5</Value>
+      <Value>41</Value>
+      <Value>21</Value>
+      <Value>          3:        98.5%
+ Count:         2205</Value>
+      <Value>Node Id:           41&#10;&#10;2:         1.3%&#10;1:         0.2%&#10;4:         0.0%&#10;3:        98.5%&#10; Count:         2205</Value>
+      <Value>2205</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 2 - HIGH SCHOOL</Value>
+      <Value></Value>
+      <Value>0.0388111531</Value>
+      <Value>86.84</Value>
+      <Value>42</Value>
+      <Value>24</Value>
+      <Value>          1:        86.8%
+ Count:           38</Value>
+      <Value>Node Id:           42&#10;&#10;2:        10.5%&#10;1:        86.8%&#10;4:         2.6%&#10;3:         0.0%&#10; Count:           38</Value>
+      <Value>38</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 2 - HIGH SCHOOL Or Missing</Value>
+      <Value></Value>
+      <Value>0.1869063426</Value>
+      <Value>78.14</Value>
+      <Value>43</Value>
+      <Value>24</Value>
+      <Value>          2:        78.1%
+ Count:          183</Value>
+      <Value>Node Id:           43&#10;&#10;2:        78.1%&#10;1:        19.7%&#10;4:         2.2%&#10;3:         0.0%&#10; Count:          183</Value>
+      <Value>183</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 3 - BSC/MSC Or Missing</Value>
+      <Value></Value>
+      <Value>0.2103973036</Value>
+      <Value>55.83</Value>
+      <Value>52</Value>
+      <Value>31</Value>
+      <Value>          1:        55.8%
+ Count:          206</Value>
+      <Value>Node Id:           52&#10;&#10;2:        42.7%&#10;1:        55.8%&#10;4:         0.0%&#10;3:         1.5%&#10; Count:          206</Value>
+      <Value>206</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 3 - BSC/MSC</Value>
+      <Value></Value>
+      <Value>0.1869063426</Value>
+      <Value>100</Value>
+      <Value>53</Value>
+      <Value>31</Value>
+      <Value>          2:       100.0%
+ Count:          183</Value>
+      <Value>Node Id:           53&#10;&#10;2:       100.0%&#10;1:         0.0%&#10;4:         0.0%&#10;3:         0.0%&#10; Count:          183</Value>
+      <Value>183</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 380.805 Or Missing</Value>
+      <Value></Value>
+      <Value>0.1123480748</Value>
+      <Value>92.73</Value>
+      <Value>56</Value>
+      <Value>33</Value>
+      <Value>          2:        92.7%
+ Count:          110</Value>
+      <Value>Node Id:           56&#10;&#10;2:        92.7%&#10;1:         0.0%&#10;4:         0.0%&#10;3:         7.3%&#10; Count:          110</Value>
+      <Value>110</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 380.805</Value>
+      <Value></Value>
+      <Value>0.0561740374</Value>
+      <Value>63.64</Value>
+      <Value>57</Value>
+      <Value>33</Value>
+      <Value>          3:        63.6%
+ Count:           55</Value>
+      <Value>Node Id:           57&#10;&#10;2:        36.4%&#10;1:         0.0%&#10;4:         0.0%&#10;3:        63.6%&#10; Count:           55</Value>
+      <Value>55</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 911.34</Value>
+      <Value></Value>
+      <Value>0.1113267286</Value>
+      <Value>91.74</Value>
+      <Value>60</Value>
+      <Value>36</Value>
+      <Value>          2:        91.7%
+ Count:          109</Value>
+      <Value>Node Id:           60&#10;&#10;2:        91.7%&#10;1:         8.3%&#10;4:         0.0%&#10;3:         0.0%&#10; Count:          109</Value>
+      <Value>109</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 911.34 Or Missing</Value>
+      <Value></Value>
+      <Value>0.1389030743</Value>
+      <Value>77.21</Value>
+      <Value>61</Value>
+      <Value>36</Value>
+      <Value>          1:        77.2%
+ Count:          136</Value>
+      <Value>Node Id:           61&#10;&#10;2:        22.8%&#10;1:        77.2%&#10;4:         0.0%&#10;3:         0.0%&#10; Count:          136</Value>
+      <Value>136</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 930.4 Or Missing</Value>
+      <Value></Value>
+      <Value>0.5872740272</Value>
+      <Value>77.74</Value>
+      <Value>64</Value>
+      <Value>40</Value>
+      <Value>          3:        77.7%
+ Count:          575</Value>
+      <Value>Node Id:           64&#10;&#10;2:        21.9%&#10;1:         0.3%&#10;4:         0.0%&#10;3:        77.7%&#10; Count:          575</Value>
+      <Value>575</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 930.4</Value>
+      <Value></Value>
+      <Value>0.0173628843</Value>
+      <Value>52.94</Value>
+      <Value>65</Value>
+      <Value>40</Value>
+      <Value>          1:        52.9%
+ Count:           17</Value>
+      <Value>Node Id:           65&#10;&#10;2:         0.0%&#10;1:        52.9%&#10;4:         0.0%&#10;3:        47.1%&#10; Count:           17</Value>
+      <Value>17</Value>
+    </Values>
+                        </ValuesList>
+                  </EmbeddedData>
+            </IQData>
+      </Data>
+
+      <View>
+            <Section>
+                  <Body>
+                        <Graph name="DecisionTree" >
+                              <ChartDataList>
+                                    <ChartData name="DTreeData" data="TreeData" >
+                                          <Roles>
+                                                <Role type="AboveText"   variable="Var1" > </Role>
+                                                <Role type="BelowText"   variable="Var2" > </Role>
+                                                <Role type="LinkWidth"   variable="Var3" > </Role>
+                                                <Role type="NodeColor"   variable="Var4" > </Role>
+                                                <Role type="ID"      variable="Var5" > </Role>
+                                                <Role type="Parent"    variable="Var6" > </Role>
+                                                <Role type="NodeText"    variable="Var7" > </Role>
+                                                <Role type="ToolTipText" variable="Var8" > </Role>
+                                                <Role type="NodeSize"    variable="Var9" > </Role>
+                                          </Roles>
+                                    </ChartData>
+                              </ChartDataList>
+                              <ColorMappers>
+                                    <ColorRamp  name="NodeColorRamp"
+                                                      underFlowColor="Red"
+                                                      overflowColor="Green"
+                                                      low="0"
+                                                      high="1000"
+                                                      beginColor="CX0000FF"
+                                                      endColor="CXFFFFFF" >
+                                    </ColorRamp>
+                                    <ColorRamp  name="LinkColorRamp"
+                                                      low="1"
+                                                      high="10"
+                                                      beginColor="CX000000"
+                                                      endColor="CX000000" >
+                                    </ColorRamp>
+                              </ColorMappers>
+                              <ChartAreas>
+                                    <ChartArea>
+                                          <Charts>
+                                          <DecisionTree name="DTree"
+                                                  chartData="DTreeData"
+                                                  selectionColor="CX00FF00"
+                                                  orientation="Vertical"
+                                                  emptyNodes="False"
+                                                  legendVisible="False"
+                                                  titleAnchor="Root"
+                                                  footnoteAnchor="Chart"
+                                                  displayDepth="4" >
+
+                                    <SplitVarList>
+                                          <SplitVar name="SPLIT VAR A" type="DISCRETE" missingBranch="3" values="1,A:1,B:2,C:3,D"/>
+                                          <SplitVar name="SPLIT VAR B" type="CONTINUOUS" breaks="10:50:100" />
+                                    </SplitVarList>
+
+                                    <IciclePlot isVisible="True"></IciclePlot>
+
+                                    <NodeStyle colorMapper="NodeColorRamp"
+                                                   outlineColor="Black"
+                                                   outlineWidth="1">
+                                          <NodeText textColor="Black"
+                                                        textFont="SansSerif"
+                                                        textSize="12 pt"
+                                                        textFlags="Bold" />
+                                    </NodeStyle>
+                                    <FlaggedNodeStyle color="CXFF8844"
+                                                              outlineColor="Black"
+                                                              outlineWidth="3" >
+                                          <FlaggedNodeText textColor="Black"
+                                                        textFont="SansSerif"
+                                                        textSize="12 pt"
+                                                        textFlags="Italic" />
+                                    </FlaggedNodeStyle>
+                                    <LinkStyle textVisible="True"
+                                                   colorMapper="LinkColorRamp"
+                                                   linkStyle="Manhattan"
+                                                   staticWidth="3" >
+                                          <LinkText textColor="Black"
+                                                        textFont="SansSerif"
+                                                        textSize="10 pt"
+                                                        textFlags="Bold" />
+                                    </LinkStyle>
+                                    <GraphStyle numBars="3"
+                                                      numStacks="3"
+                                                      axisMin="0"
+                                                      axisMax="20"
+                                                      orientation="Vertical"
+                                                      visible="True" >
+                                    </GraphStyle>
+                              </DecisionTree>
+                              </Charts>
+                        </ChartArea>
+                  </ChartAreas>
+            </Graph>
+      </Body>
+      </Section>
+      </View>
+
+  </SASReport>
+

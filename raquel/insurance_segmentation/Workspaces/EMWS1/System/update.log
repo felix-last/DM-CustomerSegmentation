@@ -1,0 +1,220 @@
+NOTE: PROCEDURE PRINTTO used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+1 
+Traverser: Traverser invoked.  MPCONNECT command is sas. 
+Traverser: Beginning flow traversal 
+*------------------------------------------------------------* 
+* 
+* Ids : Beginning Update 
+* datetime : 30DEC2015:15:07:55 
+* 
+*------------------------------------------------------------* 
+*------------------------------------------------------------* 
+* 
+* Ids : End Update 
+* datetime : 30DEC2015:15:07:55 
+* 
+*------------------------------------------------------------* 
+Traverser: WaitingNode "IMPT" 
+Traverser: WaitingNode "TRANS" 
+traverser_readyNode_note 
+*------------------------------------------------------------* 
+* 
+* Repl : Beginning Update 
+* datetime : 30DEC2015:15:07:55 
+* 
+*------------------------------------------------------------* 
+PERFORMANCE  DETAILS
+17027      %let emexceptionString =;
+17028      %let EMEXCEPTIONSTRING=;
+17029      *------------------------------------------------------------*;
+17030      * UPDATE: Repl;
+17031      *------------------------------------------------------------*;
+17032      %let EM_ACTION = UPDATE;
+17033      %let syscc = 0;
+17034      filename x CATALOG 'SASHELP.EMUTIL.EM_VARMACRO.SOURCE';
+17035      %inc x;
+NOTE: %INCLUDE (level 1) file X is file SASHELP.EMUTIL.EM_VARMACRO.SOURCE.
+17036     +%macro em_varMacro(name=emMacro, metadata=, where=, key=NAME, nummacro=);
+17037     +   filename macFile catalog 'work.emutil.macro.source';
+17038     +   %let _METAOBS = 0;
+17040     +   %if (%sysfunc(exist(&metadata))<1 and %sysfunc(exist(&metadata, VIEW))<1)
+17041     +                   or (&metadata eq ) %then %do;
+17042     +       %goto doend;
+17043     +   %end;
+17044     +   data _null_;
+17045     +      length _STRING_ $80;
+17046     +      retain _STRING_;
+17047     +      set &metadata end=eof;
+17048     +      file macFile;
+17049     +      %if %nrbquote(&where) ne %then %do;
+17050     +          %let whereClause = where (%nrbquote(&where));
+17051     +          %unquote(&whereClause);
+17052     +      %end;
+17053     +      if _N_=1 then do;
+17054     +         string = "%"!!"macro &name;";
+17055     +         put string;
+17056     +      end;
+17057     +      if (length(_STRING_) + length(trim(&key))+ 1 < 80) then do;
+17058     +         _STRING_ = trim(_STRING_)!!' '!!trim(&key);
+17059     +         if eof then do;
+17060     +            put _STRING_;
+17061     +            string = "%"!!"mend &name;";
+17062     +            put string;
+17063     +            %if (&nummacro ne ) %then %do;
+17064     +                string = strip(put(_N_, best.));
+17065     +                put "%" "global &nummacro;";
+17066     +                put "%" "let &nummacro = " string ";";
+17067     +                call symput('_METAOBS', string);
+17068     +            %end;
+17069     +         end;
+17070     +      end;
+17071     +      else do;
+17072     +         put _STRING_;
+17073     +         _string_ = TRIM(&key);
+17074     +         if eof then do;
+17075     +            put _STRING_;
+17076     +            string = "%"!!"mend &name;";
+17077     +            put string;
+17078     +        end;
+17079     +      end;
+17080     +      if eof then do;
+17081     +         string = strip(put(_N_, best.));
+17082     +         call symput('_METAOBS', string);
+17083     +         %if (&nummacro ne ) %then %do;
+17084     +             put "%" "global &nummacro;";
+17085     +             put "%" "let &nummacro = " string ";";
+17086     +         %end;
+17087     +      end;
+17088     +   run;
+17090     +   %doend:
+17091     +   %if ^&_METAOBS %then %do;
+17092     +       data _null_;
+17093     +          file macFile;
+17094     +          put "%" "macro &name;";
+17095     +          put "%" "mend &name;";
+17096     +          %if (&nummacro ne ) %then %do;
+17097     +              put "%" "global &nummacro;";
+17098     +              put "%" "let &nummacro = 0;";
+17099     +          %end;
+17100     +      run;
+17101     +   %end;
+17102     +   %inc macFile;
+17103     +   filename macFile;
+17104     +%mend em_varMacro;
+NOTE: %INCLUDE (level 1) ending.
+17105      filename X;
+NOTE: Fileref X has been deassigned.
+17106       %macro main;
+17107      
+17108         filename temp catalog 'sashelp.emmdfy.Replace_macros.source';
+17109         %include temp;
+17110         filename temp;
+17111      
+17112         %if %upcase(&EM_ACTION) = CREATE %then %do;
+17113      
+17114             filename temp catalog 'sashelp.emmdfy.Replace_create.source';
+17115             %include temp;
+17116             filename temp;
+17117             %create;
+17118         %end;
+17119         %else
+17120         %if %upcase(&EM_ACTION) = TRAIN %then %do;
+17121      
+17122             filename temp catalog 'sashelp.emmdfy.Replace_train.source';
+17123             %include temp;
+17124             filename temp;
+17125             %train;
+17126         %end;
+17127         %else
+17128         %if %upcase(&EM_ACTION) = SCORE %then %do;
+17129      
+17130             filename temp catalog 'sashelp.emmdfy.Replace_score.source';
+17131             %include temp;
+17132             filename temp;
+17133             %score;
+17134         %end;
+17135         %if %upcase(&EM_ACTION) = REPORT %then %do;
+17136      
+17137             filename temp catalog 'sashelp.emmdfy.Replace_report.source';
+17138             %include temp;
+17139             filename temp;
+17140             %report;
+17141         %end;
+17142         %if %upcase(&EM_ACTION) = OPENOUTCLASSTABLE %then %do;
+17143             filename temp catalog 'sashelp.emmdfy.replace_makeoutclass.source';
+17144             %include temp;
+17145             filename temp;
+17146             %em_replace_openoutclass;
+17147         %end;
+17148         %if %upcase(&EM_ACTION) = CLOSEOUTCLASSTABLE %then %do;
+17149             filename temp catalog 'sashelp.emmdfy.replace_makeoutclass.source';
+17150             %include temp;
+17151             filename temp;
+17152             %em_replace_closeoutclass;
+17153         %end;
+17154      %mend main;
+17155      
+17156      %main;
+NOTE: %INCLUDE (level 1) file TEMP is file SASHELP.EMMDFY.REPLACE_MACROS.SOURCE.
+17157     +%macro SetProperties;
+17158     +   %em_checkmacro(name=EM_PROPERTY_UNKNOWNLEVEL,    global=Y, value=MODE);
+17159     +   %em_checkmacro(name=EM_PROPERTY_CALCMETHOD,      global=Y, value=NONE);
+17160     +   %em_checkmacro(name=EM_PROPERTY_PERCENTSCUTOFF,  global=Y, value=0.5);
+17161     +   %em_checkmacro(name=EM_PROPERTY_SPACINGSCUTOFF,  global=Y, value=9);
+17162     +   %em_checkMacro(name=EM_PROPERTY_MADSCUTOFF,      global=Y, value=9);
+17163     +   %em_checkMacro(name=EM_PROPERTY_STDDEVCUTOFF,    global=Y, value=3);
+17164     +   %em_checkmacro(name=EM_PROPERTY_REPLACEMETHOD,   global=Y, value=COMPUTED);
+17165     +   %em_checkmacro(name=EM_PROPERTY_HIDEVARIABLE,    global=Y, value=N);
+17166     +   %em_checkmacro(name=EM_PROPERTY_INTERVALMETHOD,  global=Y, value=NONE);
+17167     +   %em_checkmacro(name=EM_PROPERTY_REPORTCOUNT,     global=Y, value=Y);
+17169     +%mend SetProperties;
+NOTE: %INCLUDE (level 1) ending.
+NOTE: Fileref TEMP has been deassigned.
+17171      
+17172      *------------------------------------------------------------*;
+17173      * End UPDATE: Repl;
+17174      *------------------------------------------------------------*;
+
+17175      %em_delMacro;
+
+*------------------------------------------------------------* 
+* 
+* Repl : End Update 
+* datetime : 30DEC2015:15:07:55 
+* 
+*------------------------------------------------------------* 
+Traverser: WaitingNode "TRANS" 
+traverser_readyNode_note 
+*------------------------------------------------------------* 
+* 
+* Impt : Beginning Update 
+* datetime : 30DEC2015:15:07:56 
+* 
+*------------------------------------------------------------* 
+*------------------------------------------------------------* 
+* 
+* Impt : End Update 
+* datetime : 30DEC2015:15:07:56 
+* 
+*------------------------------------------------------------* 
+traverser_readyNode_note 
+*------------------------------------------------------------* 
+* 
+* Trans : Beginning Update 
+* datetime : 30DEC2015:15:07:57 
+* 
+*------------------------------------------------------------* 
+*------------------------------------------------------------* 
+* 
+* Trans : End Update 
+* datetime : 30DEC2015:15:07:57 
+* 
+*------------------------------------------------------------* 
+Traverser: Run Completed 
+17215      proc printto;
+17216      run;
+

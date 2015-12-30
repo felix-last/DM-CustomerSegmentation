@@ -4,8 +4,10 @@
  MaxPctMissing="50" ValidateTestMissing="N" DistributionMissing="N" LeafSize="5" Maxbranch="2"
  Maxdepth="6" MinCatSize="5" Nrules="5" Nsurrs="2" Splitsize="." Indicator="NONE"
  IndicatorRole="REJECTED" ReplaceVariable="N" HideVariable="Y" IndicatorSource="IMPUTED"
- ForceRun="N" RunAction="Train" Component="Impute" RawCreateTime="1766928189.7" CreateTime="28DEC2015:13:23:10"
- RunId="86c1a3a8-212e-462f-a626-e7edab56ab9a">
+ ForceRun="N" RunAction="Train" Component="Impute" RawCreateTime="1767107852.2" CreateTime="30DEC2015:15:17:32"
+ RunId="fc7a1258-017d-4357-89b8-8b6351613882">
 <VARIABLEPROPERTIES/>
-<FILEPROPERTIES/>
-</_ROOT_>
+<FILEPROPERTIES ><![CDATA[
+EMNOTES
+]]>
+</FILEPROPERTIES></_ROOT_>

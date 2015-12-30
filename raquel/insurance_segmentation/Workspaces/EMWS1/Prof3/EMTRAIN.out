@@ -1,0 +1,103 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+            Measurement    Frequency
+Role           Level         Count
+
+ASSESS       NOMINAL            1   
+ID           NOMINAL            1   
+INPUT        BINARY             1   
+INPUT        INTERVAL          13   
+INPUT        NOMINAL            3   
+INPUT        ORDINAL            1   
+REJECTED     INTERVAL           3   
+SEGMENT      NOMINAL            1   
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Frequencies: SOM_SEGMENT
+
+                                       Percent of
+  Segment      Segment    Frequency       Total
+ Variable       Value       Count       Frequency
+
+SOM_SEGMENT       2           3394       34.6645 
+SOM_SEGMENT       1           2804       28.6385 
+SOM_SEGMENT       4           2685       27.4231 
+SOM_SEGMENT       3            908        9.2738 
+ 
+                                                                                                                                                                                                                                                                
+ 
+Variable: SOM_SEGMENT Segment: 2 Count: 3394
+Decision Tree Importance Profiles
+
+Variable                    Worth     Rank
+
+SOM_DIMENSION2             0.14675      1 
+SOM_DIMENSION1             0.13932      2 
+ClaimsRate                 0.09599      3 
+IMP_EducationalDegree      0.09070      4 
+IMP_REP_CustomerAge        0.05604      5 
+TOTAL_PREMIUM              0.05305      6 
+IMP_GrossMonthlySalary     0.04363      7 
+IMP_REP_FirstPolicyYear    0.03126      8 
+IMP_HasChildren            0.01258      9 
+IMP_GeographicLiving       0.00536     10 
+ 
+                                                                                                                                                                                                                                                                
+ 
+Variable: SOM_SEGMENT Segment: 1 Count: 2804
+Decision Tree Importance Profiles
+
+Variable                    Worth     Rank
+
+SOM_DIMENSION2             0.26863      1 
+IMP_REP_CustomerAge        0.11700      2 
+IMP_GrossMonthlySalary     0.10920      3 
+SOM_DIMENSION1             0.09509      4 
+IMP_HasChildren            0.07750      5 
+ClaimsRate                 0.06909      6 
+IMP_REP_FirstPolicyYear    0.03398      7 
+TOTAL_PREMIUM              0.00635      8 
+IMP_EducationalDegree      0.00327      9 
+IMP_GeographicLiving       0.00198     10 
+ 
+                                                                                                                                                                                                                                                                
+ 
+Variable: SOM_SEGMENT Segment: 4 Count: 2685
+Decision Tree Importance Profiles
+
+Variable                    Worth     Rank
+
+SOM_DIMENSION1             0.25945      1 
+IMP_REP_CustomerAge        0.14643      2 
+IMP_GrossMonthlySalary     0.13943      3 
+SOM_DIMENSION2             0.09184      4 
+ClaimsRate                 0.04964      5 
+IMP_EducationalDegree      0.03654      6 
+IMP_HasChildren            0.03146      7 
+TOTAL_PREMIUM              0.02396      8 
+IMP_REP_FirstPolicyYear    0.00746      9 
+IMP_GeographicLiving       0.00215     10 
+ 
+                                                                                                                                                                                                                                                                
+ 
+Variable: SOM_SEGMENT Segment: 3 Count: 908
+Decision Tree Importance Profiles
+
+Variable                     Worth     Rank
+
+SOM_DIMENSION1             0.029672      1 
+ClaimsRate                 0.028578      2 
+SOM_DIMENSION2             0.028169      3 
+TOTAL_PREMIUM              0.025146      4 
+IMP_REP_CustomerAge        0.009892      5 
+IMP_EducationalDegree      0.008171      6 
+IMP_GrossMonthlySalary     0.007434      7 
+IMP_REP_FirstPolicyYear    0.006171      8 
+IMP_GeographicLiving       0.000265      9 
+IMP_HasChildren            0.000125     10 

@@ -1,0 +1,96 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+            Measurement    Frequency
+Role           Level         Count
+
+ASSESS       NOMINAL            1   
+ID           NOMINAL            1   
+INPUT        BINARY             1   
+INPUT        INTERVAL          13   
+INPUT        NOMINAL            1   
+INPUT        ORDINAL            1   
+REJECTED     INTERVAL           3   
+REJECTED     NOMINAL            1   
+SEGMENT      NOMINAL            1   
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Frequencies: _SEGMENT_
+
+                                     Percent of
+ Segment     Segment    Frequency       Total
+Variable      Value       Count       Frequency
+
+_SEGMENT_       3           2701       26.2335 
+_SEGMENT_       2           2677       26.0004 
+_SEGMENT_       4           2517       24.4464 
+_SEGMENT_       1           2401       23.3197 
+ 
+                                                                                                                                                                                                                                                                
+ 
+Variable: _SEGMENT_ Segment: 3 Count: 2701
+Decision Tree Importance Profiles
+
+Variable                    Worth     Rank
+
+IMP_REP_CustomerAge        0.18046      1 
+IMP_GrossMonthlySalary     0.10971      2 
+IMP_HasChildren            0.05676      3 
+TOTAL_PREMIUM              0.00996      4 
+IMP_EducationalDegree      0.00888      5 
+ClaimsRate                 0.00442      6 
+IMP_REP_FirstPolicyYear    0.00029      7 
+IMP_GeographicLiving       0.00024      8 
+ 
+                                                                                                                                                                                                                                                                
+ 
+Variable: _SEGMENT_ Segment: 2 Count: 2677
+Decision Tree Importance Profiles
+
+Variable                    Worth     Rank
+
+IMP_REP_CustomerAge        0.12572      1 
+IMP_EducationalDegree      0.11904      2 
+IMP_GrossMonthlySalary     0.09908      3 
+IMP_HasChildren            0.03591      4 
+TOTAL_PREMIUM              0.01657      5 
+ClaimsRate                 0.00250      6 
+IMP_REP_FirstPolicyYear    0.00056      7 
+IMP_GeographicLiving       0.00016      8 
+ 
+                                                                                                                                                                                                                                                                
+ 
+Variable: _SEGMENT_ Segment: 4 Count: 2517
+Decision Tree Importance Profiles
+
+Variable                    Worth     Rank
+
+IMP_HasChildren            0.28640      1 
+IMP_REP_CustomerAge        0.22506      2 
+IMP_GrossMonthlySalary     0.17427      3 
+ClaimsRate                 0.00501      4 
+TOTAL_PREMIUM              0.00466      5 
+IMP_EducationalDegree      0.00174      6 
+IMP_REP_FirstPolicyYear    0.00074      7 
+IMP_GeographicLiving       0.00023      8 
+ 
+                                                                                                                                                                                                                                                                
+ 
+Variable: _SEGMENT_ Segment: 1 Count: 2401
+Decision Tree Importance Profiles
+
+Variable                    Worth     Rank
+
+IMP_REP_CustomerAge        0.15185      1 
+IMP_EducationalDegree      0.13692      2 
+IMP_GrossMonthlySalary     0.12994      3 
+TOTAL_PREMIUM              0.04334      4 
+IMP_HasChildren            0.01165      5 
+ClaimsRate                 0.00250      6 
+IMP_REP_FirstPolicyYear    0.00036      7 
+IMP_GeographicLiving       0.00007      8 

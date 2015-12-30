@@ -2,11 +2,12 @@
  TabletoFilter="TRAIN" IntervalFilterMethod="NONE" ClassFilterMethod="NONE" MinFreq="1"
  MinPercent="0.01" MaxValues="25" MADSCutoff="9" SpacingsCutoff="9" StddevCutoff="3"
  PercentsCutoff="0.5" PublishScoreCode="Y" CreateDistributionData="Y" UpdateClassLevel="N"
- ForceRun="N" RunAction="Train" Component="Filter" RawCreateTime="1767017893.9" CreateTime="29DEC2015:14:18:14"
- RunId="09965eaf-b7bd-4cd1-99fb-c36bbb2600b4" RawLastTimeRun="1767019748.5" RawRunTime="4.9590001106"
- LastTimeRun="29DEC2015:14:49:08" RunTime="0 Hr. 0 Min. 4.96 Sec.">
+ ForceRun="N" RunAction="Train" Component="Filter" RawCreateTime="1767107852" CreateTime="30DEC2015:15:17:32"
+ RunId="e9968339-0729-4f9e-9310-4551ac4d8436" RawLastTimeRun="1767108023.1" RawRunTime="8.9760000706"
+ LastTimeRun="30DEC2015:15:20:23" RunTime="0 Hr. 0 Min. 8.98 Sec.">
 <VARIABLEPROPERTIES/>
 <FILEPROPERTIES ><![CDATA[
 CLASSFILTER
+EMNOTES
 ]]>
 </FILEPROPERTIES></_ROOT_>

@@ -1,0 +1,431 @@
+NOTE: PROCEDURE PRINTTO used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+Traverser: Traverser invoked.  MPCONNECT command is !sascmdv -nosyntaxcheck -noasynchio -noobjectserver. 
+Traverser: Beginning flow traversal 
+15525      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+15526      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+15527      put '<Node Id="Ids" Event="Run" Pid="2832" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Ids" Event="Run" Pid="2832" Gridid=""/>';
+15528      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=WDFN33788459A,
+      Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
+      Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=60503,Lrecl=256,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 49.
+      The maximum record length was 49.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+15529      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Ids : Beginning update before running 
+* datetime : 30DEC2015:15:14:00 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     filename _emtool_ 'C:\Users\D059331\Desktop\DM_Insurance_segmentation\raquel\insurance_segmentation\Workspaces\EMWS1\Ids\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+*------------------------------------------------------------* 
+* 
+* Ids : End update 
+* datetime : 30DEC2015:15:14:00 
+* 
+*------------------------------------------------------------* 
+15531      %em_getactionstatus(emlib =EMWS1, nodeid=Ids);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+15532      proc compare base=EMWS1.Ids_emtrainvariable compare=EMWS1.Ids_variableSet out=diffDS noprint outnoequal outbase outcomp outdiff;
+MPRINT(EM_GETACTIONSTATUS):   proc compare base=EMWS1.Ids_emtrainvariable compare=EMWS1.Ids_variableSet out=diffDS noprint outnoequal outbase outcomp outdiff;
+15533      run;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+NOTE: There were 14 observations read from the data set EMWS1.IDS_EMTRAINVARIABLE.
+NOTE: There were 14 observations read from the data set EMWS1.IDS_VARIABLESET.
+NOTE: The data set WORK.DIFFDS has 0 observations and 7 variables.
+NOTE: PROCEDURE COMPARE used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+15534      %let diffVar = N;
+15535      data _null_;
+MPRINT(EM_GETACTIONSTATUS):   data _null_;
+15536      set diffDs end=eof;
+MPRINT(EM_GETACTIONSTATUS):   set diffDs end=eof;
+15537      if eof and _N_>0 then call symput('diffVar', 'Y');
+MPRINT(EM_GETACTIONSTATUS):   if eof and _N_>0 then call symput('diffVar', 'Y');
+15538      run;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+NOTE: There were 0 observations read from the data set WORK.DIFFDS.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+15539      %let em_Train = N;
+15540      %let em_Score = N;
+15541      %let em_Report = N;
+15542      %let em_Run = N;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.03 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):    
+MPRINT(EM_DIAGRAM):  ;
+
+Node "Ids" has already run. 
+Node "Ids" succeeded. 
+15543      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+15544      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+15545      put '<Node Id="Ids" Event="Complete" Pid="2832" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Ids" Event="Complete" Pid="2832" Gridid=""/>';
+15546      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=WDFN33788459A,
+      Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
+      Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=60503,Lrecl=256,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 54.
+      The maximum record length was 54.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+Traverser: WaitingNode "IMPT" 
+Traverser: WaitingNode "TRANS" 
+Traverser: WaitingNode "FILTER" 
+Traverser: WaitingNode "CLUS" 
+Traverser: WaitingNode "PROF" 
+traverser_readyNode_note 
+15547      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+15548      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+15549      put '<Node Id="Repl" Event="Run" Pid="2832" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Repl" Event="Run" Pid="2832" Gridid=""/>';
+15550      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=WDFN33788459A,
+      Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
+      Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=60503,Lrecl=256,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 50.
+      The maximum record length was 50.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+15551      %let emloopmode =;
+*------------------------------------------------------------* 
+* 
+* Repl : Beginning update before running 
+* datetime : 30DEC2015:15:14:01 
+* 
+*------------------------------------------------------------* 
+MPRINT(EM_DIAGRAM):     data WORK.Repl_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Ids_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" "SCORE" "TRANSACTION" "DOCUMENT" "RULES" "REPORTFIT" "RANK" "SCOREDIST" "ESTIMATE" "TREE" "CLUSSTAT" "CLUSMEAN" "VARMAP" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Repl: Generation of macros and macro variables;
+MPRINT(EM_DIAGRAM):   * To see the code generated, set the EM_DEBUG macro variable to SOURCE or _ALL_;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Repl: EM Macro Variables and Macros;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * System Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   length string $2000;
+MPRINT(EM_DIAGRAM):   string = 'insurance_segmentation';
+MPRINT(EM_DIAGRAM):   call symput('EM_PROJECTNAME', trim(string));
+MPRINT(EM_DIAGRAM):   string = 'insurance segmentation';
+MPRINT(EM_DIAGRAM):   call symput('EM_WSNAME', trim(string));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   * Properties Macro Variables ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------* ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Files Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Import Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Export Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Decision Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Statement Macro Variables;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   set EMWS1.Ids_EMINFO;
+MPRINT(EM_DIAGRAM):   where key in('HPDMSAMPLE', 'IDSTABLE');
+MPRINT(EM_DIAGRAM):   if key = 'HPDMSAMPLE' then call symput('_ForceGrid', '1');
+MPRINT(EM_DIAGRAM):   else call symput('_IDS_TABLE', DATA);
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(HPDM_PERFORMANCE):  ;
+PERFORMANCE  DETAILS
+MPRINT(EM_DIAGRAM):  ;
+15787      %let emexceptionString =;
+15788      %let EMEXCEPTIONSTRING=;
+15789      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+15790      * UPDATE: Repl;
+MPRINT(EM_DIAGRAM):   * UPDATE: Repl;
+15791      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+15792      %let EM_ACTION = UPDATE;
+15793      %let syscc = 0;
+15794      filename x CATALOG 'SASHELP.EMUTIL.EM_VARMACRO.SOURCE';
+MPRINT(EM_DIAGRAM):     filename x CATALOG 'SASHELP.EMUTIL.EM_VARMACRO.SOURCE';
+15795      %inc x;
+NOTE: %INCLUDE (level 1) file X is file SASHELP.EMUTIL.EM_VARMACRO.SOURCE.
+15796     +%macro em_varMacro(name=emMacro, metadata=, where=, key=NAME, nummacro=);
+15797     +   filename macFile catalog 'work.emutil.macro.source';
+15798     +   %let _METAOBS = 0;
+15800     +   %if (%sysfunc(exist(&metadata))<1 and %sysfunc(exist(&metadata, VIEW))<1)
+15801     +                   or (&metadata eq ) %then %do;
+15802     +       %goto doend;
+15803     +   %end;
+15804     +   data _null_;
+15805     +      length _STRING_ $80;
+15806     +      retain _STRING_;
+15807     +      set &metadata end=eof;
+15808     +      file macFile;
+15809     +      %if %nrbquote(&where) ne %then %do;
+15810     +          %let whereClause = where (%nrbquote(&where));
+15811     +          %unquote(&whereClause);
+15812     +      %end;
+15813     +      if _N_=1 then do;
+15814     +         string = "%"!!"macro &name;";
+15815     +         put string;
+15816     +      end;
+15817     +      if (length(_STRING_) + length(trim(&key))+ 1 < 80) then do;
+15818     +         _STRING_ = trim(_STRING_)!!' '!!trim(&key);
+15819     +         if eof then do;
+15820     +            put _STRING_;
+15821     +            string = "%"!!"mend &name;";
+15822     +            put string;
+15823     +            %if (&nummacro ne ) %then %do;
+15824     +                string = strip(put(_N_, best.));
+15825     +                put "%" "global &nummacro;";
+15826     +                put "%" "let &nummacro = " string ";";
+15827     +                call symput('_METAOBS', string);
+15828     +            %end;
+15829     +         end;
+15830     +      end;
+15831     +      else do;
+15832     +         put _STRING_;
+15833     +         _string_ = TRIM(&key);
+15834     +         if eof then do;
+15835     +            put _STRING_;
+15836     +            string = "%"!!"mend &name;";
+15837     +            put string;
+15838     +        end;
+15839     +      end;
+15840     +      if eof then do;
+15841     +         string = strip(put(_N_, best.));
+15842     +         call symput('_METAOBS', string);
+15843     +         %if (&nummacro ne ) %then %do;
+15844     +             put "%" "global &nummacro;";
+15845     +             put "%" "let &nummacro = " string ";";
+15846     +         %end;
+15847     +      end;
+15848     +   run;
+15850     +   %doend:
+15851     +   %if ^&_METAOBS %then %do;
+15852     +       data _null_;
+15853     +          file macFile;
+15854     +          put "%" "macro &name;";
+15855     +          put "%" "mend &name;";
+15856     +          %if (&nummacro ne ) %then %do;
+15857     +              put "%" "global &nummacro;";
+15858     +              put "%" "let &nummacro = 0;";
+15859     +          %end;
+15860     +      run;
+15861     +   %end;
+15862     +   %inc macFile;
+15863     +   filename macFile;
+15864     +%mend em_varMacro;
+NOTE: %INCLUDE (level 1) ending.
+15865      filename X;
+MPRINT(EM_DIAGRAM):   filename X;
+NOTE: Fileref X has been deassigned.
+15866       %macro main;
+15867      
+15868         filename temp catalog 'sashelp.emmdfy.Replace_macros.source';
+15869         %include temp;
+15870         filename temp;
+15871      
+15872         %if %upcase(&EM_ACTION) = CREATE %then %do;
+15873      
+15874             filename temp catalog 'sashelp.emmdfy.Replace_create.source';
+15875             %include temp;
+15876             filename temp;
+15877             %create;
+15878         %end;
+15879         %else
+15880         %if %upcase(&EM_ACTION) = TRAIN %then %do;
+15881      
+15882             filename temp catalog 'sashelp.emmdfy.Replace_train.source';
+15883             %include temp;
+15884             filename temp;
+15885             %train;
+15886         %end;
+15887         %else
+15888         %if %upcase(&EM_ACTION) = SCORE %then %do;
+15889      
+15890             filename temp catalog 'sashelp.emmdfy.Replace_score.source';
+15891             %include temp;
+15892             filename temp;
+15893             %score;
+15894         %end;
+15895         %if %upcase(&EM_ACTION) = REPORT %then %do;
+15896      
+15897             filename temp catalog 'sashelp.emmdfy.Replace_report.source';
+15898             %include temp;
+15899             filename temp;
+15900             %report;
+15901         %end;
+15902         %if %upcase(&EM_ACTION) = OPENOUTCLASSTABLE %then %do;
+15903             filename temp catalog 'sashelp.emmdfy.replace_makeoutclass.source';
+15904             %include temp;
+15905             filename temp;
+15906             %em_replace_openoutclass;
+15907         %end;
+15908         %if %upcase(&EM_ACTION) = CLOSEOUTCLASSTABLE %then %do;
+15909             filename temp catalog 'sashelp.emmdfy.replace_makeoutclass.source';
+15910             %include temp;
+15911             filename temp;
+15912             %em_replace_closeoutclass;
+15913         %end;
+15914      %mend main;
+15915      
+15916      %main;
+MPRINT(MAIN):   filename temp catalog 'sashelp.emmdfy.Replace_macros.source';
+NOTE: %INCLUDE (level 1) file TEMP is file SASHELP.EMMDFY.REPLACE_MACROS.SOURCE.
+15917     +%macro SetProperties;
+15918     +   %em_checkmacro(name=EM_PROPERTY_UNKNOWNLEVEL,    global=Y, value=MODE);
+15919     +   %em_checkmacro(name=EM_PROPERTY_CALCMETHOD,      global=Y, value=NONE);
+15920     +   %em_checkmacro(name=EM_PROPERTY_PERCENTSCUTOFF,  global=Y, value=0.5);
+15921     +   %em_checkmacro(name=EM_PROPERTY_SPACINGSCUTOFF,  global=Y, value=9);
+15922     +   %em_checkMacro(name=EM_PROPERTY_MADSCUTOFF,      global=Y, value=9);
+15923     +   %em_checkMacro(name=EM_PROPERTY_STDDEVCUTOFF,    global=Y, value=3);
+15924     +   %em_checkmacro(name=EM_PROPERTY_REPLACEMETHOD,   global=Y, value=COMPUTED);
+15925     +   %em_checkmacro(name=EM_PROPERTY_HIDEVARIABLE,    global=Y, value=N);
+15926     +   %em_checkmacro(name=EM_PROPERTY_INTERVALMETHOD,  global=Y, value=NONE);
+15927     +   %em_checkmacro(name=EM_PROPERTY_REPORTCOUNT,     global=Y, value=Y);
+15929     +%mend SetProperties;
+NOTE: %INCLUDE (level 1) ending.
+MPRINT(MAIN):   filename temp;
+NOTE: Fileref TEMP has been deassigned.
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * End UPDATE: Repl;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+15931      
+15932      *------------------------------------------------------------*;
+15933      * End UPDATE: Repl;
+15934      *------------------------------------------------------------*;
+
+15935      %em_delMacro;
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_DIAGRAM):  ;
+
+MPRINT(EM_DIAGRAM):    filename _emtool_ 'C:\Users\D059331\Desktop\DM_Insurance_segmentation\raquel\insurance_segmentation\Workspaces\EMWS1\Repl\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+*------------------------------------------------------------* 
+* 
+* Repl : End update 
+* datetime : 30DEC2015:15:14:01 
+* 
+*------------------------------------------------------------* 
+15937      %em_getactionstatus(emlib =EMWS1, nodeid=Repl);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+NOTE: View EMWS1.REPL_NEWVALUES.VIEW used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.06 seconds
+      
+15938      %let em_Train = Y;
+15939      %let em_Score = N;
+15940      %let em_Report = N;
+15941      %let em_Run = Y;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.09 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+15942      %let emloopmode =;
+15943      %let emloopnumber =0;
+15944      %let emloopId =Repl;
+*------------------------------------------------------------* 
+* 
+* Repl : Running 
+* datetime : 30DEC2015:15:14:01 
+* 
+*------------------------------------------------------------* 
+15945      %let SYSCC =0;
+15946      %let EMGROUPMODE =;
+15947      %let EMGROUPID =;
+MPRINT(EM_DIAGRAM):      filename temp catalog 'sashelp.emutil.em_vardist.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_classdist.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_checksetinit.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_checkerror.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_odsliston.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_odslistoff.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_getvarname.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emassmt.em_assess.source';
+MPRINT(EM_DIAGRAM):   filename temp;
+MPRINT(EM_DIAGRAM):    filename L18HLZNO "C:\Users\D059331\Desktop\DM_Insurance_segmentation\raquel\insurance_segmentation\Workspaces\EMWS1\Repl\EMTRAIN.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   proc printto log=L18HLZNO new;
+MPRINT(EM_DIAGRAM):   run;
