@@ -4,8 +4,8 @@
  SummaryVariables="TRANSFORMED" SummaryStatistics="Y" UseMetaTransform="Y" MissingAsLevel="N"
  NumberofBins="VARIABLES" MaxOptimalBins="4" ForceRun="N" RunAction="Train" Component="Transform"
  RawCreateTime="1767107855.8" CreateTime="30DEC2015:15:17:36" RunId="d025d50f-531a-45d6-b01d-f43ce39910a9"
- RawLastTimeRun="1767108016.9" RawRunTime="5.7109999657" LastTimeRun="30DEC2015:15:20:17"
- RunTime="0 Hr. 0 Min. 5.71 Sec.">
+ RawLastTimeRun="1767110979.8" RawRunTime="2.739000082" LastTimeRun="30DEC2015:16:09:40"
+ RunTime="0 Hr. 0 Min. 2.74 Sec.">
 <VARIABLEPROPERTIES/>
 <FILEPROPERTIES ><![CDATA[
 INTERACTION

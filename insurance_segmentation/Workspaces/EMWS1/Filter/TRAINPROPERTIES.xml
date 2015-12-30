@@ -3,8 +3,8 @@
  MinPercent="0.01" MaxValues="25" MADSCutoff="9" SpacingsCutoff="9" StddevCutoff="3"
  PercentsCutoff="0.5" PublishScoreCode="Y" CreateDistributionData="Y" UpdateClassLevel="N"
  ForceRun="N" RunAction="Train" Component="Filter" RawCreateTime="1767107852" CreateTime="30DEC2015:15:17:32"
- RunId="e9968339-0729-4f9e-9310-4551ac4d8436" RawLastTimeRun="1767108023.1" RawRunTime="8.9760000706"
- LastTimeRun="30DEC2015:15:20:23" RunTime="0 Hr. 0 Min. 8.98 Sec.">
+ RunId="32522a7f-b926-4980-aa89-c5e0ca64fa57" RawLastTimeRun="1767110983.1" RawRunTime="8.4700000286"
+ LastTimeRun="30DEC2015:16:09:43" RunTime="0 Hr. 0 Min. 8.47 Sec.">
 <VARIABLEPROPERTIES/>
 <FILEPROPERTIES ><![CDATA[
 CLASSFILTER

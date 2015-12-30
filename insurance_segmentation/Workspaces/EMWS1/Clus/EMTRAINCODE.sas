@@ -57,7 +57,7 @@ proc dmvq data=WORK.Clus_DMDB dmdbcat=WORK.Clus_DMDB std=STD nominal=GLM ordinal
 input %DMVQINTERVAL / level=interval;
 input %DMVQNOMINAL / level=nominal;
 input %DMVQORDINAL / level=ordinal;
-VQ maxc = 50 clusname=_SEGMENT_ CLUSLABEL="Segment Id" DISTLABEL="Distance";
+VQ maxc = 1000 clusname=_SEGMENT_ CLUSLABEL="Segment Id" DISTLABEL="Distance";
 MAKE outvar=EMWS1.Clus_OUTVAR;
 INITIAL radius=0
 initial=PRINCOMP
@@ -83,7 +83,7 @@ quit;
 *------------------------------------------------------------*;
 * Clus: Determining the number of clusters;
 *------------------------------------------------------------*;
-proc cluster data=EMWS1.Clus_OUTMEAN method=WARD pseudo outtree=EMWS1.Clus_CLUSSEED
+proc cluster data=EMWS1.Clus_OUTMEAN method=AVERAGE pseudo outtree=EMWS1.Clus_CLUSSEED
 ;
 var %dmvqvars;
 copy _SEGMENT_;
@@ -120,14 +120,14 @@ length msg $200;
 set WORK._SEED2_ end=eof;
 retain select cccSelect 0 numSel;
 if _N_=1 then numSel = numClus;
-if cccvalue>=3 then do;
-if 20>= numclus >= 2 and cccSelect<1 then do;
+if cccvalue>=2 then do;
+if 1000>= numclus >= 2 and cccSelect<1 then do;
 cccSelect = 1;
 select =1;
 numSel = numClus;
 end;
 end;
-else if 20>= numclus >= 2 and select<1 then do;
+else if 1000>= numclus >= 2 and select<1 then do;
 select = 1;
 numSel = numClus;
 end;

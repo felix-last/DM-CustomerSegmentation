@@ -1,7 +1,7 @@
 *------------------------------------------------------------*
 User:                D059331
 Date:                December 30, 2015
-Time:                15:20:22
+Time:                16:09:42
 *------------------------------------------------------------*
 * Training Output
 *------------------------------------------------------------*
@@ -34,7 +34,7 @@ Formula Transformations
 Variable Name    Role        Level       Formula
  
 TOTAL_PREMIUM    INPUT     INTERVAL      IMP_PremiumsinLOBHealth + IMP_PremiumsinLOBLife + IMP_PremiumsinLOBMotor + IMP_PremiumsinLOBWorkComp + PremiumsinLOBHousehold
-LOYALTY          INPUT     INTERVAL      YEAR( DATE()) -  IMP_FirstPolicyYear
+LOYALTY          INPUT     INTERVAL      YEAR( DATE()) -  IMP_REP_FirstPolicyYear
 
 
 *------------------------------------------------------------*

@@ -1,0 +1,60 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+         Measurement    Frequency
+Role        Level         Count
+
+ID        NOMINAL            1   
+INPUT     BINARY             1   
+INPUT     INTERVAL          10   
+INPUT     NOMINAL            1   
+INPUT     ORDINAL            1   
+ 
+                                                                                                                                                                                                                                                                
+ 
+Variable Levels Summary
+(maximum 500 observations printed)
+
+                            Frequency
+    Variable        Role      Count
+
+CustomerIdentity     ID       10296  
+ 
+                                                                                                                                                                                                                                                                
+ 
+Class Variable Summary Statistics
+(maximum 500 observations printed)
+
+Data Role=TRAIN
+
+                                       Number
+Data                                     of                                   Mode                            Mode2
+Role     Variable Name        Role     Levels    Missing    Mode           Percentage    Mode2              Percentage
+
+TRAIN    EducationalDegree    INPUT       5         17      3 - BSc/MSc      46.61       2 - High School      34.09   
+TRAIN    GeographicLiving     INPUT       5          1      4                40.26       1                    29.60   
+TRAIN    HasChildren          INPUT       3         21      1                70.53       0                    29.26   
+ 
+                                                                                                                                                                                                                                                                
+ 
+Interval Variable Summary Statistics
+(maximum 500 observations printed)
+
+Data Role=TRAIN
+
+                                               Standard          Non
+Variable                  Role         Mean    Deviation     Missing     Missing     Minimum      Median     Maximum    Skewness    Kurtosis
+
+ClaimsRate                INPUT    0.742785    2.916957        10296           0           0    0.720623       256.2    71.20994    5877.858
+CustomerAge               INPUT    47.99222    19.70948        10279          17          15          48         988    10.53673    501.8128
+CustomerMonetaryValue     INPUT    177.8926    1945.812        10296           0     -165680      186.71    11875.89    -67.0427    5323.183
+FirstPolicyYear           INPUT    1991.063    511.2679        10266          30        1974        1986       53784    101.2958    10262.57
+GrossMonthlySalary        INPUT    5012.839    2314.901        10260          36         665        5002    110429.8      11.251     474.389
+PremiumsinLOBHealth       INPUT    171.5808     296.406        10253          43       -2.11      162.81       28272    84.51949    7914.204
+PremiumsinLOBHousehold    INPUT    210.4312     352.596        10296           0         -75       132.8     25048.8    36.05402    2427.156
+PremiumsinLOBLife         INPUT    41.85578    47.48063        10192         104          -7       25.56       398.3    2.089846    5.716367
+PremiumsinLOBMotor        INPUT    300.4703     211.915        10262          34       -4.11      298.61    11604.42    23.87096    1096.287
+PremiumsinLOBWorkComp     INPUT    41.27751    51.51357        10210          86         -12       25.67      1988.7    7.438115    212.7789

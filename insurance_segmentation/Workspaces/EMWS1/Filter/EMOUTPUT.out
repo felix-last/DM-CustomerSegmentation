@@ -1,7 +1,7 @@
 *------------------------------------------------------------*
 User:                D059331
 Date:                December 30, 2015
-Time:                15:20:31
+Time:                16:09:51
 *------------------------------------------------------------*
 * Training Output
 *------------------------------------------------------------*
@@ -15,7 +15,7 @@ Variable Summary
 Role           Level         Count
  
 INPUT        BINARY             1
-INPUT        INTERVAL          13
+INPUT        INTERVAL          11
 INPUT        NOMINAL            1
 INPUT        ORDINAL            1
 REJECTED     INTERVAL           2

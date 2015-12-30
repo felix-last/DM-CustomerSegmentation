@@ -8,4 +8,4 @@ Formula Transformations
 Variable Name    Role        Level       Formula
 
 TOTAL_PREMIUM    INPUT     INTERVAL      IMP_PremiumsinLOBHealth + IMP_PremiumsinLOBLife + IMP_PremiumsinLOBMotor + IMP_PremiumsinLOBWorkComp + PremiumsinLOBHousehold
-LOYALTY          INPUT     INTERVAL      YEAR( DATE()) -  IMP_FirstPolicyYear                                                                                         
+LOYALTY          INPUT     INTERVAL      YEAR( DATE()) -  IMP_REP_FirstPolicyYear                                                                                     

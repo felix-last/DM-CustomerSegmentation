@@ -3,10 +3,10 @@
  MissingOrdinal="DEFAULT" ImputationMethod="NONE" HideVariable="Y" TrainDefaults="Y"
  Learn="." LearnInitial="0.5" LearnFinal="0.02" LearnSteps="1000" MaxIter="10" MaxSteps="1200"
  XConv="0.0001" Initial="PRINCOMP" Drift="N" Radius="0" Stdize="STD" Summary="N" TreeProfile="Y"
- ClusterGraphs="Y" NumberClusterMethod="AUTOMATIC" DistancePlot="Y" FinalMaxNum="20"
- AutomaticMaxNum="50" AutomaticMinNum="2" AutomaticMethod="WARD" CCCCutOff="3" ForceRun="N"
- RunAction="Train" Component="Cluster" RawCreateTime="1767107851.4" CreateTime="30DEC2015:15:17:31"
- RunId="0949060f-d86f-40b1-a1b6-497ee2d9bef4">
+ ClusterGraphs="Y" NumberClusterMethod="USER" DistancePlot="Y" FinalMaxNum="1000"
+ AutomaticMaxNum="1000" AutomaticMinNum="2" AutomaticMethod="AVERAGE" CCCCutOff="2"
+ ForceRun="N" RunAction="Train" Component="Cluster" RawCreateTime="1767107851.4" CreateTime="30DEC2015:15:17:31"
+ RunId="5ccc0356-9ebf-4857-a0b8-c3e91c2bd524">
 <VARIABLEPROPERTIES/>
 <FILEPROPERTIES ><![CDATA[
 EMNOTES
