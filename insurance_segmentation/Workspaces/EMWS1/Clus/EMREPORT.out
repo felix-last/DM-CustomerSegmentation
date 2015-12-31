@@ -6,15 +6,16 @@ Variable Importance
 
 NAME                         LABEL                                NRULES    NSURROGATES    IMPORTANCE
 
-IMP_REP_CustomerAge          Imputed: Replacement: CustomerAge       8           14          1.00000 
-IMP_PremiumsinLOBLife        Imputed PremiumsinLOBLife               0           21          0.93559 
-IMP_PremiumsinLOBHealth      Imputed PremiumsinLOBHealth             3           17          0.88142 
-PremiumsinLOBHousehold                                               3           10          0.86164 
-IMP_PremiumsinLOBMotor       Imputed PremiumsinLOBMotor             10           10          0.83396 
-IMP_GrossMonthlySalary       Imputed GrossMonthlySalary              7           19          0.79195 
-IMP_PremiumsinLOBWorkComp    Imputed PremiumsinLOBWorkComp           0           16          0.75216 
-IMP_HasChildren              Imputed HasChildren                     1            0          0.65941 
-CustomerMonetaryValue                                                0           13          0.36848 
-ClaimsRate                                                           1           13          0.25632 
-IMP_EducationalDegree        Imputed EducationalDegree               3            1          0.18224 
-IMP_GeographicLiving         Imputed GeographicLiving                0            2          0.10138 
+IMP_REP_CustomerAge          Imputed: Replacement: CustomerAge       7           10          1.00000 
+IMP_PremiumsinLOBLife        Imputed PremiumsinLOBLife               0           22          0.91561 
+IMP_PremiumsinLOBMotor       Imputed PremiumsinLOBMotor             10           12          0.89704 
+PremiumsinLOBHousehold                                               1           20          0.87206 
+IMP_PremiumsinLOBHealth      Imputed PremiumsinLOBHealth             6           15          0.85912 
+IMP_GrossMonthlySalary       Imputed GrossMonthlySalary              3           18          0.82512 
+IMP_PremiumsinLOBWorkComp    Imputed PremiumsinLOBWorkComp           1           16          0.72020 
+CustomerMonetaryValue                                                3           14          0.63665 
+IMP_HasChildren              Imputed HasChildren                     1            0          0.61464 
+ClaimsRate                                                           3           12          0.46414 
+IMP_EducationalDegree        Imputed EducationalDegree               3            4          0.39057 
+LOYALTY                                                              0            2          0.07531 
+IMP_GeographicLiving         Imputed GeographicLiving                0            1          0.04499 

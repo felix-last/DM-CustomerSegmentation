@@ -9,212 +9,399 @@ Traverser: Beginning flow traversal
 *------------------------------------------------------------* 
 * 
 * Ids : Beginning Update 
-* datetime : 30DEC2015:16:09:17 
+* datetime : 31DEC2015:11:57:36 
 * 
 *------------------------------------------------------------* 
 *------------------------------------------------------------* 
 * 
 * Ids : End Update 
-* datetime : 30DEC2015:16:09:17 
+* datetime : 31DEC2015:11:57:36 
 * 
 *------------------------------------------------------------* 
 Traverser: WaitingNode "IMPT" 
 Traverser: WaitingNode "TRANS" 
+Traverser: WaitingNode "FILTER" 
+Traverser: WaitingNode "CLUS3" 
 traverser_readyNode_note 
 *------------------------------------------------------------* 
 * 
 * Repl : Beginning Update 
-* datetime : 30DEC2015:16:09:17 
+* datetime : 31DEC2015:11:57:37 
 * 
 *------------------------------------------------------------* 
 PERFORMANCE  DETAILS
-48466      %let emexceptionString =;
-48467      %let EMEXCEPTIONSTRING=;
-48468      *------------------------------------------------------------*;
-48469      * UPDATE: Repl;
-48470      *------------------------------------------------------------*;
-48471      %let EM_ACTION = UPDATE;
-48472      %let syscc = 0;
-48473      filename x CATALOG 'SASHELP.EMUTIL.EM_VARMACRO.SOURCE';
-48474      %inc x;
+45357      %let emexceptionString =;
+45358      %let EMEXCEPTIONSTRING=;
+45359      *------------------------------------------------------------*;
+45360      * UPDATE: Repl;
+45361      *------------------------------------------------------------*;
+45362      %let EM_ACTION = UPDATE;
+45363      %let syscc = 0;
+45364      filename x CATALOG 'SASHELP.EMUTIL.EM_VARMACRO.SOURCE';
+45365      %inc x;
 NOTE: %INCLUDE (level 1) file X is file SASHELP.EMUTIL.EM_VARMACRO.SOURCE.
-48475     +%macro em_varMacro(name=emMacro, metadata=, where=, key=NAME, nummacro=);
-48476     +   filename macFile catalog 'work.emutil.macro.source';
-48477     +   %let _METAOBS = 0;
-48479     +   %if (%sysfunc(exist(&metadata))<1 and %sysfunc(exist(&metadata, VIEW))<1)
-48480     +                   or (&metadata eq ) %then %do;
-48481     +       %goto doend;
-48482     +   %end;
-48483     +   data _null_;
-48484     +      length _STRING_ $80;
-48485     +      retain _STRING_;
-48486     +      set &metadata end=eof;
-48487     +      file macFile;
-48488     +      %if %nrbquote(&where) ne %then %do;
-48489     +          %let whereClause = where (%nrbquote(&where));
-48490     +          %unquote(&whereClause);
-48491     +      %end;
-48492     +      if _N_=1 then do;
-48493     +         string = "%"!!"macro &name;";
-48494     +         put string;
-48495     +      end;
-48496     +      if (length(_STRING_) + length(trim(&key))+ 1 < 80) then do;
-48497     +         _STRING_ = trim(_STRING_)!!' '!!trim(&key);
-48498     +         if eof then do;
-48499     +            put _STRING_;
-48500     +            string = "%"!!"mend &name;";
-48501     +            put string;
-48502     +            %if (&nummacro ne ) %then %do;
-48503     +                string = strip(put(_N_, best.));
-48504     +                put "%" "global &nummacro;";
-48505     +                put "%" "let &nummacro = " string ";";
-48506     +                call symput('_METAOBS', string);
-48507     +            %end;
-48508     +         end;
-48509     +      end;
-48510     +      else do;
-48511     +         put _STRING_;
-48512     +         _string_ = TRIM(&key);
-48513     +         if eof then do;
-48514     +            put _STRING_;
-48515     +            string = "%"!!"mend &name;";
-48516     +            put string;
-48517     +        end;
-48518     +      end;
-48519     +      if eof then do;
-48520     +         string = strip(put(_N_, best.));
-48521     +         call symput('_METAOBS', string);
-48522     +         %if (&nummacro ne ) %then %do;
-48523     +             put "%" "global &nummacro;";
-48524     +             put "%" "let &nummacro = " string ";";
-48525     +         %end;
-48526     +      end;
-48527     +   run;
-48529     +   %doend:
-48530     +   %if ^&_METAOBS %then %do;
-48531     +       data _null_;
-48532     +          file macFile;
-48533     +          put "%" "macro &name;";
-48534     +          put "%" "mend &name;";
-48535     +          %if (&nummacro ne ) %then %do;
-48536     +              put "%" "global &nummacro;";
-48537     +              put "%" "let &nummacro = 0;";
-48538     +          %end;
-48539     +      run;
-48540     +   %end;
-48541     +   %inc macFile;
-48542     +   filename macFile;
-48543     +%mend em_varMacro;
+45366     +%macro em_varMacro(name=emMacro, metadata=, where=, key=NAME, nummacro=);
+45367     +   filename macFile catalog 'work.emutil.macro.source';
+45368     +   %let _METAOBS = 0;
+45370     +   %if (%sysfunc(exist(&metadata))<1 and %sysfunc(exist(&metadata, VIEW))<1)
+45371     +                   or (&metadata eq ) %then %do;
+45372     +       %goto doend;
+45373     +   %end;
+45374     +   data _null_;
+45375     +      length _STRING_ $80;
+45376     +      retain _STRING_;
+45377     +      set &metadata end=eof;
+45378     +      file macFile;
+45379     +      %if %nrbquote(&where) ne %then %do;
+45380     +          %let whereClause = where (%nrbquote(&where));
+45381     +          %unquote(&whereClause);
+45382     +      %end;
+45383     +      if _N_=1 then do;
+45384     +         string = "%"!!"macro &name;";
+45385     +         put string;
+45386     +      end;
+45387     +      if (length(_STRING_) + length(trim(&key))+ 1 < 80) then do;
+45388     +         _STRING_ = trim(_STRING_)!!' '!!trim(&key);
+45389     +         if eof then do;
+45390     +            put _STRING_;
+45391     +            string = "%"!!"mend &name;";
+45392     +            put string;
+45393     +            %if (&nummacro ne ) %then %do;
+45394     +                string = strip(put(_N_, best.));
+45395     +                put "%" "global &nummacro;";
+45396     +                put "%" "let &nummacro = " string ";";
+45397     +                call symput('_METAOBS', string);
+45398     +            %end;
+45399     +         end;
+45400     +      end;
+45401     +      else do;
+45402     +         put _STRING_;
+45403     +         _string_ = TRIM(&key);
+45404     +         if eof then do;
+45405     +            put _STRING_;
+45406     +            string = "%"!!"mend &name;";
+45407     +            put string;
+45408     +        end;
+45409     +      end;
+45410     +      if eof then do;
+45411     +         string = strip(put(_N_, best.));
+45412     +         call symput('_METAOBS', string);
+45413     +         %if (&nummacro ne ) %then %do;
+45414     +             put "%" "global &nummacro;";
+45415     +             put "%" "let &nummacro = " string ";";
+45416     +         %end;
+45417     +      end;
+45418     +   run;
+45420     +   %doend:
+45421     +   %if ^&_METAOBS %then %do;
+45422     +       data _null_;
+45423     +          file macFile;
+45424     +          put "%" "macro &name;";
+45425     +          put "%" "mend &name;";
+45426     +          %if (&nummacro ne ) %then %do;
+45427     +              put "%" "global &nummacro;";
+45428     +              put "%" "let &nummacro = 0;";
+45429     +          %end;
+45430     +      run;
+45431     +   %end;
+45432     +   %inc macFile;
+45433     +   filename macFile;
+45434     +%mend em_varMacro;
 NOTE: %INCLUDE (level 1) ending.
-48544      filename X;
+45435      filename X;
 NOTE: Fileref X has been deassigned.
-48545       %macro main;
-48546      
-48547         filename temp catalog 'sashelp.emmdfy.Replace_macros.source';
-48548         %include temp;
-48549         filename temp;
-48550      
-48551         %if %upcase(&EM_ACTION) = CREATE %then %do;
-48552      
-48553             filename temp catalog 'sashelp.emmdfy.Replace_create.source';
-48554             %include temp;
-48555             filename temp;
-48556             %create;
-48557         %end;
-48558         %else
-48559         %if %upcase(&EM_ACTION) = TRAIN %then %do;
-48560      
-48561             filename temp catalog 'sashelp.emmdfy.Replace_train.source';
-48562             %include temp;
-48563             filename temp;
-48564             %train;
-48565         %end;
-48566         %else
-48567         %if %upcase(&EM_ACTION) = SCORE %then %do;
-48568      
-48569             filename temp catalog 'sashelp.emmdfy.Replace_score.source';
-48570             %include temp;
-48571             filename temp;
-48572             %score;
-48573         %end;
-48574         %if %upcase(&EM_ACTION) = REPORT %then %do;
-48575      
-48576             filename temp catalog 'sashelp.emmdfy.Replace_report.source';
-48577             %include temp;
-48578             filename temp;
-48579             %report;
-48580         %end;
-48581         %if %upcase(&EM_ACTION) = OPENOUTCLASSTABLE %then %do;
-48582             filename temp catalog 'sashelp.emmdfy.replace_makeoutclass.source';
-48583             %include temp;
-48584             filename temp;
-48585             %em_replace_openoutclass;
-48586         %end;
-48587         %if %upcase(&EM_ACTION) = CLOSEOUTCLASSTABLE %then %do;
-48588             filename temp catalog 'sashelp.emmdfy.replace_makeoutclass.source';
-48589             %include temp;
-48590             filename temp;
-48591             %em_replace_closeoutclass;
-48592         %end;
-48593      %mend main;
-48594      
-48595      %main;
+45436       %macro main;
+45437      
+45438         filename temp catalog 'sashelp.emmdfy.Replace_macros.source';
+45439         %include temp;
+45440         filename temp;
+45441      
+45442         %if %upcase(&EM_ACTION) = CREATE %then %do;
+45443      
+45444             filename temp catalog 'sashelp.emmdfy.Replace_create.source';
+45445             %include temp;
+45446             filename temp;
+45447             %create;
+45448         %end;
+45449         %else
+45450         %if %upcase(&EM_ACTION) = TRAIN %then %do;
+45451      
+45452             filename temp catalog 'sashelp.emmdfy.Replace_train.source';
+45453             %include temp;
+45454             filename temp;
+45455             %train;
+45456         %end;
+45457         %else
+45458         %if %upcase(&EM_ACTION) = SCORE %then %do;
+45459      
+45460             filename temp catalog 'sashelp.emmdfy.Replace_score.source';
+45461             %include temp;
+45462             filename temp;
+45463             %score;
+45464         %end;
+45465         %if %upcase(&EM_ACTION) = REPORT %then %do;
+45466      
+45467             filename temp catalog 'sashelp.emmdfy.Replace_report.source';
+45468             %include temp;
+45469             filename temp;
+45470             %report;
+45471         %end;
+45472         %if %upcase(&EM_ACTION) = OPENOUTCLASSTABLE %then %do;
+45473             filename temp catalog 'sashelp.emmdfy.replace_makeoutclass.source';
+45474             %include temp;
+45475             filename temp;
+45476             %em_replace_openoutclass;
+45477         %end;
+45478         %if %upcase(&EM_ACTION) = CLOSEOUTCLASSTABLE %then %do;
+45479             filename temp catalog 'sashelp.emmdfy.replace_makeoutclass.source';
+45480             %include temp;
+45481             filename temp;
+45482             %em_replace_closeoutclass;
+45483         %end;
+45484      %mend main;
+45485      
+45486      %main;
 NOTE: %INCLUDE (level 1) file TEMP is file SASHELP.EMMDFY.REPLACE_MACROS.SOURCE.
-48596     +%macro SetProperties;
-48597     +   %em_checkmacro(name=EM_PROPERTY_UNKNOWNLEVEL,    global=Y, value=MODE);
-48598     +   %em_checkmacro(name=EM_PROPERTY_CALCMETHOD,      global=Y, value=NONE);
-48599     +   %em_checkmacro(name=EM_PROPERTY_PERCENTSCUTOFF,  global=Y, value=0.5);
-48600     +   %em_checkmacro(name=EM_PROPERTY_SPACINGSCUTOFF,  global=Y, value=9);
-48601     +   %em_checkMacro(name=EM_PROPERTY_MADSCUTOFF,      global=Y, value=9);
-48602     +   %em_checkMacro(name=EM_PROPERTY_STDDEVCUTOFF,    global=Y, value=3);
-48603     +   %em_checkmacro(name=EM_PROPERTY_REPLACEMETHOD,   global=Y, value=COMPUTED);
-48604     +   %em_checkmacro(name=EM_PROPERTY_HIDEVARIABLE,    global=Y, value=N);
-48605     +   %em_checkmacro(name=EM_PROPERTY_INTERVALMETHOD,  global=Y, value=NONE);
-48606     +   %em_checkmacro(name=EM_PROPERTY_REPORTCOUNT,     global=Y, value=Y);
-48608     +%mend SetProperties;
+45487     +%macro SetProperties;
+45488     +   %em_checkmacro(name=EM_PROPERTY_UNKNOWNLEVEL,    global=Y, value=MODE);
+45489     +   %em_checkmacro(name=EM_PROPERTY_CALCMETHOD,      global=Y, value=NONE);
+45490     +   %em_checkmacro(name=EM_PROPERTY_PERCENTSCUTOFF,  global=Y, value=0.5);
+45491     +   %em_checkmacro(name=EM_PROPERTY_SPACINGSCUTOFF,  global=Y, value=9);
+45492     +   %em_checkMacro(name=EM_PROPERTY_MADSCUTOFF,      global=Y, value=9);
+45493     +   %em_checkMacro(name=EM_PROPERTY_STDDEVCUTOFF,    global=Y, value=3);
+45494     +   %em_checkmacro(name=EM_PROPERTY_REPLACEMETHOD,   global=Y, value=COMPUTED);
+45495     +   %em_checkmacro(name=EM_PROPERTY_HIDEVARIABLE,    global=Y, value=N);
+45496     +   %em_checkmacro(name=EM_PROPERTY_INTERVALMETHOD,  global=Y, value=NONE);
+45497     +   %em_checkmacro(name=EM_PROPERTY_REPORTCOUNT,     global=Y, value=Y);
+45499     +%mend SetProperties;
 NOTE: %INCLUDE (level 1) ending.
 NOTE: Fileref TEMP has been deassigned.
-48610      
-48611      *------------------------------------------------------------*;
-48612      * End UPDATE: Repl;
-48613      *------------------------------------------------------------*;
+45501      
+45502      *------------------------------------------------------------*;
+45503      * End UPDATE: Repl;
+45504      *------------------------------------------------------------*;
 
-48614      %em_delMacro;
+45505      %em_delMacro;
 
 *------------------------------------------------------------* 
 * 
 * Repl : End Update 
-* datetime : 30DEC2015:16:09:18 
+* datetime : 31DEC2015:11:57:37 
 * 
 *------------------------------------------------------------* 
 Traverser: WaitingNode "TRANS" 
+Traverser: WaitingNode "FILTER" 
+Traverser: WaitingNode "CLUS3" 
 traverser_readyNode_note 
 *------------------------------------------------------------* 
 * 
 * Impt : Beginning Update 
-* datetime : 30DEC2015:16:09:18 
+* datetime : 31DEC2015:11:57:37 
 * 
 *------------------------------------------------------------* 
 *------------------------------------------------------------* 
 * 
 * Impt : End Update 
-* datetime : 30DEC2015:16:09:18 
+* datetime : 31DEC2015:11:57:38 
 * 
 *------------------------------------------------------------* 
+Traverser: WaitingNode "FILTER" 
+Traverser: WaitingNode "CLUS3" 
 traverser_readyNode_note 
 *------------------------------------------------------------* 
 * 
 * Trans : Beginning Update 
-* datetime : 30DEC2015:16:09:19 
+* datetime : 31DEC2015:11:57:38 
 * 
 *------------------------------------------------------------* 
 *------------------------------------------------------------* 
 * 
 * Trans : End Update 
-* datetime : 30DEC2015:16:09:19 
+* datetime : 31DEC2015:11:57:38 
+* 
+*------------------------------------------------------------* 
+Traverser: WaitingNode "CLUS3" 
+traverser_readyNode_note 
+*------------------------------------------------------------* 
+* 
+* Filter : Beginning Update 
+* datetime : 31DEC2015:11:57:39 
+* 
+*------------------------------------------------------------* 
+*------------------------------------------------------------* 
+* 
+* Filter : End Update 
+* datetime : 31DEC2015:11:57:39 
+* 
+*------------------------------------------------------------* 
+traverser_readyNode_note 
+*------------------------------------------------------------* 
+* 
+* Clus3 : Beginning Update 
+* datetime : 31DEC2015:11:57:39 
+* 
+*------------------------------------------------------------* 
+45582      data _null_;
+45583      set EMWS1.Filter_CMeta_TRAIN (obs=1);
+45584      retain _segFlag_ 0;
+45585      drop _segFlag_;
+45586      if upcase(name) = '_SEGMENT_' then do;
+45587      _segFlag_ = 1;
+45588      role = 'SEGMENT';
+45589      level = 'NOMINAL';
+45590      label = 'Segment Variable';
+45591      end;
+45592      else if upcase(name) = '_SEGMENT_LABEL_' then do;
+45593      role = 'REJECTED';
+45594      level = 'NOMINAL';
+45595      label = 'Segment Description';
+45596      end;
+45597      else if upcase(NAME) = 'DISTANCE' then do;
+45598      role = 'REJECTED';
+45599      level = 'INTERVAL';
+45600      end;
+45601      output;
+45602      if ^_segFlag_ and _eof_ then do;
+45603      type = 'N';
+45604      index = 'N';
+45605      indexType = 'NONE';
+45606      format = '';
+45607      informat = '';
+45608      name = '_SEGMENT_';
+45609      role = 'SEGMENT';
+45610      level = 'NOMINAL';
+45611      label = 'Segment Variable';
+45612      output;
+45613      name = '_SEGMENT_LABEL_';
+45614      role = 'REJECTED';
+45615      level = 'NOMINAL';
+45616      label = 'Segment Description';
+45617      output;
+45618      name = 'Distance';
+45619      role = 'REJECTED';
+45620      level = 'INTERVAL';
+45621      label = 'Distance to Cluster Seed';
+45622      output;
+45623      end;
+45624      run;
+
+NOTE: Variable _eof_ is uninitialized.
+NOTE: There were 1 observations read from the data set EMWS1.FILTER_CMETA_TRAIN.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+45625      *------------------------------------------------------------*;
+45626      * Clus3: Update Variables Set;
+45627      *------------------------------------------------------------*;
+
+45628      data EMWS1.Clus3_VariableSet;
+45629      length USE $1;
+45630      label USE = "Use";
+45631      length REPORT $1;
+45632      label REPORT = "Report";
+45633      set EMWS1.Filter_CMeta_TRAIN;
+45634      where(ROLE in("INPUT" "REJECTED" "FREQ" "ID"));
+45635      run;
+
+NOTE: Variable USE is uninitialized.
+NOTE: There were 17 observations read from the data set EMWS1.FILTER_CMETA_TRAIN.
+      WHERE ROLE in ('FREQ', 'ID', 'INPUT', 'REJECTED');
+NOTE: The data set EMWS1.CLUS3_VARIABLESET has 17 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+45636      data EMWS1.Clus3_VariableSet;
+45637      set EMWS1.Clus3_VariableSet;
+45638      if upcase(NAME) = 'CLAIMSRATE' then do;
+45639      USE = 'Y';
+45640      end;
+45641      if upcase(NAME) = 'CUSTOMERAGE' then do;
+45642      USE = 'N';
+45643      end;
+45644      if upcase(NAME) = 'CUSTOMERIDENTITY' then do;
+45645      USE = 'N';
+45646      end;
+45647      if upcase(NAME) = 'CUSTOMERMONETARYVALUE' then do;
+45648      USE = 'Y';
+45649      end;
+45650      if upcase(NAME) = 'FIRSTPOLICYYEAR' then do;
+45651      USE = 'N';
+45652      end;
+45653      if upcase(NAME) = 'IMP_EDUCATIONALDEGREE' then do;
+45654      USE = 'Y';
+45655      end;
+45656      if upcase(NAME) = 'IMP_GEOGRAPHICLIVING' then do;
+45657      USE = 'Y';
+45658      end;
+45659      if upcase(NAME) = 'IMP_GROSSMONTHLYSALARY' then do;
+45660      USE = 'Y';
+45661      end;
+45662      if upcase(NAME) = 'IMP_HASCHILDREN' then do;
+45663      USE = 'Y';
+45664      end;
+45665      if upcase(NAME) = 'IMP_PREMIUMSINLOBHEALTH' then do;
+45666      USE = 'Y';
+45667      end;
+45668      if upcase(NAME) = 'IMP_PREMIUMSINLOBLIFE' then do;
+45669      USE = 'Y';
+45670      end;
+45671      if upcase(NAME) = 'IMP_PREMIUMSINLOBMOTOR' then do;
+45672      USE = 'Y';
+45673      end;
+45674      if upcase(NAME) = 'IMP_PREMIUMSINLOBWORKCOMP' then do;
+45675      USE = 'Y';
+45676      end;
+45677      if upcase(NAME) = 'IMP_REP_CUSTOMERAGE' then do;
+45678      USE = 'Y';
+45679      end;
+45680      if upcase(NAME) = 'LOYALTY' then do;
+45681      USE = 'Y';
+45682      end;
+45683      if upcase(NAME) = 'PREMIUMSINLOBHOUSEHOLD' then do;
+45684      USE = 'Y';
+45685      end;
+45686      if upcase(NAME) = 'TOTAL_PREMIUM' then do;
+45687      USE = 'N';
+45688      end;
+45689      run;
+
+NOTE: There were 17 observations read from the data set EMWS1.CLUS3_VARIABLESET.
+NOTE: The data set EMWS1.CLUS3_VARIABLESET has 17 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+45690      * Clus3: End of Update Variables Set;
+45691      *------------------------------------------------------------*;
+
+45692      *------------------------------------------------------------*;
+45693      * Clus3: Computing metadata for TRAIN data;
+45694      *------------------------------------------------------------*;
+
+45744      *------------------------------------------------------------*;
+45745      * Clus3: Computing metadata for CLUSSTAT data;
+45746      *------------------------------------------------------------*;
+
+45747      *------------------------------------------------------------*;
+45748      * Clus3: Computing metadata for CLUSMEAN data;
+45749      *------------------------------------------------------------*;
+
+45750      *------------------------------------------------------------*;
+45751      * Clus3: Computing metadata for VARMAP data;
+45752      *------------------------------------------------------------*;
+
+*------------------------------------------------------------* 
+* 
+* Clus3 : End Update 
+* datetime : 31DEC2015:11:57:40 
 * 
 *------------------------------------------------------------* 
 Traverser: Run Completed 
-48654      proc printto;
-48655      run;
+45754      proc printto;
+45755      run;
 

@@ -1,0 +1,49 @@
+*------------------------------------------------------------*
+User:                D059331
+Date:                December 31, 2015
+Time:                11:58:32
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+            Measurement    Frequency
+Role           Level         Count
+ 
+ID           NOMINAL            1
+INPUT        BINARY             1
+INPUT        INTERVAL          11
+INPUT        NOMINAL            1
+INPUT        ORDINAL            1
+REJECTED     INTERVAL           2
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Importance
+ 
+NAME                      LABEL                                NRULES    NSURROGATES    IMPORTANCE
+ 
+IMP_REP_CustomerAge       Imputed: Replacement: CustomerAge       4           15          1.00000
+TOTAL_PREMIUM                                                     7           16          0.93802
+IMP_GrossMonthlySalary    Imputed GrossMonthlySalary              8           12          0.87738
+CustomerMonetaryValue                                             4           21          0.85986
+ClaimsRate                                                        8           16          0.78441
+IMP_HasChildren           Imputed HasChildren                     1            0          0.58136
+IMP_EducationalDegree     Imputed EducationalDegree               2            7          0.47679
+IMP_GeographicLiving      Imputed GeographicLiving                0            2          0.09776
+LOYALTY                                                           0            6          0.09691

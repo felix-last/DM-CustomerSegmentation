@@ -57,7 +57,7 @@ proc dmvq data=WORK.Clus2_DMDB dmdbcat=WORK.Clus2_DMDB std=STD nominal=GLM ordin
 input %DMVQINTERVAL / level=interval;
 input %DMVQNOMINAL / level=nominal;
 input %DMVQORDINAL / level=ordinal;
-VQ maxc = 4 clusname=_SEGMENT_ CLUSLABEL="Segment Id" DISTLABEL="Distance";
+VQ maxc = 5 clusname=_SEGMENT_ CLUSLABEL="Segment Id" DISTLABEL="Distance";
 MAKE outvar=EMWS1.Clus2_OUTVAR;
 INITIAL radius=0
 initial=PRINCOMP
@@ -76,7 +76,7 @@ quit;
 %macro dmvqvars;
     ClaimsRate CustomerMonetaryValue IMP_GrossMonthlySalary
    IMP_PremiumsinLOBHealth IMP_PremiumsinLOBLife IMP_PremiumsinLOBMotor
-   IMP_PremiumsinLOBWorkComp IMP_REP_CustomerAge PremiumsinLOBHousehold
+   IMP_PremiumsinLOBWorkComp IMP_REP_CustomerAge LOYALTY PremiumsinLOBHousehold
    IMP_GeographicLiving1 IMP_GeographicLiving2 IMP_GeographicLiving3
    IMP_GeographicLiving4 IMP_HasChildren0 IMP_HasChildren1 T_IMP_EducationalDegree
 %mend ;

@@ -1,0 +1,134 @@
+*------------------------------------------------------------*
+User:                D059331
+Date:                December 31, 2015
+Time:                12:49:16
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+            Measurement    Frequency
+Role           Level         Count
+ 
+ID           NOMINAL            1
+INPUT        BINARY             1
+INPUT        INTERVAL          11
+INPUT        NOMINAL            1
+INPUT        ORDINAL            1
+REJECTED     INTERVAL           3
+REJECTED     NOMINAL            1
+SEGMENT      NOMINAL            1
+ 
+ 
+ 
+ 
+Frequencies: _SEGMENT_
+ 
+                                     Percent of
+ Segment     Segment    Frequency       Total
+Variable      Value       Count       Frequency
+ 
+_SEGMENT_       3           2412       24.6449
+_SEGMENT_       5           2329       23.7969
+_SEGMENT_       2           2033       20.7725
+_SEGMENT_       4           1952       19.9448
+_SEGMENT_       1           1061       10.8409
+ 
+ 
+ 
+Variable: _SEGMENT_ Segment: 3 Count: 2412
+Decision Tree Importance Profiles
+ 
+Variable                   Worth     Rank
+ 
+ClaimsRate                0.19092      1
+CustomerMonetaryValue     0.18093      2
+IMP_REP_CustomerAge       0.04864      3
+IMP_HasChildren           0.03641      4
+IMP_GrossMonthlySalary    0.03471      5
+TOTAL_PREMIUM             0.01983      6
+IMP_EducationalDegree     0.01083      7
+LOYALTY                   0.00062      8
+IMP_GeographicLiving      0.00012      9
+ 
+ 
+ 
+Variable: _SEGMENT_ Segment: 5 Count: 2329
+Decision Tree Importance Profiles
+ 
+Variable                   Worth     Rank
+ 
+IMP_HasChildren           0.27095      1
+IMP_REP_CustomerAge       0.23111      2
+IMP_GrossMonthlySalary    0.18210      3
+ClaimsRate                0.01168      4
+CustomerMonetaryValue     0.00775      5
+TOTAL_PREMIUM             0.00589      6
+IMP_EducationalDegree     0.00107      7
+LOYALTY                   0.00076      8
+IMP_GeographicLiving      0.00035      9
+ 
+ 
+ 
+Variable: _SEGMENT_ Segment: 2 Count: 2033
+Decision Tree Importance Profiles
+ 
+Variable                   Worth     Rank
+ 
+IMP_REP_CustomerAge       0.12278      1
+IMP_GrossMonthlySalary    0.11424      2
+CustomerMonetaryValue     0.04631      3
+ClaimsRate                0.04291      4
+IMP_HasChildren           0.01639      5
+TOTAL_PREMIUM             0.00927      6
+IMP_EducationalDegree     0.00061      7
+LOYALTY                   0.00052      8
+IMP_GeographicLiving      0.00023      9
+ 
+ 
+ 
+Variable: _SEGMENT_ Segment: 4 Count: 1952
+Decision Tree Importance Profiles
+ 
+Variable                    Worth     Rank
+ 
+IMP_REP_CustomerAge       0.071767      1
+CustomerMonetaryValue     0.068637      2
+ClaimsRate                0.066614      3
+IMP_GrossMonthlySalary    0.055665      4
+IMP_HasChildren           0.030920      5
+TOTAL_PREMIUM             0.014859      6
+IMP_EducationalDegree     0.000813      7
+LOYALTY                   0.000627      8
+IMP_GeographicLiving      0.000252      9
+ 
+ 
+ 
+Variable: _SEGMENT_ Segment: 1 Count: 1061
+Decision Tree Importance Profiles
+ 
+Variable                    Worth     Rank
+ 
+TOTAL_PREMIUM             0.088569      1
+IMP_REP_CustomerAge       0.064077      2
+IMP_GrossMonthlySalary    0.046537      3
+CustomerMonetaryValue     0.031773      4
+IMP_EducationalDegree     0.029380      5
+ClaimsRate                0.005227      6
+IMP_HasChildren           0.000668      7
+LOYALTY                   0.000307      8
+IMP_GeographicLiving      0.000013      9
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*

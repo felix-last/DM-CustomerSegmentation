@@ -9,8 +9,8 @@ Traverser: Beginning flow traversal
 MPRINT(EM_DIAGRAM):    data _null_;
 15520      file emwipmsg;
 MPRINT(EM_DIAGRAM):   file emwipmsg;
-15521      put '<Node Id="Ids" Event="Run" Pid="6272" Gridid=""/>';
-MPRINT(EM_DIAGRAM):   put '<Node Id="Ids" Event="Run" Pid="6272" Gridid=""/>';
+15521      put '<Node Id="Ids" Event="Run" Pid="3464" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Ids" Event="Run" Pid="3464" Gridid=""/>';
 15522      run;
 MPRINT(EM_DIAGRAM):   run;
 
@@ -19,7 +19,7 @@ NOTE: The file EMWIPMSG is:
       Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
       Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
       Peer IP addr=127.0.0.1,Peer Name=N/A,
-      Peer Portno=55880,Lrecl=256,Recfm=Variable
+      Peer Portno=54332,Lrecl=256,Recfm=Variable
 
 NOTE: 1 record was written to the file EMWIPMSG.
       The minimum record length was 49.
@@ -33,14 +33,14 @@ NOTE: DATA statement used (Total process time):
 *------------------------------------------------------------* 
 * 
 * Ids : Beginning update before running 
-* datetime : 30DEC2015:16:09:38 
+* datetime : 31DEC2015:13:05:31 
 * 
 *------------------------------------------------------------* 
 MPRINT(EM_DIAGRAM):     filename _emtool_ 'C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Ids\PROPERTIES.xml' encoding="UTF-8" NOBOM;
 *------------------------------------------------------------* 
 * 
 * Ids : End update 
-* datetime : 30DEC2015:16:09:38 
+* datetime : 31DEC2015:13:05:31 
 * 
 *------------------------------------------------------------* 
 15525      %em_getactionstatus(emlib =EMWS1, nodeid=Ids);
@@ -54,7 +54,7 @@ MPRINT(EM_GETACTIONSTATUS):   run;
 15529      %let em_Run = N;
 NOTE: PROCEDURE DISPLAY used (Total process time):
       real time           0.01 seconds
-      cpu time            0.00 seconds
+      cpu time            0.01 seconds
       
 
 MPRINT(EM_GETACTIONSTATUS):   
@@ -66,8 +66,8 @@ Node "Ids" succeeded.
 MPRINT(EM_DIAGRAM):    data _null_;
 15531      file emwipmsg;
 MPRINT(EM_DIAGRAM):   file emwipmsg;
-15532      put '<Node Id="Ids" Event="Complete" Pid="6272" Gridid=""/>';
-MPRINT(EM_DIAGRAM):   put '<Node Id="Ids" Event="Complete" Pid="6272" Gridid=""/>';
+15532      put '<Node Id="Ids" Event="Complete" Pid="3464" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Ids" Event="Complete" Pid="3464" Gridid=""/>';
 15533      run;
 MPRINT(EM_DIAGRAM):   run;
 
@@ -76,7 +76,7 @@ NOTE: The file EMWIPMSG is:
       Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
       Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
       Peer IP addr=127.0.0.1,Peer Name=N/A,
-      Peer Portno=55880,Lrecl=256,Recfm=Variable
+      Peer Portno=54332,Lrecl=256,Recfm=Variable
 
 NOTE: 1 record was written to the file EMWIPMSG.
       The minimum record length was 54.
@@ -88,15 +88,15 @@ NOTE: DATA statement used (Total process time):
 
 Traverser: WaitingNode "IMPT" 
 Traverser: WaitingNode "TRANS" 
-Traverser: WaitingNode "FILTER" 
-Traverser: WaitingNode "VARCLUS" 
+Traverser: WaitingNode "CLUS2" 
+Traverser: WaitingNode "PROF2" 
 traverser_readyNode_note 
 15534      data _null_;
 MPRINT(EM_DIAGRAM):    data _null_;
 15535      file emwipmsg;
 MPRINT(EM_DIAGRAM):   file emwipmsg;
-15536      put '<Node Id="Repl" Event="Run" Pid="6272" Gridid=""/>';
-MPRINT(EM_DIAGRAM):   put '<Node Id="Repl" Event="Run" Pid="6272" Gridid=""/>';
+15536      put '<Node Id="Repl" Event="Run" Pid="3464" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Repl" Event="Run" Pid="3464" Gridid=""/>';
 15537      run;
 MPRINT(EM_DIAGRAM):   run;
 
@@ -105,7 +105,7 @@ NOTE: The file EMWIPMSG is:
       Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
       Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
       Peer IP addr=127.0.0.1,Peer Name=N/A,
-      Peer Portno=55880,Lrecl=256,Recfm=Variable
+      Peer Portno=54332,Lrecl=256,Recfm=Variable
 
 NOTE: 1 record was written to the file EMWIPMSG.
       The minimum record length was 50.
@@ -119,7 +119,7 @@ NOTE: DATA statement used (Total process time):
 *------------------------------------------------------------* 
 * 
 * Repl : Beginning update before running 
-* datetime : 30DEC2015:16:09:38 
+* datetime : 31DEC2015:13:05:31 
 * 
 *------------------------------------------------------------* 
 MPRINT(EM_DIAGRAM):     data WORK.Repl_FILTERSET;
@@ -344,7 +344,7 @@ MPRINT(EM_DIAGRAM):    filename _emtool_ 'C:\Users\D059331\Desktop\DM_Insurance_
 *------------------------------------------------------------* 
 * 
 * Repl : End update 
-* datetime : 30DEC2015:16:09:39 
+* datetime : 31DEC2015:13:05:32 
 * 
 *------------------------------------------------------------* 
 15924      %em_getactionstatus(emlib =EMWS1, nodeid=Repl);
@@ -353,15 +353,15 @@ MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
 MPRINT(EM_GETACTIONSTATUS):   run;
 
 NOTE: View EMWS1.REPL_NEWVALUES.VIEW used (Total process time):
-      real time           0.02 seconds
-      cpu time            0.01 seconds
+      real time           0.01 seconds
+      cpu time            0.03 seconds
       
 15925      %let em_Train = N;
 15926      %let em_Score = N;
 15927      %let em_Report = N;
 15928      %let em_Run = N;
 NOTE: PROCEDURE DISPLAY used (Total process time):
-      real time           0.06 seconds
+      real time           0.04 seconds
       cpu time            0.04 seconds
       
 
@@ -374,8 +374,8 @@ Node "Repl" succeeded.
 MPRINT(EM_DIAGRAM):    data _null_;
 15930      file emwipmsg;
 MPRINT(EM_DIAGRAM):   file emwipmsg;
-15931      put '<Node Id="Repl" Event="Complete" Pid="6272" Gridid=""/>';
-MPRINT(EM_DIAGRAM):   put '<Node Id="Repl" Event="Complete" Pid="6272" Gridid=""/>';
+15931      put '<Node Id="Repl" Event="Complete" Pid="3464" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Repl" Event="Complete" Pid="3464" Gridid=""/>';
 15932      run;
 MPRINT(EM_DIAGRAM):   run;
 
@@ -384,7 +384,7 @@ NOTE: The file EMWIPMSG is:
       Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
       Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
       Peer IP addr=127.0.0.1,Peer Name=N/A,
-      Peer Portno=55880,Lrecl=256,Recfm=Variable
+      Peer Portno=54332,Lrecl=256,Recfm=Variable
 
 NOTE: 1 record was written to the file EMWIPMSG.
       The minimum record length was 55.
@@ -395,15 +395,15 @@ NOTE: DATA statement used (Total process time):
       
 
 Traverser: WaitingNode "TRANS" 
-Traverser: WaitingNode "FILTER" 
-Traverser: WaitingNode "VARCLUS" 
+Traverser: WaitingNode "CLUS2" 
+Traverser: WaitingNode "PROF2" 
 traverser_readyNode_note 
 15933      data _null_;
 MPRINT(EM_DIAGRAM):    data _null_;
 15934      file emwipmsg;
 MPRINT(EM_DIAGRAM):   file emwipmsg;
-15935      put '<Node Id="Impt" Event="Run" Pid="6272" Gridid=""/>';
-MPRINT(EM_DIAGRAM):   put '<Node Id="Impt" Event="Run" Pid="6272" Gridid=""/>';
+15935      put '<Node Id="Impt" Event="Run" Pid="3464" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Impt" Event="Run" Pid="3464" Gridid=""/>';
 15936      run;
 MPRINT(EM_DIAGRAM):   run;
 
@@ -412,13 +412,13 @@ NOTE: The file EMWIPMSG is:
       Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
       Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
       Peer IP addr=127.0.0.1,Peer Name=N/A,
-      Peer Portno=55880,Lrecl=256,Recfm=Variable
+      Peer Portno=54332,Lrecl=256,Recfm=Variable
 
 NOTE: 1 record was written to the file EMWIPMSG.
       The minimum record length was 50.
       The maximum record length was 50.
 NOTE: DATA statement used (Total process time):
-      real time           0.00 seconds
+      real time           0.01 seconds
       cpu time            0.00 seconds
       
 
@@ -426,7 +426,7 @@ NOTE: DATA statement used (Total process time):
 *------------------------------------------------------------* 
 * 
 * Impt : Beginning update before running 
-* datetime : 30DEC2015:16:09:39 
+* datetime : 31DEC2015:13:05:32 
 * 
 *------------------------------------------------------------* 
 MPRINT(EM_DIAGRAM):     data WORK.Impt_FILTERSET;
@@ -441,7 +441,7 @@ MPRINT(EM_DIAGRAM):    filename _emtool_ 'C:\Users\D059331\Desktop\DM_Insurance_
 *------------------------------------------------------------* 
 * 
 * Impt : End update 
-* datetime : 30DEC2015:16:09:39 
+* datetime : 31DEC2015:13:05:32 
 * 
 *------------------------------------------------------------* 
 15957      %em_getactionstatus(emlib =EMWS1, nodeid=Impt);
@@ -467,8 +467,8 @@ Node "Impt" succeeded.
 MPRINT(EM_DIAGRAM):    data _null_;
 15963      file emwipmsg;
 MPRINT(EM_DIAGRAM):   file emwipmsg;
-15964      put '<Node Id="Impt" Event="Complete" Pid="6272" Gridid=""/>';
-MPRINT(EM_DIAGRAM):   put '<Node Id="Impt" Event="Complete" Pid="6272" Gridid=""/>';
+15964      put '<Node Id="Impt" Event="Complete" Pid="3464" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Impt" Event="Complete" Pid="3464" Gridid=""/>';
 15965      run;
 MPRINT(EM_DIAGRAM):   run;
 
@@ -477,7 +477,7 @@ NOTE: The file EMWIPMSG is:
       Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
       Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
       Peer IP addr=127.0.0.1,Peer Name=N/A,
-      Peer Portno=55880,Lrecl=256,Recfm=Variable
+      Peer Portno=54332,Lrecl=256,Recfm=Variable
 
 NOTE: 1 record was written to the file EMWIPMSG.
       The minimum record length was 55.
@@ -487,15 +487,15 @@ NOTE: DATA statement used (Total process time):
       cpu time            0.00 seconds
       
 
-Traverser: WaitingNode "FILTER" 
-Traverser: WaitingNode "VARCLUS" 
+Traverser: WaitingNode "CLUS2" 
+Traverser: WaitingNode "PROF2" 
 traverser_readyNode_note 
 15966      data _null_;
 MPRINT(EM_DIAGRAM):    data _null_;
 15967      file emwipmsg;
 MPRINT(EM_DIAGRAM):   file emwipmsg;
-15968      put '<Node Id="Trans" Event="Run" Pid="6272" Gridid=""/>';
-MPRINT(EM_DIAGRAM):   put '<Node Id="Trans" Event="Run" Pid="6272" Gridid=""/>';
+15968      put '<Node Id="Trans" Event="Run" Pid="3464" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Trans" Event="Run" Pid="3464" Gridid=""/>';
 15969      run;
 MPRINT(EM_DIAGRAM):   run;
 
@@ -504,21 +504,21 @@ NOTE: The file EMWIPMSG is:
       Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
       Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
       Peer IP addr=127.0.0.1,Peer Name=N/A,
-      Peer Portno=55880,Lrecl=256,Recfm=Variable
+      Peer Portno=54332,Lrecl=256,Recfm=Variable
 
 NOTE: 1 record was written to the file EMWIPMSG.
       The minimum record length was 51.
       The maximum record length was 51.
 NOTE: DATA statement used (Total process time):
       real time           0.00 seconds
-      cpu time            0.00 seconds
+      cpu time            0.01 seconds
       
 
 15970      %let emloopmode =;
 *------------------------------------------------------------* 
 * 
 * Trans : Beginning update before running 
-* datetime : 30DEC2015:16:09:40 
+* datetime : 31DEC2015:13:05:33 
 * 
 *------------------------------------------------------------* 
 MPRINT(EM_DIAGRAM):     data WORK.Trans_FILTERSET;
@@ -533,7 +533,7 @@ MPRINT(EM_DIAGRAM):    filename _emtool_ 'C:\Users\D059331\Desktop\DM_Insurance_
 *------------------------------------------------------------* 
 * 
 * Trans : End update 
-* datetime : 30DEC2015:16:09:40 
+* datetime : 31DEC2015:13:05:33 
 * 
 *------------------------------------------------------------* 
 15990      %em_getactionstatus(emlib =EMWS1, nodeid=Trans);
@@ -542,9 +542,9 @@ MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
 MPRINT(EM_GETACTIONSTATUS):   run;
 
 15991      %let em_Train = N;
-15992      %let em_Score = Y;
+15992      %let em_Score = N;
 15993      %let em_Report = N;
-15994      %let em_Run = Y;
+15994      %let em_Run = N;
 NOTE: PROCEDURE DISPLAY used (Total process time):
       real time           0.01 seconds
       cpu time            0.01 seconds
@@ -553,18 +553,358 @@ NOTE: PROCEDURE DISPLAY used (Total process time):
 MPRINT(EM_GETACTIONSTATUS):   
 MPRINT(EM_DIAGRAM):  ;
 
-15995      %let emloopmode =;
-15996      %let emloopnumber =0;
-15997      %let emloopId =Trans;
+Node "Trans" has already run. 
+Node "Trans" succeeded. 
+15995      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+15996      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+15997      put '<Node Id="Trans" Event="Complete" Pid="3464" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Trans" Event="Complete" Pid="3464" Gridid=""/>';
+15998      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=WDFN33788459A,
+      Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
+      Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=54332,Lrecl=256,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 56.
+      The maximum record length was 56.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+Traverser: WaitingNode "PROF2" 
+traverser_readyNode_note 
+15999      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+16000      file emwipmsg;
+MPRINT(EM_DIAGRAM):   file emwipmsg;
+16001      put '<Node Id="Clus2" Event="Run" Pid="3464" Gridid=""/>';
+MPRINT(EM_DIAGRAM):   put '<Node Id="Clus2" Event="Run" Pid="3464" Gridid=""/>';
+16002      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: The file EMWIPMSG is:
+      Local Host Name=WDFN33788459A,
+      Local Host IP addr=fe80::5c78:ba6e:152:c92%5,
+      Peer Hostname Name=WDFN33788459A.emea.global.corp.sap,
+      Peer IP addr=127.0.0.1,Peer Name=N/A,
+      Peer Portno=54332,Lrecl=256,Recfm=Variable
+
+NOTE: 1 record was written to the file EMWIPMSG.
+      The minimum record length was 51.
+      The maximum record length was 51.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+16003      %let emloopmode =;
 *------------------------------------------------------------* 
 * 
-* Trans : Running 
-* datetime : 30DEC2015:16:09:40 
+* Clus2 : Beginning update before running 
+* datetime : 31DEC2015:13:05:34 
 * 
 *------------------------------------------------------------* 
-15998      %let SYSCC =0;
-15999      %let EMGROUPMODE =;
-16000      %let EMGROUPID =;
+MPRINT(EM_DIAGRAM):     data WORK.Clus2_FILTERSET;
+MPRINT(EM_DIAGRAM):   length PORT $32 USE $1;
+MPRINT(EM_DIAGRAM):   DROP DELTACODE APPLYDELTA APPLYSCORE IMPORTPORT;
+MPRINT(EM_DIAGRAM):   set EMWS1.Trans_exportSet ;
+MPRINT(EM_DIAGRAM):   PORT = '';
+MPRINT(EM_DIAGRAM):   USE = '';
+MPRINT(EM_DIAGRAM):   where role in( "RAW" "TRAIN" "VALIDATE" "TEST" ) and EXPORT = 'Y' ;
+MPRINT(EM_DIAGRAM):   run;
+NOTE: This SAS session is using a registry in WORK.  All changes will be lost at the end of this session.
+16022      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+16023      set EMWS1.Trans_CMeta_TRAIN (obs=1);
+MPRINT(EM_DIAGRAM):   set EMWS1.Trans_CMeta_TRAIN (obs=1);
+16024      retain _segFlag_ 0;
+MPRINT(EM_DIAGRAM):   retain _segFlag_ 0;
+16025      drop _segFlag_;
+MPRINT(EM_DIAGRAM):   drop _segFlag_;
+16026      if upcase(name) = '_SEGMENT_' then do;
+MPRINT(EM_DIAGRAM):   if upcase(name) = '_SEGMENT_' then do;
+16027      _segFlag_ = 1;
+MPRINT(EM_DIAGRAM):   _segFlag_ = 1;
+16028      role = 'SEGMENT';
+MPRINT(EM_DIAGRAM):   role = 'SEGMENT';
+16029      level = 'NOMINAL';
+MPRINT(EM_DIAGRAM):   level = 'NOMINAL';
+16030      label = 'Segment Variable';
+MPRINT(EM_DIAGRAM):   label = 'Segment Variable';
+16031      end;
+MPRINT(EM_DIAGRAM):   end;
+16032      else if upcase(name) = '_SEGMENT_LABEL_' then do;
+MPRINT(EM_DIAGRAM):   else if upcase(name) = '_SEGMENT_LABEL_' then do;
+16033      role = 'REJECTED';
+MPRINT(EM_DIAGRAM):   role = 'REJECTED';
+16034      level = 'NOMINAL';
+MPRINT(EM_DIAGRAM):   level = 'NOMINAL';
+16035      label = 'Segment Description';
+MPRINT(EM_DIAGRAM):   label = 'Segment Description';
+16036      end;
+MPRINT(EM_DIAGRAM):   end;
+16037      else if upcase(NAME) = 'DISTANCE' then do;
+MPRINT(EM_DIAGRAM):   else if upcase(NAME) = 'DISTANCE' then do;
+16038      role = 'REJECTED';
+MPRINT(EM_DIAGRAM):   role = 'REJECTED';
+16039      level = 'INTERVAL';
+MPRINT(EM_DIAGRAM):   level = 'INTERVAL';
+16040      end;
+MPRINT(EM_DIAGRAM):   end;
+16041      output;
+MPRINT(EM_DIAGRAM):   output;
+16042      if ^_segFlag_ and _eof_ then do;
+MPRINT(EM_DIAGRAM):   if ^_segFlag_ and _eof_ then do;
+16043      type = 'N';
+MPRINT(EM_DIAGRAM):   type = 'N';
+16044      index = 'N';
+MPRINT(EM_DIAGRAM):   index = 'N';
+16045      indexType = 'NONE';
+MPRINT(EM_DIAGRAM):   indexType = 'NONE';
+16046      format = '';
+MPRINT(EM_DIAGRAM):   format = '';
+16047      informat = '';
+MPRINT(EM_DIAGRAM):   informat = '';
+16048      name = '_SEGMENT_';
+MPRINT(EM_DIAGRAM):   name = '_SEGMENT_';
+16049      role = 'SEGMENT';
+MPRINT(EM_DIAGRAM):   role = 'SEGMENT';
+16050      level = 'NOMINAL';
+MPRINT(EM_DIAGRAM):   level = 'NOMINAL';
+16051      label = 'Segment Variable';
+MPRINT(EM_DIAGRAM):   label = 'Segment Variable';
+16052      output;
+MPRINT(EM_DIAGRAM):   output;
+16053      name = '_SEGMENT_LABEL_';
+MPRINT(EM_DIAGRAM):   name = '_SEGMENT_LABEL_';
+16054      role = 'REJECTED';
+MPRINT(EM_DIAGRAM):   role = 'REJECTED';
+16055      level = 'NOMINAL';
+MPRINT(EM_DIAGRAM):   level = 'NOMINAL';
+16056      label = 'Segment Description';
+MPRINT(EM_DIAGRAM):   label = 'Segment Description';
+16057      output;
+MPRINT(EM_DIAGRAM):   output;
+16058      name = 'Distance';
+MPRINT(EM_DIAGRAM):   name = 'Distance';
+16059      role = 'REJECTED';
+MPRINT(EM_DIAGRAM):   role = 'REJECTED';
+16060      level = 'INTERVAL';
+MPRINT(EM_DIAGRAM):   level = 'INTERVAL';
+16061      label = 'Distance to Cluster Seed';
+MPRINT(EM_DIAGRAM):   label = 'Distance to Cluster Seed';
+16062      output;
+MPRINT(EM_DIAGRAM):   output;
+16063      end;
+MPRINT(EM_DIAGRAM):   end;
+16064      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: Variable _eof_ is uninitialized.
+NOTE: There were 1 observations read from the data set EMWS1.TRANS_CMETA_TRAIN.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+16065      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
+16066      * Clus2: Update Variables Set;
+MPRINT(EM_DIAGRAM):   * Clus2: Update Variables Set;
+16067      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+
+16068      data EMWS1.Clus2_VariableSet;
+MPRINT(EM_DIAGRAM):    data EMWS1.Clus2_VariableSet;
+16069      length USE $1;
+MPRINT(EM_DIAGRAM):   length USE $1;
+16070      label USE = "Use";
+MPRINT(EM_DIAGRAM):   label USE = "Use";
+16071      length REPORT $1;
+MPRINT(EM_DIAGRAM):   length REPORT $1;
+16072      label REPORT = "Report";
+MPRINT(EM_DIAGRAM):   label REPORT = "Report";
+16073      set EMWS1.Trans_CMeta_TRAIN;
+MPRINT(EM_DIAGRAM):   set EMWS1.Trans_CMeta_TRAIN;
+16074      where(ROLE in("INPUT" "REJECTED" "FREQ" "ID"));
+MPRINT(EM_DIAGRAM):   where(ROLE in("INPUT" "REJECTED" "FREQ" "ID"));
+16075      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: Variable USE is uninitialized.
+NOTE: There were 17 observations read from the data set EMWS1.TRANS_CMETA_TRAIN.
+      WHERE ROLE in ('FREQ', 'ID', 'INPUT', 'REJECTED');
+NOTE: The data set EMWS1.CLUS2_VARIABLESET has 17 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+16076      data EMWS1.Clus2_VariableSet;
+MPRINT(EM_DIAGRAM):    data EMWS1.Clus2_VariableSet;
+16077      set EMWS1.Clus2_VariableSet;
+MPRINT(EM_DIAGRAM):   set EMWS1.Clus2_VariableSet;
+16078      if upcase(NAME) = 'CLAIMSRATE' then do;
+MPRINT(EM_DIAGRAM):   if upcase(NAME) = 'CLAIMSRATE' then do;
+16079      USE = 'Y';
+MPRINT(EM_DIAGRAM):   USE = 'Y';
+16080      end;
+MPRINT(EM_DIAGRAM):   end;
+16081      if upcase(NAME) = 'CUSTOMERAGE' then do;
+MPRINT(EM_DIAGRAM):   if upcase(NAME) = 'CUSTOMERAGE' then do;
+16082      USE = 'N';
+MPRINT(EM_DIAGRAM):   USE = 'N';
+16083      end;
+MPRINT(EM_DIAGRAM):   end;
+16084      if upcase(NAME) = 'CUSTOMERIDENTITY' then do;
+MPRINT(EM_DIAGRAM):   if upcase(NAME) = 'CUSTOMERIDENTITY' then do;
+16085      USE = 'N';
+MPRINT(EM_DIAGRAM):   USE = 'N';
+16086      end;
+MPRINT(EM_DIAGRAM):   end;
+16087      if upcase(NAME) = 'CUSTOMERMONETARYVALUE' then do;
+MPRINT(EM_DIAGRAM):   if upcase(NAME) = 'CUSTOMERMONETARYVALUE' then do;
+16088      USE = 'Y';
+MPRINT(EM_DIAGRAM):   USE = 'Y';
+16089      end;
+MPRINT(EM_DIAGRAM):   end;
+16090      if upcase(NAME) = 'FIRSTPOLICYYEAR' then do;
+MPRINT(EM_DIAGRAM):   if upcase(NAME) = 'FIRSTPOLICYYEAR' then do;
+16091      USE = 'N';
+MPRINT(EM_DIAGRAM):   USE = 'N';
+16092      end;
+MPRINT(EM_DIAGRAM):   end;
+16093      if upcase(NAME) = 'IMP_EDUCATIONALDEGREE' then do;
+MPRINT(EM_DIAGRAM):   if upcase(NAME) = 'IMP_EDUCATIONALDEGREE' then do;
+16094      USE = 'Y';
+MPRINT(EM_DIAGRAM):   USE = 'Y';
+16095      end;
+MPRINT(EM_DIAGRAM):   end;
+16096      if upcase(NAME) = 'IMP_GEOGRAPHICLIVING' then do;
+MPRINT(EM_DIAGRAM):   if upcase(NAME) = 'IMP_GEOGRAPHICLIVING' then do;
+16097      USE = 'Y';
+MPRINT(EM_DIAGRAM):   USE = 'Y';
+16098      end;
+MPRINT(EM_DIAGRAM):   end;
+16099      if upcase(NAME) = 'IMP_GROSSMONTHLYSALARY' then do;
+MPRINT(EM_DIAGRAM):   if upcase(NAME) = 'IMP_GROSSMONTHLYSALARY' then do;
+16100      USE = 'Y';
+MPRINT(EM_DIAGRAM):   USE = 'Y';
+16101      end;
+MPRINT(EM_DIAGRAM):   end;
+16102      if upcase(NAME) = 'IMP_HASCHILDREN' then do;
+MPRINT(EM_DIAGRAM):   if upcase(NAME) = 'IMP_HASCHILDREN' then do;
+16103      USE = 'Y';
+MPRINT(EM_DIAGRAM):   USE = 'Y';
+16104      end;
+MPRINT(EM_DIAGRAM):   end;
+16105      if upcase(NAME) = 'IMP_PREMIUMSINLOBHEALTH' then do;
+MPRINT(EM_DIAGRAM):   if upcase(NAME) = 'IMP_PREMIUMSINLOBHEALTH' then do;
+16106      USE = 'Y';
+MPRINT(EM_DIAGRAM):   USE = 'Y';
+16107      end;
+MPRINT(EM_DIAGRAM):   end;
+16108      if upcase(NAME) = 'IMP_PREMIUMSINLOBLIFE' then do;
+MPRINT(EM_DIAGRAM):   if upcase(NAME) = 'IMP_PREMIUMSINLOBLIFE' then do;
+16109      USE = 'Y';
+MPRINT(EM_DIAGRAM):   USE = 'Y';
+16110      end;
+MPRINT(EM_DIAGRAM):   end;
+16111      if upcase(NAME) = 'IMP_PREMIUMSINLOBMOTOR' then do;
+MPRINT(EM_DIAGRAM):   if upcase(NAME) = 'IMP_PREMIUMSINLOBMOTOR' then do;
+16112      USE = 'Y';
+MPRINT(EM_DIAGRAM):   USE = 'Y';
+16113      end;
+MPRINT(EM_DIAGRAM):   end;
+16114      if upcase(NAME) = 'IMP_PREMIUMSINLOBWORKCOMP' then do;
+MPRINT(EM_DIAGRAM):   if upcase(NAME) = 'IMP_PREMIUMSINLOBWORKCOMP' then do;
+16115      USE = 'Y';
+MPRINT(EM_DIAGRAM):   USE = 'Y';
+16116      end;
+MPRINT(EM_DIAGRAM):   end;
+16117      if upcase(NAME) = 'IMP_REP_CUSTOMERAGE' then do;
+MPRINT(EM_DIAGRAM):   if upcase(NAME) = 'IMP_REP_CUSTOMERAGE' then do;
+16118      USE = 'Y';
+MPRINT(EM_DIAGRAM):   USE = 'Y';
+16119      end;
+MPRINT(EM_DIAGRAM):   end;
+16120      if upcase(NAME) = 'LOYALTY' then do;
+MPRINT(EM_DIAGRAM):   if upcase(NAME) = 'LOYALTY' then do;
+16121      USE = 'Y';
+MPRINT(EM_DIAGRAM):   USE = 'Y';
+16122      end;
+MPRINT(EM_DIAGRAM):   end;
+16123      if upcase(NAME) = 'PREMIUMSINLOBHOUSEHOLD' then do;
+MPRINT(EM_DIAGRAM):   if upcase(NAME) = 'PREMIUMSINLOBHOUSEHOLD' then do;
+16124      USE = 'Y';
+MPRINT(EM_DIAGRAM):   USE = 'Y';
+16125      end;
+MPRINT(EM_DIAGRAM):   end;
+16126      if upcase(NAME) = 'TOTAL_PREMIUM' then do;
+MPRINT(EM_DIAGRAM):   if upcase(NAME) = 'TOTAL_PREMIUM' then do;
+16127      USE = 'N';
+MPRINT(EM_DIAGRAM):   USE = 'N';
+16128      end;
+MPRINT(EM_DIAGRAM):   end;
+16129      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 17 observations read from the data set EMWS1.CLUS2_VARIABLESET.
+NOTE: The data set EMWS1.CLUS2_VARIABLESET has 17 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+16130      * Clus2: End of Update Variables Set;
+MPRINT(EM_DIAGRAM):    * Clus2: End of Update Variables Set;
+16131      *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+
+MPRINT(EM_DIAGRAM):    filename _emtool_ 'C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Clus2\PROPERTIES.xml' encoding="UTF-8" NOBOM;
+*------------------------------------------------------------* 
+* 
+* Clus2 : End update 
+* datetime : 31DEC2015:13:05:34 
+* 
+*------------------------------------------------------------* 
+16133      %em_getactionstatus(emlib =EMWS1, nodeid=Clus2);
+MPRINT(EM_DIAGRAM):   
+MPRINT(EM_GETACTIONSTATUS):   proc display c=sashelp.emutil.getactionstatus.scl;
+MPRINT(EM_GETACTIONSTATUS):   run;
+
+16134      %let em_Train = Y;
+16135      %let em_Report = Y;
+16136      %let em_Score = Y;
+16137      %let em_Run = Y;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(EM_GETACTIONSTATUS):   
+MPRINT(EM_DIAGRAM):  ;
+
+16138      %let emloopmode =;
+16139      %let emloopnumber =0;
+16140      %let emloopId =Clus2;
+*------------------------------------------------------------* 
+* 
+* Clus2 : Running 
+* datetime : 31DEC2015:13:05:34 
+* 
+*------------------------------------------------------------* 
+16141      %let SYSCC =0;
+16142      %let EMGROUPMODE =;
+16143      %let EMGROUPID =;
 MPRINT(EM_DIAGRAM):      filename temp catalog 'sashelp.emutil.em_vardist.source';
 MPRINT(EM_DIAGRAM):   filename temp;
 MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_classdist.source';
@@ -581,6 +921,6 @@ MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emutil.em_getvarname.source
 MPRINT(EM_DIAGRAM):   filename temp;
 MPRINT(EM_DIAGRAM):   filename temp catalog 'sashelp.emassmt.em_assess.source';
 MPRINT(EM_DIAGRAM):   filename temp;
-MPRINT(EM_DIAGRAM):    filename L168R25I "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Trans\EMSCORE.log" encoding="UTF-8" NOBOM;
-MPRINT(EM_DIAGRAM):   proc printto log=L168R25I new;
+MPRINT(EM_DIAGRAM):    filename L3LY520W "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Clus2\EMTRAIN.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   proc printto log=L3LY520W new;
 MPRINT(EM_DIAGRAM):   run;

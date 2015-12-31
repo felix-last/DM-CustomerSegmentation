@@ -18,877 +18,925 @@
       <Value>Non-Missing Values</Value>
       <Value>Imputed HasChildren</Value>
       <Value>10</Value>
-      <Value>48.65</Value>
+      <Value>24.37</Value>
       <Value>1</Value>
       <Value>0</Value>
-      <Value>          1:        48.6%
+      <Value>          1:        24.4%
  Count:         9787</Value>
-      <Value>Node Id:            1&#10;&#10;1:        48.6%&#10;3:        24.9%&#10;2:        26.5%&#10; Count:         9787</Value>
+      <Value>Node Id:            1&#10;&#10;1:        24.4%&#10;5:        13.3%&#10;3:        20.8%&#10;2:        18.9%&#10;4:        22.7%&#10; Count:         9787</Value>
       <Value>9787</Value>
     </Values>
     <Values>
       <Value>1 Or Missing</Value>
       <Value>Imputed PremiumsinLOBMotor</Value>
       <Value>7.0849085522</Value>
-      <Value>65.75</Value>
+      <Value>31.8</Value>
       <Value>2</Value>
       <Value>1</Value>
-      <Value>          1:        65.7%
+      <Value>          1:        31.8%
  Count:         6934</Value>
-      <Value>Node Id:            2&#10;&#10;1:        65.7%&#10;3:        29.7%&#10;2:         4.6%&#10; Count:         6934</Value>
+      <Value>Node Id:            2&#10;&#10;1:        31.8%&#10;5:        14.1%&#10;3:        27.8%&#10;2:        26.1%&#10;4:         0.2%&#10; Count:         6934</Value>
       <Value>6934</Value>
     </Values>
     <Values>
       <Value>0</Value>
       <Value>Imputed: Replacement: CustomerAg</Value>
       <Value>2.9150914478</Value>
-      <Value>79.81</Value>
+      <Value>77.32</Value>
       <Value>3</Value>
       <Value>1</Value>
-      <Value>          2:        79.8%
+      <Value>          4:        77.3%
  Count:         2853</Value>
-      <Value>Node Id:            3&#10;&#10;1:         7.1%&#10;3:        13.1%&#10;2:        79.8%&#10; Count:         2853</Value>
+      <Value>Node Id:            3&#10;&#10;1:         6.3%&#10;5:        11.4%&#10;3:         3.6%&#10;2:         1.4%&#10;4:        77.3%&#10; Count:         2853</Value>
       <Value>2853</Value>
     </Values>
     <Values>
-      <Value>&lt; 269.495</Value>
-      <Value>Imputed GrossMonthlySalary</Value>
-      <Value>2.4369060999</Value>
-      <Value>80.59</Value>
+      <Value>&lt; 347.565 Or Missing</Value>
+      <Value>Imputed: Replacement: CustomerAg</Value>
+      <Value>3.7917645857</Value>
+      <Value>44.81</Value>
       <Value>4</Value>
       <Value>2</Value>
-      <Value>          3:        80.6%
- Count:         2385</Value>
-      <Value>Node Id:            4&#10;&#10;1:         9.7%&#10;3:        80.6%&#10;2:         9.7%&#10; Count:         2385</Value>
-      <Value>2385</Value>
+      <Value>          3:        44.8%
+ Count:         3711</Value>
+      <Value>Node Id:            4&#10;&#10;1:         2.9%&#10;5:        26.4%&#10;3:        44.8%&#10;2:        25.5%&#10;4:         0.4%&#10; Count:         3711</Value>
+      <Value>3711</Value>
     </Values>
     <Values>
-      <Value>&gt;= 269.495 Or Missing</Value>
-      <Value>Imputed PremiumsinLOBMotor</Value>
-      <Value>4.6480024522</Value>
-      <Value>95.12</Value>
+      <Value>&gt;= 347.565</Value>
+      <Value>ClaimsRate</Value>
+      <Value>3.2931439665</Value>
+      <Value>65.06</Value>
       <Value>5</Value>
       <Value>2</Value>
-      <Value>          1:        95.1%
- Count:         4549</Value>
-      <Value>Node Id:            5&#10;&#10;1:        95.1%&#10;3:         3.0%&#10;2:         1.9%&#10; Count:         4549</Value>
-      <Value>4549</Value>
+      <Value>          1:        65.1%
+ Count:         3223</Value>
+      <Value>Node Id:            5&#10;&#10;1:        65.1%&#10;5:         0.0%&#10;3:         8.3%&#10;2:        26.7%&#10;4:         0.0%&#10; Count:         3223</Value>
+      <Value>3223</Value>
     </Values>
     <Values>
       <Value>&lt; 40.5</Value>
       <Value>Imputed PremiumsinLOBMotor</Value>
       <Value>0.4209665883</Value>
-      <Value>85.68</Value>
+      <Value>69.17</Value>
       <Value>6</Value>
       <Value>3</Value>
-      <Value>          3:        85.7%
+      <Value>          5:        69.2%
  Count:          412</Value>
-      <Value>Node Id:            6&#10;&#10;1:        11.2%&#10;3:        85.7%&#10;2:         3.2%&#10; Count:          412</Value>
+      <Value>Node Id:            6&#10;&#10;1:         6.1%&#10;5:        69.2%&#10;3:        23.5%&#10;2:         0.2%&#10;4:         1.0%&#10; Count:          412</Value>
       <Value>412</Value>
     </Values>
     <Values>
       <Value>&gt;= 40.5 Or Missing</Value>
       <Value>Imputed PremiumsinLOBMotor</Value>
       <Value>2.4941248595</Value>
-      <Value>92.75</Value>
+      <Value>90.21</Value>
       <Value>7</Value>
       <Value>3</Value>
-      <Value>          2:        92.7%
+      <Value>          4:        90.2%
  Count:         2441</Value>
-      <Value>Node Id:            7&#10;&#10;1:         6.4%&#10;3:         0.9%&#10;2:        92.7%&#10; Count:         2441</Value>
+      <Value>Node Id:            7&#10;&#10;1:         6.3%&#10;5:         1.6%&#10;3:         0.3%&#10;2:         1.6%&#10;4:        90.2%&#10; Count:         2441</Value>
       <Value>2441</Value>
     </Values>
     <Values>
-      <Value>&lt; 5991.5 Or Missing</Value>
-      <Value>Imputed: Replacement: CustomerAg</Value>
-      <Value>2.1477470113</Value>
-      <Value>88.34</Value>
+      <Value>&lt; 44.5 Or Missing</Value>
+      <Value>Imputed PremiumsinLOBMotor</Value>
+      <Value>2.6524982119</Value>
+      <Value>60.98</Value>
       <Value>8</Value>
       <Value>4</Value>
-      <Value>          3:        88.3%
- Count:         2102</Value>
-      <Value>Node Id:            8&#10;&#10;1:        10.1%&#10;3:        88.3%&#10;2:         1.5%&#10; Count:         2102</Value>
-      <Value>2102</Value>
+      <Value>          3:        61.0%
+ Count:         2596</Value>
+      <Value>Node Id:            8&#10;&#10;1:         2.2%&#10;5:        34.4%&#10;3:        61.0%&#10;2:         2.4%&#10;4:         0.0%&#10; Count:         2596</Value>
+      <Value>2596</Value>
     </Values>
     <Values>
-      <Value>&gt;= 5991.5</Value>
-      <Value>Imputed PremiumsinLOBHealth</Value>
-      <Value>0.2891590886</Value>
-      <Value>70.32</Value>
+      <Value>&gt;= 44.5</Value>
+      <Value>Imputed PremiumsinLOBMotor</Value>
+      <Value>1.1392663738</Value>
+      <Value>79.28</Value>
       <Value>9</Value>
       <Value>4</Value>
-      <Value>          2:        70.3%
- Count:          283</Value>
-      <Value>Node Id:            9&#10;&#10;1:         6.7%&#10;3:        23.0%&#10;2:        70.3%&#10; Count:          283</Value>
-      <Value>283</Value>
+      <Value>          2:        79.3%
+ Count:         1115</Value>
+      <Value>Node Id:            9&#10;&#10;1:         4.7%&#10;5:         7.6%&#10;3:         7.2%&#10;2:        79.3%&#10;4:         1.3%&#10; Count:         1115</Value>
+      <Value>1115</Value>
     </Values>
     <Values>
-      <Value>&lt; 295.555</Value>
-      <Value>Imputed GrossMonthlySalary</Value>
-      <Value>0.4393583325</Value>
-      <Value>65.12</Value>
+      <Value>&lt; 0.4516</Value>
+      <Value>Imputed PremiumsinLOBHealth</Value>
+      <Value>1.4447736794</Value>
+      <Value>94.7</Value>
       <Value>10</Value>
       <Value>5</Value>
-      <Value>          1:        65.1%
- Count:          430</Value>
-      <Value>Node Id:           10&#10;&#10;1:        65.1%&#10;3:        23.0%&#10;2:        11.9%&#10; Count:          430</Value>
-      <Value>430</Value>
+      <Value>          1:        94.7%
+ Count:         1414</Value>
+      <Value>Node Id:           10&#10;&#10;1:        94.7%&#10;5:         0.0%&#10;3:         0.5%&#10;2:         4.8%&#10;4:         0.0%&#10; Count:         1414</Value>
+      <Value>1414</Value>
     </Values>
     <Values>
-      <Value>&gt;= 295.555 Or Missing</Value>
-      <Value>Imputed GrossMonthlySalary</Value>
-      <Value>4.2086441198</Value>
-      <Value>98.25</Value>
+      <Value>&gt;= 0.4516 Or Missing</Value>
+      <Value>Imputed: Replacement: CustomerAg</Value>
+      <Value>1.8483702871</Value>
+      <Value>43.78</Value>
       <Value>11</Value>
       <Value>5</Value>
-      <Value>          1:        98.3%
- Count:         4119</Value>
-      <Value>Node Id:           11&#10;&#10;1:        98.3%&#10;3:         0.9%&#10;2:         0.8%&#10; Count:         4119</Value>
-      <Value>4119</Value>
+      <Value>          2:        43.8%
+ Count:         1809</Value>
+      <Value>Node Id:           11&#10;&#10;1:        41.9%&#10;5:         0.0%&#10;3:        14.3%&#10;2:        43.8%&#10;4:         0.0%&#10; Count:         1809</Value>
+      <Value>1809</Value>
     </Values>
     <Values>
-      <Value>&lt; 294.11 Or Missing</Value>
-      <Value>Imputed: Replacement: CustomerAg</Value>
-      <Value>0.367834883</Value>
-      <Value>95.83</Value>
+      <Value>&lt; 343.12 Or Missing</Value>
+      <Value>Imputed GrossMonthlySalary</Value>
+      <Value>0.3903136814</Value>
+      <Value>74.61</Value>
       <Value>12</Value>
       <Value>6</Value>
-      <Value>          3:        95.8%
- Count:          360</Value>
-      <Value>Node Id:           12&#10;&#10;1:         1.1%&#10;3:        95.8%&#10;2:         3.1%&#10; Count:          360</Value>
-      <Value>360</Value>
+      <Value>          5:        74.6%
+ Count:          382</Value>
+      <Value>Node Id:           12&#10;&#10;1:         0.8%&#10;5:        74.6%&#10;3:        23.6%&#10;2:         0.0%&#10;4:         1.0%&#10; Count:          382</Value>
+      <Value>382</Value>
     </Values>
     <Values>
-      <Value>&gt;= 294.11</Value>
-      <Value>Imputed EducationalDegree</Value>
-      <Value>0.0531317053</Value>
-      <Value>80.77</Value>
+      <Value>&gt;= 343.12</Value>
+      <Value>ClaimsRate</Value>
+      <Value>0.0306529069</Value>
+      <Value>73.33</Value>
       <Value>13</Value>
       <Value>6</Value>
-      <Value>          1:        80.8%
- Count:           52</Value>
-      <Value>Node Id:           13&#10;&#10;1:        80.8%&#10;3:        15.4%&#10;2:         3.8%&#10; Count:           52</Value>
-      <Value>52</Value>
+      <Value>          1:        73.3%
+ Count:           30</Value>
+      <Value>Node Id:           13&#10;&#10;1:        73.3%&#10;5:         0.0%&#10;3:        23.3%&#10;2:         3.3%&#10;4:         0.0%&#10; Count:           30</Value>
+      <Value>30</Value>
     </Values>
     <Values>
       <Value>&lt; 435.915 Or Missing</Value>
       <Value>Imputed: Replacement: CustomerAg</Value>
       <Value>2.3398385614</Value>
-      <Value>97.03</Value>
+      <Value>94.89</Value>
       <Value>14</Value>
       <Value>7</Value>
-      <Value>          2:        97.0%
+      <Value>          4:        94.9%
  Count:         2290</Value>
-      <Value>Node Id:           14&#10;&#10;1:         2.1%&#10;3:         0.9%&#10;2:        97.0%&#10; Count:         2290</Value>
+      <Value>Node Id:           14&#10;&#10;1:         2.1%&#10;5:         1.7%&#10;3:         0.3%&#10;2:         1.0%&#10;4:        94.9%&#10; Count:         2290</Value>
       <Value>2290</Value>
     </Values>
     <Values>
       <Value>&gt;= 435.915</Value>
-      <Value>Imputed: Replacement: CustomerAg</Value>
+      <Value>ClaimsRate</Value>
       <Value>0.1542862982</Value>
-      <Value>72.19</Value>
+      <Value>70.86</Value>
       <Value>15</Value>
       <Value>7</Value>
-      <Value>          1:        72.2%
+      <Value>          1:        70.9%
  Count:          151</Value>
-      <Value>Node Id:           15&#10;&#10;1:        72.2%&#10;3:         0.0%&#10;2:        27.8%&#10; Count:          151</Value>
+      <Value>Node Id:           15&#10;&#10;1:        70.9%&#10;5:         0.0%&#10;3:         0.0%&#10;2:         9.9%&#10;4:        19.2%&#10; Count:          151</Value>
       <Value>151</Value>
     </Values>
     <Values>
-      <Value>&lt; 61.5 Or Missing</Value>
-      <Value>Imputed PremiumsinLOBMotor</Value>
-      <Value>2.1150505773</Value>
-      <Value>89.18</Value>
+      <Value>&lt; 165.975</Value>
+      <Value>Imputed PremiumsinLOBHealth</Value>
+      <Value>0.9737406764</Value>
+      <Value>74.82</Value>
       <Value>16</Value>
       <Value>8</Value>
-      <Value>          3:        89.2%
- Count:         2070</Value>
-      <Value>Node Id:           16&#10;&#10;1:        10.1%&#10;3:        89.2%&#10;2:         0.7%&#10; Count:         2070</Value>
-      <Value>2070</Value>
+      <Value>          5:        74.8%
+ Count:          953</Value>
+      <Value>Node Id:           16&#10;&#10;1:         0.0%&#10;5:        74.8%&#10;3:        25.2%&#10;2:         0.0%&#10;4:         0.0%&#10; Count:          953</Value>
+      <Value>953</Value>
     </Values>
     <Values>
-      <Value>&gt;= 61.5</Value>
+      <Value>&gt;= 165.975 Or Missing</Value>
       <Value>Imputed PremiumsinLOBHealth</Value>
-      <Value>0.032696434</Value>
-      <Value>53.13</Value>
+      <Value>1.6787575355</Value>
+      <Value>81.74</Value>
       <Value>17</Value>
       <Value>8</Value>
-      <Value>          2:        53.1%
- Count:           32</Value>
-      <Value>Node Id:           17&#10;&#10;1:        12.5%&#10;3:        34.4%&#10;2:        53.1%&#10; Count:           32</Value>
-      <Value>32</Value>
+      <Value>          3:        81.7%
+ Count:         1643</Value>
+      <Value>Node Id:           17&#10;&#10;1:         3.4%&#10;5:        11.0%&#10;3:        81.7%&#10;2:         3.8%&#10;4:         0.0%&#10; Count:         1643</Value>
+      <Value>1643</Value>
     </Values>
     <Values>
-      <Value>&lt; 124.69</Value>
-      <Value>Imputed GrossMonthlySalary</Value>
-      <Value>0.0439358332</Value>
-      <Value>69.77</Value>
+      <Value>&lt; 173.7</Value>
+      <Value>Imputed PremiumsinLOBHealth</Value>
+      <Value>0.1246551548</Value>
+      <Value>48.36</Value>
       <Value>18</Value>
       <Value>9</Value>
-      <Value>          3:        69.8%
- Count:           43</Value>
-      <Value>Node Id:           18&#10;&#10;1:         2.3%&#10;3:        69.8%&#10;2:        27.9%&#10; Count:           43</Value>
-      <Value>43</Value>
+      <Value>          5:        48.4%
+ Count:          122</Value>
+      <Value>Node Id:           18&#10;&#10;1:         0.0%&#10;5:        48.4%&#10;3:         9.8%&#10;2:        34.4%&#10;4:         7.4%&#10; Count:          122</Value>
+      <Value>122</Value>
     </Values>
     <Values>
-      <Value>&gt;= 124.69 Or Missing</Value>
-      <Value>Imputed PremiumsinLOBMotor</Value>
-      <Value>0.2452232553</Value>
-      <Value>77.92</Value>
+      <Value>&gt;= 173.7 Or Missing</Value>
+      <Value>Imputed GrossMonthlySalary</Value>
+      <Value>1.014611219</Value>
+      <Value>84.79</Value>
       <Value>19</Value>
       <Value>9</Value>
-      <Value>          2:        77.9%
- Count:          240</Value>
-      <Value>Node Id:           19&#10;&#10;1:         7.5%&#10;3:        14.6%&#10;2:        77.9%&#10; Count:          240</Value>
-      <Value>240</Value>
+      <Value>          2:        84.8%
+ Count:          993</Value>
+      <Value>Node Id:           19&#10;&#10;1:         5.2%&#10;5:         2.6%&#10;3:         6.8%&#10;2:        84.8%&#10;4:         0.5%&#10; Count:          993</Value>
+      <Value>993</Value>
     </Values>
     <Values>
-      <Value>&lt; 6679 Or Missing</Value>
+      <Value>&lt; 190.87 Or Missing</Value>
       <Value>Imputed EducationalDegree</Value>
-      <Value>0.3841831</Value>
-      <Value>71.54</Value>
+      <Value>1.4130990089</Value>
+      <Value>95.16</Value>
       <Value>20</Value>
       <Value>10</Value>
-      <Value>          1:        71.5%
- Count:          376</Value>
-      <Value>Node Id:           20&#10;&#10;1:        71.5%&#10;3:        26.3%&#10;2:         2.1%&#10; Count:          376</Value>
-      <Value>376</Value>
+      <Value>          1:        95.2%
+ Count:         1383</Value>
+      <Value>Node Id:           20&#10;&#10;1:        95.2%&#10;5:         0.0%&#10;3:         0.1%&#10;2:         4.8%&#10;4:         0.0%&#10; Count:         1383</Value>
+      <Value>1383</Value>
     </Values>
     <Values>
-      <Value>&gt;= 6679</Value>
-      <Value>Imputed: Replacement: CustomerAg</Value>
-      <Value>0.0551752325</Value>
-      <Value>79.63</Value>
+      <Value>&gt;= 190.87</Value>
+      <Value></Value>
+      <Value>0.0316746705</Value>
+      <Value>74.19</Value>
       <Value>21</Value>
       <Value>10</Value>
-      <Value>          2:        79.6%
- Count:           54</Value>
-      <Value>Node Id:           21&#10;&#10;1:        20.4%&#10;3:         0.0%&#10;2:        79.6%&#10; Count:           54</Value>
-      <Value>54</Value>
+      <Value>          1:        74.2%
+ Count:           31</Value>
+      <Value>Node Id:           21&#10;&#10;1:        74.2%&#10;5:         0.0%&#10;3:        19.4%&#10;2:         6.5%&#10;4:         0.0%&#10; Count:           31</Value>
+      <Value>31</Value>
     </Values>
     <Values>
-      <Value>&lt; 8060 Or Missing</Value>
-      <Value>PremiumsinLOBHousehold</Value>
-      <Value>4.1616429958</Value>
-      <Value>98.58</Value>
+      <Value>&lt; 40.5</Value>
+      <Value>Imputed PremiumsinLOBHealth</Value>
+      <Value>0.4536630224</Value>
+      <Value>49.77</Value>
       <Value>22</Value>
       <Value>11</Value>
-      <Value>          1:        98.6%
- Count:         4073</Value>
-      <Value>Node Id:           22&#10;&#10;1:        98.6%&#10;3:         0.9%&#10;2:         0.5%&#10; Count:         4073</Value>
-      <Value>4073</Value>
+      <Value>          3:        49.8%
+ Count:          444</Value>
+      <Value>Node Id:           22&#10;&#10;1:        39.9%&#10;5:         0.0%&#10;3:        49.8%&#10;2:        10.4%&#10;4:         0.0%&#10; Count:          444</Value>
+      <Value>444</Value>
     </Values>
     <Values>
-      <Value>&gt;= 8060</Value>
+      <Value>&gt;= 40.5 Or Missing</Value>
       <Value>Imputed PremiumsinLOBMotor</Value>
-      <Value>0.0470011239</Value>
-      <Value>69.57</Value>
+      <Value>1.3947072647</Value>
+      <Value>54.65</Value>
       <Value>23</Value>
       <Value>11</Value>
-      <Value>          1:        69.6%
- Count:           46</Value>
-      <Value>Node Id:           23&#10;&#10;1:        69.6%&#10;3:         0.0%&#10;2:        30.4%&#10; Count:           46</Value>
-      <Value>46</Value>
+      <Value>          2:        54.7%
+ Count:         1365</Value>
+      <Value>Node Id:           23&#10;&#10;1:        42.6%&#10;5:         0.0%&#10;3:         2.8%&#10;2:        54.7%&#10;4:         0.0%&#10; Count:         1365</Value>
+      <Value>1365</Value>
     </Values>
     <Values>
-      <Value>&lt; 34.5 Or Missing</Value>
-      <Value></Value>
-      <Value>0.3300296311</Value>
-      <Value>98.76</Value>
+      <Value>&lt; 4451 Or Missing</Value>
+      <Value>Imputed PremiumsinLOBMotor</Value>
+      <Value>0.3800960458</Value>
+      <Value>75.27</Value>
       <Value>24</Value>
       <Value>12</Value>
-      <Value>          3:        98.8%
- Count:          323</Value>
-      <Value>Node Id:           24&#10;&#10;1:         0.9%&#10;3:        98.8%&#10;2:         0.3%&#10; Count:          323</Value>
-      <Value>323</Value>
+      <Value>          5:        75.3%
+ Count:          372</Value>
+      <Value>Node Id:           24&#10;&#10;1:         0.8%&#10;5:        75.3%&#10;3:        23.9%&#10;2:         0.0%&#10;4:         0.0%&#10; Count:          372</Value>
+      <Value>372</Value>
     </Values>
     <Values>
-      <Value>&gt;= 34.5</Value>
-      <Value>PremiumsinLOBHousehold</Value>
-      <Value>0.0378052519</Value>
-      <Value>70.27</Value>
+      <Value>&gt;= 4451</Value>
+      <Value></Value>
+      <Value>0.0102176356</Value>
+      <Value>50</Value>
       <Value>25</Value>
       <Value>12</Value>
-      <Value>          3:        70.3%
- Count:           37</Value>
-      <Value>Node Id:           25&#10;&#10;1:         2.7%&#10;3:        70.3%&#10;2:        27.0%&#10; Count:           37</Value>
-      <Value>37</Value>
+      <Value>          5:        50.0%
+ Count:           10</Value>
+      <Value>Node Id:           25&#10;&#10;1:         0.0%&#10;5:        50.0%&#10;3:        10.0%&#10;2:         0.0%&#10;4:        40.0%&#10; Count:           10</Value>
+      <Value>10</Value>
     </Values>
     <Values>
-      <Value>&lt; 3 - BSC/MSC</Value>
+      <Value>&lt; 0.8507 Or Missing</Value>
+      <Value></Value>
+      <Value>0.0183917442</Value>
+      <Value>100</Value>
+      <Value>26</Value>
+      <Value>13</Value>
+      <Value>          1:       100.0%
+ Count:           18</Value>
+      <Value>Node Id:           26&#10;&#10;1:       100.0%&#10;5:         0.0%&#10;3:         0.0%&#10;2:         0.0%&#10;4:         0.0%&#10; Count:           18</Value>
+      <Value>18</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 0.8507</Value>
       <Value></Value>
       <Value>0.0122611628</Value>
       <Value>58.33</Value>
-      <Value>26</Value>
+      <Value>27</Value>
       <Value>13</Value>
       <Value>          3:        58.3%
  Count:           12</Value>
-      <Value>Node Id:           26&#10;&#10;1:        33.3%&#10;3:        58.3%&#10;2:         8.3%&#10; Count:           12</Value>
+      <Value>Node Id:           27&#10;&#10;1:        33.3%&#10;5:         0.0%&#10;3:        58.3%&#10;2:         8.3%&#10;4:         0.0%&#10; Count:           12</Value>
       <Value>12</Value>
     </Values>
     <Values>
-      <Value>&gt;= 3 - BSC/MSC Or Missing</Value>
-      <Value></Value>
-      <Value>0.0408705426</Value>
-      <Value>95</Value>
-      <Value>27</Value>
-      <Value>13</Value>
-      <Value>          1:        95.0%
- Count:           40</Value>
-      <Value>Node Id:           27&#10;&#10;1:        95.0%&#10;3:         2.5%&#10;2:         2.5%&#10; Count:           40</Value>
-      <Value>40</Value>
-    </Values>
-    <Values>
-      <Value>&lt; 53.5</Value>
+      <Value>&lt; 52.5</Value>
       <Value>PremiumsinLOBHousehold</Value>
-      <Value>0.119546337</Value>
-      <Value>57.26</Value>
+      <Value>0.1083069378</Value>
+      <Value>43.4</Value>
       <Value>28</Value>
       <Value>14</Value>
-      <Value>          2:        57.3%
- Count:          117</Value>
-      <Value>Node Id:           28&#10;&#10;1:        29.1%&#10;3:        13.7%&#10;2:        57.3%&#10; Count:          117</Value>
-      <Value>117</Value>
+      <Value>          4:        43.4%
+ Count:          106</Value>
+      <Value>Node Id:           28&#10;&#10;1:        17.0%&#10;5:        15.1%&#10;3:         6.6%&#10;2:        17.9%&#10;4:        43.4%&#10; Count:          106</Value>
+      <Value>106</Value>
     </Values>
     <Values>
-      <Value>&gt;= 53.5 Or Missing</Value>
+      <Value>&gt;= 52.5 Or Missing</Value>
       <Value>Imputed PremiumsinLOBMotor</Value>
-      <Value>2.2202922244</Value>
-      <Value>99.17</Value>
+      <Value>2.2315316236</Value>
+      <Value>97.39</Value>
       <Value>29</Value>
       <Value>14</Value>
-      <Value>          2:        99.2%
- Count:         2173</Value>
-      <Value>Node Id:           29&#10;&#10;1:         0.6%&#10;3:         0.2%&#10;2:        99.2%&#10; Count:         2173</Value>
-      <Value>2173</Value>
+      <Value>          4:        97.4%
+ Count:         2184</Value>
+      <Value>Node Id:           29&#10;&#10;1:         1.4%&#10;5:         1.1%&#10;3:         0.0%&#10;2:         0.2%&#10;4:        97.4%&#10; Count:         2184</Value>
+      <Value>2184</Value>
     </Values>
     <Values>
-      <Value>&lt; 66.5 Or Missing</Value>
-      <Value>Imputed GrossMonthlySalary</Value>
-      <Value>0.1185245734</Value>
-      <Value>93.1</Value>
+      <Value>&lt; 0.962 Or Missing</Value>
+      <Value></Value>
+      <Value>0.0950240114</Value>
+      <Value>91.4</Value>
       <Value>30</Value>
       <Value>15</Value>
-      <Value>          1:        93.1%
- Count:          116</Value>
-      <Value>Node Id:           30&#10;&#10;1:        93.1%&#10;3:         0.0%&#10;2:         6.9%&#10; Count:          116</Value>
-      <Value>116</Value>
+      <Value>          1:        91.4%
+ Count:           93</Value>
+      <Value>Node Id:           30&#10;&#10;1:        91.4%&#10;5:         0.0%&#10;3:         0.0%&#10;2:         2.2%&#10;4:         6.5%&#10; Count:           93</Value>
+      <Value>93</Value>
     </Values>
     <Values>
-      <Value>&gt;= 66.5</Value>
-      <Value></Value>
-      <Value>0.0357617247</Value>
-      <Value>97.14</Value>
+      <Value>&gt;= 0.962</Value>
+      <Value>Imputed: Replacement: CustomerAg</Value>
+      <Value>0.0592622867</Value>
+      <Value>39.66</Value>
       <Value>31</Value>
       <Value>15</Value>
-      <Value>          2:        97.1%
- Count:           35</Value>
-      <Value>Node Id:           31&#10;&#10;1:         2.9%&#10;3:         0.0%&#10;2:        97.1%&#10; Count:           35</Value>
-      <Value>35</Value>
+      <Value>          4:        39.7%
+ Count:           58</Value>
+      <Value>Node Id:           31&#10;&#10;1:        37.9%&#10;5:         0.0%&#10;3:         0.0%&#10;2:        22.4%&#10;4:        39.7%&#10; Count:           58</Value>
+      <Value>58</Value>
     </Values>
     <Values>
-      <Value>&lt; 230.765 Or Missing</Value>
+      <Value>&lt; 249.88 Or Missing</Value>
       <Value></Value>
-      <Value>1.6521916828</Value>
-      <Value>97.28</Value>
+      <Value>0.6835598243</Value>
+      <Value>94.02</Value>
       <Value>32</Value>
       <Value>16</Value>
-      <Value>          3:        97.3%
- Count:         1617</Value>
-      <Value>Node Id:           32&#10;&#10;1:         2.0%&#10;3:        97.3%&#10;2:         0.7%&#10; Count:         1617</Value>
-      <Value>1617</Value>
+      <Value>          5:        94.0%
+ Count:          669</Value>
+      <Value>Node Id:           32&#10;&#10;1:         0.0%&#10;5:        94.0%&#10;3:         6.0%&#10;2:         0.0%&#10;4:         0.0%&#10; Count:          669</Value>
+      <Value>669</Value>
     </Values>
     <Values>
-      <Value>&gt;= 230.765</Value>
-      <Value>Imputed EducationalDegree</Value>
-      <Value>0.4628588945</Value>
-      <Value>60.26</Value>
+      <Value>&gt;= 249.88</Value>
+      <Value>CustomerMonetaryValue</Value>
+      <Value>0.2901808522</Value>
+      <Value>70.42</Value>
       <Value>33</Value>
       <Value>16</Value>
-      <Value>          3:        60.3%
- Count:          453</Value>
-      <Value>Node Id:           33&#10;&#10;1:        38.9%&#10;3:        60.3%&#10;2:         0.9%&#10; Count:          453</Value>
-      <Value>453</Value>
+      <Value>          3:        70.4%
+ Count:          284</Value>
+      <Value>Node Id:           33&#10;&#10;1:         0.0%&#10;5:        29.6%&#10;3:        70.4%&#10;2:         0.0%&#10;4:         0.0%&#10; Count:          284</Value>
+      <Value>284</Value>
     </Values>
     <Values>
-      <Value>&lt; 175.255</Value>
-      <Value></Value>
-      <Value>0.0091958721</Value>
-      <Value>88.89</Value>
+      <Value>&lt; 154.14</Value>
+      <Value>Imputed PremiumsinLOBMotor</Value>
+      <Value>0.2452232553</Value>
+      <Value>46.67</Value>
       <Value>34</Value>
       <Value>17</Value>
-      <Value>          3:        88.9%
- Count:            9</Value>
-      <Value>Node Id:           34&#10;&#10;1:         0.0%&#10;3:        88.9%&#10;2:        11.1%&#10; Count:            9</Value>
-      <Value>9</Value>
+      <Value>          5:        46.7%
+ Count:          240</Value>
+      <Value>Node Id:           34&#10;&#10;1:         6.3%&#10;5:        46.7%&#10;3:        34.6%&#10;2:        12.5%&#10;4:         0.0%&#10; Count:          240</Value>
+      <Value>240</Value>
     </Values>
     <Values>
-      <Value>&gt;= 175.255 Or Missing</Value>
-      <Value>ClaimsRate</Value>
-      <Value>0.023500562</Value>
-      <Value>69.57</Value>
+      <Value>&gt;= 154.14 Or Missing</Value>
+      <Value></Value>
+      <Value>1.4335342802</Value>
+      <Value>89.81</Value>
       <Value>35</Value>
       <Value>17</Value>
-      <Value>          2:        69.6%
- Count:           23</Value>
-      <Value>Node Id:           35&#10;&#10;1:        17.4%&#10;3:        13.0%&#10;2:        69.6%&#10; Count:           23</Value>
-      <Value>23</Value>
+      <Value>          3:        89.8%
+ Count:         1403</Value>
+      <Value>Node Id:           35&#10;&#10;1:         2.9%&#10;5:         4.9%&#10;3:        89.8%&#10;2:         2.4%&#10;4:         0.0%&#10; Count:         1403</Value>
+      <Value>1403</Value>
     </Values>
     <Values>
-      <Value>&lt; 7188 Or Missing</Value>
-      <Value></Value>
-      <Value>0.0337181976</Value>
-      <Value>84.85</Value>
+      <Value>&lt; 280.72 Or Missing</Value>
+      <Value>Imputed GrossMonthlySalary</Value>
+      <Value>0.112393992</Value>
+      <Value>53.64</Value>
       <Value>36</Value>
       <Value>18</Value>
-      <Value>          3:        84.8%
- Count:           33</Value>
-      <Value>Node Id:           36&#10;&#10;1:         3.0%&#10;3:        84.8%&#10;2:        12.1%&#10; Count:           33</Value>
-      <Value>33</Value>
+      <Value>          5:        53.6%
+ Count:          110</Value>
+      <Value>Node Id:           36&#10;&#10;1:         0.0%&#10;5:        53.6%&#10;3:         3.6%&#10;2:        38.2%&#10;4:         4.5%&#10; Count:          110</Value>
+      <Value>110</Value>
     </Values>
     <Values>
-      <Value>&gt;= 7188</Value>
+      <Value>&gt;= 280.72</Value>
       <Value></Value>
-      <Value>0.0102176356</Value>
-      <Value>80</Value>
+      <Value>0.0122611628</Value>
+      <Value>66.67</Value>
       <Value>37</Value>
       <Value>18</Value>
-      <Value>          2:        80.0%
- Count:           10</Value>
-      <Value>Node Id:           37&#10;&#10;1:         0.0%&#10;3:        20.0%&#10;2:        80.0%&#10; Count:           10</Value>
-      <Value>10</Value>
+      <Value>          3:        66.7%
+ Count:           12</Value>
+      <Value>Node Id:           37&#10;&#10;1:         0.0%&#10;5:         0.0%&#10;3:        66.7%&#10;2:         0.0%&#10;4:        33.3%&#10; Count:           12</Value>
+      <Value>12</Value>
     </Values>
     <Values>
-      <Value>&lt; 150.085</Value>
-      <Value>Imputed PremiumsinLOBHealth</Value>
-      <Value>0.0265658527</Value>
-      <Value>61.54</Value>
+      <Value>&lt; 4702</Value>
+      <Value>CustomerMonetaryValue</Value>
+      <Value>0.072545213</Value>
+      <Value>47.89</Value>
       <Value>38</Value>
       <Value>19</Value>
-      <Value>          3:        61.5%
- Count:           26</Value>
-      <Value>Node Id:           38&#10;&#10;1:         0.0%&#10;3:        61.5%&#10;2:        38.5%&#10; Count:           26</Value>
-      <Value>26</Value>
+      <Value>          3:        47.9%
+ Count:           71</Value>
+      <Value>Node Id:           38&#10;&#10;1:        14.1%&#10;5:         5.6%&#10;3:        47.9%&#10;2:        32.4%&#10;4:         0.0%&#10; Count:           71</Value>
+      <Value>71</Value>
     </Values>
     <Values>
-      <Value>&gt;= 150.085 Or Missing</Value>
-      <Value>Imputed: Replacement: CustomerAg</Value>
-      <Value>0.2186574027</Value>
-      <Value>82.71</Value>
+      <Value>&gt;= 4702 Or Missing</Value>
+      <Value></Value>
+      <Value>0.9420660059</Value>
+      <Value>88.83</Value>
       <Value>39</Value>
       <Value>19</Value>
-      <Value>          2:        82.7%
- Count:          214</Value>
-      <Value>Node Id:           39&#10;&#10;1:         8.4%&#10;3:         8.9%&#10;2:        82.7%&#10; Count:          214</Value>
-      <Value>214</Value>
+      <Value>          2:        88.8%
+ Count:          922</Value>
+      <Value>Node Id:           39&#10;&#10;1:         4.6%&#10;5:         2.4%&#10;3:         3.7%&#10;2:        88.8%&#10;4:         0.5%&#10; Count:          922</Value>
+      <Value>922</Value>
     </Values>
     <Values>
       <Value>&lt; 3 - BSC/MSC</Value>
       <Value>Imputed: Replacement: CustomerAg</Value>
-      <Value>0.1747215694</Value>
-      <Value>48.54</Value>
+      <Value>0.3944007357</Value>
+      <Value>83.68</Value>
       <Value>40</Value>
       <Value>20</Value>
-      <Value>          1:        48.5%
- Count:          171</Value>
-      <Value>Node Id:           40&#10;&#10;1:        48.5%&#10;3:        46.8%&#10;2:         4.7%&#10; Count:          171</Value>
-      <Value>171</Value>
+      <Value>          1:        83.7%
+ Count:          386</Value>
+      <Value>Node Id:           40&#10;&#10;1:        83.7%&#10;5:         0.0%&#10;3:         0.3%&#10;2:        16.1%&#10;4:         0.0%&#10; Count:          386</Value>
+      <Value>386</Value>
     </Values>
     <Values>
       <Value>&gt;= 3 - BSC/MSC Or Missing</Value>
       <Value></Value>
-      <Value>0.2094615306</Value>
-      <Value>90.73</Value>
+      <Value>1.0186982732</Value>
+      <Value>99.6</Value>
       <Value>41</Value>
       <Value>20</Value>
-      <Value>          1:        90.7%
- Count:          205</Value>
-      <Value>Node Id:           41&#10;&#10;1:        90.7%&#10;3:         9.3%&#10;2:         0.0%&#10; Count:          205</Value>
-      <Value>205</Value>
+      <Value>          1:        99.6%
+ Count:          997</Value>
+      <Value>Node Id:           41&#10;&#10;1:        99.6%&#10;5:         0.0%&#10;3:         0.0%&#10;2:         0.4%&#10;4:         0.0%&#10; Count:          997</Value>
+      <Value>997</Value>
     </Values>
     <Values>
-      <Value>&lt; 59.5</Value>
-      <Value></Value>
-      <Value>0.0153264535</Value>
-      <Value>53.33</Value>
+      <Value>&lt; 122.745</Value>
+      <Value>Imputed EducationalDegree</Value>
+      <Value>0.1808521508</Value>
+      <Value>75.71</Value>
       <Value>42</Value>
-      <Value>21</Value>
-      <Value>          1:        53.3%
- Count:           15</Value>
-      <Value>Node Id:           42&#10;&#10;1:        53.3%&#10;3:         0.0%&#10;2:        46.7%&#10; Count:           15</Value>
-      <Value>15</Value>
+      <Value>22</Value>
+      <Value>          1:        75.7%
+ Count:          177</Value>
+      <Value>Node Id:           42&#10;&#10;1:        75.7%&#10;5:         0.0%&#10;3:        11.3%&#10;2:        13.0%&#10;4:         0.0%&#10; Count:          177</Value>
+      <Value>177</Value>
     </Values>
     <Values>
-      <Value>&gt;= 59.5 Or Missing</Value>
+      <Value>&gt;= 122.745 Or Missing</Value>
       <Value></Value>
-      <Value>0.039848779</Value>
-      <Value>92.31</Value>
+      <Value>0.2728108716</Value>
+      <Value>75.28</Value>
       <Value>43</Value>
-      <Value>21</Value>
-      <Value>          2:        92.3%
- Count:           39</Value>
-      <Value>Node Id:           43&#10;&#10;1:         7.7%&#10;3:         0.0%&#10;2:        92.3%&#10; Count:           39</Value>
-      <Value>39</Value>
+      <Value>22</Value>
+      <Value>          3:        75.3%
+ Count:          267</Value>
+      <Value>Node Id:           43&#10;&#10;1:        16.1%&#10;5:         0.0%&#10;3:        75.3%&#10;2:         8.6%&#10;4:         0.0%&#10; Count:          267</Value>
+      <Value>267</Value>
     </Values>
     <Values>
-      <Value>&lt; 359.225 Or Missing</Value>
+      <Value>&lt; 455.585 Or Missing</Value>
       <Value></Value>
-      <Value>4.0952283642</Value>
-      <Value>99</Value>
+      <Value>0.7765403086</Value>
+      <Value>76.45</Value>
       <Value>44</Value>
-      <Value>22</Value>
-      <Value>          1:        99.0%
- Count:         4008</Value>
-      <Value>Node Id:           44&#10;&#10;1:        99.0%&#10;3:         0.5%&#10;2:         0.4%&#10; Count:         4008</Value>
-      <Value>4008</Value>
+      <Value>23</Value>
+      <Value>          2:        76.4%
+ Count:          760</Value>
+      <Value>Node Id:           44&#10;&#10;1:        18.6%&#10;5:         0.0%&#10;3:         5.0%&#10;2:        76.4%&#10;4:         0.0%&#10; Count:          760</Value>
+      <Value>760</Value>
     </Values>
     <Values>
-      <Value>&gt;= 359.225</Value>
-      <Value>Imputed GrossMonthlySalary</Value>
-      <Value>0.0664146317</Value>
-      <Value>72.31</Value>
+      <Value>&gt;= 455.585</Value>
+      <Value>Imputed EducationalDegree</Value>
+      <Value>0.6181669562</Value>
+      <Value>72.73</Value>
       <Value>45</Value>
-      <Value>22</Value>
-      <Value>          1:        72.3%
- Count:           65</Value>
-      <Value>Node Id:           45&#10;&#10;1:        72.3%&#10;3:        24.6%&#10;2:         3.1%&#10; Count:           65</Value>
-      <Value>65</Value>
+      <Value>23</Value>
+      <Value>          1:        72.7%
+ Count:          605</Value>
+      <Value>Node Id:           45&#10;&#10;1:        72.7%&#10;5:         0.0%&#10;3:         0.0%&#10;2:        27.3%&#10;4:         0.0%&#10; Count:          605</Value>
+      <Value>605</Value>
     </Values>
     <Values>
-      <Value>&lt; 380.405</Value>
-      <Value></Value>
-      <Value>0.016348217</Value>
-      <Value>75</Value>
+      <Value>&lt; 209.76 Or Missing</Value>
+      <Value>Imputed PremiumsinLOBHealth</Value>
+      <Value>0.3034637785</Value>
+      <Value>88.22</Value>
       <Value>46</Value>
-      <Value>23</Value>
-      <Value>          2:        75.0%
- Count:           16</Value>
-      <Value>Node Id:           46&#10;&#10;1:        25.0%&#10;3:         0.0%&#10;2:        75.0%&#10; Count:           16</Value>
-      <Value>16</Value>
+      <Value>24</Value>
+      <Value>          5:        88.2%
+ Count:          297</Value>
+      <Value>Node Id:           46&#10;&#10;1:         0.0%&#10;5:        88.2%&#10;3:        11.8%&#10;2:         0.0%&#10;4:         0.0%&#10; Count:          297</Value>
+      <Value>297</Value>
     </Values>
     <Values>
-      <Value>&gt;= 380.405 Or Missing</Value>
-      <Value></Value>
-      <Value>0.0306529069</Value>
-      <Value>93.33</Value>
+      <Value>&gt;= 209.76</Value>
+      <Value>CustomerMonetaryValue</Value>
+      <Value>0.0766322673</Value>
+      <Value>72</Value>
       <Value>47</Value>
-      <Value>23</Value>
-      <Value>          1:        93.3%
- Count:           30</Value>
-      <Value>Node Id:           47&#10;&#10;1:        93.3%&#10;3:         0.0%&#10;2:         6.7%&#10; Count:           30</Value>
-      <Value>30</Value>
-    </Values>
-    <Values>
-      <Value>&lt; 137.525</Value>
-      <Value></Value>
-      <Value>0.0091958721</Value>
-      <Value>77.78</Value>
-      <Value>50</Value>
-      <Value>25</Value>
-      <Value>          2:        77.8%
- Count:            9</Value>
-      <Value>Node Id:           50&#10;&#10;1:         0.0%&#10;3:        22.2%&#10;2:        77.8%&#10; Count:            9</Value>
-      <Value>9</Value>
-    </Values>
-    <Values>
-      <Value>&gt;= 137.525 Or Missing</Value>
-      <Value></Value>
-      <Value>0.0286093798</Value>
-      <Value>85.71</Value>
-      <Value>51</Value>
-      <Value>25</Value>
-      <Value>          3:        85.7%
- Count:           28</Value>
-      <Value>Node Id:           51&#10;&#10;1:         3.6%&#10;3:        85.7%&#10;2:        10.7%&#10; Count:           28</Value>
-      <Value>28</Value>
+      <Value>24</Value>
+      <Value>          3:        72.0%
+ Count:           75</Value>
+      <Value>Node Id:           47&#10;&#10;1:         4.0%&#10;5:        24.0%&#10;3:        72.0%&#10;2:         0.0%&#10;4:         0.0%&#10; Count:           75</Value>
+      <Value>75</Value>
     </Values>
     <Values>
       <Value>&lt; 437.025 Or Missing</Value>
       <Value>Imputed PremiumsinLOBMotor</Value>
-      <Value>0.1021763564</Value>
-      <Value>63</Value>
-      <Value>52</Value>
+      <Value>0.0919587208</Value>
+      <Value>51.11</Value>
+      <Value>48</Value>
       <Value>28</Value>
-      <Value>          2:        63.0%
- Count:          100</Value>
-      <Value>Node Id:           52&#10;&#10;1:        34.0%&#10;3:         3.0%&#10;2:        63.0%&#10; Count:          100</Value>
-      <Value>100</Value>
+      <Value>          4:        51.1%
+ Count:           90</Value>
+      <Value>Node Id:           48&#10;&#10;1:        20.0%&#10;5:         2.2%&#10;3:         6.7%&#10;2:        20.0%&#10;4:        51.1%&#10; Count:           90</Value>
+      <Value>90</Value>
     </Values>
     <Values>
       <Value>&gt;= 437.025</Value>
       <Value></Value>
-      <Value>0.0173699806</Value>
-      <Value>76.47</Value>
-      <Value>53</Value>
+      <Value>0.016348217</Value>
+      <Value>87.5</Value>
+      <Value>49</Value>
       <Value>28</Value>
-      <Value>          3:        76.5%
- Count:           17</Value>
-      <Value>Node Id:           53&#10;&#10;1:         0.0%&#10;3:        76.5%&#10;2:        23.5%&#10; Count:           17</Value>
-      <Value>17</Value>
+      <Value>          5:        87.5%
+ Count:           16</Value>
+      <Value>Node Id:           49&#10;&#10;1:         0.0%&#10;5:        87.5%&#10;3:         6.3%&#10;2:         6.3%&#10;4:         0.0%&#10; Count:           16</Value>
+      <Value>16</Value>
     </Values>
     <Values>
-      <Value>&lt; 413.745 Or Missing</Value>
+      <Value>&lt; 396.575 Or Missing</Value>
       <Value></Value>
-      <Value>2.1354858486</Value>
-      <Value>99.67</Value>
-      <Value>54</Value>
+      <Value>2.0854194339</Value>
+      <Value>98.68</Value>
+      <Value>50</Value>
       <Value>29</Value>
-      <Value>          2:        99.7%
- Count:         2090</Value>
-      <Value>Node Id:           54&#10;&#10;1:         0.1%&#10;3:         0.2%&#10;2:        99.7%&#10; Count:         2090</Value>
-      <Value>2090</Value>
+      <Value>          4:        98.7%
+ Count:         2041</Value>
+      <Value>Node Id:           50&#10;&#10;1:         0.0%&#10;5:         1.1%&#10;3:         0.0%&#10;2:         0.1%&#10;4:        98.7%&#10; Count:         2041</Value>
+      <Value>2041</Value>
     </Values>
     <Values>
-      <Value>&gt;= 413.745</Value>
-      <Value>Imputed GrossMonthlySalary</Value>
-      <Value>0.0848063758</Value>
-      <Value>86.75</Value>
-      <Value>55</Value>
-      <Value>29</Value>
-      <Value>          2:        86.7%
- Count:           83</Value>
-      <Value>Node Id:           55&#10;&#10;1:        13.3%&#10;3:         0.0%&#10;2:        86.7%&#10; Count:           83</Value>
-      <Value>83</Value>
-    </Values>
-    <Values>
-      <Value>&lt; 6516 Or Missing</Value>
-      <Value></Value>
-      <Value>0.0970675386</Value>
-      <Value>100</Value>
-      <Value>56</Value>
-      <Value>30</Value>
-      <Value>          1:       100.0%
- Count:           95</Value>
-      <Value>Node Id:           56&#10;&#10;1:       100.0%&#10;3:         0.0%&#10;2:         0.0%&#10; Count:           95</Value>
-      <Value>95</Value>
-    </Values>
-    <Values>
-      <Value>&gt;= 6516</Value>
-      <Value>Imputed PremiumsinLOBMotor</Value>
-      <Value>0.0214570348</Value>
-      <Value>61.9</Value>
-      <Value>57</Value>
-      <Value>30</Value>
-      <Value>          1:        61.9%
- Count:           21</Value>
-      <Value>Node Id:           57&#10;&#10;1:        61.9%&#10;3:         0.0%&#10;2:        38.1%&#10; Count:           21</Value>
-      <Value>21</Value>
-    </Values>
-    <Values>
-      <Value>&lt; 3 - BSC/MSC Or Missing</Value>
-      <Value></Value>
-      <Value>0.2513538367</Value>
-      <Value>82.93</Value>
-      <Value>60</Value>
-      <Value>33</Value>
-      <Value>          3:        82.9%
- Count:          246</Value>
-      <Value>Node Id:           60&#10;&#10;1:        15.4%&#10;3:        82.9%&#10;2:         1.6%&#10; Count:          246</Value>
-      <Value>246</Value>
-    </Values>
-    <Values>
-      <Value>&gt;= 3 - BSC/MSC</Value>
-      <Value></Value>
-      <Value>0.2115050577</Value>
-      <Value>66.67</Value>
-      <Value>61</Value>
-      <Value>33</Value>
-      <Value>          1:        66.7%
- Count:          207</Value>
-      <Value>Node Id:           61&#10;&#10;1:        66.7%&#10;3:        33.3%&#10;2:         0.0%&#10; Count:          207</Value>
-      <Value>207</Value>
-    </Values>
-    <Values>
-      <Value>&lt; 0.5976</Value>
-      <Value></Value>
-      <Value>0.0091958721</Value>
-      <Value>44.44</Value>
-      <Value>62</Value>
-      <Value>35</Value>
-      <Value>          1:        44.4%
- Count:            9</Value>
-      <Value>Node Id:           62&#10;&#10;1:        44.4%&#10;3:        33.3%&#10;2:        22.2%&#10; Count:            9</Value>
-      <Value>9</Value>
-    </Values>
-    <Values>
-      <Value>&gt;= 0.5976 Or Missing</Value>
-      <Value></Value>
-      <Value>0.0143046899</Value>
-      <Value>100</Value>
-      <Value>63</Value>
-      <Value>35</Value>
-      <Value>          2:       100.0%
- Count:           14</Value>
-      <Value>Node Id:           63&#10;&#10;1:         0.0%&#10;3:         0.0%&#10;2:       100.0%&#10; Count:           14</Value>
-      <Value>14</Value>
-    </Values>
-    <Values>
-      <Value>&lt; 238.655 Or Missing</Value>
-      <Value></Value>
-      <Value>0.0153264535</Value>
-      <Value>93.33</Value>
-      <Value>64</Value>
-      <Value>38</Value>
-      <Value>          3:        93.3%
- Count:           15</Value>
-      <Value>Node Id:           64&#10;&#10;1:         0.0%&#10;3:        93.3%&#10;2:         6.7%&#10; Count:           15</Value>
-      <Value>15</Value>
-    </Values>
-    <Values>
-      <Value>&gt;= 238.655</Value>
-      <Value></Value>
-      <Value>0.0112393992</Value>
-      <Value>81.82</Value>
-      <Value>65</Value>
-      <Value>38</Value>
-      <Value>          2:        81.8%
- Count:           11</Value>
-      <Value>Node Id:           65&#10;&#10;1:         0.0%&#10;3:        18.2%&#10;2:        81.8%&#10; Count:           11</Value>
-      <Value>11</Value>
-    </Values>
-    <Values>
-      <Value>&lt; 53.5</Value>
-      <Value></Value>
-      <Value>0.0122611628</Value>
-      <Value>41.67</Value>
-      <Value>66</Value>
-      <Value>39</Value>
-      <Value>          1:        41.7%
- Count:           12</Value>
-      <Value>Node Id:           66&#10;&#10;1:        41.7%&#10;3:        41.7%&#10;2:        16.7%&#10; Count:           12</Value>
-      <Value>12</Value>
-    </Values>
-    <Values>
-      <Value>&gt;= 53.5 Or Missing</Value>
-      <Value></Value>
-      <Value>0.2063962399</Value>
-      <Value>86.63</Value>
-      <Value>67</Value>
-      <Value>39</Value>
-      <Value>          2:        86.6%
- Count:          202</Value>
-      <Value>Node Id:           67&#10;&#10;1:         6.4%&#10;3:         6.9%&#10;2:        86.6%&#10; Count:          202</Value>
-      <Value>202</Value>
-    </Values>
-    <Values>
-      <Value>&lt; 58.5 Or Missing</Value>
-      <Value></Value>
+      <Value>&gt;= 396.575</Value>
+      <Value>Imputed: Replacement: CustomerAg</Value>
       <Value>0.1461121896</Value>
-      <Value>55.24</Value>
-      <Value>68</Value>
-      <Value>40</Value>
-      <Value>          3:        55.2%
+      <Value>79.02</Value>
+      <Value>51</Value>
+      <Value>29</Value>
+      <Value>          4:        79.0%
  Count:          143</Value>
-      <Value>Node Id:           68&#10;&#10;1:        44.8%&#10;3:        55.2%&#10;2:         0.0%&#10; Count:          143</Value>
+      <Value>Node Id:           51&#10;&#10;1:        20.3%&#10;5:         0.0%&#10;3:         0.0%&#10;2:         0.7%&#10;4:        79.0%&#10; Count:          143</Value>
       <Value>143</Value>
     </Values>
     <Values>
-      <Value>&gt;= 58.5</Value>
-      <Value></Value>
-      <Value>0.0286093798</Value>
-      <Value>67.86</Value>
-      <Value>69</Value>
-      <Value>40</Value>
-      <Value>          1:        67.9%
- Count:           28</Value>
-      <Value>Node Id:           69&#10;&#10;1:        67.9%&#10;3:         3.6%&#10;2:        28.6%&#10; Count:           28</Value>
-      <Value>28</Value>
+      <Value>&lt; 60.5 Or Missing</Value>
+      <Value>Imputed PremiumsinLOBWorkComp</Value>
+      <Value>0.0316746705</Value>
+      <Value>61.29</Value>
+      <Value>54</Value>
+      <Value>31</Value>
+      <Value>          1:        61.3%
+ Count:           31</Value>
+      <Value>Node Id:           54&#10;&#10;1:        61.3%&#10;5:         0.0%&#10;3:         0.0%&#10;2:        35.5%&#10;4:         3.2%&#10; Count:           31</Value>
+      <Value>31</Value>
     </Values>
     <Values>
-      <Value>&lt; 3985</Value>
-      <Value></Value>
-      <Value>0.0214570348</Value>
-      <Value>76.19</Value>
-      <Value>74</Value>
-      <Value>45</Value>
-      <Value>          3:        76.2%
- Count:           21</Value>
-      <Value>Node Id:           74&#10;&#10;1:        23.8%&#10;3:        76.2%&#10;2:         0.0%&#10; Count:           21</Value>
-      <Value>21</Value>
-    </Values>
-    <Values>
-      <Value>&gt;= 3985 Or Missing</Value>
-      <Value></Value>
-      <Value>0.0449575968</Value>
-      <Value>95.45</Value>
-      <Value>75</Value>
-      <Value>45</Value>
-      <Value>          1:        95.5%
- Count:           44</Value>
-      <Value>Node Id:           75&#10;&#10;1:        95.5%&#10;3:         0.0%&#10;2:         4.5%&#10; Count:           44</Value>
-      <Value>44</Value>
-    </Values>
-    <Values>
-      <Value>&lt; 370.57 Or Missing</Value>
-      <Value></Value>
-      <Value>0.0745887402</Value>
-      <Value>79.45</Value>
-      <Value>76</Value>
-      <Value>52</Value>
-      <Value>          2:        79.5%
- Count:           73</Value>
-      <Value>Node Id:           76&#10;&#10;1:        16.4%&#10;3:         4.1%&#10;2:        79.5%&#10; Count:           73</Value>
-      <Value>73</Value>
-    </Values>
-    <Values>
-      <Value>&gt;= 370.57</Value>
+      <Value>&gt;= 60.5</Value>
       <Value></Value>
       <Value>0.0275876162</Value>
       <Value>81.48</Value>
-      <Value>77</Value>
-      <Value>52</Value>
-      <Value>          1:        81.5%
+      <Value>55</Value>
+      <Value>31</Value>
+      <Value>          4:        81.5%
  Count:           27</Value>
-      <Value>Node Id:           77&#10;&#10;1:        81.5%&#10;3:         0.0%&#10;2:        18.5%&#10; Count:           27</Value>
+      <Value>Node Id:           55&#10;&#10;1:        11.1%&#10;5:         0.0%&#10;3:         0.0%&#10;2:         7.4%&#10;4:        81.5%&#10; Count:           27</Value>
       <Value>27</Value>
     </Values>
     <Values>
-      <Value>&lt; 6154.5</Value>
+      <Value>&lt; 419.47 Or Missing</Value>
       <Value></Value>
-      <Value>0.0132829263</Value>
-      <Value>69.23</Value>
-      <Value>80</Value>
-      <Value>55</Value>
-      <Value>          1:        69.2%
- Count:           13</Value>
-      <Value>Node Id:           80&#10;&#10;1:        69.2%&#10;3:         0.0%&#10;2:        30.8%&#10; Count:           13</Value>
-      <Value>13</Value>
+      <Value>0.2472667825</Value>
+      <Value>80.58</Value>
+      <Value>58</Value>
+      <Value>33</Value>
+      <Value>          3:        80.6%
+ Count:          242</Value>
+      <Value>Node Id:           58&#10;&#10;1:         0.0%&#10;5:        19.4%&#10;3:        80.6%&#10;2:         0.0%&#10;4:         0.0%&#10; Count:          242</Value>
+      <Value>242</Value>
     </Values>
     <Values>
-      <Value>&gt;= 6154.5 Or Missing</Value>
+      <Value>&gt;= 419.47</Value>
       <Value></Value>
-      <Value>0.0715234495</Value>
-      <Value>97.14</Value>
-      <Value>81</Value>
-      <Value>55</Value>
-      <Value>          2:        97.1%
- Count:           70</Value>
-      <Value>Node Id:           81&#10;&#10;1:         2.9%&#10;3:         0.0%&#10;2:        97.1%&#10; Count:           70</Value>
+      <Value>0.0429140697</Value>
+      <Value>88.1</Value>
+      <Value>59</Value>
+      <Value>33</Value>
+      <Value>          5:        88.1%
+ Count:           42</Value>
+      <Value>Node Id:           59&#10;&#10;1:         0.0%&#10;5:        88.1%&#10;3:        11.9%&#10;2:         0.0%&#10;4:         0.0%&#10; Count:           42</Value>
+      <Value>42</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 265.55 Or Missing</Value>
+      <Value></Value>
+      <Value>0.1246551548</Value>
+      <Value>78.69</Value>
+      <Value>60</Value>
+      <Value>34</Value>
+      <Value>          5:        78.7%
+ Count:          122</Value>
+      <Value>Node Id:           60&#10;&#10;1:         0.0%&#10;5:        78.7%&#10;3:        19.7%&#10;2:         1.6%&#10;4:         0.0%&#10; Count:          122</Value>
+      <Value>122</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 265.55</Value>
+      <Value></Value>
+      <Value>0.1205681005</Value>
+      <Value>50</Value>
+      <Value>61</Value>
+      <Value>34</Value>
+      <Value>          3:        50.0%
+ Count:          118</Value>
+      <Value>Node Id:           61&#10;&#10;1:        12.7%&#10;5:        13.6%&#10;3:        50.0%&#10;2:        23.7%&#10;4:         0.0%&#10; Count:          118</Value>
+      <Value>118</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 7355.5 Or Missing</Value>
+      <Value></Value>
+      <Value>0.1011545928</Value>
+      <Value>58.59</Value>
+      <Value>64</Value>
+      <Value>36</Value>
+      <Value>          5:        58.6%
+ Count:           99</Value>
+      <Value>Node Id:           64&#10;&#10;1:         0.0%&#10;5:        58.6%&#10;3:         4.0%&#10;2:        37.4%&#10;4:         0.0%&#10; Count:           99</Value>
+      <Value>99</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 7355.5</Value>
+      <Value></Value>
+      <Value>0.0112393992</Value>
+      <Value>45.45</Value>
+      <Value>65</Value>
+      <Value>36</Value>
+      <Value>          2:        45.5%
+ Count:           11</Value>
+      <Value>Node Id:           65&#10;&#10;1:         0.0%&#10;5:         9.1%&#10;3:         0.0%&#10;2:        45.5%&#10;4:        45.5%&#10; Count:           11</Value>
+      <Value>11</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 314.62 Or Missing</Value>
+      <Value></Value>
+      <Value>0.0551752325</Value>
+      <Value>59.26</Value>
+      <Value>66</Value>
+      <Value>38</Value>
+      <Value>          3:        59.3%
+ Count:           54</Value>
+      <Value>Node Id:           66&#10;&#10;1:         0.0%&#10;5:         5.6%&#10;3:        59.3%&#10;2:        35.2%&#10;4:         0.0%&#10; Count:           54</Value>
+      <Value>54</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 314.62</Value>
+      <Value></Value>
+      <Value>0.0173699806</Value>
+      <Value>58.82</Value>
+      <Value>67</Value>
+      <Value>38</Value>
+      <Value>          1:        58.8%
+ Count:           17</Value>
+      <Value>Node Id:           67&#10;&#10;1:        58.8%&#10;5:         5.9%&#10;3:        11.8%&#10;2:        23.5%&#10;4:         0.0%&#10; Count:           17</Value>
+      <Value>17</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 56.5 Or Missing</Value>
+      <Value></Value>
+      <Value>0.3433125575</Value>
+      <Value>92.26</Value>
       <Value>70</Value>
+      <Value>40</Value>
+      <Value>          1:        92.3%
+ Count:          336</Value>
+      <Value>Node Id:           70&#10;&#10;1:        92.3%&#10;5:         0.0%&#10;3:         0.3%&#10;2:         7.4%&#10;4:         0.0%&#10; Count:          336</Value>
+      <Value>336</Value>
     </Values>
     <Values>
-      <Value>&lt; 459.53</Value>
+      <Value>&gt;= 56.5</Value>
+      <Value></Value>
+      <Value>0.0510881782</Value>
+      <Value>74</Value>
+      <Value>71</Value>
+      <Value>40</Value>
+      <Value>          2:        74.0%
+ Count:           50</Value>
+      <Value>Node Id:           71&#10;&#10;1:        26.0%&#10;5:         0.0%&#10;3:         0.0%&#10;2:        74.0%&#10;4:         0.0%&#10; Count:           50</Value>
+      <Value>50</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 3 - BSC/MSC</Value>
+      <Value></Value>
+      <Value>0.0418923061</Value>
+      <Value>56.1</Value>
+      <Value>74</Value>
+      <Value>42</Value>
+      <Value>          2:        56.1%
+ Count:           41</Value>
+      <Value>Node Id:           74&#10;&#10;1:        26.8%&#10;5:         0.0%&#10;3:        17.1%&#10;2:        56.1%&#10;4:         0.0%&#10; Count:           41</Value>
+      <Value>41</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 3 - BSC/MSC Or Missing</Value>
+      <Value></Value>
+      <Value>0.1389598447</Value>
+      <Value>90.44</Value>
+      <Value>75</Value>
+      <Value>42</Value>
+      <Value>          1:        90.4%
+ Count:          136</Value>
+      <Value>Node Id:           75&#10;&#10;1:        90.4%&#10;5:         0.0%&#10;3:         9.6%&#10;2:         0.0%&#10;4:         0.0%&#10; Count:          136</Value>
+      <Value>136</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 3 - BSC/MSC</Value>
+      <Value></Value>
+      <Value>0.1491774803</Value>
+      <Value>82.19</Value>
+      <Value>80</Value>
+      <Value>45</Value>
+      <Value>          2:        82.2%
+ Count:          146</Value>
+      <Value>Node Id:           80&#10;&#10;1:        17.8%&#10;5:         0.0%&#10;3:         0.0%&#10;2:        82.2%&#10;4:         0.0%&#10; Count:          146</Value>
+      <Value>146</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 3 - BSC/MSC Or Missing</Value>
+      <Value></Value>
+      <Value>0.4689894758</Value>
+      <Value>90.2</Value>
+      <Value>81</Value>
+      <Value>45</Value>
+      <Value>          1:        90.2%
+ Count:          459</Value>
+      <Value>Node Id:           81&#10;&#10;1:        90.2%&#10;5:         0.0%&#10;3:         0.0%&#10;2:         9.8%&#10;4:         0.0%&#10; Count:          459</Value>
+      <Value>459</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 283.72 Or Missing</Value>
+      <Value></Value>
+      <Value>0.2697455809</Value>
+      <Value>94.32</Value>
+      <Value>82</Value>
+      <Value>46</Value>
+      <Value>          5:        94.3%
+ Count:          264</Value>
+      <Value>Node Id:           82&#10;&#10;1:         0.0%&#10;5:        94.3%&#10;3:         5.7%&#10;2:         0.0%&#10;4:         0.0%&#10; Count:          264</Value>
+      <Value>264</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 283.72</Value>
+      <Value></Value>
+      <Value>0.0337181976</Value>
+      <Value>60.61</Value>
+      <Value>83</Value>
+      <Value>46</Value>
+      <Value>          3:        60.6%
+ Count:           33</Value>
+      <Value>Node Id:           83&#10;&#10;1:         0.0%&#10;5:        39.4%&#10;3:        60.6%&#10;2:         0.0%&#10;4:         0.0%&#10; Count:           33</Value>
+      <Value>33</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 526.215 Or Missing</Value>
+      <Value></Value>
+      <Value>0.0653928681</Value>
+      <Value>82.81</Value>
+      <Value>84</Value>
+      <Value>47</Value>
+      <Value>          3:        82.8%
+ Count:           64</Value>
+      <Value>Node Id:           84&#10;&#10;1:         0.0%&#10;5:        17.2%&#10;3:        82.8%&#10;2:         0.0%&#10;4:         0.0%&#10; Count:           64</Value>
+      <Value>64</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 526.215</Value>
+      <Value></Value>
+      <Value>0.0112393992</Value>
+      <Value>63.64</Value>
+      <Value>85</Value>
+      <Value>47</Value>
+      <Value>          5:        63.6%
+ Count:           11</Value>
+      <Value>Node Id:           85&#10;&#10;1:        27.3%&#10;5:        63.6%&#10;3:         9.1%&#10;2:         0.0%&#10;4:         0.0%&#10; Count:           11</Value>
+      <Value>11</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 355.4 Or Missing</Value>
+      <Value></Value>
+      <Value>0.0582405231</Value>
+      <Value>71.93</Value>
+      <Value>86</Value>
+      <Value>48</Value>
+      <Value>          4:        71.9%
+ Count:           57</Value>
+      <Value>Node Id:           86&#10;&#10;1:         5.3%&#10;5:         3.5%&#10;3:        10.5%&#10;2:         8.8%&#10;4:        71.9%&#10; Count:           57</Value>
+      <Value>57</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 355.4</Value>
+      <Value></Value>
+      <Value>0.0337181976</Value>
+      <Value>45.45</Value>
+      <Value>87</Value>
+      <Value>48</Value>
+      <Value>          1:        45.5%
+ Count:           33</Value>
+      <Value>Node Id:           87&#10;&#10;1:        45.5%&#10;5:         0.0%&#10;3:         0.0%&#10;2:        39.4%&#10;4:        15.2%&#10; Count:           33</Value>
+      <Value>33</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 62.5</Value>
+      <Value></Value>
+      <Value>0.0357617247</Value>
+      <Value>57.14</Value>
+      <Value>90</Value>
+      <Value>51</Value>
+      <Value>          1:        57.1%
+ Count:           35</Value>
+      <Value>Node Id:           90&#10;&#10;1:        57.1%&#10;5:         0.0%&#10;3:         0.0%&#10;2:         2.9%&#10;4:        40.0%&#10; Count:           35</Value>
+      <Value>35</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 62.5 Or Missing</Value>
+      <Value></Value>
+      <Value>0.1103504649</Value>
+      <Value>91.67</Value>
+      <Value>91</Value>
+      <Value>51</Value>
+      <Value>          4:        91.7%
+ Count:          108</Value>
+      <Value>Node Id:           91&#10;&#10;1:         8.3%&#10;5:         0.0%&#10;3:         0.0%&#10;2:         0.0%&#10;4:        91.7%&#10; Count:          108</Value>
+      <Value>108</Value>
+    </Values>
+    <Values>
+      <Value>&lt; 10.445 Or Missing</Value>
+      <Value></Value>
+      <Value>0.0214570348</Value>
+      <Value>85.71</Value>
+      <Value>92</Value>
+      <Value>54</Value>
+      <Value>          1:        85.7%
+ Count:           21</Value>
+      <Value>Node Id:           92&#10;&#10;1:        85.7%&#10;5:         0.0%&#10;3:         0.0%&#10;2:        14.3%&#10;4:         0.0%&#10; Count:           21</Value>
+      <Value>21</Value>
+    </Values>
+    <Values>
+      <Value>&gt;= 10.445</Value>
       <Value></Value>
       <Value>0.0102176356</Value>
       <Value>80</Value>
-      <Value>82</Value>
-      <Value>57</Value>
+      <Value>93</Value>
+      <Value>54</Value>
       <Value>          2:        80.0%
  Count:           10</Value>
-      <Value>Node Id:           82&#10;&#10;1:        20.0%&#10;3:         0.0%&#10;2:        80.0%&#10; Count:           10</Value>
+      <Value>Node Id:           93&#10;&#10;1:        10.0%&#10;5:         0.0%&#10;3:         0.0%&#10;2:        80.0%&#10;4:        10.0%&#10; Count:           10</Value>
       <Value>10</Value>
-    </Values>
-    <Values>
-      <Value>&gt;= 459.53 Or Missing</Value>
-      <Value></Value>
-      <Value>0.0112393992</Value>
-      <Value>100</Value>
-      <Value>83</Value>
-      <Value>57</Value>
-      <Value>          1:       100.0%
- Count:           11</Value>
-      <Value>Node Id:           83&#10;&#10;1:       100.0%&#10;3:         0.0%&#10;2:         0.0%&#10; Count:           11</Value>
-      <Value>11</Value>
     </Values>
                         </ValuesList>
                   </EmbeddedData>

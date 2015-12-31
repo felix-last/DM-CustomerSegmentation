@@ -3,8 +3,8 @@ MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
 MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
 MPRINT(EM_DIAGRAM):   run;
 MPRINT(EM_DIAGRAM):   data _null_;
-MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "December 30, 2015" );
-MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "15:57:09" );
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "December 31, 2015" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "10:25:39" );
 MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
 MPRINT(EM_DIAGRAM):   put "* Score Log";
 MPRINT(EM_DIAGRAM):   put nldate;
@@ -13,19 +13,19 @@ MPRINT(EM_DIAGRAM):   put "*----------------------------------------------------
 MPRINT(EM_DIAGRAM):   run;
 *------------------------------------------------------------*
 * Score Log
-Date:                December 30, 2015
-Time:                15:57:09
+Date:                December 31, 2015
+Time:                10:25:39
 *------------------------------------------------------------*
-MPRINT(EM_DIAGRAM):    filename O2YACI1L "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Clus\EMSCORE.out" encoding="UTF-8" NOBOM;
-MPRINT(EM_DIAGRAM):   proc printto print=O2YACI1L new;
+MPRINT(EM_DIAGRAM):    filename O02F1ER4 "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Clus\EMSCORE.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   proc printto print=O02F1ER4 new;
 MPRINT(EM_DIAGRAM):   run;
-21233      proc transpose data=EMWS1.Clus_OUTVAR out=WORK.Clus_OUTVAR(rename=(COl2=NAME) where=(COL1='IMPUTED'));
+21127      proc transpose data=EMWS1.Clus_OUTVAR out=WORK.Clus_OUTVAR(rename=(COl2=NAME) where=(COL1='IMPUTED'));
 MPRINT(EM_DIAGRAM):    proc transpose data=EMWS1.Clus_OUTVAR out=WORK.Clus_OUTVAR(rename=(COl2=NAME) where=(COL1='IMPUTED'));
-21234      var ClaimsRate--T_IMP_EducationalDegree;
+21128      var ClaimsRate--T_IMP_EducationalDegree;
 MPRINT(EM_DIAGRAM):   var ClaimsRate--T_IMP_EducationalDegree;
-21235      where _TYPE_ in('TYPE' 'VARIABLE');
+21129      where _TYPE_ in('TYPE' 'VARIABLE');
 MPRINT(EM_DIAGRAM):   where _TYPE_ in('TYPE' 'VARIABLE');
-21236      run;
+21130      run;
 MPRINT(EM_DIAGRAM):   run;
 
 NOTE: There were 2 observations read from the data set EMWS1.CLUS_OUTVAR.
@@ -33,202 +33,212 @@ NOTE: There were 2 observations read from the data set EMWS1.CLUS_OUTVAR.
 NOTE: The data set WORK.CLUS_OUTVAR has 0 observations and 4 variables.
 NOTE: PROCEDURE TRANSPOSE used (Total process time):
       real time           0.01 seconds
-      cpu time            0.00 seconds
+      cpu time            0.01 seconds
       
 
-21237      proc sort data=WORK.Clus_OUTVAR;
+21131      proc sort data=WORK.Clus_OUTVAR;
 MPRINT(EM_DIAGRAM):   proc sort data=WORK.Clus_OUTVAR;
-21238      by NAME;
+21132      by NAME;
 MPRINT(EM_DIAGRAM):   by NAME;
-21239      run;
+21133      run;
 MPRINT(EM_DIAGRAM):   run;
 
 NOTE: Input data set is empty.
 NOTE: The data set WORK.CLUS_OUTVAR has 0 observations and 4 variables.
 NOTE: PROCEDURE SORT used (Total process time):
-      real time           0.00 seconds
-      cpu time            0.00 seconds
+      real time           0.01 seconds
+      cpu time            0.01 seconds
       
 
-21240      proc sort data=EMWS1.Clus_VariableSet(KEEP=NAME ROLE LEVEL) out=WORK.Clus_SORTEDVARS;
+21134      proc sort data=EMWS1.Clus_VariableSet(KEEP=NAME ROLE LEVEL) out=WORK.Clus_SORTEDVARS;
 MPRINT(EM_DIAGRAM):   proc sort data=EMWS1.Clus_VariableSet(KEEP=NAME ROLE LEVEL) out=WORK.Clus_SORTEDVARS;
-21241      by NAME;
+21135      by NAME;
 MPRINT(EM_DIAGRAM):   by NAME;
-21242      run;
+21136      run;
 MPRINT(EM_DIAGRAM):   run;
 
-NOTE: There were 19 observations read from the data set EMWS1.CLUS_VARIABLESET.
-NOTE: The data set WORK.CLUS_SORTEDVARS has 19 observations and 3 variables.
+NOTE: There were 17 observations read from the data set EMWS1.CLUS_VARIABLESET.
+NOTE: The data set WORK.CLUS_SORTEDVARS has 17 observations and 3 variables.
 NOTE: PROCEDURE SORT used (Total process time):
       real time           0.01 seconds
       cpu time            0.01 seconds
       
 
-21243      data WORK.Clus_OUTVAR;
+21137      data WORK.Clus_OUTVAR;
 MPRINT(EM_DIAGRAM):   data WORK.Clus_OUTVAR;
-21244      merge WORK.Clus_OUTVAR(in=INVAR) WORK.Clus_SORTEDVARS;
+21138      merge WORK.Clus_OUTVAR(in=INVAR) WORK.Clus_SORTEDVARS;
 MPRINT(EM_DIAGRAM):   merge WORK.Clus_OUTVAR(in=INVAR) WORK.Clus_SORTEDVARS;
-21245      by NAME;
+21139      by NAME;
 MPRINT(EM_DIAGRAM):   by NAME;
-21246      if INVAR then output;
+21140      if INVAR then output;
 MPRINT(EM_DIAGRAM):   if INVAR then output;
-21247      run;
+21141      run;
 MPRINT(EM_DIAGRAM):   run;
 
 WARNING: Multiple lengths were specified for the BY variable NAME by input data sets. This may cause unexpected results.
 NOTE: There were 0 observations read from the data set WORK.CLUS_OUTVAR.
-NOTE: There were 19 observations read from the data set WORK.CLUS_SORTEDVARS.
+NOTE: There were 17 observations read from the data set WORK.CLUS_SORTEDVARS.
 NOTE: The data set WORK.CLUS_OUTVAR has 0 observations and 6 variables.
 NOTE: DATA statement used (Total process time):
       real time           0.00 seconds
       cpu time            0.00 seconds
       
 
-21248      filename emflow "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Clus\EMFLOWSCORE.sas";
+NOTE: This SAS session is using a registry in WORK.  All changes will be lost at the end of this session.
+21142      filename emflow "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Clus\EMFLOWSCORE.sas";
 MPRINT(EM_DIAGRAM):    filename emflow "C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Clus\EMFLOWSCORE.sas";
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   * Clus: Scoring DATA data;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
-21249      *------------------------------------------------------------*;
-21250      * Clus: Scoring DATA data;
-21251      *------------------------------------------------------------*;
-21252      data EMWS1.Clus_TRAIN
-21253      / view=EMWS1.Clus_TRAIN
-21254      ;
+21143      *------------------------------------------------------------*;
+21144      * Clus: Scoring DATA data;
+21145      *------------------------------------------------------------*;
+21146      data EMWS1.Clus_TRAIN
+21147      / view=EMWS1.Clus_TRAIN
+21148      ;
 MPRINT(EM_DIAGRAM):   data EMWS1.Clus_TRAIN / view=EMWS1.Clus_TRAIN ;
-21255      set EMWS1.Filter_TRAIN
-21256      ;
+21149      set EMWS1.Filter_TRAIN
+21150      ;
 MPRINT(EM_DIAGRAM):   set EMWS1.Filter_TRAIN ;
-21257      %inc emflow;
+21151      %inc emflow;
 NOTE: %INCLUDE (level 1) file EMFLOW is file C:\Users\D059331\Desktop\DM_Insurance_segmentation\insurance_segmentation\Workspaces\EMWS1\Clus\EMFLOWSCORE.sas.
-21258     +*****************************************;
+21152     +*****************************************;
 MPRINT(EM_DIAGRAM):   *****************************************;
-21259     +*** Begin Scoring Code from PROC DMVQ ***;
+21153     +*** Begin Scoring Code from PROC DMVQ ***;
 MPRINT(EM_DIAGRAM):   *** Begin Scoring Code from PROC DMVQ ***;
-21260     +*****************************************;
+21154     +*****************************************;
 MPRINT(EM_DIAGRAM):   *****************************************;
-21261     +
-21262     +
-21263     +*** Begin Class Look-up, Standardization, Replacement ;
+21155     +
+21156     +
+21157     +*** Begin Class Look-up, Standardization, Replacement ;
 MPRINT(EM_DIAGRAM):   *** Begin Class Look-up, Standardization, Replacement ;
-21264     +drop _dm_bad; _dm_bad = 0;
+21158     +drop _dm_bad; _dm_bad = 0;
 MPRINT(EM_DIAGRAM):   drop _dm_bad;
 MPRINT(EM_DIAGRAM):   _dm_bad = 0;
-21265     +
-21266     +*** Standardize ClaimsRate ;
+21159     +
+21160     +*** Standardize ClaimsRate ;
 MPRINT(EM_DIAGRAM):   *** Standardize ClaimsRate ;
-21267     +drop T_ClaimsRate ;
+21161     +drop T_ClaimsRate ;
 MPRINT(EM_DIAGRAM):   drop T_ClaimsRate ;
-21268     +if missing( ClaimsRate ) then T_ClaimsRate = .;
+21162     +if missing( ClaimsRate ) then T_ClaimsRate = .;
 MPRINT(EM_DIAGRAM):   if missing( ClaimsRate ) then T_ClaimsRate = .;
-21269     +else T_ClaimsRate = (ClaimsRate - 0.67794677876012) * 3.19941338729829;
+21163     +else T_ClaimsRate = (ClaimsRate - 0.67794677876012) * 3.19941338729829;
 MPRINT(EM_DIAGRAM):   else T_ClaimsRate = (ClaimsRate - 0.67794677876012) * 3.19941338729829;
-21270     +
-21271     +*** Standardize CustomerMonetaryValue ;
+21164     +
+21165     +*** Standardize CustomerMonetaryValue ;
 MPRINT(EM_DIAGRAM):   *** Standardize CustomerMonetaryValue ;
-21272     +drop T_CustomerMonetaryValue ;
+21166     +drop T_CustomerMonetaryValue ;
 MPRINT(EM_DIAGRAM):   drop T_CustomerMonetaryValue ;
-21273     +if missing( CustomerMonetaryValue ) then T_CustomerMonetaryValue = .;
+21167     +if missing( CustomerMonetaryValue ) then T_CustomerMonetaryValue = .;
 MPRINT(EM_DIAGRAM):   if missing( CustomerMonetaryValue ) then T_CustomerMonetaryValue = .;
-21274     +else T_CustomerMonetaryValue = (CustomerMonetaryValue
-21275     +         - 216.160594666394) * 0.00411467214717;
+21168     +else T_CustomerMonetaryValue = (CustomerMonetaryValue
+21169     +         - 216.160594666394) * 0.00411467214717;
 MPRINT(EM_DIAGRAM):   else T_CustomerMonetaryValue = (CustomerMonetaryValue - 216.160594666394) * 0.00411467214717;
-21276     +
-21277     +*** Standardize IMP_GrossMonthlySalary ;
+21170     +
+21171     +*** Standardize IMP_GrossMonthlySalary ;
 MPRINT(EM_DIAGRAM):   *** Standardize IMP_GrossMonthlySalary ;
-21278     +drop T_IMP_GrossMonthlySalary ;
+21172     +drop T_IMP_GrossMonthlySalary ;
 MPRINT(EM_DIAGRAM):   drop T_IMP_GrossMonthlySalary ;
-21279     +if missing( IMP_GrossMonthlySalary ) then T_IMP_GrossMonthlySalary = .;
+21173     +if missing( IMP_GrossMonthlySalary ) then T_IMP_GrossMonthlySalary = .;
 MPRINT(EM_DIAGRAM):   if missing( IMP_GrossMonthlySalary ) then T_IMP_GrossMonthlySalary = .;
-21280     +else T_IMP_GrossMonthlySalary = (IMP_GrossMonthlySalary
-21281     +         - 5037.76267683033) * 0.00052230054959;
+21174     +else T_IMP_GrossMonthlySalary = (IMP_GrossMonthlySalary
+21175     +         - 5037.76267683033) * 0.00052230054959;
 MPRINT(EM_DIAGRAM):   else T_IMP_GrossMonthlySalary = (IMP_GrossMonthlySalary - 5037.76267683033) * 0.00052230054959;
-21282     +
-21283     +*** Standardize IMP_PremiumsinLOBHealth ;
+21176     +
+21177     +*** Standardize IMP_PremiumsinLOBHealth ;
 MPRINT(EM_DIAGRAM):   *** Standardize IMP_PremiumsinLOBHealth ;
-21284     +drop T_IMP_PremiumsinLOBHealth ;
+21178     +drop T_IMP_PremiumsinLOBHealth ;
 MPRINT(EM_DIAGRAM):   drop T_IMP_PremiumsinLOBHealth ;
-21285     +if missing( IMP_PremiumsinLOBHealth ) then T_IMP_PremiumsinLOBHealth = .;
+21179     +if missing( IMP_PremiumsinLOBHealth ) then T_IMP_PremiumsinLOBHealth = .;
 MPRINT(EM_DIAGRAM):   if missing( IMP_PremiumsinLOBHealth ) then T_IMP_PremiumsinLOBHealth = .;
-21286     +else T_IMP_PremiumsinLOBHealth = (IMP_PremiumsinLOBHealth
-21287     +         - 169.062511833779) * 0.01393077964912;
+21180     +else T_IMP_PremiumsinLOBHealth = (IMP_PremiumsinLOBHealth
+21181     +         - 169.062511833779) * 0.01393077964912;
 MPRINT(EM_DIAGRAM):   else T_IMP_PremiumsinLOBHealth = (IMP_PremiumsinLOBHealth - 169.062511833779) * 0.01393077964912;
-21288     +
-21289     +*** Standardize IMP_PremiumsinLOBLife ;
+21182     +
+21183     +*** Standardize IMP_PremiumsinLOBLife ;
 MPRINT(EM_DIAGRAM):   *** Standardize IMP_PremiumsinLOBLife ;
-21290     +drop T_IMP_PremiumsinLOBLife ;
+21184     +drop T_IMP_PremiumsinLOBLife ;
 MPRINT(EM_DIAGRAM):   drop T_IMP_PremiumsinLOBLife ;
-21291     +if missing( IMP_PremiumsinLOBLife ) then T_IMP_PremiumsinLOBLife = .;
+21185     +if missing( IMP_PremiumsinLOBLife ) then T_IMP_PremiumsinLOBLife = .;
 MPRINT(EM_DIAGRAM):   if missing( IMP_PremiumsinLOBLife ) then T_IMP_PremiumsinLOBLife = .;
-21292     +else T_IMP_PremiumsinLOBLife = (IMP_PremiumsinLOBLife
-21293     +         - 40.9128391370854) * 0.02196228220047;
+21186     +else T_IMP_PremiumsinLOBLife = (IMP_PremiumsinLOBLife
+21187     +         - 40.9128391370854) * 0.02196228220047;
 MPRINT(EM_DIAGRAM):   else T_IMP_PremiumsinLOBLife = (IMP_PremiumsinLOBLife - 40.9128391370854) * 0.02196228220047;
-21294     +
-21295     +*** Standardize IMP_PremiumsinLOBMotor ;
+21188     +
+21189     +*** Standardize IMP_PremiumsinLOBMotor ;
 MPRINT(EM_DIAGRAM):   *** Standardize IMP_PremiumsinLOBMotor ;
-21296     +drop T_IMP_PremiumsinLOBMotor ;
+21190     +drop T_IMP_PremiumsinLOBMotor ;
 MPRINT(EM_DIAGRAM):   drop T_IMP_PremiumsinLOBMotor ;
-21297     +if missing( IMP_PremiumsinLOBMotor ) then T_IMP_PremiumsinLOBMotor = .;
+21191     +if missing( IMP_PremiumsinLOBMotor ) then T_IMP_PremiumsinLOBMotor = .;
 MPRINT(EM_DIAGRAM):   if missing( IMP_PremiumsinLOBMotor ) then T_IMP_PremiumsinLOBMotor = .;
-21298     +else T_IMP_PremiumsinLOBMotor = (IMP_PremiumsinLOBMotor
-21299     +         - 300.705034925363) * 0.00752909476072;
+21192     +else T_IMP_PremiumsinLOBMotor = (IMP_PremiumsinLOBMotor
+21193     +         - 300.705034925363) * 0.00752909476072;
 MPRINT(EM_DIAGRAM):   else T_IMP_PremiumsinLOBMotor = (IMP_PremiumsinLOBMotor - 300.705034925363) * 0.00752909476072;
-21300     +
-21301     +*** Standardize IMP_PremiumsinLOBWorkComp ;
+21194     +
+21195     +*** Standardize IMP_PremiumsinLOBWorkComp ;
 MPRINT(EM_DIAGRAM):   *** Standardize IMP_PremiumsinLOBWorkComp ;
-21302     +drop T_IMP_PremiumsinLOBWorkComp ;
+21196     +drop T_IMP_PremiumsinLOBWorkComp ;
 MPRINT(EM_DIAGRAM):   drop T_IMP_PremiumsinLOBWorkComp ;
-21303     +if missing( IMP_PremiumsinLOBWorkComp ) then T_IMP_PremiumsinLOBWorkComp = .;
+21197     +if missing( IMP_PremiumsinLOBWorkComp ) then T_IMP_PremiumsinLOBWorkComp = .;
 MPRINT(EM_DIAGRAM):   if missing( IMP_PremiumsinLOBWorkComp ) then T_IMP_PremiumsinLOBWorkComp = .;
-21304     +else T_IMP_PremiumsinLOBWorkComp = (IMP_PremiumsinLOBWorkComp
-21305     +         - 39.1457064116058) * 0.02388036571999;
+21198     +else T_IMP_PremiumsinLOBWorkComp = (IMP_PremiumsinLOBWorkComp
+21199     +         - 39.1457064116058) * 0.02388036571999;
 MPRINT(EM_DIAGRAM):   else T_IMP_PremiumsinLOBWorkComp = (IMP_PremiumsinLOBWorkComp - 39.1457064116058) * 0.02388036571999;
-21306     +
-21307     +*** Standardize IMP_REP_CustomerAge ;
+21200     +
+21201     +*** Standardize IMP_REP_CustomerAge ;
 MPRINT(EM_DIAGRAM):   *** Standardize IMP_REP_CustomerAge ;
-21308     +drop T_IMP_REP_CustomerAge ;
+21202     +drop T_IMP_REP_CustomerAge ;
 MPRINT(EM_DIAGRAM):   drop T_IMP_REP_CustomerAge ;
-21309     +if missing( IMP_REP_CustomerAge ) then T_IMP_REP_CustomerAge = .;
+21203     +if missing( IMP_REP_CustomerAge ) then T_IMP_REP_CustomerAge = .;
 MPRINT(EM_DIAGRAM):   if missing( IMP_REP_CustomerAge ) then T_IMP_REP_CustomerAge = .;
-21310     +else T_IMP_REP_CustomerAge = (IMP_REP_CustomerAge
-21311     +         - 48.3002159661034) * 0.05849681051166;
+21204     +else T_IMP_REP_CustomerAge = (IMP_REP_CustomerAge
+21205     +         - 48.3002159661034) * 0.05849681051166;
 MPRINT(EM_DIAGRAM):   else T_IMP_REP_CustomerAge = (IMP_REP_CustomerAge - 48.3002159661034) * 0.05849681051166;
-21312     +
-21313     +*** Standardize PremiumsinLOBHousehold ;
+21206     +
+21207     +*** Standardize LOYALTY ;
+MPRINT(EM_DIAGRAM):   *** Standardize LOYALTY ;
+21208     +drop T_LOYALTY ;
+MPRINT(EM_DIAGRAM):   drop T_LOYALTY ;
+21209     +if missing( LOYALTY ) then T_LOYALTY = .;
+MPRINT(EM_DIAGRAM):   if missing( LOYALTY ) then T_LOYALTY = .;
+21210     +else T_LOYALTY = (LOYALTY - 29.0027065039337) * 0.15179623368094;
+MPRINT(EM_DIAGRAM):   else T_LOYALTY = (LOYALTY - 29.0027065039337) * 0.15179623368094;
+21211     +
+21212     +*** Standardize PremiumsinLOBHousehold ;
 MPRINT(EM_DIAGRAM):   *** Standardize PremiumsinLOBHousehold ;
-21314     +drop T_PremiumsinLOBHousehold ;
+21213     +drop T_PremiumsinLOBHousehold ;
 MPRINT(EM_DIAGRAM):   drop T_PremiumsinLOBHousehold ;
-21315     +if missing( PremiumsinLOBHousehold ) then T_PremiumsinLOBHousehold = .;
+21214     +if missing( PremiumsinLOBHousehold ) then T_PremiumsinLOBHousehold = .;
 MPRINT(EM_DIAGRAM):   if missing( PremiumsinLOBHousehold ) then T_PremiumsinLOBHousehold = .;
-21316     +else T_PremiumsinLOBHousehold = (PremiumsinLOBHousehold
-21317     +         - 198.392193726367) * 0.00468668992402;
+21215     +else T_PremiumsinLOBHousehold = (PremiumsinLOBHousehold
+21216     +         - 198.392193726367) * 0.00468668992402;
 MPRINT(EM_DIAGRAM):   else T_PremiumsinLOBHousehold = (PremiumsinLOBHousehold - 198.392193726367) * 0.00468668992402;
-21318     +
-21319     +*** Generate dummy variables for IMP_GeographicLiving ;
+21217     +
+21218     +*** Generate dummy variables for IMP_GeographicLiving ;
 MPRINT(EM_DIAGRAM):   *** Generate dummy variables for IMP_GeographicLiving ;
-21320     +drop IMP_GeographicLiving1 IMP_GeographicLiving2 IMP_GeographicLiving3
-21321     +        IMP_GeographicLiving4 ;
+21219     +drop IMP_GeographicLiving1 IMP_GeographicLiving2 IMP_GeographicLiving3
+21220     +        IMP_GeographicLiving4 ;
 MPRINT(EM_DIAGRAM):   drop IMP_GeographicLiving1 IMP_GeographicLiving2 IMP_GeographicLiving3 IMP_GeographicLiving4 ;
-21322     +if missing( IMP_GeographicLiving ) then do;
+21221     +if missing( IMP_GeographicLiving ) then do;
 MPRINT(EM_DIAGRAM):   if missing( IMP_GeographicLiving ) then do;
-21323     +   IMP_GeographicLiving1 = .;
+21222     +   IMP_GeographicLiving1 = .;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving1 = .;
-21324     +   IMP_GeographicLiving2 = .;
+21223     +   IMP_GeographicLiving2 = .;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving2 = .;
-21325     +   IMP_GeographicLiving3 = .;
+21224     +   IMP_GeographicLiving3 = .;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving3 = .;
-21326     +   IMP_GeographicLiving4 = .;
+21225     +   IMP_GeographicLiving4 = .;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving4 = .;
-21327     +end;
+21226     +end;
 MPRINT(EM_DIAGRAM):   end;
-21328     +else do;
+21227     +else do;
 MPRINT(EM_DIAGRAM):   else do;
-21329     +   length _dm12 $ 12; drop _dm12 ;
+21228     +   length _dm12 $ 12; drop _dm12 ;
 MPRINT(EM_DIAGRAM):   length _dm12 $ 12;
 MPRINT(EM_DIAGRAM):   drop _dm12 ;
-21330     +   _dm12 = put( IMP_GeographicLiving , BEST12. );
+21229     +   _dm12 = put( IMP_GeographicLiving , BEST12. );
 MPRINT(EM_DIAGRAM):   _dm12 = put( IMP_GeographicLiving , BEST12. );
-21331     +   %DMNORMIP( _dm12 )
+21230     +   %DMNORMIP( _dm12 )
 MPRINT(DMNORMIP):   call dmnorm(_dm12,
 MPRINT(DMNORLEN):  32
 MPRINT(DMNORMIP):  );
@@ -237,489 +247,575 @@ MPRINT(EM_DIAGRAM):   IMP_GeographicLiving1 = -0.32404062826594;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving2 = -0.16763086377407;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving3 = -0.25011493503349;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving4 = 0.6085514560971;
-21332     +   if _dm12 = '4'  then do;
+21231     +   if _dm12 = '4'  then do;
 MPRINT(EM_DIAGRAM):   end;
-21333     +      IMP_GeographicLiving1 = -0.32404062826594;
-21334     +      IMP_GeographicLiving2 = -0.16763086377407;
+21232     +      IMP_GeographicLiving1 = -0.32404062826594;
+21233     +      IMP_GeographicLiving2 = -0.16763086377407;
 MPRINT(EM_DIAGRAM):   else if _dm12 = '1' then do;
-21335     +      IMP_GeographicLiving3 = -0.25011493503349;
+21234     +      IMP_GeographicLiving3 = -0.25011493503349;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving1 = 0.77142936442447;
-21336     +      IMP_GeographicLiving4 = 0.6085514560971;
+21235     +      IMP_GeographicLiving4 = 0.6085514560971;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving2 = -0.16763086377407;
-21337     +   end;
+21236     +   end;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving3 = -0.25011493503349;
-21338     +   else if _dm12 = '1'  then do;
+21237     +   else if _dm12 = '1'  then do;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving4 = -0.41076962910268;
 MPRINT(EM_DIAGRAM):   end;
-21339     +      IMP_GeographicLiving1 = 0.77142936442447;
-21340     +      IMP_GeographicLiving2 = -0.16763086377407;
+21238     +      IMP_GeographicLiving1 = 0.77142936442447;
+21239     +      IMP_GeographicLiving2 = -0.16763086377407;
 MPRINT(EM_DIAGRAM):   else if _dm12 = '3' then do;
-21341     +      IMP_GeographicLiving3 = -0.25011493503349;
+21240     +      IMP_GeographicLiving3 = -0.25011493503349;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving1 = -0.32404062826594;
-21342     +      IMP_GeographicLiving4 = -0.41076962910268;
+21241     +      IMP_GeographicLiving4 = -0.41076962910268;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving2 = -0.16763086377407;
-21343     +   end;
+21242     +   end;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving3 = 0.99943834172648;
-21344     +   else if _dm12 = '3'  then do;
+21243     +   else if _dm12 = '3'  then do;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving4 = -0.41076962910268;
 MPRINT(EM_DIAGRAM):   end;
-21345     +      IMP_GeographicLiving1 = -0.32404062826594;
-21346     +      IMP_GeographicLiving2 = -0.16763086377407;
+21244     +      IMP_GeographicLiving1 = -0.32404062826594;
+21245     +      IMP_GeographicLiving2 = -0.16763086377407;
 MPRINT(EM_DIAGRAM):   else if _dm12 = '2' then do;
-21347     +      IMP_GeographicLiving3 = 0.99943834172648;
+21246     +      IMP_GeographicLiving3 = 0.99943834172648;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving1 = -0.32404062826594;
-21348     +      IMP_GeographicLiving4 = -0.41076962910268;
+21247     +      IMP_GeographicLiving4 = -0.41076962910268;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving2 = 1.49121975680923;
-21349     +   end;
+21248     +   end;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving3 = -0.25011493503349;
-21350     +   else if _dm12 = '2'  then do;
+21249     +   else if _dm12 = '2'  then do;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving4 = -0.41076962910268;
 MPRINT(EM_DIAGRAM):   end;
-21351     +      IMP_GeographicLiving1 = -0.32404062826594;
-21352     +      IMP_GeographicLiving2 = 1.49121975680923;
+21250     +      IMP_GeographicLiving1 = -0.32404062826594;
+21251     +      IMP_GeographicLiving2 = 1.49121975680923;
 MPRINT(EM_DIAGRAM):   else do;
-21353     +      IMP_GeographicLiving3 = -0.25011493503349;
+21252     +      IMP_GeographicLiving3 = -0.25011493503349;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving1 = .;
-21354     +      IMP_GeographicLiving4 = -0.41076962910268;
+21253     +      IMP_GeographicLiving4 = -0.41076962910268;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving2 = .;
-21355     +   end;
+21254     +   end;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving3 = .;
-21356     +   else do;
+21255     +   else do;
 MPRINT(EM_DIAGRAM):   IMP_GeographicLiving4 = .;
 MPRINT(EM_DIAGRAM):   _DM_BAD = 1;
-21357     +      IMP_GeographicLiving1 = .;
+21256     +      IMP_GeographicLiving1 = .;
 MPRINT(EM_DIAGRAM):   end;
-21358     +      IMP_GeographicLiving2 = .;
+21257     +      IMP_GeographicLiving2 = .;
 MPRINT(EM_DIAGRAM):   end;
-21359     +      IMP_GeographicLiving3 = .;
-21360     +      IMP_GeographicLiving4 = .;
+21258     +      IMP_GeographicLiving3 = .;
+21259     +      IMP_GeographicLiving4 = .;
 MPRINT(EM_DIAGRAM):   *** Generate dummy variables for IMP_HasChildren ;
-21361     +      _DM_BAD = 1;
+21260     +      _DM_BAD = 1;
 MPRINT(EM_DIAGRAM):   drop IMP_HasChildren0 IMP_HasChildren1 ;
-21362     +   end;
+21261     +   end;
 MPRINT(EM_DIAGRAM):   if missing( IMP_HasChildren ) then do;
-21363     +end;
+21262     +end;
 MPRINT(EM_DIAGRAM):   IMP_HasChildren0 = .;
-21364     +
+21263     +
 MPRINT(EM_DIAGRAM):   IMP_HasChildren1 = .;
-21365     +*** Generate dummy variables for IMP_HasChildren ;
+21264     +*** Generate dummy variables for IMP_HasChildren ;
 MPRINT(EM_DIAGRAM):   end;
-21366     +drop IMP_HasChildren0 IMP_HasChildren1 ;
-21367     +if missing( IMP_HasChildren ) then do;
+21265     +drop IMP_HasChildren0 IMP_HasChildren1 ;
+21266     +if missing( IMP_HasChildren ) then do;
 MPRINT(EM_DIAGRAM):   else do;
-21368     +   IMP_HasChildren0 = .;
+21267     +   IMP_HasChildren0 = .;
 MPRINT(EM_DIAGRAM):   length _dm12 $ 12;
-21369     +   IMP_HasChildren1 = .;
+21268     +   IMP_HasChildren1 = .;
 MPRINT(EM_DIAGRAM):   drop _dm12 ;
-21370     +end;
+21269     +end;
 MPRINT(EM_DIAGRAM):   _dm12 = put( IMP_HasChildren , BEST12. );
-21371     +else do;
-21372     +   length _dm12 $ 12; drop _dm12 ;
+21270     +else do;
+21271     +   length _dm12 $ 12; drop _dm12 ;
 MPRINT(DMNORMIP):   call dmnorm(_dm12,
-21373     +   _dm12 = put( IMP_HasChildren , BEST12. );
-21374     +   %DMNORMIP( _dm12 )
+21272     +   _dm12 = put( IMP_HasChildren , BEST12. );
+21273     +   %DMNORMIP( _dm12 )
 MPRINT(DMNORLEN):  32
 MPRINT(DMNORMIP):  );
 MPRINT(EM_DIAGRAM):   if _dm12 = '1' then do;
 MPRINT(EM_DIAGRAM):   IMP_HasChildren0 = -0.45354645930186;
 MPRINT(EM_DIAGRAM):   IMP_HasChildren1 = 0.45354645930186;
 MPRINT(EM_DIAGRAM):   end;
-21375     +   if _dm12 = '1'  then do;
+21274     +   if _dm12 = '1'  then do;
 MPRINT(EM_DIAGRAM):   else if _dm12 = '0' then do;
-21376     +      IMP_HasChildren0 = -0.45354645930186;
+21275     +      IMP_HasChildren0 = -0.45354645930186;
 MPRINT(EM_DIAGRAM):   IMP_HasChildren0 = 1.10231025194501;
-21377     +      IMP_HasChildren1 = 0.45354645930186;
+21276     +      IMP_HasChildren1 = 0.45354645930186;
 MPRINT(EM_DIAGRAM):   IMP_HasChildren1 = -1.10231025194501;
-21378     +   end;
+21277     +   end;
 MPRINT(EM_DIAGRAM):   end;
-21379     +   else if _dm12 = '0'  then do;
+21278     +   else if _dm12 = '0'  then do;
 MPRINT(EM_DIAGRAM):   else do;
-21380     +      IMP_HasChildren0 = 1.10231025194501;
+21279     +      IMP_HasChildren0 = 1.10231025194501;
 MPRINT(EM_DIAGRAM):   IMP_HasChildren0 = .;
-21381     +      IMP_HasChildren1 = -1.10231025194501;
+21280     +      IMP_HasChildren1 = -1.10231025194501;
 MPRINT(EM_DIAGRAM):   IMP_HasChildren1 = .;
-21382     +   end;
+21281     +   end;
 MPRINT(EM_DIAGRAM):   _DM_BAD = 1;
-21383     +   else do;
+21282     +   else do;
 MPRINT(EM_DIAGRAM):   end;
 MPRINT(EM_DIAGRAM):   end;
-21384     +      IMP_HasChildren0 = .;
-21385     +      IMP_HasChildren1 = .;
+21283     +      IMP_HasChildren0 = .;
+21284     +      IMP_HasChildren1 = .;
 MPRINT(EM_DIAGRAM):   *** Generate dummy variables for IMP_EducationalDegree ;
-21386     +      _DM_BAD = 1;
+21285     +      _DM_BAD = 1;
 MPRINT(EM_DIAGRAM):   drop T_IMP_EducationalDegree ;
-21387     +   end;
+21286     +   end;
 MPRINT(EM_DIAGRAM):   if missing( IMP_EducationalDegree ) then do;
-21388     +end;
+21287     +end;
 MPRINT(EM_DIAGRAM):   T_IMP_EducationalDegree = .;
-21389     +
+21288     +
 MPRINT(EM_DIAGRAM):   end;
-21390     +*** Generate dummy variables for IMP_EducationalDegree ;
-21391     +drop T_IMP_EducationalDegree ;
+21289     +*** Generate dummy variables for IMP_EducationalDegree ;
+21290     +drop T_IMP_EducationalDegree ;
 MPRINT(EM_DIAGRAM):   else do;
-21392     +if missing( IMP_EducationalDegree ) then do;
+21291     +if missing( IMP_EducationalDegree ) then do;
 MPRINT(EM_DIAGRAM):   length _dm15 $ 15;
-21393     +   T_IMP_EducationalDegree = .;
+21292     +   T_IMP_EducationalDegree = .;
 MPRINT(EM_DIAGRAM):   drop _dm15 ;
-21394     +end;
+21293     +end;
 MPRINT(EM_DIAGRAM):   _dm15 = put( IMP_EducationalDegree , $CHAR15. );
-21395     +else do;
-21396     +   length _dm15 $ 15; drop _dm15 ;
+21294     +else do;
+21295     +   length _dm15 $ 15; drop _dm15 ;
 MPRINT(DMNORMIP):   call dmnorm(_dm15,
-21397     +   _dm15 = put( IMP_EducationalDegree , $CHAR15. );
-21398     +   %DMNORMIP( _dm15 )
+21296     +   _dm15 = put( IMP_EducationalDegree , $CHAR15. );
+21297     +   %DMNORMIP( _dm15 )
 MPRINT(DMNORLEN):  32
 MPRINT(DMNORMIP):  );
 MPRINT(EM_DIAGRAM):   if _dm15 = '3 - BSC/MSC' then do;
 MPRINT(EM_DIAGRAM):   T_IMP_EducationalDegree = 0.73555748368902;
 MPRINT(EM_DIAGRAM):   end;
 MPRINT(EM_DIAGRAM):   else if _dm15 = '2 - HIGH SCHOOL' then do;
-21399     +   if _dm15 = '3 - BSC/MSC'  then do;
+21298     +   if _dm15 = '3 - BSC/MSC'  then do;
 MPRINT(EM_DIAGRAM):   T_IMP_EducationalDegree = -0.80523581525977;
-21400     +      T_IMP_EducationalDegree = 0.73555748368902;
+21299     +      T_IMP_EducationalDegree = 0.73555748368902;
 MPRINT(EM_DIAGRAM):   end;
-21401     +   end;
-21402     +   else if _dm15 = '2 - HIGH SCHOOL'  then do;
+21300     +   end;
+21301     +   else if _dm15 = '2 - HIGH SCHOOL'  then do;
 MPRINT(EM_DIAGRAM):   else if _dm15 = '1 - BASIC' then do;
 MPRINT(EM_DIAGRAM):   T_IMP_EducationalDegree = -1.6661375152455;
-21403     +      T_IMP_EducationalDegree = -0.80523581525977;
+21302     +      T_IMP_EducationalDegree = -0.80523581525977;
 MPRINT(EM_DIAGRAM):   end;
-21404     +   end;
-21405     +   else if _dm15 = '1 - BASIC'  then do;
+21303     +   end;
+21304     +   else if _dm15 = '1 - BASIC'  then do;
 MPRINT(EM_DIAGRAM):   else if _dm15 = '4 - PHD' then do;
 MPRINT(EM_DIAGRAM):   T_IMP_EducationalDegree = 1.7532834175406;
-21406     +      T_IMP_EducationalDegree = -1.6661375152455;
+21305     +      T_IMP_EducationalDegree = -1.6661375152455;
 MPRINT(EM_DIAGRAM):   end;
-21407     +   end;
-21408     +   else if _dm15 = '4 - PHD'  then do;
+21306     +   end;
+21307     +   else if _dm15 = '4 - PHD'  then do;
 MPRINT(EM_DIAGRAM):   else do;
 MPRINT(EM_DIAGRAM):   T_IMP_EducationalDegree = .;
-21409     +      T_IMP_EducationalDegree = 1.7532834175406;
+21308     +      T_IMP_EducationalDegree = 1.7532834175406;
 MPRINT(EM_DIAGRAM):   _DM_BAD = 1;
-21410     +   end;
+21309     +   end;
 MPRINT(EM_DIAGRAM):   end;
-21411     +   else do;
+21310     +   else do;
 MPRINT(EM_DIAGRAM):   end;
-21412     +      T_IMP_EducationalDegree = .;
+21311     +      T_IMP_EducationalDegree = .;
 MPRINT(EM_DIAGRAM):   *** End Class Look-up, Standardization, Replacement ;
-21413     +      _DM_BAD = 1;
-21414     +   end;
-21415     +end;
+21312     +      _DM_BAD = 1;
+21313     +   end;
+21314     +end;
 MPRINT(EM_DIAGRAM):   *** Omitted Cases;
-21416     +
+21315     +
 MPRINT(EM_DIAGRAM):   if _dm_bad then do;
-21417     +*** End Class Look-up, Standardization, Replacement ;
+21316     +*** End Class Look-up, Standardization, Replacement ;
 MPRINT(EM_DIAGRAM):   _SEGMENT_ = .;
 MPRINT(EM_DIAGRAM):   Distance = .;
-21418     +
+21317     +
 MPRINT(EM_DIAGRAM):   goto CLUSvlex ;
-21419     +
+21318     +
 MPRINT(EM_DIAGRAM):   end;
 MPRINT(EM_DIAGRAM):   *** omitted;
-21420     +*** Omitted Cases;
-21421     +if _dm_bad then do;
+21319     +*** Omitted Cases;
+21320     +if _dm_bad then do;
 MPRINT(EM_DIAGRAM):   *** Compute Distances and Cluster Membership;
-21422     +   _SEGMENT_ = .; Distance = .;
+21321     +   _SEGMENT_ = .; Distance = .;
 MPRINT(EM_DIAGRAM):   label _SEGMENT_ = 'Segment Id' ;
-21423     +   goto CLUSvlex ;
-21424     +end; *** omitted;
+21322     +   goto CLUSvlex ;
+21323     +end; *** omitted;
 MPRINT(EM_DIAGRAM):   label Distance = 'Distance' ;
-21425     +
-21426     +*** Compute Distances and Cluster Membership;
-MPRINT(EM_DIAGRAM):   array CLUSvads [3] _temporary_;
-21427     +label _SEGMENT_ = 'Segment Id' ;
+21324     +
+21325     +*** Compute Distances and Cluster Membership;
+MPRINT(EM_DIAGRAM):   array CLUSvads [5] _temporary_;
+21326     +label _SEGMENT_ = 'Segment Id' ;
 MPRINT(EM_DIAGRAM):   drop _vqclus _vqmvar _vqnvar;
 MPRINT(EM_DIAGRAM):   _vqmvar = 0;
-21428     +label Distance = 'Distance' ;
-MPRINT(EM_DIAGRAM):   do _vqclus = 1 to 3;
+21327     +label Distance = 'Distance' ;
+MPRINT(EM_DIAGRAM):   do _vqclus = 1 to 5;
 MPRINT(EM_DIAGRAM):   CLUSvads [_vqclus] = 0;
 MPRINT(EM_DIAGRAM):   end;
 MPRINT(EM_DIAGRAM):   if not missing( T_ClaimsRate ) then do;
-21429     +array CLUSvads [3] _temporary_;
-MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_ClaimsRate - -0.1067509403154 )**2;
-21430     +drop _vqclus _vqmvar _vqnvar;
-MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_ClaimsRate - 0.11883988166144 )**2;
-21431     +_vqmvar = 0;
-MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_ClaimsRate - 0.08095656243799 )**2;
-21432     +do _vqclus = 1 to 3; CLUSvads [_vqclus] = 0; end;
+21328     +array CLUSvads [5] _temporary_;
+MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_ClaimsRate - -0.55032712447982 )**2;
+21329     +drop _vqclus _vqmvar _vqnvar;
+MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_ClaimsRate - 0.24067040035191 )**2;
+21330     +_vqmvar = 0;
+MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_ClaimsRate - 0.37226668449576 )**2;
+21331     +do _vqclus = 1 to 5; CLUSvads [_vqclus] = 0; end;
+MPRINT(EM_DIAGRAM):   CLUSvads [4] + ( T_ClaimsRate - 0.12060121457744 )**2;
+21332     +if not missing( T_ClaimsRate ) then do;
+MPRINT(EM_DIAGRAM):   CLUSvads [5] + ( T_ClaimsRate - -0.11830649663813 )**2;
+21333     +   CLUSvads [1] + ( T_ClaimsRate - -0.55032712447982 )**2;
 MPRINT(EM_DIAGRAM):   end;
-21433     +if not missing( T_ClaimsRate ) then do;
-21434     +   CLUSvads [1] + ( T_ClaimsRate - -0.1067509403154 )**2;
+21334     +   CLUSvads [2] + ( T_ClaimsRate - 0.24067040035191 )**2;
+21335     +   CLUSvads [3] + ( T_ClaimsRate - 0.37226668449576 )**2;
 MPRINT(EM_DIAGRAM):   else _vqmvar + 1;
-21435     +   CLUSvads [2] + ( T_ClaimsRate - 0.11883988166144 )**2;
+21336     +   CLUSvads [4] + ( T_ClaimsRate - 0.12060121457744 )**2;
 MPRINT(EM_DIAGRAM):   if not missing( T_CustomerMonetaryValue ) then do;
-21436     +   CLUSvads [3] + ( T_ClaimsRate - 0.08095656243799 )**2;
-MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_CustomerMonetaryValue - -0.02465166420419 )**2;
-21437     +end;
-MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_CustomerMonetaryValue - -0.0835605329457 )**2;
-21438     +else _vqmvar + 1;
-MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_CustomerMonetaryValue - 0.13806534314775 )**2;
+21337     +   CLUSvads [5] + ( T_ClaimsRate - -0.11830649663813 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_CustomerMonetaryValue - 0.30423994153308 )**2;
+21338     +end;
+MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_CustomerMonetaryValue - -0.21996810108003 )**2;
+21339     +else _vqmvar + 1;
+MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_CustomerMonetaryValue - -0.37971273830137 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [4] + ( T_CustomerMonetaryValue - -0.09439896747785 )**2;
+21340     +if not missing( T_CustomerMonetaryValue ) then do;
+MPRINT(EM_DIAGRAM):   CLUSvads [5] + ( T_CustomerMonetaryValue - 0.49789441537079 )**2;
+21341     +   CLUSvads [1] + ( T_CustomerMonetaryValue - 0.30423994153308 )**2;
 MPRINT(EM_DIAGRAM):   end;
-21439     +if not missing( T_CustomerMonetaryValue ) then do;
-21440     +   CLUSvads [1] + ( T_CustomerMonetaryValue - -0.02465166420419 )**2;
+21342     +   CLUSvads [2] + ( T_CustomerMonetaryValue - -0.21996810108003 )**2;
+21343     +   CLUSvads [3] + ( T_CustomerMonetaryValue - -0.37971273830137 )**2;
 MPRINT(EM_DIAGRAM):   else _vqmvar + 1;
-21441     +   CLUSvads [2] + ( T_CustomerMonetaryValue - -0.0835605329457 )**2;
+21344     +   CLUSvads [4] + ( T_CustomerMonetaryValue - -0.09439896747785 )**2;
 MPRINT(EM_DIAGRAM):   if not missing( T_IMP_GrossMonthlySalary ) then do;
-21442     +   CLUSvads [3] + ( T_CustomerMonetaryValue - 0.13806534314775 )**2;
-MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_IMP_GrossMonthlySalary - -0.08937612472079 )**2;
-21443     +end;
-MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_IMP_GrossMonthlySalary - 1.11665313885414 )**2;
-21444     +else _vqmvar + 1;
-MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_IMP_GrossMonthlySalary - -1.02603933499744 )**2;
+21345     +   CLUSvads [5] + ( T_CustomerMonetaryValue - 0.49789441537079 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_IMP_GrossMonthlySalary - -0.08409439907167 )**2;
+21346     +end;
+MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_IMP_GrossMonthlySalary - 0.51351270530275 )**2;
+21347     +else _vqmvar + 1;
+MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_IMP_GrossMonthlySalary - -0.86709158628221 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [4] + ( T_IMP_GrossMonthlySalary - 1.15546926173304 )**2;
+21348     +if not missing( T_IMP_GrossMonthlySalary ) then do;
+MPRINT(EM_DIAGRAM):   CLUSvads [5] + ( T_IMP_GrossMonthlySalary - -1.14068968229078 )**2;
+21349     +   CLUSvads [1] + ( T_IMP_GrossMonthlySalary - -0.08409439907167 )**2;
 MPRINT(EM_DIAGRAM):   end;
-21445     +if not missing( T_IMP_GrossMonthlySalary ) then do;
-21446     +   CLUSvads [1] + ( T_IMP_GrossMonthlySalary - -0.08937612472079 )**2;
+21350     +   CLUSvads [2] + ( T_IMP_GrossMonthlySalary - 0.51351270530275 )**2;
+21351     +   CLUSvads [3] + ( T_IMP_GrossMonthlySalary - -0.86709158628221 )**2;
 MPRINT(EM_DIAGRAM):   else _vqmvar + 1;
-21447     +   CLUSvads [2] + ( T_IMP_GrossMonthlySalary - 1.11665313885414 )**2;
+21352     +   CLUSvads [4] + ( T_IMP_GrossMonthlySalary - 1.15546926173304 )**2;
 MPRINT(EM_DIAGRAM):   if not missing( T_IMP_PremiumsinLOBHealth ) then do;
-21448     +   CLUSvads [3] + ( T_IMP_GrossMonthlySalary - -1.02603933499744 )**2;
-MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_IMP_PremiumsinLOBHealth - -0.51705109816503 )**2;
-21449     +end;
-MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_IMP_PremiumsinLOBHealth - 0.55722691726309 )**2;
-21450     +else _vqmvar + 1;
-MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_IMP_PremiumsinLOBHealth - 0.4118777319249 )**2;
+21353     +   CLUSvads [5] + ( T_IMP_GrossMonthlySalary - -1.14068968229078 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_IMP_PremiumsinLOBHealth - -0.98937426534087 )**2;
+21354     +end;
+MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_IMP_PremiumsinLOBHealth - -0.30146037132124 )**2;
+21355     +else _vqmvar + 1;
+MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_IMP_PremiumsinLOBHealth - 0.74631647842302 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [4] + ( T_IMP_PremiumsinLOBHealth - 0.62149284176421 )**2;
+21356     +if not missing( T_IMP_PremiumsinLOBHealth ) then do;
+MPRINT(EM_DIAGRAM):   CLUSvads [5] + ( T_IMP_PremiumsinLOBHealth - -0.0115832415579 )**2;
+21357     +   CLUSvads [1] + ( T_IMP_PremiumsinLOBHealth - -0.98937426534087 )**2;
 MPRINT(EM_DIAGRAM):   end;
-21451     +if not missing( T_IMP_PremiumsinLOBHealth ) then do;
-21452     +   CLUSvads [1] + ( T_IMP_PremiumsinLOBHealth - -0.51705109816503 )**2;
+21358     +   CLUSvads [2] + ( T_IMP_PremiumsinLOBHealth - -0.30146037132124 )**2;
+21359     +   CLUSvads [3] + ( T_IMP_PremiumsinLOBHealth - 0.74631647842302 )**2;
 MPRINT(EM_DIAGRAM):   else _vqmvar + 1;
-21453     +   CLUSvads [2] + ( T_IMP_PremiumsinLOBHealth - 0.55722691726309 )**2;
+21360     +   CLUSvads [4] + ( T_IMP_PremiumsinLOBHealth - 0.62149284176421 )**2;
 MPRINT(EM_DIAGRAM):   if not missing( T_IMP_PremiumsinLOBLife ) then do;
-21454     +   CLUSvads [3] + ( T_IMP_PremiumsinLOBHealth - 0.4118777319249 )**2;
-MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_IMP_PremiumsinLOBLife - -0.48906418940277 )**2;
-21455     +end;
-MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_IMP_PremiumsinLOBLife - 0.07371157073035 )**2;
-21456     +else _vqmvar + 1;
-MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_IMP_PremiumsinLOBLife - 0.87710702640313 )**2;
+21361     +   CLUSvads [5] + ( T_IMP_PremiumsinLOBHealth - -0.0115832415579 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_IMP_PremiumsinLOBLife - -0.6504765301098 )**2;
+21362     +end;
+MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_IMP_PremiumsinLOBLife - -0.14547919467741 )**2;
+21363     +else _vqmvar + 1;
+MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_IMP_PremiumsinLOBLife - -0.11610398959901 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [4] + ( T_IMP_PremiumsinLOBLife - 0.05168632307734 )**2;
+21364     +if not missing( T_IMP_PremiumsinLOBLife ) then do;
+MPRINT(EM_DIAGRAM):   CLUSvads [5] + ( T_IMP_PremiumsinLOBLife - 1.45312309884203 )**2;
+21365     +   CLUSvads [1] + ( T_IMP_PremiumsinLOBLife - -0.6504765301098 )**2;
 MPRINT(EM_DIAGRAM):   end;
-21457     +if not missing( T_IMP_PremiumsinLOBLife ) then do;
-21458     +   CLUSvads [1] + ( T_IMP_PremiumsinLOBLife - -0.48906418940277 )**2;
+21366     +   CLUSvads [2] + ( T_IMP_PremiumsinLOBLife - -0.14547919467741 )**2;
+21367     +   CLUSvads [3] + ( T_IMP_PremiumsinLOBLife - -0.11610398959901 )**2;
 MPRINT(EM_DIAGRAM):   else _vqmvar + 1;
-21459     +   CLUSvads [2] + ( T_IMP_PremiumsinLOBLife - 0.07371157073035 )**2;
+21368     +   CLUSvads [4] + ( T_IMP_PremiumsinLOBLife - 0.05168632307734 )**2;
 MPRINT(EM_DIAGRAM):   if not missing( T_IMP_PremiumsinLOBMotor ) then do;
-21460     +   CLUSvads [3] + ( T_IMP_PremiumsinLOBLife - 0.87710702640313 )**2;
-MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_IMP_PremiumsinLOBMotor - 0.76589928619236 )**2;
-21461     +end;
-MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_IMP_PremiumsinLOBMotor - -0.38441255049986 )**2;
-21462     +else _vqmvar + 1;
-MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_IMP_PremiumsinLOBMotor - -1.08434458051326 )**2;
+21369     +   CLUSvads [5] + ( T_IMP_PremiumsinLOBLife - 1.45312309884203 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_IMP_PremiumsinLOBMotor - 1.18671497909633 )**2;
+21370     +end;
+MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_IMP_PremiumsinLOBMotor - 0.28040978116274 )**2;
+21371     +else _vqmvar + 1;
+MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_IMP_PremiumsinLOBMotor - -0.297783823788 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [4] + ( T_IMP_PremiumsinLOBMotor - -0.39131642130038 )**2;
+21372     +if not missing( T_IMP_PremiumsinLOBMotor ) then do;
+MPRINT(EM_DIAGRAM):   CLUSvads [5] + ( T_IMP_PremiumsinLOBMotor - -1.38909537454878 )**2;
+21373     +   CLUSvads [1] + ( T_IMP_PremiumsinLOBMotor - 1.18671497909633 )**2;
 MPRINT(EM_DIAGRAM):   end;
-21463     +if not missing( T_IMP_PremiumsinLOBMotor ) then do;
-21464     +   CLUSvads [1] + ( T_IMP_PremiumsinLOBMotor - 0.76589928619236 )**2;
+21374     +   CLUSvads [2] + ( T_IMP_PremiumsinLOBMotor - 0.28040978116274 )**2;
+21375     +   CLUSvads [3] + ( T_IMP_PremiumsinLOBMotor - -0.297783823788 )**2;
 MPRINT(EM_DIAGRAM):   else _vqmvar + 1;
-21465     +   CLUSvads [2] + ( T_IMP_PremiumsinLOBMotor - -0.38441255049986 )**2;
+21376     +   CLUSvads [4] + ( T_IMP_PremiumsinLOBMotor - -0.39131642130038 )**2;
 MPRINT(EM_DIAGRAM):   if not missing( T_IMP_PremiumsinLOBWorkComp ) then do;
-21466     +   CLUSvads [3] + ( T_IMP_PremiumsinLOBMotor - -1.08434458051326 )**2;
-MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_IMP_PremiumsinLOBWorkComp - -0.4987161937694 )**2;
-21467     +end;
-MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_IMP_PremiumsinLOBWorkComp - 0.07614030401026 )**2;
-21468     +else _vqmvar + 1;
-MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_IMP_PremiumsinLOBWorkComp - 0.89336991525772 )**2;
+21377     +   CLUSvads [5] + ( T_IMP_PremiumsinLOBMotor - -1.38909537454878 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_IMP_PremiumsinLOBWorkComp - -0.67595844999924 )**2;
+21378     +end;
+MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_IMP_PremiumsinLOBWorkComp - -0.0996449923526 )**2;
+21379     +else _vqmvar + 1;
+MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_IMP_PremiumsinLOBWorkComp - -0.06631905428861 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [4] + ( T_IMP_PremiumsinLOBWorkComp - 0.03890616916594 )**2;
+21380     +if not missing( T_IMP_PremiumsinLOBWorkComp ) then do;
+MPRINT(EM_DIAGRAM):   CLUSvads [5] + ( T_IMP_PremiumsinLOBWorkComp - 1.3810679485595 )**2;
+21381     +   CLUSvads [1] + ( T_IMP_PremiumsinLOBWorkComp - -0.67595844999924 )**2;
 MPRINT(EM_DIAGRAM):   end;
-21469     +if not missing( T_IMP_PremiumsinLOBWorkComp ) then do;
-21470     +   CLUSvads [1] + ( T_IMP_PremiumsinLOBWorkComp - -0.4987161937694 )**2;
+21382     +   CLUSvads [2] + ( T_IMP_PremiumsinLOBWorkComp - -0.0996449923526 )**2;
+21383     +   CLUSvads [3] + ( T_IMP_PremiumsinLOBWorkComp - -0.06631905428861 )**2;
 MPRINT(EM_DIAGRAM):   else _vqmvar + 1;
-21471     +   CLUSvads [2] + ( T_IMP_PremiumsinLOBWorkComp - 0.07614030401026 )**2;
+21384     +   CLUSvads [4] + ( T_IMP_PremiumsinLOBWorkComp - 0.03890616916594 )**2;
 MPRINT(EM_DIAGRAM):   if not missing( T_IMP_REP_CustomerAge ) then do;
-21472     +   CLUSvads [3] + ( T_IMP_PremiumsinLOBWorkComp - 0.89336991525772 )**2;
-MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_IMP_REP_CustomerAge - -0.09039922909565 )**2;
-21473     +end;
-MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_IMP_REP_CustomerAge - 1.16168792222724 )**2;
-21474     +else _vqmvar + 1;
-MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_IMP_REP_CustomerAge - -1.07246772042387 )**2;
+21385     +   CLUSvads [5] + ( T_IMP_PremiumsinLOBWorkComp - 1.3810679485595 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_IMP_REP_CustomerAge - -0.06851875007629 )**2;
+21386     +end;
+MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_IMP_REP_CustomerAge - 0.49618952052836 )**2;
+21387     +else _vqmvar + 1;
+MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_IMP_REP_CustomerAge - -0.8883455537645 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [4] + ( T_IMP_REP_CustomerAge - 1.22020510578764 )**2;
+21388     +if not missing( T_IMP_REP_CustomerAge ) then do;
+MPRINT(EM_DIAGRAM):   CLUSvads [5] + ( T_IMP_REP_CustomerAge - -1.2204539220054 )**2;
+21389     +   CLUSvads [1] + ( T_IMP_REP_CustomerAge - -0.06851875007629 )**2;
 MPRINT(EM_DIAGRAM):   end;
-21475     +if not missing( T_IMP_REP_CustomerAge ) then do;
-21476     +   CLUSvads [1] + ( T_IMP_REP_CustomerAge - -0.09039922909565 )**2;
+21390     +   CLUSvads [2] + ( T_IMP_REP_CustomerAge - 0.49618952052836 )**2;
+21391     +   CLUSvads [3] + ( T_IMP_REP_CustomerAge - -0.8883455537645 )**2;
 MPRINT(EM_DIAGRAM):   else _vqmvar + 1;
-21477     +   CLUSvads [2] + ( T_IMP_REP_CustomerAge - 1.16168792222724 )**2;
+21392     +   CLUSvads [4] + ( T_IMP_REP_CustomerAge - 1.22020510578764 )**2;
+MPRINT(EM_DIAGRAM):   if not missing( T_LOYALTY ) then do;
+21393     +   CLUSvads [5] + ( T_IMP_REP_CustomerAge - -1.2204539220054 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_LOYALTY - -0.00399748784547 )**2;
+21394     +end;
+MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_LOYALTY - 0.06013229252938 )**2;
+21395     +else _vqmvar + 1;
+MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_LOYALTY - 0.00358196302372 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [4] + ( T_LOYALTY - -0.04159681082494 )**2;
+21396     +if not missing( T_LOYALTY ) then do;
+MPRINT(EM_DIAGRAM):   CLUSvads [5] + ( T_LOYALTY - -0.01045838918556 )**2;
+21397     +   CLUSvads [1] + ( T_LOYALTY - -0.00399748784547 )**2;
+MPRINT(EM_DIAGRAM):   end;
+21398     +   CLUSvads [2] + ( T_LOYALTY - 0.06013229252938 )**2;
+21399     +   CLUSvads [3] + ( T_LOYALTY - 0.00358196302372 )**2;
+MPRINT(EM_DIAGRAM):   else _vqmvar + 1;
+21400     +   CLUSvads [4] + ( T_LOYALTY - -0.04159681082494 )**2;
 MPRINT(EM_DIAGRAM):   if not missing( T_PremiumsinLOBHousehold ) then do;
-21478     +   CLUSvads [3] + ( T_IMP_REP_CustomerAge - -1.07246772042387 )**2;
-MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_PremiumsinLOBHousehold - -0.50473314620215 )**2;
-21479     +end;
-MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_PremiumsinLOBHousehold - 0.09998316505462 )**2;
-21480     +else _vqmvar + 1;
-MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_PremiumsinLOBHousehold - 0.87949626614925 )**2;
+21401     +   CLUSvads [5] + ( T_LOYALTY - -0.01045838918556 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_PremiumsinLOBHousehold - -0.66943470087491 )**2;
+21402     +end;
+MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_PremiumsinLOBHousehold - -0.10997729368533 )**2;
+21403     +else _vqmvar + 1;
+MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_PremiumsinLOBHousehold - -0.14645023820969 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [4] + ( T_PremiumsinLOBHousehold - 0.06886472770849 )**2;
+21404     +if not missing( T_PremiumsinLOBHousehold ) then do;
+MPRINT(EM_DIAGRAM):   CLUSvads [5] + ( T_PremiumsinLOBHousehold - 1.45692322004126 )**2;
+21405     +   CLUSvads [1] + ( T_PremiumsinLOBHousehold - -0.66943470087491 )**2;
 MPRINT(EM_DIAGRAM):   end;
-21481     +if not missing( T_PremiumsinLOBHousehold ) then do;
-21482     +   CLUSvads [1] + ( T_PremiumsinLOBHousehold - -0.50473314620215 )**2;
+21406     +   CLUSvads [2] + ( T_PremiumsinLOBHousehold - -0.10997729368533 )**2;
+21407     +   CLUSvads [3] + ( T_PremiumsinLOBHousehold - -0.14645023820969 )**2;
 MPRINT(EM_DIAGRAM):   else _vqmvar + 1;
-21483     +   CLUSvads [2] + ( T_PremiumsinLOBHousehold - 0.09998316505462 )**2;
+21408     +   CLUSvads [4] + ( T_PremiumsinLOBHousehold - 0.06886472770849 )**2;
 MPRINT(EM_DIAGRAM):   if not missing( IMP_GeographicLiving1 ) then do;
-21484     +   CLUSvads [3] + ( T_PremiumsinLOBHousehold - 0.87949626614925 )**2;
-MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( IMP_GeographicLiving1 - 0.00727674947277 )**2;
-21485     +end;
-MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( IMP_GeographicLiving1 - -0.02237730971197 )**2;
-21486     +else _vqmvar + 1;
-MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( IMP_GeographicLiving1 - 0.00983408120313 )**2;
+21409     +   CLUSvads [5] + ( T_PremiumsinLOBHousehold - 1.45692322004126 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( IMP_GeographicLiving1 - 0.00533743934282 )**2;
+21410     +end;
+MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( IMP_GeographicLiving1 - -0.00662743924816 )**2;
+21411     +else _vqmvar + 1;
+MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( IMP_GeographicLiving1 - 0.01191774589411 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [4] + ( IMP_GeographicLiving1 - -0.01407633433779 )**2;
+21412     +if not missing( IMP_GeographicLiving1 ) then do;
+MPRINT(EM_DIAGRAM):   CLUSvads [5] + ( IMP_GeographicLiving1 - 0.00460036954118 )**2;
+21413     +   CLUSvads [1] + ( IMP_GeographicLiving1 - 0.00533743934282 )**2;
 MPRINT(EM_DIAGRAM):   end;
-21487     +if not missing( IMP_GeographicLiving1 ) then do;
-21488     +   CLUSvads [1] + ( IMP_GeographicLiving1 - 0.00727674947277 )**2;
+21414     +   CLUSvads [2] + ( IMP_GeographicLiving1 - -0.00662743924816 )**2;
+21415     +   CLUSvads [3] + ( IMP_GeographicLiving1 - 0.01191774589411 )**2;
 MPRINT(EM_DIAGRAM):   else _vqmvar + 0.25;
-21489     +   CLUSvads [2] + ( IMP_GeographicLiving1 - -0.02237730971197 )**2;
+21416     +   CLUSvads [4] + ( IMP_GeographicLiving1 - -0.01407633433779 )**2;
 MPRINT(EM_DIAGRAM):   if not missing( IMP_GeographicLiving2 ) then do;
-21490     +   CLUSvads [3] + ( IMP_GeographicLiving1 - 0.00983408120313 )**2;
-MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( IMP_GeographicLiving2 - -0.00027841068658 )**2;
-21491     +end;
-MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( IMP_GeographicLiving2 - 0.00962663264214 )**2;
-21492     +else _vqmvar + 0.25;
-MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( IMP_GeographicLiving2 - -0.00980776107442 )**2;
+21417     +   CLUSvads [5] + ( IMP_GeographicLiving1 - 0.00460036954118 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( IMP_GeographicLiving2 - 0.00257920831268 )**2;
+21418     +end;
+MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( IMP_GeographicLiving2 - -0.00220531712311 )**2;
+21419     +else _vqmvar + 0.25;
+MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( IMP_GeographicLiving2 - 0.00221732263377 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [4] + ( IMP_GeographicLiving2 - 0.00922365582927 )**2;
+21420     +if not missing( IMP_GeographicLiving2 ) then do;
+MPRINT(EM_DIAGRAM):   CLUSvads [5] + ( IMP_GeographicLiving2 - -0.02045464330127 )**2;
+21421     +   CLUSvads [1] + ( IMP_GeographicLiving2 - 0.00257920831268 )**2;
 MPRINT(EM_DIAGRAM):   end;
-21493     +if not missing( IMP_GeographicLiving2 ) then do;
-21494     +   CLUSvads [1] + ( IMP_GeographicLiving2 - -0.00027841068658 )**2;
+21422     +   CLUSvads [2] + ( IMP_GeographicLiving2 - -0.00220531712311 )**2;
+21423     +   CLUSvads [3] + ( IMP_GeographicLiving2 - 0.00221732263377 )**2;
 MPRINT(EM_DIAGRAM):   else _vqmvar + 0.25;
-21495     +   CLUSvads [2] + ( IMP_GeographicLiving2 - 0.00962663264214 )**2;
+21424     +   CLUSvads [4] + ( IMP_GeographicLiving2 - 0.00922365582927 )**2;
 MPRINT(EM_DIAGRAM):   if not missing( IMP_GeographicLiving3 ) then do;
-21496     +   CLUSvads [3] + ( IMP_GeographicLiving2 - -0.00980776107442 )**2;
-MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( IMP_GeographicLiving3 - 0.00753305526726 )**2;
-21497     +end;
-MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( IMP_GeographicLiving3 - -0.0117857386235 )**2;
-21498     +else _vqmvar + 0.25;
-MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( IMP_GeographicLiving3 - -0.00205699458937 )**2;
+21425     +   CLUSvads [5] + ( IMP_GeographicLiving2 - -0.02045464330127 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( IMP_GeographicLiving3 - 0.00946425702682 )**2;
+21426     +end;
+MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( IMP_GeographicLiving3 - 0.01571800583954 )**2;
+21427     +else _vqmvar + 0.25;
+MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( IMP_GeographicLiving3 - -0.00824626078985 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [4] + ( IMP_GeographicLiving3 - -0.0174046081875 )**2;
+21428     +if not missing( IMP_GeographicLiving3 ) then do;
+MPRINT(EM_DIAGRAM):   CLUSvads [5] + ( IMP_GeographicLiving3 - 0.0035537752862 )**2;
+21429     +   CLUSvads [1] + ( IMP_GeographicLiving3 - 0.00946425702682 )**2;
 MPRINT(EM_DIAGRAM):   end;
-21499     +if not missing( IMP_GeographicLiving3 ) then do;
-21500     +   CLUSvads [1] + ( IMP_GeographicLiving3 - 0.00753305526726 )**2;
+21430     +   CLUSvads [2] + ( IMP_GeographicLiving3 - 0.01571800583954 )**2;
+21431     +   CLUSvads [3] + ( IMP_GeographicLiving3 - -0.00824626078985 )**2;
 MPRINT(EM_DIAGRAM):   else _vqmvar + 0.24999999999999;
-21501     +   CLUSvads [2] + ( IMP_GeographicLiving3 - -0.0117857386235 )**2;
+21432     +   CLUSvads [4] + ( IMP_GeographicLiving3 - -0.0174046081875 )**2;
 MPRINT(EM_DIAGRAM):   if not missing( IMP_GeographicLiving4 ) then do;
-21502     +   CLUSvads [3] + ( IMP_GeographicLiving3 - -0.00205699458937 )**2;
-MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( IMP_GeographicLiving4 - -0.01274492565693 )**2;
-21503     +end;
-MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( IMP_GeographicLiving4 - 0.02452068495237 )**2;
-21504     +else _vqmvar + 0.24999999999999;
-MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( IMP_GeographicLiving4 - -0.00144588195696 )**2;
+21433     +   CLUSvads [5] + ( IMP_GeographicLiving3 - 0.0035537752862 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( IMP_GeographicLiving4 - -0.01427173010781 )**2;
+21434     +end;
+MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( IMP_GeographicLiving4 - -0.00530007831406 )**2;
+21435     +else _vqmvar + 0.24999999999999;
+MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( IMP_GeographicLiving4 - -0.00572492679267 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [4] + ( IMP_GeographicLiving4 - 0.02162793425467 )**2;
+21436     +if not missing( IMP_GeographicLiving4 ) then do;
+MPRINT(EM_DIAGRAM):   CLUSvads [5] + ( IMP_GeographicLiving4 - 0.00538928011798 )**2;
+21437     +   CLUSvads [1] + ( IMP_GeographicLiving4 - -0.01427173010781 )**2;
 MPRINT(EM_DIAGRAM):   end;
-21505     +if not missing( IMP_GeographicLiving4 ) then do;
-21506     +   CLUSvads [1] + ( IMP_GeographicLiving4 - -0.01274492565693 )**2;
+21438     +   CLUSvads [2] + ( IMP_GeographicLiving4 - -0.00530007831406 )**2;
+21439     +   CLUSvads [3] + ( IMP_GeographicLiving4 - -0.00572492679267 )**2;
 MPRINT(EM_DIAGRAM):   else _vqmvar + 0.24999999999999;
-21507     +   CLUSvads [2] + ( IMP_GeographicLiving4 - 0.02452068495237 )**2;
+21440     +   CLUSvads [4] + ( IMP_GeographicLiving4 - 0.02162793425467 )**2;
 MPRINT(EM_DIAGRAM):   if not missing( IMP_HasChildren0 ) then do;
-21508     +   CLUSvads [3] + ( IMP_GeographicLiving4 - -0.00144588195696 )**2;
-MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( IMP_HasChildren0 - -0.38800910836474 )**2;
-21509     +end;
-MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( IMP_HasChildren0 - 0.90507219318486 )**2;
-21510     +else _vqmvar + 0.24999999999999;
-MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( IMP_HasChildren0 - -0.21452893323305 )**2;
+21441     +   CLUSvads [5] + ( IMP_GeographicLiving4 - 0.00538928011798 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( IMP_HasChildren0 - -0.33839474307837 )**2;
+21442     +end;
+MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( IMP_HasChildren0 - -0.41906764021605 )**2;
+21443     +else _vqmvar + 0.24999999999999;
+MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( IMP_HasChildren0 - -0.37541226073607 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [4] + ( IMP_HasChildren0 - 1.09251178412787 )**2;
+21444     +if not missing( IMP_HasChildren0 ) then do;
+MPRINT(EM_DIAGRAM):   CLUSvads [5] + ( IMP_HasChildren0 - -0.07335590956108 )**2;
+21445     +   CLUSvads [1] + ( IMP_HasChildren0 - -0.33839474307837 )**2;
 MPRINT(EM_DIAGRAM):   end;
-21511     +if not missing( IMP_HasChildren0 ) then do;
-21512     +   CLUSvads [1] + ( IMP_HasChildren0 - -0.38800910836474 )**2;
+21446     +   CLUSvads [2] + ( IMP_HasChildren0 - -0.41906764021605 )**2;
+21447     +   CLUSvads [3] + ( IMP_HasChildren0 - -0.37541226073607 )**2;
 MPRINT(EM_DIAGRAM):   else _vqmvar + 0.5;
-21513     +   CLUSvads [2] + ( IMP_HasChildren0 - 0.90507219318486 )**2;
+21448     +   CLUSvads [4] + ( IMP_HasChildren0 - 1.09251178412787 )**2;
 MPRINT(EM_DIAGRAM):   if not missing( IMP_HasChildren1 ) then do;
-21514     +   CLUSvads [3] + ( IMP_HasChildren0 - -0.21452893323305 )**2;
-MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( IMP_HasChildren1 - 0.38800910836474 )**2;
-21515     +end;
-MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( IMP_HasChildren1 - -0.90507219318486 )**2;
-21516     +else _vqmvar + 0.5;
-MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( IMP_HasChildren1 - 0.21452893323305 )**2;
+21449     +   CLUSvads [5] + ( IMP_HasChildren0 - -0.07335590956108 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( IMP_HasChildren1 - 0.33839474307837 )**2;
+21450     +end;
+MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( IMP_HasChildren1 - 0.41906764021605 )**2;
+21451     +else _vqmvar + 0.5;
+MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( IMP_HasChildren1 - 0.37541226073607 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [4] + ( IMP_HasChildren1 - -1.09251178412787 )**2;
+21452     +if not missing( IMP_HasChildren1 ) then do;
+MPRINT(EM_DIAGRAM):   CLUSvads [5] + ( IMP_HasChildren1 - 0.07335590956108 )**2;
+21453     +   CLUSvads [1] + ( IMP_HasChildren1 - 0.33839474307837 )**2;
 MPRINT(EM_DIAGRAM):   end;
-21517     +if not missing( IMP_HasChildren1 ) then do;
-21518     +   CLUSvads [1] + ( IMP_HasChildren1 - 0.38800910836474 )**2;
+21454     +   CLUSvads [2] + ( IMP_HasChildren1 - 0.41906764021605 )**2;
+21455     +   CLUSvads [3] + ( IMP_HasChildren1 - 0.37541226073607 )**2;
 MPRINT(EM_DIAGRAM):   else _vqmvar + 0.5;
-21519     +   CLUSvads [2] + ( IMP_HasChildren1 - -0.90507219318486 )**2;
+21456     +   CLUSvads [4] + ( IMP_HasChildren1 - -1.09251178412787 )**2;
 MPRINT(EM_DIAGRAM):   if not missing( T_IMP_EducationalDegree ) then do;
-21520     +   CLUSvads [3] + ( IMP_HasChildren1 - 0.21452893323305 )**2;
-MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_IMP_EducationalDegree - 0.34586411005645 )**2;
-21521     +end;
-MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_IMP_EducationalDegree - -0.00169278868143 )**2;
-21522     +else _vqmvar + 0.5;
-MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_IMP_EducationalDegree - -0.67452344452255 )**2;
+21457     +   CLUSvads [5] + ( IMP_HasChildren1 - 0.07335590956108 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [1] + ( T_IMP_EducationalDegree - 0.60955992254884 )**2;
+21458     +end;
+MPRINT(EM_DIAGRAM):   CLUSvads [2] + ( T_IMP_EducationalDegree - -0.30142536882155 )**2;
+21459     +else _vqmvar + 0.5;
+MPRINT(EM_DIAGRAM):   CLUSvads [3] + ( T_IMP_EducationalDegree - 0.10411969671552 )**2;
+MPRINT(EM_DIAGRAM):   CLUSvads [4] + ( T_IMP_EducationalDegree - 0.07347625651496 )**2;
+21460     +if not missing( T_IMP_EducationalDegree ) then do;
+MPRINT(EM_DIAGRAM):   CLUSvads [5] + ( T_IMP_EducationalDegree - -0.96417136939438 )**2;
+21461     +   CLUSvads [1] + ( T_IMP_EducationalDegree - 0.60955992254884 )**2;
 MPRINT(EM_DIAGRAM):   end;
-21523     +if not missing( T_IMP_EducationalDegree ) then do;
-21524     +   CLUSvads [1] + ( T_IMP_EducationalDegree - 0.34586411005645 )**2;
+21462     +   CLUSvads [2] + ( T_IMP_EducationalDegree - -0.30142536882155 )**2;
+21463     +   CLUSvads [3] + ( T_IMP_EducationalDegree - 0.10411969671552 )**2;
 MPRINT(EM_DIAGRAM):   else _vqmvar + 0.99999999999999;
-21525     +   CLUSvads [2] + ( T_IMP_EducationalDegree - -0.00169278868143 )**2;
-MPRINT(EM_DIAGRAM):   _vqnvar = 12 - _vqmvar;
-21526     +   CLUSvads [3] + ( T_IMP_EducationalDegree - -0.67452344452255 )**2;
-MPRINT(EM_DIAGRAM):   if _vqnvar <= 2.182787284255E-11 then do;
-21527     +end;
+21464     +   CLUSvads [4] + ( T_IMP_EducationalDegree - 0.07347625651496 )**2;
+MPRINT(EM_DIAGRAM):   _vqnvar = 13 - _vqmvar;
+21465     +   CLUSvads [5] + ( T_IMP_EducationalDegree - -0.96417136939438 )**2;
+MPRINT(EM_DIAGRAM):   if _vqnvar <= 2.5124791136477E-11 then do;
+21466     +end;
 MPRINT(EM_DIAGRAM):   _SEGMENT_ = .;
 MPRINT(EM_DIAGRAM):   Distance = .;
-21528     +else _vqmvar + 0.99999999999999;
+21467     +else _vqmvar + 0.99999999999999;
 MPRINT(EM_DIAGRAM):   end;
-21529     +_vqnvar = 12 - _vqmvar;
+21468     +_vqnvar = 13 - _vqmvar;
 MPRINT(EM_DIAGRAM):   else do;
-21530     +if _vqnvar <= 2.182787284255E-11 then do;
+21469     +if _vqnvar <= 2.5124791136477E-11 then do;
 MPRINT(EM_DIAGRAM):   _SEGMENT_ = 1;
 MPRINT(EM_DIAGRAM):   Distance = CLUSvads [1];
-21531     +   _SEGMENT_ = .; Distance = .;
+21470     +   _SEGMENT_ = .; Distance = .;
 MPRINT(EM_DIAGRAM):   _vqfzdst = Distance * 0.99999999999988;
 MPRINT(EM_DIAGRAM):   drop _vqfzdst;
-21532     +end;
-MPRINT(EM_DIAGRAM):   do _vqclus = 2 to 3;
-21533     +else do;
+21471     +end;
+MPRINT(EM_DIAGRAM):   do _vqclus = 2 to 5;
+21472     +else do;
 MPRINT(EM_DIAGRAM):   if CLUSvads [_vqclus] < _vqfzdst then do;
 MPRINT(EM_DIAGRAM):   _SEGMENT_ = _vqclus;
 MPRINT(EM_DIAGRAM):   Distance = CLUSvads [_vqclus];
-21534     +   _SEGMENT_ = 1; Distance = CLUSvads [1];
+21473     +   _SEGMENT_ = 1; Distance = CLUSvads [1];
 MPRINT(EM_DIAGRAM):   _vqfzdst = Distance * 0.99999999999988;
-21535     +   _vqfzdst = Distance * 0.99999999999988; drop _vqfzdst;
+21474     +   _vqfzdst = Distance * 0.99999999999988; drop _vqfzdst;
 MPRINT(EM_DIAGRAM):   end;
-21536     +   do _vqclus = 2 to 3;
+21475     +   do _vqclus = 2 to 5;
 MPRINT(EM_DIAGRAM):   end;
-21537     +      if CLUSvads [_vqclus] < _vqfzdst then do;
-MPRINT(EM_DIAGRAM):   Distance = sqrt(Distance * (12 / _vqnvar));
-21538     +         _SEGMENT_ = _vqclus; Distance = CLUSvads [_vqclus];
+21476     +      if CLUSvads [_vqclus] < _vqfzdst then do;
+MPRINT(EM_DIAGRAM):   Distance = sqrt(Distance * (13 / _vqnvar));
+21477     +         _SEGMENT_ = _vqclus; Distance = CLUSvads [_vqclus];
 MPRINT(EM_DIAGRAM):   end;
-21539     +         _vqfzdst = Distance * 0.99999999999988;
-21540     +      end;
+21478     +         _vqfzdst = Distance * 0.99999999999988;
+21479     +      end;
 MPRINT(EM_DIAGRAM):   CLUSvlex :;
-21541     +   end;
-21542     +   Distance = sqrt(Distance * (12 / _vqnvar));
+21480     +   end;
+21481     +   Distance = sqrt(Distance * (13 / _vqnvar));
 MPRINT(EM_DIAGRAM):   ***************************************;
-21543     +end;
+21482     +end;
 MPRINT(EM_DIAGRAM):   *** End Scoring Code from PROC DMVQ ***;
-21544     +CLUSvlex :;
+21483     +CLUSvlex :;
 MPRINT(EM_DIAGRAM):   ***************************************;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
-21545     +
+21484     +
 MPRINT(EM_DIAGRAM):   * Clus: Creating Segment Label;
-21546     +***************************************;
+21485     +***************************************;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
-21547     +*** End Scoring Code from PROC DMVQ ***;
-21548     +***************************************;
+21486     +*** End Scoring Code from PROC DMVQ ***;
+21487     +***************************************;
 MPRINT(EM_DIAGRAM):   length _SEGMENT_LABEL_ $80;
-21549     +*------------------------------------------------------------*;
-21550     +* Clus: Creating Segment Label;
+21488     +*------------------------------------------------------------*;
+21489     +* Clus: Creating Segment Label;
 MPRINT(EM_DIAGRAM):   label _SEGMENT_LABEL_= 'Segment Description';
-21551     +*------------------------------------------------------------*;
-21552     +length _SEGMENT_LABEL_ $80;
+21490     +*------------------------------------------------------------*;
+21491     +length _SEGMENT_LABEL_ $80;
 MPRINT(EM_DIAGRAM):   if _SEGMENT_ = 1 then _SEGMENT_LABEL_="Cluster1";
-21553     +label _SEGMENT_LABEL_='Segment Description';
+21492     +label _SEGMENT_LABEL_='Segment Description';
 MPRINT(EM_DIAGRAM):   else if _SEGMENT_ = 2 then _SEGMENT_LABEL_="Cluster2";
-21554     +if _SEGMENT_ = 1 then _SEGMENT_LABEL_="Cluster1";
-21555     +else
-21556     +if _SEGMENT_ = 2 then _SEGMENT_LABEL_="Cluster2";
+21493     +if _SEGMENT_ = 1 then _SEGMENT_LABEL_="Cluster1";
+21494     +else
+21495     +if _SEGMENT_ = 2 then _SEGMENT_LABEL_="Cluster2";
 MPRINT(EM_DIAGRAM):   else if _SEGMENT_ = 3 then _SEGMENT_LABEL_="Cluster3";
-21557     +else
-21558     +if _SEGMENT_ = 3 then _SEGMENT_LABEL_="Cluster3";
+21496     +else
+21497     +if _SEGMENT_ = 3 then _SEGMENT_LABEL_="Cluster3";
+MPRINT(EM_DIAGRAM):   else if _SEGMENT_ = 4 then _SEGMENT_LABEL_="Cluster4";
+21498     +else
+21499     +if _SEGMENT_ = 4 then _SEGMENT_LABEL_="Cluster4";
+MPRINT(EM_DIAGRAM):   else if _SEGMENT_ = 5 then _SEGMENT_LABEL_="Cluster5";
+21500     +else
+21501     +if _SEGMENT_ = 5 then _SEGMENT_LABEL_="Cluster5";
 NOTE: %INCLUDE (level 1) ending.
 MPRINT(EM_DIAGRAM):   run;
-21559      run;
+21502      run;
 
 NOTE: DATA STEP view saved on file EMWS1.CLUS_TRAIN.
 NOTE: A stored DATA STEP view cannot run under a different operating system.
 NOTE: View EMWS1.FILTER_TRAIN.VIEW used (Total process time):
-      real time           0.17 seconds
-      cpu time            0.17 seconds
+      real time           0.14 seconds
+      cpu time            0.10 seconds
       
 NOTE: DATA statement used (Total process time):
-      real time           0.20 seconds
-      cpu time            0.20 seconds
+      real time           0.15 seconds
+      cpu time            0.12 seconds
       
 
 MPRINT(EM_DIAGRAM):   quit;
-21560      quit;
-21561      filename emflow;
+21503      quit;
+21504      filename emflow;
 MPRINT(EM_DIAGRAM):   filename emflow;
 NOTE: Fileref EMFLOW has been deassigned.
-21562      *------------------------------------------------------------*;
+21505      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
-21563      * Clus: Computing metadata for TRAIN data;
+21506      * Clus: Computing metadata for TRAIN data;
 MPRINT(EM_DIAGRAM):   * Clus: Computing metadata for TRAIN data;
-21564      *------------------------------------------------------------*;
+21507      *------------------------------------------------------------*;
 MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
 
 NOTE: View EMWS1.CLUS_TRAIN.VIEW used (Total process time):
-      real time           0.14 seconds
+      real time           0.15 seconds
       cpu time            0.15 seconds
       
 MPRINT(EM_DIAGRAM):    *------------------------------------------------------------*;
@@ -740,12 +836,12 @@ MPRINT(EMADVISECOLUMNS):   call symput('_engineTable', attrc(dsid, 'ENGINE'));
 MPRINT(EMADVISECOLUMNS):   dsid = close(dsid);
 MPRINT(EMADVISECOLUMNS):   end;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    proc contents data=EMWS1.Clus_TRAIN out=WORK.M20T92IH noprint;
+MPRINT(EMADVISECOLUMNS):    proc contents data=EMWS1.Clus_TRAIN out=WORK.M0UTOT0B noprint;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M20T92IH;
+MPRINT(EMADVISECOLUMNS):    data WORK.M0UTOT0B;
 MPRINT(EMADVISECOLUMNS):   length NAME $ 64 TYPE $ 1 LABEL $ 200 FORMAT $ 20 INFORMAT $20 INDEX $ 1 INDEXTYPE $ 9;
 MPRINT(EMADVISECOLUMNS):   label NAME =;
-MPRINT(EMADVISECOLUMNS):   set WORK.M20T92IH(keep=name type length label format formatl formatd informat informl informd idxusage rename=(type=itype));
+MPRINT(EMADVISECOLUMNS):   set WORK.M0UTOT0B(keep=name type length label format formatl formatd informat informl informd idxusage rename=(type=itype));
 MPRINT(EMADVISECOLUMNS):   if itype = 1 then type = 'N';
 MPRINT(EMADVISECOLUMNS):   else type = 'C';
 MPRINT(EMADVISECOLUMNS):   if formatl > 0 then do;
@@ -763,21 +859,21 @@ MPRINT(EMADVISECOLUMNS):   else index = "Y";
 MPRINT(EMADVISECOLUMNS):   indextype = idxusage;
 MPRINT(EMADVISECOLUMNS):   drop idxusage itype formatl formatd informl informd;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M20T92IH;
+MPRINT(EMADVISECOLUMNS):    data WORK.M0UTOT0B;
 MPRINT(EMADVISECOLUMNS):   length UNAME $64;
-MPRINT(EMADVISECOLUMNS):   set WORK.M20T92IH;
+MPRINT(EMADVISECOLUMNS):   set WORK.M0UTOT0B;
 MPRINT(EMADVISECOLUMNS):   UNAME = upcase(NAME);
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    proc sort data=WORK.M3V6QQ6P NOTHREADS;
+MPRINT(EMADVISECOLUMNS):    proc sort data=WORK.M21RY9AC NOTHREADS;
 MPRINT(EMADVISECOLUMNS):   by UNAME;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M3V6QQ6P;
+MPRINT(EMADVISECOLUMNS):    data WORK.M21RY9AC;
 MPRINT(EMADVISECOLUMNS):   drop UNAME;
-MPRINT(EMADVISECOLUMNS):   set WORK.M3V6QQ6P;
+MPRINT(EMADVISECOLUMNS):   set WORK.M21RY9AC;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M0BG28BE(keep=NAME ATTR);
+MPRINT(EMADVISECOLUMNS):    data WORK.M05JEP_5(keep=NAME ATTR);
 MPRINT(EMADVISECOLUMNS):   length ATTR $ 20;
-MPRINT(EMADVISECOLUMNS):   set WORK.M3V6QQ6P;
+MPRINT(EMADVISECOLUMNS):   set WORK.M21RY9AC;
 MPRINT(EMADVISECOLUMNS):   if level ne "INTERVAL" then do;
 MPRINT(EMADVISECOLUMNS):   if order = ' ' then do;
 MPRINT(EMADVISECOLUMNS):   attr = 'ORDER';
@@ -812,10 +908,10 @@ MPRINT(EMADVISECOLUMNS):   run;
 MPRINT(EMADVISECOLUMNS):   proc sort NOTHREADS;
 MPRINT(EMADVISECOLUMNS):   by attr;
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M3V6QQ6P;
+MPRINT(EMADVISECOLUMNS):    data WORK.M21RY9AC;
 MPRINT(EMADVISECOLUMNS):   length NAME $64 ROLE $ 32 LEVEL $ 10 ORDER $ 8 CREATOR $32 FORMATTYPE $ 10 FAMILY $ 10 LOWERLIMIT 8 UPPERLIMIT 8 REPORT $1 DISTRIBUTION $ 20 COMMENT $64;
 MPRINT(EMADVISECOLUMNS):   length levelAssigned 8 roleAssigned 8 PRICE 8;
-MPRINT(EMADVISECOLUMNS):   set WORK.M3V6QQ6P;
+MPRINT(EMADVISECOLUMNS):   set WORK.M21RY9AC;
 MPRINT(EMADVISECOLUMNS):   if formattype = ' ' then do;
 MPRINT(EMADVISECOLUMNS):   if format ne ' ' then do;
 MPRINT(EMADVISECOLUMNS):   if type = 'N' then do;
@@ -953,8 +1049,8 @@ MPRINT(EMADVISECOLUMNS):   end;
 MPRINT(EMADVISECOLUMNS):   else role = upcase(role);
 MPRINT(EMADVISECOLUMNS):   if REPORT = '' then REPORT = 'N';
 MPRINT(EMADVISECOLUMNS):   run;
-MPRINT(EMADVISECOLUMNS):    data WORK.M3V6QQ6P;
-MPRINT(EMADVISECOLUMNS):   set WORK.M3V6QQ6P;
+MPRINT(EMADVISECOLUMNS):    data WORK.M21RY9AC;
+MPRINT(EMADVISECOLUMNS):   set WORK.M21RY9AC;
 MPRINT(EMADVISECOLUMNS):   label NAME = "Variable Name" TYPE = "Type" ROLE = "Role" LEVEL= "Measurement Level" ORDER= "Order" CREATOR= "Creator" FORMATTYPE= "Format Type" FAMILY= "Family" DISTRIBUTION= "Distribution" PRICE= "Price" LOWERLIMIT= "Lower 
 limit" UPPERLIMIT= "Upper Limit" REPORT= "Report" COMMENT= "Comment" INDEX= "Index" INDEXTYPE= "IndexType" LABEL= "Label" LENGTH= "Length";
 MPRINT(EMADVISECOLUMNS):   drop levelAssigned roleAssigned;
@@ -1035,7 +1131,7 @@ MPRINT(EM_DIAGRAM):   end;
 MPRINT(EM_DIAGRAM):   run;
 MPRINT(EM_DIAGRAM):   filename _delta;
 NOTE: View EMWS1.CLUS_TRAIN.VIEW used (Total process time):
-      real time           0.14 seconds
+      real time           0.13 seconds
       cpu time            0.14 seconds
       
 MPRINT(EM_DIAGRAM):    proc printto;
